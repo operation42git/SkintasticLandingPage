@@ -1,0 +1,358 @@
+{
+  "nav": {
+    "offers": "Ponude",
+    "locations": "Lokacija",
+    "booking": "Rezervacija termina",
+    "services": "Usluge",
+    "technology": "Tehnologija",
+    "info": "Korisne informacije",
+    "about": "O nama",
+    "contact": "Kontakt",
+    "bookNow": "Rezerviraj termin",
+    "close": "Zatvori",
+    "topBarOffer": "Lasersko uklanjanje dlačica ispod pazuha sada 19,90",
+    "topBarSite": "skintastic.hr",
+    "submenu": {
+      "offers": [
+        { "label": "Laserski pazusi", "href": "#offers" },
+        { "label": "Žena punog tijela", "href": "#offers" },
+        { "label": "Lica i vrata", "href": "#offers" },
+        { "label": "Superman paket", "href": "#offers" },
+        { "label": "Oblikovanje brade", "href": "#offers" },
+        { "label": "Noge kompletne", "href": "#offers" },
+        { "label": "Intimno kompletno", "href": "#offers" },
+        { "label": "Paket za plažu žena", "href": "#offers" }
+      ],
+      "locations": [
+        { "label": "Zagreb Zapad", "href": "#locations" },
+        { "label": "Wien 5. Bezirk", "href": "#locations" },
+        { "label": "Graz Süd Puntigam", "href": "#locations" },
+        { "label": "Graz City Jakominiplatz", "href": "#locations" },
+        { "label": "Stuttgart", "href": "#locations" }
+      ],
+      "booking": [
+        { "label": "Zagreb Zapad", "href": "#booking" },
+        { "label": "Wien 5. Bezirk", "href": "#booking" },
+        { "label": "Graz Süd Puntigam", "href": "#booking" },
+        { "label": "Graz City Jakominiplatz", "href": "#booking" },
+        { "label": "Stuttgart", "href": "#booking" }
+      ],
+      "about": [
+        { "label": "O nama", "href": "#about" },
+        { "label": "Pečat kvalitete", "href": "#certificates" },
+        { "label": "Recenzije", "href": "#reviews" }
+      ],
+      "contact": [
+        { "label": "Zaštita podataka", "href": "datenschutz" },
+        { "label": "Impressum", "href": "impressum" }
+      ]
+    }
+  },
+  "scroll": "Pomakni",
+  "scrollTop": "Na vrh",
+  "hero": {
+    "slide1": {
+      "badge": "Dan bez dlačica",
+      "title": "10% popusta na lasersko uklanjanje dlačica",
+      "subtitle": "10% popusta na lasersko uklanjanje dlačica svakog zadnjeg petka u mjesecu! Rezerviraj svoj termin odmah!",
+      "cta": "Rezerviraj sada"
+    },
+    "slide2": {
+      "badge": "Posebna ponuda",
+      "title": "Lasersko uklanjanje dlačica ispod pazuha sada 19,90",
+      "subtitle": "za žene i muškarce · Ponuda vrijedi do 31.12.2026.",
+      "cta": "Rezerviraj sada"
+    }
+  },
+  "features": {
+    "experts": {
+      "title": "Stručnjaci za njegu kože",
+      "desc": "Naš stručni tim kombinira iskustvo i pažljiv pristup – za rezultate koji se vide."
+    },
+    "technology": {
+      "title": "Tehnologija",
+      "desc": "Koristimo isključivo modernu, provjerenu high-end tehnologiju – samo najbolje za tvoju kožu."
+    },
+    "hygiene": {
+      "title": "Higijena",
+      "desc": "Brinemo za tvoju sigurnost kroz stroge higijenske standarde u svim područjima."
+    },
+    "consultation": {
+      "title": "Besplatno savjetovanje",
+      "desc": "Posvećujemo ti pažnju, potpuno\nindividualno i bez naknade."
+    }
+  },
+  "offers": {
+    "title": "Najbolje ponude",
+    "subtitle": "Trajno povoljno",
+    "description": "Sve cijene, pakete i ponude provjeri u našem <bold>online kalendaru za rezervacije</bold>.",
+    "instead": "umjesto",
+    "now": "sada",
+    "bookNow": "Rezerviraj sada",
+    "selectLocation": "Odaberi lokaciju",
+    "allCentres": "Cijene & rezervacije",
+    "items": {
+      "axilla": {
+        "title": "Laserska epilacija pazuha",
+        "desc": "za muškarce i žene",
+        "price": "19,90",
+        "oldPrice": "49,99"
+      },
+      "fullBody": {
+        "title": "Cijelo tijelo (žena) small",
+        "desc": "Cijelo tijelo bez leđa i trbuha (uključuje liniju ispod pupka i donji dio leđa)",
+        "price": "199,90",
+        "oldPrice": "299,90"
+      },
+      "faceNeck": {
+        "title": "Laserska epilacija lica i vrata",
+        "desc": "za svilenkasto glatku kožu",
+        "price": "49,90",
+        "oldPrice": "79,80"
+      },
+      "superman": {
+        "title": "Superman paket",
+        "desc": "laserska epilacija prsa i trbuha",
+        "price": "99,90",
+        "oldPrice": "169,80"
+      },
+      "legs": {
+        "title": "Laserska epilacija nogu",
+        "desc": "(uključujući stopalo i prste)",
+        "price": "99,90",
+        "oldPrice": ""
+      },
+      "intimate": {
+        "title": "Laserska epilacija",
+        "desc": "Cijela intimna zona (žene)",
+        "price": "79,90",
+        "oldPrice": ""
+      },
+      "beach": {
+        "title": "Beach paket",
+        "desc": "laserska epilacija bikini zone, intimne zone, nogu i pazuha",
+        "price": "149,90",
+        "oldPrice": "249,70"
+      }
+    }
+  },
+  "locations": {
+    "title": "Lokacije",
+    "subtitle": "svi naši centri",
+    "gallery": "Galerija",
+    "prices": "Cijene & rezervacije",
+    "items": {
+      "zagreb": {
+        "name": "Zagreb Zapad",
+        "address": "Drage Gervaisa 1, 10090 Zagreb",
+        "extra": ""
+      },
+      "wien": {
+        "name": "Wien 5. Bezirk",
+        "address": "Wien 1050, Kliebergasse 7",
+        "extra": "5. Bezirk"
+      },
+      "grazPuntigam": {
+        "name": "Graz Süd Puntigam",
+        "address": "Graz 8055, Triester Straße 369",
+        "extra": "Puntigam"
+      },
+      "grazCity": {
+        "name": "Graz City Jakominiplatz",
+        "address": "Graz 8010, Jakominiplatz 12",
+        "extra": "Steirerhof, 3.Stock"
+      },
+      "stuttgart": {
+        "name": "Stuttgart",
+        "address": "Marktstraße 6, 70173 Stuttgart",
+        "extra": "Dr. med. Jens Neumann"
+      }
+    }
+  },
+  "services": {
+    "badge": "Naša ponuda",
+    "title": "Usluge skintastica",
+    "subtitle": "Trajno uklanjanje dlačica laserom",
+    "lead": "Trajno glatka koža uz vrhunsku lasersku tehnologiju <em>u skintasticu</em>.",
+    "body1": "Želiš trajno glatku kožu bez brijanja, depilacije i dosadnih dlačica? U skintasticu te čeka nježno i učinkovito lasersko uklanjanje dlačica uz najnovije diodne lasere. Najpopularniji tretmani obuhvaćaju pazuhe, noge, intimnu zonu i lice, a već nakon 6 do 8 tretmana možeš uživati u dugotrajnoj glatkoj koži, nježnoj i blistavoj kao nikada prije.",
+    "body2": "Naša tehnologija pogodna je za sve tipove kože i dlačica, a tretmane provode isključivo posebno educirani stručnjaci za lasersku i njegu kože. Posebnu pažnju posvećujemo higijeni, sigurnosti i podnošljivosti tretmana. Rezerviraj sada svoje besplatno savjetovanje – posvetit ćemo vrijeme svakom tvojem pitanju. Tvoj put do svilenkasto glatke kože počinje <em>u skintasticu</em>!",
+    "ctaPrices": "Cijene & rezervacije",
+    "ctaTech": "Tehnologija"
+  },
+  "technology": {
+    "badge": "Tehnologija",
+    "title": "High-End uređaji",
+    "heading": "Mediostar diodni laser – maksimalno učinkovit",
+    "p1": "<em>U skintasticu</em> koristimo najmoderniju tehnologiju – Mediostar diodni laser njemačkog proizvođača Asclepion, jednog od vodećih svjetskih imena u medicinskim laserskim sustavima. Više od 45 godina Asclepion stoji za stručnost, kvalitetu i inovacije, potvrđujući pouzdanost tehnologije „Made in Germany“.",
+    "p2": "Naš Mediostar posebno je razvijen za trajno uklanjanje dlačica – pogodan za sve tipove kože (I–VI) i sve tipove dlačica. Monolith Powerline ručka s 5.000 W snage kombinira vrhunske rezultate i ugodan tretman, uz savršeni miks valnih duljina. S 360° Ice-hlađenjem, ergonomskim dizajnom i kratkim impulsima, i najsuptilnije dlačice uklanjaju se učinkovito i nježno.",
+    "p3": "<em>U skintasticu</em> je tvoje iskustvo laserskog uklanjanja dlačica na vrhunskom nivou."
+  },
+  "faq": {
+    "badge": "Često postavljana pitanja",
+    "title": "Korisne informacije",
+    "subtitle": "Zanima te trajno uklanjanje dlačica u skintasticu i imaš pitanja? Super! Želimo da se osjećaš ugodno i dobro informirano. Ovdje smo odgovorili na najčešća pitanja naših klijenata:",
+    "items": [
+      {
+        "q": "Kako izgleda tretman laserom?",
+        "a": "Prije prvog tretmana u skintasticu dogovaramo besplatno savjetovanje – individualno i prilagođeno tvojoj koži i tipu dlačica. Područje koje će se tretirati trebalo bi biti obrijano večer prije, a nekoliko dana ranije izbjegavaj kreme i intenzivno sunčanje.<br>Tijekom tretmana, naš snažni diodni laser ciljano uništava korijen dlačice – brzo, nježno i s pažnjom prema tvojoj koži. Nakon tretmana koža može biti malo osjetljiva, pa savjetujemo korištenje zaštitnog faktora 50 nekoliko dana.<br>Već nakon prvog tretmana primijetit ćeš sporiji rast dlačica, vidljive rezultate i dugotrajnu glatkoću – za svilenkastu koža bez brijanja."
+      },
+      {
+        "q": "Kako se pripremiti za tretman?",
+        "a": "Preporučujemo da područje koje će se tretirati obriješ večer prije tretmana. Važno je da dlačice ne strše iznad površine kože, kako bi laser mogao djelovati optimalno, a tretman bio maksimalno ugodan i učinkovit."
+      },
+      {
+        "q": "Na što trebam paziti nakon tretmana?",
+        "a": "Važno je izbjegavati intenzivno sunčanje neposredno prije i nakon tretmana. Posebno zaštiti tretirana područja kremom sa zaštitnim faktorom 50. Naši stručnjaci rado će te informirati o pravilnoj njezi nakon tretmana."
+      },
+      {
+        "q": "Je li tretman bolan?",
+        "a": "Ne, zahvaljujući našoj modernoj ICE-hladnoj tehnologiji, tijekom tretmana osjetit ćeš samo blage trnce i osjećaj topline. Stari mit da su laserski tretmani bolni često potječe od ranijih tehnologija poput IPL-a, kod kojih je na površini kože nastajala veća toplina."
+      },
+      {
+        "q": "Broj tretmana i rezultati",
+        "a": [
+          "<strong>Zašto je potrebno više laserskih tretmana da bi koža bila trajno bez dlačica?</strong><br>Laser djeluje samo na dlačice u aktivnoj fazi rasta, dok tzv. „uspavane“ dlačice – one u fazi mirovanja – tijekom tretmana ostaju netaknute. Kasnije te dlačice ulaze u novu fazu rasta i postaju vidljive, zbog čega je potrebno više tretmana kako bi se trajno uklonile sve dlačice.<br>Naše iskustvo pokazuje da je za optimalan i dugotrajan rezultat obično potrebno <strong>6 do 8 tretmana</strong>. Točan broj tretmana može varirati ovisno o brzini rasta dlačica, hormonalnom statusu i tretiranoj regiji.",
+          "<strong>Koliki je idealan razmak između laserskih tretmana?</strong><br>Za optimalne rezultate preporučujemo da se prvi tretmani provode u razmaku od otprilike <strong>4–5 tjedana</strong>. U ovoj fazi laser posebno učinkovito djeluje na dlačice u njihovoj aktivnoj fazi rasta. Ovisno o individualnom rastu dlačica i uspjehu tretmana, razmak će se prilagoditi – često na <strong>5–6 tjedana</strong>, a ponekad i <strong>7–8 tjedana</strong>.<br>Cilj skintastica je postići trajno glatku kožu uz što manje tretmana – učinkovito, nježno za kožu i prilagođeno baš tebi.",
+          "<strong>Što se događa ako preskočim tretman ili ne održim preporučeni razmak?</strong><br>Za optimalno djelovanje na ciklus rasta dlačica, važno je pridržavati se redovitog ritma tretmana.",
+          "<strong>Trebam li nakon završenog laserskog tretmana dolaziti na ponovne tretmane?</strong><br>Da, to je sasvim normalno. Čak i nakon završene serije tretmana, pojedine dlačice mogu ponovno izrasti nakon 1–2 godine – primjerice zbog hormonskih promjena ili reaktivacije uspavanih folikula koji prethodno nisu bili u fazi rasta.<br>Kako bi rezultat ostao dugotrajno glatka koža, preporučujemo, ovisno o tvojim individualnim potrebama, dolazak na povremeni tretman osvježavanja."
+        ]
+      },
+      {
+        "q": "Cijene i rezervacija",
+        "a": [
+          "<strong>Koliko košta lasersko uklanjanje dlačica u skintastic?</strong><br><em>U skintasticu </em>plaćaš samo pojedinačni tretman. Nema skrivenih troškova, tako da ostaješ fleksibilan/a i imaš potpunu kontrolu nad troškovima. Sve cijene, pakete i akcije možeš pronaći u našem online kalendaru za rezervacije.",
+          "<strong>Kako mogu rezervirati i platiti tretman?</strong><br>Tretman možeš jednostavno i praktično rezervirati online. Kao načine plaćanja nudimo kartično plaćanje ili gotovinu.",
+          "<strong>Iskoristi besplatno savjetovanje</strong><br>Tvoje savjetovanje je potpuno besplatno i bez obveze. Posvetit ćemo ti vrijeme za sva tvoja pitanja, analizirati kožu i dlačice te objasniti tijek tretmana."
+        ]
+      },
+      {
+        "q": "Je li diodni laser pogodan za sve tipove kože i dlačica?",
+        "a": "<strong>Da, naši diodni laseri dizajnirani su za učinkovito tretiranje svih tipova kože i dlačica.</strong><br>Lasersko uklanjanje dlačica djeluje pomoću svjetlosti koja se ciljano apsorbira u pigmentu dlake (melaninu). Taj pigment prenosi energiju do korijena dlačice, gdje se trajno uništava. Bijele ili sijede dlačice sadrže malo ili nimalo melanina, zbog čega ih laser „ne prepoznaje“ – energija ne doseže korijen dlačice i ne dolazi do trajnog oštećenja folikula."
+      },
+      {
+        "q": "Što znači ICE-hlađenje kod diodnih lasera?",
+        "a": [
+          "Naši visokotehnološki diodni laseri opremljeni su inovativnim ICE-hlađenjem u aplikatoru. Kako to točno funkcionira i koje prednosti imaš?",
+          "Vrlo jednostavno: dok laser ciljano djeluje na tvoje folikule dlaka, aplikator neprekidno hladi tvoju kožu. Ovo kontaktno hlađenje osigurava da gornji slojevi kože tijekom cijelog tretmana ostanu ugodno rashlađeni. Rezultat je znatno veća udobnost tretmana – osjetit ćeš samo blage trnce, dok je koža optimalno zaštićena.",
+          "Ova napredna tehnologija hlađenja čini lasersko uklanjanje dlačica kod nas ne samo učinkovitijim, već i posebno nježnim i sigurnim za kožu. Tako se možeš potpuno opustiti i veseliti svom cilju: trajno svilenkasto glatka koža, bez neželjenih dlačica i iritacija"
+        ]
+      },
+      {
+        "q": "Valne duljine",
+        "a": [
+          "<strong>Što znače valne duljine kod laserskog uklanjanja dlačica i zašto broj valnih duljina nije presudan?</strong>",
+          "Mnogi drugi reklamiraju četiri ili više valnih duljina i pritom sugeriraju na posebno moćne uređaje. No, oprez: više valnih duljina ne znači automatski bolje rezultate. Često se radi samo o mješavinama valnih duljina bez dokazane učinkovitosti – riječ je o čistom marketinškom obećanju.",
+          "<em>U skintasticu </em>koristimo Mediostar diodni laser, jedan od najsuvremenijih uređaja na tržištu – „Made in Germany“. Ovaj vrhunski sustav koristi ciljano provjerene valne duljine od 810 nm i 940 nm, koje prodiru duboko u kožu i posebno učinkovito te nježno tretiraju folikul dlačice.",
+          "Zahvaljujući individualnom podešavanju prema tipu tvoje kože i dlačica, radimo posebno precizno, sigurno i učinkovito – bez praznih obećanja. Kvaliteta se ne mjeri brojem valnih duljina, već tehnološkom snagom i prilagodljivošću uređaja. Upravo zato vjerujemo u Mediostar – a možeš i ti!"
+        ]
+      },
+      {
+        "q": "Česte zablude i mitovi",
+        "a": [
+          "1) <strong>„Lasersko uklanjanje dlačica je samo za tamne dlačice i svijetlu kožu.“</strong><br>To više ne vrijedi! Dok su se ranije najbolji rezultati postizali upravo na tom kontrastu, naši visokoučinkoviti diodni laseri najnovije generacije dovoljno su napredni da sigurno i učinkovito tretiraju sve tipove kože i dlačica.",
+          "2) <strong>„Laserske zrake su opasne ili kancerogene.“</strong><br>Netočno. Diodni laser koji koristimo ne emitira UV-zračenje i znanstveno je provjeren kao siguran za trajno uklanjanje dlačica. Laserska energija precizno djeluje na melaninu u folikulu dlačice i ne prodire dublje u tijelo.",
+          "3) <strong>„Nakon laserskog tretmana dlačice rastu deblje ili jače.“</strong><br>Upravo suprotno! Laserska energija uništava folikule dlačica, tako da dlačice ili više ne rastu ili ponovno izrastaju tanje i svjetlije. Rezultat je trajno glatka i svilenkasta koža.",
+          "4) <strong>„Što više valnih duljina ima uređaj, to je bolji.“</strong><br>To je česta zabluda. Broj valnih duljina ne govori ništa o kvaliteti ili učinkovitosti uređaja. Najpoznatiji i najučinkovitiji proizvođači često koriste dvije optimalno usklađene valne duljine. Uređaji koji reklamiraju četiri ili više valnih duljina često uključuju treću ili četvrtu „mješovitu“ valnu duljinu koja nema stvarni učinak na uklanjanje dlačica. Kvaliteta, snaga i pravilna kombinacija valnih duljina važniji su od same brojke."
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "badge": "Kvaliteta je na prvom mjestu",
+    "title": "Naši certifikati"
+  },
+  "reviews": {
+    "badge": "Ponosni smo na to",
+    "title": "Što naša zajednica kaže",
+    "items": [
+      {
+        "headline": "Mogu samo preporučiti",
+        "text": "Bio mi je treći put tamo, a atmosfera je bila super lijepa i ugodna! Veselim se sljedećem terminu!",
+        "author": "Jessi"
+      },
+      {
+        "headline": "Savršena atmosfera",
+        "text": "Odličan prvi termin. Gospođa je odvojila vrijeme da mi sve objasni i cijelo vrijeme sam znala što se događa. Atmosfera je bila savršena i osjećala sam se vrlo ugodno. Već se veselim sljedećim tretmanima.",
+        "author": "Diana"
+      },
+      {
+        "headline": "Vrlo pristupačno",
+        "text": "Vrlo ljubazno, osjećate se ugodno, a laserski tretman je ugodan! Veselim se sljedećim sesijama. Svakako to učinite sada; posebni paketi su vrlo pristupačni i stvarno se isplate.",
+        "author": "Michelle"
+      },
+      {
+        "headline": "Jednostavno rezerviranje termina",
+        "text": "Usluga je bila jako ljubazna, osjećala sam se vrlo ugodno. Jednostavna rezervacija termina putem interneta. Već vidim rezultate nakon drugog posjeta :)",
+        "author": "Margit"
+      }
+    ]
+  },
+  "goetheQuote": {
+    "line1": "Ljepota je uvijek",
+    "line2": "rado viđen gost.",
+    "author": "Goethe"
+  },
+  "quote": {
+    "line1": "It's not easy",
+    "line2": "being as beautiful",
+    "line3": "as you look.",
+    "author": "Sharon Stone"
+  },
+  "about": {
+    "badge": "SKINTASTIC LASER | SKIN | BODY",
+    "title": "O nama",
+    "p1": "<strong>skintastic sve se vrti oko tvoje kože.</strong> Specijalizirani smo za lasersko uklanjanje dlačica visokoučinkovitim diodnim laserima.",
+    "p2": "Naš cilj: vrhunski rezultati i vidljive promjene – po poštenoj cijeni. Kvaliteta nam je na prvom mjestu, zato koristimo high-end tehnologiju i stručno osoblje koje izvrsno poznaje svoj posao.",
+    "p3": "U elegantnom ambijentu pružamo individualne tretmane na najvišoj razini. Vjeruj našoj stručnosti i doživi savršenu kombinaciju tehnologije, estetike i osobne pažnje – za osjećaj kože koji oduševljava.",
+    "tagline": "Ljepota koja traje."
+  },
+  "beachBanner": {
+    "title": "Beach paket",
+    "price": "€ 149,90",
+    "instead": "umjesto",
+    "oldPrice": "€ 249,70",
+    "desc": "Bilo da se pripremaš za ljeto ili jednostavno želiš više udobnosti, uz higijensku i učinkovitu lasersku epilaciju diodnim laserom <em>u skintasticu</em>, možeš zaboraviti na stalno brijanje i uživati u dugotrajno glatkoj koži.",
+    "cta": "Cijene & rezervacije"
+  },
+  "footer": {
+    "navigation": "Navigacija",
+    "legal": "Pravno",
+    "privacyPolicy": "Zaštita podataka",
+    "imprint": "Impressum",
+    "rights": "Sva prava pridržana."
+  },
+  "cookieConsent": {
+    "title": "Prilagodite postavke pristanka",
+    "introShort": "Koristimo kolačiće kako bismo vam pomogli da se učinkovito krećete i izvodite određene funkcije.",
+    "introLong": "Kolačići koji su kategorizirani kao \"Neophodni\" pohranjuju se u vašem pregledniku jer su neophodni za omogućavanje osnovnih funkcionalnosti stranice.\n\nTakođer koristimo kolačiće trećih strana koji nam pomažu analizirati kako koristite ovu web stranicu, pohranjujemo vaše postavke i pružamo sadržaj i oglase koji su relevantni za vas. Ovi kolačići bit će pohranjeni u vašem pregledniku samo uz vašu prethodnu suglasnost.\n\nMožete odabrati da omogućite ili onemogućite neke ili sve ove kolačiće, ali onemogućavanje nekih od njih može utjecati na vaše iskustvo pregledavanja.",
+    "showMore": "Pokažite više",
+    "showLess": "Pokažite manje",
+    "alwaysActive": "Uvijek aktivan",
+    "categories": {
+      "necessary": {
+        "title": "Potrebno",
+        "desc": "Potrebni kolačići presudni su za osnovne funkcije web stranice i web stranica bez njih neće raditi na predviđeni način. Ovi kolačići ne pohranjuju nikakve osobne podatke."
+      },
+      "functional": {
+        "title": "Funkcional",
+        "desc": "Funkcionalni kolačići pomažu u izvođenju određenih funkcionalnosti poput dijeljenja sadržaja web mjesta na platformama društvenih medija, prikupljanja povratnih informacija i ostalih značajki trećih strana."
+      },
+      "analytics": {
+        "title": "Analitika",
+        "desc": "Analitički kolačići koriste se za razumijevanje načina na koji posjetitelji komuniciraju s web stranicom. Ovi kolačići pomažu u pružanju podataka o broju posjetitelja, stopi napuštanja početne stranice, izvoru prometa itd."
+      },
+      "performance": {
+        "title": "Izvođenje",
+        "desc": "Kolačići izvedbe koriste se za razumijevanje i analizu ključnih indeksa izvedbe web stranice što pomaže u pružanju boljeg korisničkog iskustva posjetiteljima."
+      },
+      "ads": {
+        "title": "Oglasi",
+        "desc": "Reklamni kolačići koriste se za pružanje relevantnih oglasa i marketinških kampanja posjetiteljima. Ovi kolačići prate posjetitelje na web stranicama i prikupljaju informacije kako bi pružili prilagođene oglase."
+      }
+    },
+    "btnReject": "Odbiti",
+    "btnSave": "Spremi moje postavke",
+    "btnAcceptAll": "Prihvatiti sve",
+    "reopenLabel": "Postavke kolačića"
+  }
+}

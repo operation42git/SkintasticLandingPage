@@ -1,0 +1,368 @@
+{
+  "nav": {
+    "offers": "Angebote",
+    "locations": "Standorte",
+    "booking": "Termin buchen",
+    "services": "Leistungen",
+    "technology": "Technologie",
+    "info": "Nützliche Infos",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "bookNow": "Termin buchen",
+    "close": "Schließen",
+    "topBarOffer": "Laser-Haarentfernung Achseln jetzt 19,90",
+    "topBarSite": "skintastic.hr",
+    "submenu": {
+      "offers": [
+        { "label": "Laser Achseln", "href": "#offers" },
+        { "label": "Ganzkörper Frau", "href": "#offers" },
+        { "label": "Gesicht und Hals", "href": "#offers" },
+        { "label": "Superman Paket", "href": "#offers" },
+        { "label": "Bart formen", "href": "#offers" },
+        { "label": "Beine komplett", "href": "#offers" },
+        { "label": "Intim komplett", "href": "#offers" },
+        { "label": "Strandpaket Frau", "href": "#offers" }
+      ],
+      "locations": [
+        { "label": "Zagreb West", "href": "#locations" },
+        { "label": "Wien 5. Bezirk", "href": "#locations" },
+        { "label": "Graz Süd Puntigam", "href": "#locations" },
+        { "label": "Graz City Jakominiplatz", "href": "#locations" },
+        { "label": "Stuttgart", "href": "#locations" }
+      ],
+      "booking": [
+        { "label": "Zagreb West", "href": "#booking" },
+        { "label": "Wien 5. Bezirk", "href": "#booking" },
+        { "label": "Graz Süd Puntigam", "href": "#booking" },
+        { "label": "Graz City Jakominiplatz", "href": "#booking" },
+        { "label": "Stuttgart", "href": "#booking" }
+      ],
+      "about": [
+        { "label": "Über uns", "href": "#about" },
+        { "label": "Qualitätssiegel", "href": "#certificates" },
+        { "label": "Bewertungen", "href": "#reviews" }
+      ],
+      "contact": [
+        { "label": "Datenschutz", "href": "datenschutz" },
+        { "label": "Impressum", "href": "impressum" }
+      ]
+    }
+  },
+  "scroll": "Scrollen",
+  "scrollTop": "Nach oben",
+  "hero": {
+    "slide1": {
+      "badge": "Haarfreiheitstag",
+      "title": "10% Rabatt auf Laser-Haarentfernung",
+      "subtitle": "10% Rabatt auf Laser-Haarentfernung jeden letzten Freitag im Monat! Buche deinen Termin jetzt!",
+      "cta": "Jetzt buchen"
+    },
+    "slide2": {
+      "badge": "Sonderangebot",
+      "title": "Laser-Haarentfernung Achseln jetzt 19,90",
+      "subtitle": "für Frauen und Männer · Angebot gültig bis 31.12.2026.",
+      "cta": "Jetzt buchen"
+    }
+  },
+  "features": {
+    "experts": {
+      "title": "Experten für Hautpflege",
+      "desc": "Unser Expertenteam kombiniert Erfahrung und sorgfältige Betreuung – für sichtbare Ergebnisse."
+    },
+    "technology": {
+      "title": "Technologie",
+      "desc": "Wir setzen ausschließlich auf moderne, bewährte High-End-Technologie – nur das Beste für deine Haut."
+    },
+    "hygiene": {
+      "title": "Hygiene",
+      "desc": "Wir sorgen für deine Sicherheit durch strenge Hygienestandards in allen Bereichen."
+    },
+    "consultation": {
+      "title": "Kostenlose Beratung",
+      "desc": "Wir widmen uns dir ganz individuell und ohne Kosten."
+    }
+  },
+  "offers": {
+    "title": "Beste Angebote",
+    "subtitle": "Dauerhaft günstig",
+    "description": "Alle Preise, Pakete und Angebote findest du in unserem <bold>Online-Buchungskalender</bold>.",
+    "instead": "statt",
+    "now": "jetzt",
+    "bookNow": "Jetzt buchen",
+    "selectLocation": "Standort wählen",
+    "allCentres": "Preise & Reservierung",
+    "items": {
+      "axilla": {
+        "title": "Laser-Haarentfernung Achseln",
+        "desc": "für Männer und Frauen",
+        "price": "19,90",
+        "oldPrice": "49,99"
+      },
+      "fullBody": {
+        "title": "Ganzkörper (Frau) small",
+        "desc": "Ganzkörper ohne Rücken und Bauch (inkl. Nabelfalte und unterer Rücken)",
+        "price": "199,90",
+        "oldPrice": "299,90"
+      },
+      "faceNeck": {
+        "title": "Laser-Haarentfernung Gesicht & Hals",
+        "desc": "für seidig glatte Haut",
+        "price": "49,90",
+        "oldPrice": "79,80"
+      },
+      "superman": {
+        "title": "Superman-Paket",
+        "desc": "Laser-Haarentfernung Brust und Bauch",
+        "price": "99,90",
+        "oldPrice": "169,80"
+      },
+      "legs": {
+        "title": "Laser-Haarentfernung Beine",
+        "desc": "(inkl. Füße und Zehen)",
+        "price": "99,90",
+        "oldPrice": ""
+      },
+      "intimate": {
+        "title": "Laser-Haarentfernung",
+        "desc": "Kompletter Intimbereich (Frauen)",
+        "price": "79,90",
+        "oldPrice": ""
+      },
+      "beach": {
+        "title": "Beach-Paket",
+        "desc": "Laser-Haarentfernung Bikinizone, Intimbereich, Beine und Achseln",
+        "price": "149,90",
+        "oldPrice": "249,70"
+      }
+    }
+  },
+  "locations": {
+    "title": "Standorte",
+    "subtitle": "alle unsere zentren",
+    "gallery": "Galerie",
+    "prices": "Preise & Reservierung",
+    "items": {
+      "zagreb": {
+        "name": "Zagreb West",
+        "address": "Drage Gervaisa 1, 10090 Zagreb",
+        "extra": ""
+      },
+      "wien": {
+        "name": "Wien 5. Bezirk",
+        "address": "Wien 1050, Kliebergasse 7",
+        "extra": "5. Bezirk"
+      },
+      "grazPuntigam": {
+        "name": "Graz Süd Puntigam",
+        "address": "Graz 8055, Triester Straße 369",
+        "extra": "Puntigam"
+      },
+      "grazCity": {
+        "name": "Graz City Jakominiplatz",
+        "address": "Graz 8010, Jakominiplatz 12",
+        "extra": "Steirerhof, 3.Stock"
+      },
+      "stuttgart": {
+        "name": "Stuttgart",
+        "address": "Marktstraße 6, 70173 Stuttgart",
+        "extra": "Dr. med. Jens Neumann"
+      }
+    }
+  },
+  "services": {
+    "badge": "Unser Angebot",
+    "title": "Leistungen von skintastic",
+    "subtitle": "Dauerhafte Haarentfernung mit Laser",
+    "lead": "Dauerhaft glatte Haut mit modernster Lasertechnologie <em>bei skintastic</em>.",
+    "body1": "Du möchtest dauerhaft glatte Haut ohne Rasieren, Waxing und lästige Haare? Bei skintastic erwartet dich eine sanfte und effektive Laser-Haarentfernung mit den neuesten Diodenlasern. Die beliebtesten Behandlungen umfassen Achseln, Beine, Intimbereich und Gesicht – bereits nach 6 bis 8 Behandlungen kannst du dich über langanhaltend glatte Haut freuen.",
+    "body2": "Unsere Technologie eignet sich für alle Haut- und Haartypen. Die Behandlungen werden ausschließlich von speziell ausgebildeten Fachkräften durchgeführt. Hygiene, Sicherheit und Verträglichkeit stehen bei uns an erster Stelle. Buche jetzt deine kostenlose Beratung – wir nehmen uns Zeit für jede deiner Fragen. Dein Weg zu seidig glatter Haut beginnt <em>bei skintastic</em>!",
+    "ctaPrices": "Preise & Reservierung",
+    "ctaTech": "Technologie"
+  },
+  "technology": {
+    "badge": "Technologie",
+    "title": "High-End Geräte",
+    "heading": "Mediostar Diodenlaser – maximal effektiv",
+    "p1": "<em>Bei skintastic</em> setzen wir auf modernste Technologie – den Mediostar Diodenlaser des deutschen Herstellers Asclepion, einem der weltweit führenden Namen in medizinischen Lasersystemen. Seit über 45 Jahren steht Asclepion für Fachkompetenz, Qualität und Innovation – Technologie „Made in Germany“.",
+    "p2": "Unser Mediostar wurde speziell für die dauerhafte Haarentfernung entwickelt – geeignet für alle Hauttypen (I–VI) und alle Haartypen. Der Monolith Powerline-Handgriff mit 5.000 W vereint erstklassige Ergebnisse und angenehme Behandlung mit der perfekten Wellenlängen-Mischung. Mit 360° Ice-Kühlung, ergonomischem Design und kurzen Impulsen werden selbst feinste Haare effektiv und sanft entfernt.",
+    "p3": "<em>Bei skintastic</em> erlebst du Laser-Haarentfernung auf höchstem Niveau."
+  },
+  "faq": {
+    "badge": "Häufig gestellte Fragen",
+    "title": "Gut zu wissen",
+    "subtitle": "Du interessierst dich für eine dauerhafte Haarentfernung bei <em>skintastic</em> und hast sicherlich einige Fragen. Das ist super, denn wir möchten, dass du dich bei uns bestens informiert und wohlfühlst! Hier findest du Antworten auf die häufigsten Anliegen unserer Kundinnen:",
+    "items": [
+      {
+        "q": "So läuft eine Laserbehandlung ab",
+        "a": "Vor Deiner ersten Behandlung bei <em>skintastic</em> führen wir ein kostenloses Beratungsgespräch durch – individuell, ehrlich und auf Ihre Haut und Haarstruktur abgestimmt. Für den Termin sollte die zu behandelnde Stelle am Vorabend rasiert werden. Bitte verzichte auf Cremes und vermeiden intensives Sonnenbaden einige Tage zuvor. Während der Behandlung sorgt unser Hochleistungs-Diodenlaser gezielt dafür, die Haarwurzel dauerhaft zu veröden – sanft, effizient und hautschonend. Nach der Sitzung ist die Haut leicht empfindlich, daher empfehlen wir für einige Tage Lichtschutzfaktor 50. Bereits nach der ersten Behandlung wirst du ein verlangsamtes Haarwachstum und sichtbare Ergebnisse, sowie langanhaltende Ergebnisse bemerken – für seidig glatte Haut ganz ohne Rasieren."
+      },
+      {
+        "q": "Wie bereite ich mich auf meine Behandlung vor?",
+        "a": "Bitte <strong>rasiere die zu behandelnde Stelle am besten am Vorabend</strong> deiner Behandlung. Es ist wichtig, dass keine Haare über die Hautoberfläche hinausragen, dass bei bestmöglichem Behandlungskomfort der Laser optimal wirken kann."
+      },
+      {
+        "q": "Muss ich etwas nach der Behandlung beachten?",
+        "a": "Ja, es ist wichtig, <strong>intensive Sonnenbäder kurz vor der Behandlung und auch danach zu vermeiden</strong>. Schütze insbesondere die behandelten Hautbereiche mit Sonnenschutzcreme Lichtschutzfaktor 50. Unsere Expertinnen informieren dich gerne zur richtigen Nachsorge."
+      },
+      {
+        "q": "Spürt man die Behandlung?",
+        "a": "Nein, dank unserer modernen ICE-Kühlung im Handstück spürst du während der Behandlung lediglich ein leichtes Kribbeln und Wärmegefühl. Der alte Mythos, dass Laserbehandlungen schmerzhaft sind, stammt oft noch von früheren Technologien wie IPL, bei denen viel Hitze auf der Hautoberfläche entstand."
+      },
+      {
+        "q": "Anzahl der Behandlungen und Ergebnisse",
+        "a": [
+          "<strong>Warum sind mehrere Laserbehandlungen notwendig, um dauerhaft haarfrei zu sein?</strong><br>Da der Laser nur Haare in der aktiven Wachstumsphase erreicht, bleiben sogenannte Schläferhärchen – also Haare in der Ruhephase – bei der Behandlung zunächst unberührt. Diese können später in eine neue Wachstumsphase übergehen und sichtbar werden, weshalb mehrere Sitzungen nötig sind, um wirklich alle Haare dauerhaft zu entfernen.",
+          "Unsere Erfahrung zeigt, dass du in der Regel <strong>6 bis 8 Behandlungen</strong> benötigst, um ein optimales und dauerhaftes Ergebnis zu erzielen. Die genaue Anzahl kann je nach Haarwachstum, Hormonhaushalt und Körperzone variieren.",
+          "<strong>In welchem Abstand sollte eine Laserbehandlung idealerweise durchgeführt werden?</strong><br>Für optimale Ergebnisse empfehlen wir, die ersten Behandlungen in einem Rhythmus von etwa <strong>4–5 Wochen</strong> durchzuführen. In dieser Phase erreicht der Laser die Haare besonders effektiv in ihrer aktiven Wachstumsphase. Je nach individuellem Haarwachstum und Behandlungserfolg wird der Abstand gemeinsam mit Deiner Behandlerin angepasst – oft auf <strong>5–6 Wochen</strong> oder später <strong>7–8 Wochen</strong>.<br>Das Ziel von <em>skintastic</em> ist es, mit <strong>so wenig Behandlungen wie möglich</strong> ein dauerhaft glattes Ergebnis zu erzielen – effizient, hautschonend und individuell auf Dich abgestimmt.",
+          "<strong>Was ist, wenn ich eine Sitzung auslasse oder den Abstand nicht einhalte?</strong><br>Um den Haarwuchszyklus optimal zu treffen, ist ein regelmäßiger Behandlungsrhythmus wichtig.",
+          "<strong>Benötige ich nach abgeschlossener Laserbehandlung Auffrischungstermine?</strong><br>Ja, das ist ganz normal. Auch nach einer vollständigen Behandlungsserie können vereinzelt nach 1-2 Jahren neue Härchen nachwachsen – zum Beispiel durch hormonelle Veränderungen oder Reaktivierung ruhender Haarfollikel, welche sich zuvor in keiner Wachstumsphase befunden haben. Um das Ergebnis langfristig glatt zu halten, empfehlen wir je nach deinen individuellen Bedürfnissen eine Auffrischungsbehandlung."
+        ]
+      },
+      {
+        "q": "Kosten und Buchung",
+        "a": [
+          "<strong>Was kostet eine Laserhaarentfernung bei skintastic?</strong><br>Bei <strong>skintastic</strong> zahlst du <strong>nur die jeweilige Einzelbehandlung</strong>. Es gibt keine versteckten Kosten. So bleibst du flexibel und behältst die volle Kostenkontrolle.<br>Alle Preise, Pakete, Aktionen findest du im Online-Buchungskalender.",
+          "<strong>Wie kann ich eine Behandlung buchen und bezahlen?</strong><br>Du kannst deinen Wunschtermin ganz einfach und bequem <strong>online buchen</strong>. Als Zahlungsmöglichkeiten bieten wir sowohl <strong>Karten- als auch Barzahlung</strong> an.",
+          "<strong>Nutze ein kostenloses Beratungsgespräch</strong><br>Dein <strong>Beratungsgespräch ist absolut kostenlos und unverbindlich</strong>. Wir nehmen uns Zeit für all deine Fragen, analysieren deine Haut und Haare und erklären dir den Behandlungsablauf."
+        ]
+      },
+      {
+        "q": "Ist der Diodenlaser für alle Haut- und Haartypen geeignet?",
+        "a": [
+          "Ja, unsere Hochleistungs-Diodenlaser sind darauf ausgelegt, <strong>alle Haut- und Haartypen effektiv zu behandeln</strong>.",
+          "Laserhaarentfernung funktioniert über Licht, das gezielt vom Farbpigment (Melanin) im Haar aufgenommen wird. Dieses Pigment leitet die Energie bis zur Haarwurzel weiter, wo sie verödet wird. <strong>Weiße oder graue Haare enthalten kaum oder gar kein Melanin</strong>, weshalb der Laser sie nicht „erkennt“ – die Energie erreicht die Haarwurzel nicht, und es kommt zu keiner dauerhaften Schädigung des Haarfolikels."
+        ]
+      },
+      {
+        "q": "Was bedeutet ICE-Kühlung bei Diodenlasern?",
+        "a": [
+          "Unsere hochmodernen Diodenlaser sind mit einer innovativen <strong>ICE-Kühlung</strong> im Handstück ausgestattet. Doch wie funktioniert das genau und welche Vorteile hast du davon?",
+          "Ganz einfach: Während der Laser gezielt deine Haarfollikel behandelt, kühlt das Handstück deine Haut kontinuierlich. Diese <strong>Kontaktkühlung</strong> sorgt dafür, dass die obersten Hautschichten während des gesamten Vorgangs angenehm temperiert bleiben. Das Ergebnis ist ein <strong>deutlich erhöhungs Behandlungskomfort</strong> für dich. Du spürst lediglich ein leichtes Kribbeln, während deine Haut optimal geschützt wird.",
+          "Diese fortschrittliche Kühltechnologie macht die Laserhaarentfernung bei uns nicht nur effektiver, sondern auch besonders <strong>hautverträglich und sicher</strong>. So kannst du dich ganz entspannt auf dein Ziel freuen: dauerhaft seidenglatte Haut, frei von störenden Härchen und Hautreizungen."
+        ]
+      },
+      {
+        "q": "Wellenlängen",
+        "a": [
+          "<strong>Was bedeuten die Wellenlängen bei der Laserhaarentfernung – und warum kommt es nicht auf die Anzahl an?</strong>",
+          "Viele Anbieter werben mit vier oder mehr Wellenlängen und suggerieren damit besonders leistungsstarke Geräte. Doch Vorsicht: Mehr Wellenlängen bedeuten nicht automatisch bessere Ergebnisse. Häufig handelt es sich dabei nur um Mischwellenlängen ohne nachgewiesene Wirkung – ein reines Marketingversprechen.",
+          "Bei skintastic setzen wir auf den <strong>Mediostar Diodenlaser</strong>, eines der modernsten Geräte auf dem Markt – <strong>„Made in Germany“</strong>. Dieses High-End-System nutzt gezielt die bewährten Wellenlängen <strong>810 nm und 940 nm</strong>, die tief in die Haut eindringen und den Haarfollikel besonders effektiv und hautschonend behandeln.",
+          "Dank individueller Einstellung auf deinen Haut- und Haartyp arbeiten wir besonders präzise, sicher und effektiv – ganz ohne leere Versprechen. Qualität zeigt sich nicht in der Anzahl der Wellenlängen, sondern in der <strong>technologischen Leistung und Anpassungsfähigkeit</strong>. Genau deshalb vertrauen wir auf Mediostar – und du kannst das auch."
+        ]
+      },
+      {
+        "q": "Mythen & Missverständnisse",
+        "a": [
+          "Es gibt viele Informationen rund um die Haarentfernung mit Diodenlaser, und nicht alle davon stimmen. Wir möchten die häufigsten Missverständnisse ausräumen, damit du mit einem guten Gefühl in deine Behandlung startest:",
+          "1) <strong>„Laserhaarentfernung ist nur etwas für dunkle Haare und helle Haut.“</strong> Das stimmt nicht mehr! Während früher die besten Ergebnisse bei diesem Kontrast erzielt wurden, sind unsere <strong>Hochleistungs-Diodenlaser der neuesten Generation</strong> so weit entwickelt, dass sie <strong>alle Haut- und Haartypen</strong> sicher und effektiv behandeln können.",
+          "2) <strong>„Laserstrahlen sind gefährlich oder krebserregend.“</strong> Falsch. Der von uns verwendete Diodenlaser emittiert <strong>keine UV-Strahlung</strong> und ist für die dauerhafte Haarentfernung <strong>wissenschaftlich geprüft und sicher</strong>. Die Laserenergie zielt präzise auf das Melanin im Haarfollikel und dringt nicht tiefer in den Körper ein.",
+          "3) <strong>„Nach dem Lasern wachsen die Haare dicker oder stärker nach.“</strong> Ganz im Gegenteil! Die Laserenergie zerstört die Haarfollikel, sodass die Haare entweder gar nicht mehr wachsen oder deutlich feiner und heller nachwachsen. Du erhältst eine <strong>dauerhaft glatte und seidige Haut</strong>.",
+          "4) <strong>„Je mehr Wellenlängen ein Gerät hat, desto besser ist es.“</strong> Das ist ein häufiges Missverständnis. Die Anzahl der Wellenlängen sagt <strong>nichts über die Qualität oder Effektivität</strong> eines Geräts aus. Die namhaftesten und effektivsten Gerätehersteller setzen oft auf <strong>zwei optimal aufeinander abgestimmte Wellenlängen</strong>. Geräte, die mit vier oder mehr Wellenlängen werben, haben oft dritte oder vierte Wellenlängen, die als „Mischwellenlängen“ kaum eine wirkliche Wirkung auf die Haarentfernung haben. Es kommt auf die <strong>Qualität, Leistung und die richtige Kombination der Wellenlängen</strong> an, nicht auf deren pure Anzahl."
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "badge": "Qualität steht an erster Stelle",
+    "title": "Unsere Zertifikate"
+  },
+  "reviews": {
+    "badge": "Wir sind stolz drauf",
+    "title": "Was unsere Community sagt",
+    "items": [
+      {
+        "headline": "Kann ich nur weiterempfehlen",
+        "text": "War zum dritten Mal dort, super nette angenehme Atmosphäre! Freu mich auf den nächsten Termin!",
+        "author": "Jessi"
+      },
+      {
+        "headline": "Perfekte Atmosphäre",
+        "text": "Super erster Termin. Die Dame hat sich Zeit genommen mir alles zu erklären und ich wusste zu jedem Zeitpunkt was gerade passiert. Die Atmosphäre war perfekt und ich habe mich sehr wohl gefühlt. Ich freue mich schon auf die weiteren Behandlungen.",
+        "author": "Diana"
+      },
+      {
+        "headline": "Sehr preiswert",
+        "text": "Sehr freundlich, man fühlt sich wohl und das Lasern ist angenehm! Freu mich auf die nächsten Sitzungen. Unbedingt jetzt machen, die Aktions-Pakete sind sehr preiswert und lohnen sich wirklich.",
+        "author": "Michelle"
+      },
+      {
+        "headline": "Einfache Terminbuchung",
+        "text": "Total nette Betreuung, hab mich sehr wohl gefühlt. Einfache Terminbuchung via Internet. Bereits nach dem zweiten Besuch zeichnen sich Erfolge ab :)",
+        "author": "Margit"
+      },
+      {
+        "headline": "Empfehlenswert",
+        "text": "Ich war heute das erste Mal meine Bartkonturen lasern und bin sehr zufrieden. Das Personal ist sehr freundlich und bemüht. Empfehlenswert!",
+        "author": "Moritz"
+      }
+    ]
+  },
+  "goetheQuote": {
+    "line1": "Schönheit ist überall",
+    "line2": "ein gar willkommener Gast.",
+    "author": "Goethe"
+  },
+  "quote": {
+    "line1": "It's not easy",
+    "line2": "being as beautiful",
+    "line3": "as you look.",
+    "author": "Sharon Stone"
+  },
+  "about": {
+    "badge": "SKINTASTIC LASER | SKIN | BODY",
+    "title": "Über uns",
+    "p1": "Bei <strong>skintastic</strong> dreht sich alles um Ihre Haut. Wir sind spezialisiert auf Laserhaarentfernung mit Hochleistungsdiodenlasern sowie apparative Kosmetik mit modernsten Premiumgeräten.",
+    "p2": "Unser Ziel: erstklassige Ergebnisse und sichtbare Verbesserungen – und das <strong>zu einem fairen Preis</strong>. Qualität steht bei uns an erster Stelle, daher setzen wir auf High-End-Technologie und bestens geschulte MitarbeiterInnen, die ihr Fach verstehen. In stilvollem Ambiente bieten wir Ihnen individuelle Behandlungen auf höchstem Niveau. Vertrauen Sie auf unsere Expertise und erleben Sie die Kombination aus Technologie, Ästhetik und persönlicher Betreuung – für ein Hautgefühl, das begeistert.",
+    "p3": "",
+    "tagline": "Die Freiheit immer bereit zu sein!"
+  },
+  "beachBanner": {
+    "title": "Beach-Paket",
+    "price": "€ 149,90",
+    "instead": "statt",
+    "oldPrice": "€ 249,70",
+    "desc": "Ob du dich auf den Sommer vorbereitest oder einfach mehr Komfort möchtest – mit der hygienischen und effektiven Laser-Epilation <em>bei skintastic</em> kannst du das ständige Rasieren vergessen und dauerhafte Haarfreiheit genießen.",
+    "cta": "Preise & Buchung"
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "legal": "Rechtliches",
+    "privacyPolicy": "Datenschutz",
+    "imprint": "Impressum",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "cookieConsent": {
+    "title": "Einwilligungseinstellungen anpassen",
+    "introShort": "Wir verwenden Cookies, damit Sie effizient navigieren und bestimmte Funktionen ausführen können.",
+    "introLong": "Als \"Notwendig\" eingestufte Cookies werden in Ihrem Browser gespeichert, da sie für die grundlegenden Funktionen der Website erforderlich sind.\n\nWir verwenden auch Cookies von Drittanbietern, die uns helfen zu analysieren, wie Sie diese Website nutzen, und um Ihre Einstellungen zu speichern sowie Inhalte und Werbeanzeigen bereitzustellen, die für Sie relevant sind. Diese Cookies werden nur mit Ihrer vorherigen Zustimmung in Ihrem Browser gespeichert.\n\nSie können wählen, ob Sie einige oder alle dieser Cookies aktivieren oder deaktivieren möchten, aber das Deaktivieren einiger von ihnen kann Ihr Surferlebnis beeinträchtigen.",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
+    "alwaysActive": "Immer aktiv",
+    "categories": {
+      "necessary": {
+        "title": "Notwendig",
+        "desc": "Notwendige Cookies sind für die Grundfunktionen der Website unbedingt erforderlich. Ohne sie funktioniert die Website nicht wie vorgesehen. Diese Cookies speichern keine personenbezogenen Daten."
+      },
+      "functional": {
+        "title": "Funktional",
+        "desc": "Funktionale Cookies helfen dabei, bestimmte Funktionen auszuführen, z. B. das Teilen von Website-Inhalten auf Social-Media-Plattformen, das Erfassen von Feedback und andere Funktionen von Drittanbietern."
+      },
+      "analytics": {
+        "title": "Analytik",
+        "desc": "Analytische Cookies werden verwendet, um zu verstehen, wie Besucher mit der Website interagieren. Diese Cookies helfen dabei, Informationen über Besucherzahl, Absprungrate, Verkehrsquelle usw. zu liefern."
+      },
+      "performance": {
+        "title": "Leistung",
+        "desc": "Performance-Cookies werden verwendet, um die wichtigsten Leistungsindizes der Website zu verstehen und zu analysieren, um eine bessere Benutzererfahrung für die Besucher bereitzustellen."
+      },
+      "ads": {
+        "title": "Werbung",
+        "desc": "Werbe-Cookies werden verwendet, um Besuchern relevante Werbeanzeigen und Marketingkampagnen bereitzustellen. Diese Cookies verfolgen Besucher über Websites hinweg und sammeln Informationen, um maßgeschneiderte Anzeigen zu liefern."
+      }
+    },
+    "btnReject": "Ablehnen",
+    "btnSave": "Meine Einstellungen speichern",
+    "btnAcceptAll": "Alle akzeptieren",
+    "reopenLabel": "Cookie-Einstellungen"
+  }
+}
