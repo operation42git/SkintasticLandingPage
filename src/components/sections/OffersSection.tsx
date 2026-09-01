@@ -14,11 +14,13 @@ const OFFER_ITEMS = [
   { key: "beach", image: "/images/services/beach-package.jpg" },
 ];
 
+const BOOKING_APP = (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").replace(/\/$/, "");
+
 const LOCATIONS = [
   {
     key: "zagreb",
     address: "Drage Gervaisa 1, 10090 Zagreb",
-    url: "https://www.timify.com/hr-HR/profile/skintastic-zagreb",
+    url: `${BOOKING_APP}/book/zagreb-centar`,
   },
   {
     key: "wien",

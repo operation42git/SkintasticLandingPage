@@ -5,11 +5,15 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Lightbox } from "@/components/ui/Lightbox";
 
+// The Zagreb location is live on our own platform; all other locations still use Timify.
+// Update NEXT_PUBLIC_BOOKING_URL in .env.local / hosting env when deploying.
+const BOOKING_APP = (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").replace(/\/$/, "");
+
 const LOCATIONS = [
   {
     key: "zagreb",
     image: "/images/locations/zagreb.jpg",
-    bookingUrl: "https://www.timify.com/hr-HR/profile/skintastic-zagreb",
+    bookingUrl: `${BOOKING_APP}/book/zagreb-centar`,
     gallery: [
       "/images/locations/zagreb.jpg",
       "/images/locations/zagreb-2.jpeg",
