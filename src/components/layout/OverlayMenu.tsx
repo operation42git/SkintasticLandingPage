@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 type SubItem = { label: string; href: string };
 
@@ -126,6 +127,8 @@ export function OverlayMenu({
               </div>
             );
           })}
+
+          <LanguageSwitcher className="pt-6" onNavigate={onClose} />
         </nav>
       </aside>
     </div>

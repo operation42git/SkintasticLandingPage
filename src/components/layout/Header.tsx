@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { OverlayMenu } from "./OverlayMenu";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV_LINKS = [
   { key: "offers", href: "#offers" },
@@ -111,14 +112,18 @@ export function Header() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-          className="justify-self-end text-[#1a1516] p-1 hover:text-[#c9a96e] transition-colors"
-        >
-          <LayersIcon className="w-8 h-8" />
-        </button>
+        <div className="flex items-center gap-4 justify-self-end">
+          <LanguageSwitcher />
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+            className="text-[#1a1516] p-1 hover:text-[#c9a96e] transition-colors"
+          >
+            <LayersIcon className="w-8 h-8" />
+          </button>
+        </div>
       </div>
 
       <OverlayMenu open={menuOpen} onClose={() => setMenuOpen(false)} />

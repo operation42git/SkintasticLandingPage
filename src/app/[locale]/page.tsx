@@ -13,8 +13,16 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { CertificatesSection } from "@/components/sections/CertificatesSection";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
 import { GoetheQuoteSection } from "@/components/sections/GoetheQuoteSection";
+import { setRequestLocale } from "next-intl/server";
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <Header />

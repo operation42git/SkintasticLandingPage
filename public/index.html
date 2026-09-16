@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>skintastic LASER SKIN &amp; BODY</title>
+    <meta name="robots" content="noindex" />
+    <noscript><meta http-equiv="refresh" content="0; url=/hr/" /></noscript>
+    <script>
+      (function () {
+        var locales = ["hr", "de"];
+        var fallback = "hr";
+
+        var stored;
+        try {
+          stored = localStorage.getItem("locale");
+        } catch (e) {
+          stored = null;
+        }
+
+        var target = locales.indexOf(stored) !== -1 ? stored : null;
+
+        if (!target) {
+          var preferred = navigator.languages || [navigator.language || ""];
+          for (var i = 0; i < preferred.length && !target; i++) {
+            var tag = String(preferred[i]).toLowerCase().split("-")[0];
+            if (locales.indexOf(tag) !== -1) target = tag;
+          }
+        }
+
+        location.replace("/" + (target || fallback) + "/");
+      })();
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="/hr/">Hrvatski</a>
+      &middot;
+      <a href="/de/">Deutsch</a>
+    </p>
+  </body>
+</html>
