@@ -1,7 +1,7 @@
 # Brief · landing The Zagreb page sells Zagreb and sends every "Rezerviraj" straight into booking
 
 > **Accepted by Ivan Tomić, 2026-10-21.** Written by the landing-page analysis conversation. The
-> values still marked "the person gives" are not given yet: the agent lists them and stops (AGENTS.md).
+> values still marked "the person gives" follow **Values not given yet** (under the Values table).
 
 **Canvas:** https://claude.ai/artifact/DCgUZ5TcHXTgG1rv8daDpp ("Skintastic Zagreb landing mockup").
 Boards: `Desktop — new landing page`, the three mobile boards, `Location types — spec`, `Booking flow —
@@ -118,7 +118,7 @@ without prefill. Written against `main` at `9360318`.
 | offer `code` | text | the app's catalogue code, sent as `?usluga=` | e.g. `alc_underarms` | not allowed | the person gives (from the app's catalogue) |
 | campaign params passed on | text | — | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `gclid`, `fbclid` | missing: not added | scheduling decision 194 |
 | `skt_consent` cookie | cookie | `Domain` = main domain, `Path=/`, `SameSite=Lax`, `Secure`, 180 days | `v1.<necessary>.<analytics>.<marketing>.<YYYY-MM-DD>`, each `0`/`1`, necessary always `1`, e.g. `v1.1.1.0.2026-10-21` | missing or unreadable = no for analytics and marketing; on `localhost` written without `Domain` and `Secure` (local testing) | ADR-0047 |
-| banner categories | rule | — | the banner's categories map to analytics and marketing; necessary is always on | — | ADR-0047 (how today's four categories map is asked before the build) |
+| banner categories | rule | — | the banner's categories map to analytics and marketing; necessary is always on | — | decided (the person, 2026-10-21): `functional`, `analytics`, `performance` → the analytics bit; `ads` → the marketing bit; the banner's texts and layout unchanged |
 | hero offers | list | 1 or more | today: one, "Pazusi 19,90", `alc_underarms`, valid until 2026-12-31 (texts from `hero.slide2` in `messages/hr.json`) | empty: build fails | decided (the person, 2026-10-21) |
 | offer prices and old prices | money | € with comma | — | old price may be empty | the person gives; today's values in `messages/hr.json` until then |
 | Google rating, count, review texts | text | real Zagreb reviews only | — | section hidden if empty | the person gives |
@@ -127,10 +127,23 @@ without prefill. Written against `main` at `9360318`.
 | teaser button (hr) | text | disabled | "Rezervacije uskoro"; badge "Uskoro" | — | canvas |
 | brand strip (hr) | text | — | "Dio skintastic obitelji" / "5 centara u 3 zemlje" (count from config) | — | canvas |
 | top bar (hr) | text | — | "Besplatno savjetovanje · Rezerviraj online" | — | canvas |
-| `en` texts | text | — | translations of every `hr` text on the page | — | the person gives (O1) |
-| page `<title>` / description (hr) | text | ≤ 60 / ≤ 155 chars | mention Zagreb and laser hair removal; no foreign cities | — | the person gives |
+| `en` texts | text | — | translations of every `hr` text on the page | — | the agent drafts them, the person reviews (see Values not given yet) |
+| page `<title>` / description (hr) | text | ≤ 60 / ≤ 155 chars | mention Zagreb and laser hair removal; no foreign cities | — | the agent drafts them, the person reviews (see Values not given yet) |
 
 The agent picks none of these. A value this brief needs that is not in the table is a stop.
+
+**Values not given yet** (the person, 2026-10-21). So the build does not wait for them:
+- **Facts** still marked "the person gives" (phone, opening hours, Zapad's address, the franchise
+  website URLs, the franchisee slug, the teaser's `openingLabel`) go into `src/config/` as visible
+  placeholders in brackets: `[TELEFON]`, `[RADNO VRIJEME]`, `[ADRESA ZAPAD]`, `[URL WIEN]`, … Never a
+  real-looking value. A placeholder in a link (e.g. `tel:`, an external URL) leaves the link out and
+  shows the bracket text.
+- **An offer without a confirmed `code`** links to booking without `?usluga=`; the report lists it.
+- **Offer prices:** today's values in `messages/hr.json`.
+- **Reviews:** none given, so the section is hidden.
+- **Texts** (`en` texts, page `<title>` and description): the agent drafts them within the limits of
+  the row; the report lists every drafted key for the person to review.
+- The page is not published while a bracket placeholder is left; every run's report lists them all.
 
 **Build**
 1. `src/config/locations.ts`: one list with the three types; every section, the menu and the footer
