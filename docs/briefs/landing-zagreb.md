@@ -11,8 +11,10 @@ before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[
 ## Touches
 
 - `src/app/[locale]/page.tsx` (section order only)
-- `src/app/[locale]/layout.tsx` (`metadata` only)
-- `src/i18n/routing.ts` (`locales` only, after open choice O1)
+- `src/app/[locale]/layout.tsx` (`metadata` and the locale type only)
+- `src/i18n/routing.ts` (`locales` only: `["hr", "en"]`, O1), `src/i18n/request.ts` (the locale type only)
+- `src/components/layout/LanguageSwitcher.tsx` (labels only, O1)
+- `public/index.html` (`locales` and the fallback links: `hr`, `en`, O1)
 - `src/components/layout/Header.tsx`, `OverlayMenu.tsx`, `Footer.tsx`
 - `src/components/sections/HeroSection.tsx`, `OffersSection.tsx`, `LocationsSection.tsx`,
   `ServicesSection.tsx`, `TechnologySection.tsx`, `ReviewsSection.tsx`, `FaqSection.tsx`
@@ -21,8 +23,9 @@ before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[
 - removed from the page (files may stay): `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection`
 - `src/components/legal/CookieConsent.tsx` (storage only: the `skt_consent` cookie replaces
   `localStorage`, ADR-0047; texts and layout unchanged)
-- `messages/hr.json` and the second locale's file (after O1)
-- `public/images/hero/` (remove the unused `hero-video-2.mp4`; add compressed versions)
+- `messages/hr.json`; new `messages/en.json`; `messages/de.json` removed (O1)
+- `public/images/hero/` (remove the unused `hero-video-2.mp4`, the white fabric clip; add compressed
+  versions of `hero-video-1.mp4` and `hero-video-3.mp4`, which stay)
 
 Changing any other file: stop and ask. The legal pages (`impressum/`, `datenschutz/`) are **not**
 touched by this brief (see Out of scope). End your report with the
@@ -56,17 +59,18 @@ calendar from any "Rezerviraj" in one click, in the same tab.
 - **Same domain, subdomains:** landing on the main domain, the studio app with online booking on
   `app.` (the person, 2026-10-21; the domain name itself is O3).
 - **Zagreb owns its Google and Meta accounts** (the person, 2026-10-21). Tracking itself is out of scope.
+- **O1 · Languages: `hr` + `en`; `de` is dropped** (the person, 2026-10-21). `/de/…` URLs are
+  redirected to `/en/…` by the host (domain setup, not this brief). The legal pages keep their texts:
+  `/en/impressum` and `/en/datenschutz` show the `hr` text until the legal brief.
+- **O2 · Location names are the app's names** (the person, 2026-10-21; org decision 31):
+  "Skintastic Zapad", "Skintastic Istok", "Skintastic Jug".
+- **O3 · The domain is not in the code** (the person, 2026-10-21). It is chosen in the env and domain
+  setup; the page reads it only from `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`. If the main
+  domain changes, `skintastic.hr` stays and redirects page by page (301), set up on the host.
+- **O5 · The brand strip links to each franchise's own site** (the person, 2026-10-21): Wien, Graz
+  (×2) and Stuttgart are `external` locations, each with its own `url`.
 
-**Open — asked one at a time, each with a recommendation**
-- **O1 · Languages.** Recommendation: `hr` + `en`, drop `de` (the booking app has hr/en/de; Zagreb
-  clients and tourists read English; the current `de` pages show the Austrian company).
-- **O2 · Location names.** Recommendation: the app's own names (org decision 31), e.g. "Skintastic
-  Zapad", so the page, the booking app and the e-mails match.
-- **O3 · Domain.** Final name (`skintasticlaserstudio.hr` was an example) and whether `skintastic.hr`
-  stays and redirects page by page (301).
-- **O5 · Brand strip target.** Recommendation: the franchisor's main site rather than each franchise.
-
-**Waits for** O1–O3, O5 and the values marked "the person gives". Scheduling decisions 190–194
+**Waits for** the values marked "the person gives" (O1–O3 and O5 are decided above). Scheduling decisions 190–194
 (#506) and ADR-0047 (accepted by Ivan Tomić, 2026-10-21, #508) are merged into Skintastic `develop`
 at `5e82fd8a`. The franchisee entry, `?centar=` and `?usluga=` are built
 by the Skintastic brief `scheduling-public-entry-centar`; until it ships, the links open the entry
@@ -98,13 +102,14 @@ without prefill. Written against `main` at `9360318`.
 
 | Field | Type | Limits | Allowed values | Null or empty | Source |
 |---|---|---|---|---|---|
-| `BOOKING_URL` | env var `NEXT_PUBLIC_BOOKING_URL` | absolute https URL | `https://app.{domain}/book/f/{franchiseeSlug}` (scheduling decision 191; domain O3) | build fails | the person gives (the slug is set on Online rezervacije) |
+| `BOOKING_URL` | env var `NEXT_PUBLIC_BOOKING_URL` | absolute https URL | `https://app.{domain}/book/f/{franchiseeSlug}` (scheduling decision 191) | build fails | env and domain setup (the slug is set on Online rezervacije) |
+| `SITE_URL` | env var `NEXT_PUBLIC_SITE_URL` | absolute https URL, no trailing slash | the main domain; canonical, JSON-LD and the `skt_consent` `Domain` are taken from it | build fails | env and domain setup (O3) |
 | location `type` | enum | — | `bookable`, `teaser`, `external` | not allowed | decided |
 | location `slug` | text | lowercase, digits, dashes | the app's location slug, sent as `?centar=` (scheduling decisions 108, 192) | `teaser`, `external`: empty | the person gives |
-| location `name` | text | — | per O2 | not allowed | O2 |
+| location `name` | text | — | `bookable`/`teaser`: the app's name, e.g. "Skintastic Zapad" (O2); `external`: the franchise's name | not allowed | decided (O2); the person gives the list |
 | location address, phone, hours | text | — | — | `teaser`: area only, may be empty | the person gives |
 | teaser `openingLabel` | text | e.g. month + year | — | may be empty → "Uskoro" alone | the person gives |
-| external `url` | absolute URL | — | the franchise's or franchisor's site (O5) | not allowed | the person gives |
+| external `url` | absolute URL | — | the franchise's own site, one per franchise (O5) | not allowed | the person gives |
 | offer `code` | text | the app's catalogue code, sent as `?usluga=` | e.g. `alc_underarms` | not allowed | the person gives (from the app's catalogue) |
 | campaign params passed on | text | — | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `gclid`, `fbclid` | missing: not added | scheduling decision 194 |
 | `skt_consent` cookie | cookie | `Domain` = main domain, `Path=/`, `SameSite=Lax`, `Secure`, 180 days | `v1.<necessary>.<analytics>.<marketing>.<YYYY-MM-DD>`, each `0`/`1`, necessary always `1`, e.g. `v1.1.1.0.2026-10-21` | missing or unreadable = no for analytics and marketing | ADR-0047 |
@@ -116,7 +121,7 @@ without prefill. Written against `main` at `9360318`.
 | teaser button (hr) | text | disabled | "Rezervacije uskoro"; badge "Uskoro" | — | canvas |
 | brand strip (hr) | text | — | "Dio skintastic obitelji" / "5 centara u 3 zemlje" (count from config) | — | canvas |
 | top bar (hr) | text | — | "Besplatno savjetovanje · Rezerviraj online" | — | canvas |
-| `en` texts | text | — | translations of the hr row | — | the person gives (after O1) |
+| `en` texts | text | — | translations of every `hr` text on the page | — | the person gives (O1) |
 | page `<title>` / description (hr) | text | ≤ 60 / ≤ 155 chars | mention Zagreb and laser hair removal; no foreign cities | — | the person gives |
 
 The agent picks none of these. A value this brief needs that is not in the table is a stop.
@@ -128,8 +133,11 @@ The agent picks none of these. A value this brief needs that is not in the table
    `CookieConsent.tsx` writes and reads `skt_consent` (ADR-0047) instead of `localStorage`.
 2. Header: 5 nav items (Ponude, Lokacije, Usluge, Informacije, Kontakt), phone link, language switch,
    a persistent "Rezerviraj termin". Mobile: a fixed bottom bar with WhatsApp and "Rezerviraj termin".
-3. Hero: one static slide with the H1, the offer, "Rezerviraj termin" (booking link) and "Sve ponude"
-   (`#ponude`); a trust row under it. Mobile shows the poster image, not the video.
+3. Hero: the background keeps today's two videos of the women's faces (`hero-video-1.mp4`,
+   `hero-video-3.mp4`), playing in turn as now, on desktop and mobile (the person, 2026-10-21);
+   use compressed versions, and the posters while they load. The text over them is one static block
+   (no rotating text, no slide dots): the H1, the offer, "Rezerviraj termin" (booking link) and
+   "Sve ponude" (`#ponude`); a trust row under it.
 4. Offers: a static grid (no autoplay, no dropdown); each card has its own "Rezerviraj" link.
 5. Locations: Zagreb `bookable` and `teaser` cards; the brand strip for `external` ones.
 6. Services and Technology shortened as on the canvas; Reviews from real Zagreb reviews or hidden.
@@ -156,7 +164,8 @@ The agent picks none of these. A value this brief needs that is not in the table
    needed to make it bookable everywhere. Shown.
 5. **Incoming `utm_source=test`** on the landing URL appears on every booking link. Shown.
 6. **Accepting analytics only** in the banner writes `skt_consent=v1.1.1.0.{today}` on the main
-   domain; rejecting all writes `v1.1.0.0.{today}`; nothing is left in `localStorage`. Shown.
+   domain; rejecting all writes `v1.1.0.0.{today}`; no consent value is left in `localStorage` (the language
+   switcher's `locale` key stays). Shown.
 7. **The mobile bar** is visible at 390 px on every scroll position. Shown.
 8. **The diff** lists only the Touches paths. Listed.
 
@@ -191,4 +200,4 @@ The agent picks none of these. A value this brief needs that is not in the table
 - **European Accessibility Act:** check whether the company is exempt as a microenterprise. Owner:
   the person.
 
-**Estimate** Three to four days, after O1–O3 and the values are given.
+**Estimate** Three to four days, after the values are given.
