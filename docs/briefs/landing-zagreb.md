@@ -19,11 +19,13 @@ before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[
 - new: `src/config/locations.ts`, `src/config/booking.ts`, `src/components/sections/ContactSection.tsx`,
   `src/components/ui/BookButton.tsx`, `src/components/layout/MobileBookBar.tsx`
 - removed from the page (files may stay): `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection`
+- `src/components/legal/CookieConsent.tsx` (storage only: the `skt_consent` cookie replaces
+  `localStorage`, ADR-0047; texts and layout unchanged)
 - `messages/hr.json` and the second locale's file (after O1)
 - `public/images/hero/` (remove the unused `hero-video-2.mp4`; add compressed versions)
 
-Changing any other file: stop and ask. The legal pages (`impressum/`, `datenschutz/`) and
-`CookieConsent.tsx` are **not** touched by this brief (see Out of scope). End your report with the
+Changing any other file: stop and ask. The legal pages (`impressum/`, `datenschutz/`) are **not**
+touched by this brief (see Out of scope). End your report with the
 output of `git diff --stat origin/main...HEAD`.
 
 **Goal**
@@ -39,8 +41,18 @@ calendar from any "Rezerviraj" in one click, in the same tab.
 - **No location popup on the landing page.** Every "Rezerviraj" opens the booking app's step 1. The
   centre is chosen there when the link does not carry it (the person, 2026-10-21; the app side is
   in the handover, see Out of scope).
-- **Links carry what they know:** a general "Rezerviraj" → `{BOOKING_URL}`; a location card →
-  `?centar={slug}`; an offer card → `?usluga={key}` (the person, 2026-10-21).
+- **Links carry what they know:** a general "Rezerviraj" → the franchisee's booking entry
+  `https://app.{domain}/book/f/{franchiseeSlug}`; a location card adds `?centar={locationSlug}`; an
+  offer card adds `?usluga={catalogue code}` (e.g. `alc_underarms`); `utm_*`, `gclid`, `fbclid` are
+  passed on (the person, 2026-10-21; Skintastic scheduling decisions 191, 192, 194).
+- **With the centre and the treatment both known,** the app still opens Tretmani with both filled
+  (the person, 2026-10-21, L4; scheduling decision 192). Nothing for the landing page to build.
+- **"Uskoro" centres exist on the landing page only;** the app does not know them (the person,
+  2026-10-21, L3; scheduling decision 190).
+- **The cookie choice is one cookie, `skt_consent`, on the main domain,** written by the landing
+  page's banner and only read by the app (the person, 2026-10-21, L1; Skintastic ADR-0047, proposed).
+  The app loads no tag before the ads brief; the landing page's own tags, when they come, follow the
+  same cookie (scheduling decision 193).
 - **Same domain, subdomains:** landing on the main domain, the studio app with online booking on
   `app.` (the person, 2026-10-21; the domain name itself is O3).
 - **Zagreb owns its Google and Meta accounts** (the person, 2026-10-21). Tracking itself is out of scope.
@@ -52,13 +64,12 @@ calendar from any "Rezerviraj" in one click, in the same tab.
   Zapad", so the page, the booking app and the e-mails match.
 - **O3 · Domain.** Final name (`skintasticlaserstudio.hr` was an example) and whether `skintastic.hr`
   stays and redirects page by page (301).
-- **O4 · Offer card when the centre is also known.** Recommendation: open step 1 with both filled
-  (consistent); the alternative skips to Termin. Decided on the app side; the landing only sends the link.
 - **O5 · Brand strip target.** Recommendation: the franchisor's main site rather than each franchise.
 
-**Waits for** O1–O3 and the values marked "the person gives". The booking prefill (`?centar=`,
-`?usluga=`) and the Centar field wait for: scheduling, from handover-2026-10-21-landing. Until they
-exist, the links still open the app's step 1 without prefill. Written against `main` at `9360318`.
+**Waits for** O1–O3, O5 and the values marked "the person gives"; Skintastic PR #506 (scheduling
+decisions 190–194 and ADR-0047) accepted. The franchisee entry, `?centar=` and `?usluga=` are built
+by the Skintastic brief `scheduling-public-entry-centar`; until it ships, the links open the entry
+without prefill. Written against `main` at `9360318`.
 
 **What exists today** (`main` at `9360318`)
 - **Hero CTA scrolls instead of booking:** `href="#offers"` (`src/components/sections/HeroSection.tsx:92`);
@@ -86,14 +97,17 @@ exist, the links still open the app's step 1 without prefill. Written against `m
 
 | Field | Type | Limits | Allowed values | Null or empty | Source |
 |---|---|---|---|---|---|
-| `BOOKING_URL` | env var `NEXT_PUBLIC_BOOKING_URL` | absolute https URL | the app's public booking entry (O3) | build fails | the person gives |
+| `BOOKING_URL` | env var `NEXT_PUBLIC_BOOKING_URL` | absolute https URL | `https://app.{domain}/book/f/{franchiseeSlug}` (scheduling decision 191; domain O3) | build fails | the person gives (the slug is set on Online rezervacije) |
 | location `type` | enum | — | `bookable`, `teaser`, `external` | not allowed | decided |
-| location `slug` | text | lowercase, digits, dashes | the app's slug (scheduling decision 108) | `teaser`, `external`: empty | the person gives |
+| location `slug` | text | lowercase, digits, dashes | the app's location slug, sent as `?centar=` (scheduling decisions 108, 192) | `teaser`, `external`: empty | the person gives |
 | location `name` | text | — | per O2 | not allowed | O2 |
 | location address, phone, hours | text | — | — | `teaser`: area only, may be empty | the person gives |
 | teaser `openingLabel` | text | e.g. month + year | — | may be empty → "Uskoro" alone | the person gives |
 | external `url` | absolute URL | — | the franchise's or franchisor's site (O5) | not allowed | the person gives |
-| offer `key` | text | matches an app service key | — | not allowed | the person gives (from the app's catalogue) |
+| offer `code` | text | the app's catalogue code, sent as `?usluga=` | e.g. `alc_underarms` | not allowed | the person gives (from the app's catalogue) |
+| campaign params passed on | text | — | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `gclid`, `fbclid` | missing: not added | scheduling decision 194 |
+| `skt_consent` cookie | cookie | `Domain` = main domain, `Path=/`, `SameSite=Lax`, `Secure`, 180 days | `v1.<necessary>.<analytics>.<marketing>.<YYYY-MM-DD>`, each `0`/`1`, necessary always `1`, e.g. `v1.1.1.0.2026-10-21` | missing or unreadable = no for analytics and marketing | ADR-0047 |
+| banner categories | rule | — | the banner's categories map to analytics and marketing; necessary is always on | — | ADR-0047 (how today's four categories map is asked before the build) |
 | offer prices and old prices | money | € with comma | — | old price may be empty | the person gives; today's values in `messages/hr.json` until then |
 | Google rating, count, review texts | text | real Zagreb reviews only | — | section hidden if empty | the person gives |
 | H1 (hr) | text | — | "Laserska epilacija u Zagrebu" | — | canvas |
@@ -110,6 +124,7 @@ The agent picks none of these. A value this brief needs that is not in the table
 1. `src/config/locations.ts`: one list with the three types; every section, the menu and the footer
    read it. `src/config/booking.ts` builds the links (`{BOOKING_URL}`, `?centar=`, `?usluga=`); links
    open in the same tab and carry the page's incoming `utm_*`, `gclid`, `fbclid` parameters on.
+   `CookieConsent.tsx` writes and reads `skt_consent` (ADR-0047) instead of `localStorage`.
 2. Header: 5 nav items (Ponude, Lokacije, Usluge, Informacije, Kontakt), phone link, language switch,
    a persistent "Rezerviraj termin". Mobile: a fixed bottom bar with WhatsApp and "Rezerviraj termin".
 3. Hero: one static slide with the H1, the offer, "Rezerviraj termin" (booking link) and "Sve ponude"
@@ -133,14 +148,16 @@ The agent picks none of these. A value this brief needs that is not in the table
 **Done when**
 1. **Every "Rezerviraj"** on the page links to the booking app in the same tab, and none points to
    `#offers`, `#locations` or a `timify.com` URL. Shown.
-2. **A location card's link** carries `?centar={slug}`; an offer card's carries `?usluga={key}`. Shown.
+2. **A location card's link** carries `?centar={slug}`; an offer card's carries `?usluga={code}`. Shown.
 3. **With one `bookable` location**, no foreign city appears outside the brand strip and the footer;
    the page `<title>` and description contain "Zagreb". Shown.
 4. **Switching a location** from `teaser` to `bookable` in `src/config/locations.ts` is the only edit
    needed to make it bookable everywhere. Shown.
 5. **Incoming `utm_source=test`** on the landing URL appears on every booking link. Shown.
-6. **The mobile bar** is visible at 390 px on every scroll position. Shown.
-7. **The diff** lists only the Touches paths. Listed.
+6. **Accepting analytics only** in the banner writes `skt_consent=v1.1.1.0.{today}` on the main
+   domain; rejecting all writes `v1.1.0.0.{today}`; nothing is left in `localStorage`. Shown.
+7. **The mobile bar** is visible at 390 px on every scroll position. Shown.
+8. **The diff** lists only the Touches paths. Listed.
 
 **How a person checks it**
 1. Open the page on a phone: the header says Zagreb, "Rezerviraj termin" is always visible.
@@ -149,15 +166,14 @@ The agent picks none of these. A value this brief needs that is not in the table
 4. Scroll to Lokacije: Istok and Jug show "Uskoro"; Wien, Graz and Stuttgart only in the brand strip.
 
 **Out of scope** (parked; each with its owner and where it is decided)
-- **Booking app: the Centar field in step 1, the `?centar=` / `?usluga=` prefill, the public entry
-  without a slug.** Owner Dražen (scheduling). Scheduling, from handover-2026-10-21-landing.
-- **Cookie consent shared across the main domain and `app.`** (one choice for both; today the choice
-  is in `localStorage` and nothing reads it, `CookieConsent.tsx:14`, `:38`). Owner: the person +
-  scheduling. From handover-2026-10-21-landing.
+- **Booking app: the franchisee entry `/book/f/{franchiseeSlug}`, the Centar field in Tretmani, the
+  `?centar=` / `?usluga=` prefill, the campaign parameters kept on the booking.** Owner Dražen
+  (scheduling). Skintastic brief `scheduling-public-entry-centar` (decisions 190–192, 194).
+- **The app reading `skt_consent`.** Built with the ads brief (ADR-0047 point 2).
 - **Ads tracking and attribution:** GTM, GA4, Google Ads, Meta Pixel + Conversions API, Consent Mode
-  v2, `booking_confirmed` from the app, campaign parameters stored on the appointment, offline
-  conversions for paid visits. Owner: the person. Its own brief after the consent decision; IDs only
-  as env vars.
+  v2, `booking_confirmed` from the app, offline conversions for paid visits through the platform
+  capability `ads`. Owner: the person. Its own brief, under ADR-0047 (tags only on `/book/…` and the
+  landing page, only with consent; no personal data to Google or Meta); IDs only as env vars.
 - **Impressum:** OIB, MBS and court register, share capital, bank/IBAN missing; the `de` page names
   skintastic GmbH (Graz) (`src/app/[locale]/impressum/page.tsx:113`); the EU ODR link (`:92`, `:176`)
   points to a platform closed in July 2025 — replace with the Croatian consumer complaint notice.
