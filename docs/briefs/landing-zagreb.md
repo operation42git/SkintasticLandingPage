@@ -1,7 +1,7 @@
 # Brief · landing The Zagreb page sells Zagreb and sends every "Rezerviraj" straight into booking
 
-> **Draft, 2026-10-21. Not accepted.** Written by the landing-page analysis conversation. The person
-> accepts it; the open choices under **Decided** are asked one at a time before the build starts.
+> **Accepted by Ivan Tomić, 2026-10-21.** Written by the landing-page analysis conversation. The
+> values still marked "the person gives" are not given yet: the agent lists them and stops (AGENTS.md).
 
 **Canvas:** https://claude.ai/artifact/DCgUZ5TcHXTgG1rv8daDpp ("Skintastic Zagreb landing mockup").
 Boards: `Desktop — new landing page`, the three mobile boards, `Location types — spec`, `Booking flow —
@@ -67,6 +67,11 @@ calendar from any "Rezerviraj" in one click, in the same tab.
 - **O3 · The domain is not in the code** (the person, 2026-10-21). It is chosen in the env and domain
   setup; the page reads it only from `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`. If the main
   domain changes, `skintastic.hr` stays and redirects page by page (301), set up on the host.
+- **The Zagreb centres** (the person, 2026-10-21): "Skintastic Istok" (`bookable`, slug
+  `zagreb-istok`, Drage Gervaisa 1, 10090 Zagreb; today's page calls this address "Zagreb Zapad",
+  which is wrong), "Skintastic Zapad" (`bookable`, slug `zagreb-zapad`), "Skintastic Jug – Velika
+  Gorica" (`teaser`). With two `bookable` centres the general "Rezerviraj termin" opens the
+  franchisee entry, where the client picks the centre; the card links carry `?centar=`.
 - **O5 · The brand strip links to each franchise's own site** (the person, 2026-10-21): Wien, Graz
   (×2) and Stuttgart are `external` locations, each with its own `url`.
 
@@ -105,9 +110,9 @@ without prefill. Written against `main` at `9360318`.
 | `BOOKING_URL` | env var `NEXT_PUBLIC_BOOKING_URL` | absolute https URL | `https://app.{domain}/book/f/{franchiseeSlug}` (scheduling decision 191) | build fails | env and domain setup (the slug is set on Online rezervacije) |
 | `SITE_URL` | env var `NEXT_PUBLIC_SITE_URL` | absolute https URL, no trailing slash | the main domain; canonical, JSON-LD and the `skt_consent` `Domain` are taken from it | build fails | env and domain setup (O3) |
 | location `type` | enum | — | `bookable`, `teaser`, `external` | not allowed | decided |
-| location `slug` | text | lowercase, digits, dashes | the app's location slug, sent as `?centar=` (scheduling decisions 108, 192) | `teaser`, `external`: empty | the person gives |
+| location `slug` | text | lowercase, digits, dashes | the app's location slug, sent as `?centar=` (scheduling decisions 108, 192) | `teaser`, `external`: empty | decided: `zagreb-istok`, `zagreb-zapad` |
 | location `name` | text | — | `bookable`/`teaser`: the app's name, e.g. "Skintastic Zapad" (O2); `external`: the franchise's name | not allowed | decided (O2); the person gives the list |
-| location address, phone, hours | text | — | — | `teaser`: area only, may be empty | the person gives |
+| location address, phone, hours | text | — | — | `teaser`: area only ("Velika Gorica"), may be empty | Istok address decided; the rest the person gives |
 | teaser `openingLabel` | text | e.g. month + year | — | may be empty → "Uskoro" alone | the person gives |
 | external `url` | absolute URL | — | the franchise's own site, one per franchise (O5) | not allowed | the person gives |
 | offer `code` | text | the app's catalogue code, sent as `?usluga=` | e.g. `alc_underarms` | not allowed | the person gives (from the app's catalogue) |
@@ -168,7 +173,7 @@ The agent picks none of these. A value this brief needs that is not in the table
 1. **Every "Rezerviraj"** on the page links to the booking app in the same tab, and none points to
    `#offers`, `#locations` or a `timify.com` URL. Shown.
 2. **A location card's link** carries `?centar={slug}`; an offer card's carries `?usluga={code}`. Shown.
-3. **With one `bookable` location**, no foreign city appears outside the brand strip and the footer;
+3. **With the Zagreb centres configured**, no foreign city appears outside the brand strip and the footer;
    the page `<title>` and description contain "Zagreb". Shown.
 4. **Switching a location** from `teaser` to `bookable` in `src/config/locations.ts` is the only edit
    needed to make it bookable everywhere. Shown.
@@ -184,8 +189,8 @@ The agent picks none of these. A value this brief needs that is not in the table
 **How a person checks it**
 1. Open the page on a phone: the header says Zagreb, "Rezerviraj termin" is always visible.
 2. Tap the hero button: the booking app opens in the same tab.
-3. Tap "Rezerviraj" on the Zapad card, then on an offer card: the links carry the centre and the treatment.
-4. Scroll to Lokacije: Istok and Jug show "Uskoro"; Wien, Graz and Stuttgart only in the brand strip.
+3. Tap "Rezerviraj" on the Istok card, then on an offer card: the links carry the centre and the treatment.
+4. Scroll to Lokacije: Istok and Zapad are bookable, Jug – Velika Gorica shows "Uskoro"; Wien, Graz and Stuttgart only in the brand strip.
 
 **Out of scope** (parked; each with its owner and where it is decided)
 - **Booking app: the franchisee entry `/book/f/{franchiseeSlug}`, the Centar field in Tretmani, the
