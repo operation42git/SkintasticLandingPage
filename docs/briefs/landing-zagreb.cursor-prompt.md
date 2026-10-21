@@ -2,7 +2,8 @@
 
 Two runs, one branch each, one PR each. Start run 2 after run 1 is merged into `main`.
 Before either: the brief's header says **Accepted**, the values for that run are in the brief's
-Values table, and `.env.local` has `NEXT_PUBLIC_BOOKING_URL` and `NEXT_PUBLIC_SITE_URL`.
+Values table, and `.env.local` has `NEXT_PUBLIC_SITE_URL=http://localhost:3000` and
+`NEXT_PUBLIC_BOOKING_URL` (see AGENTS.md).
 
 The canvas (claude.ai artifact) is private, so the agent cannot open it. Attach screenshots of the
 boards `Desktop — new landing page` and the three mobile boards to the chat with each prompt.

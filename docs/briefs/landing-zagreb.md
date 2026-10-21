@@ -117,7 +117,7 @@ without prefill. Written against `main` at `9360318`.
 | external `url` | absolute URL | — | the franchise's own site, one per franchise (O5) | not allowed | the person gives |
 | offer `code` | text | the app's catalogue code, sent as `?usluga=` | e.g. `alc_underarms` | not allowed | the person gives (from the app's catalogue) |
 | campaign params passed on | text | — | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `gclid`, `fbclid` | missing: not added | scheduling decision 194 |
-| `skt_consent` cookie | cookie | `Domain` = main domain, `Path=/`, `SameSite=Lax`, `Secure`, 180 days | `v1.<necessary>.<analytics>.<marketing>.<YYYY-MM-DD>`, each `0`/`1`, necessary always `1`, e.g. `v1.1.1.0.2026-10-21` | missing or unreadable = no for analytics and marketing | ADR-0047 |
+| `skt_consent` cookie | cookie | `Domain` = main domain, `Path=/`, `SameSite=Lax`, `Secure`, 180 days | `v1.<necessary>.<analytics>.<marketing>.<YYYY-MM-DD>`, each `0`/`1`, necessary always `1`, e.g. `v1.1.1.0.2026-10-21` | missing or unreadable = no for analytics and marketing; on `localhost` written without `Domain` and `Secure` (local testing) | ADR-0047 |
 | banner categories | rule | — | the banner's categories map to analytics and marketing; necessary is always on | — | ADR-0047 (how today's four categories map is asked before the build) |
 | hero offers | list | 1 or more | today: one, "Pazusi 19,90", `alc_underarms`, valid until 2026-12-31 (texts from `hero.slide2` in `messages/hr.json`) | empty: build fails | decided (the person, 2026-10-21) |
 | offer prices and old prices | money | € with comma | — | old price may be empty | the person gives; today's values in `messages/hr.json` until then |

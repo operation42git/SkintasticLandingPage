@@ -26,9 +26,12 @@ links to it.
   read them; they never copy them. One edit in `src/config/` must be enough to change the page.
 - Every visible text is in `messages/{locale}.json` (`hr` first). No text in components.
 - Environment: `NEXT_PUBLIC_BOOKING_URL` and `NEXT_PUBLIC_SITE_URL`. No domain name is written in
-  the code. For local work, put them in `.env.local` (ignored by git), e.g.
-  `NEXT_PUBLIC_BOOKING_URL=https://app.example.test/book/f/test` and
-  `NEXT_PUBLIC_SITE_URL=https://example.test`.
+  the code. For local work, put them in `.env.local` (ignored by git):
+  `NEXT_PUBLIC_SITE_URL=http://localhost:3000` and
+  `NEXT_PUBLIC_BOOKING_URL=http://localhost:5173/book/f/test` (the Skintastic app's dev server, if it
+  runs; otherwise any URL: the links are checked by their address, not by opening them).
+- On `localhost` the `skt_consent` cookie is written without `Domain` and without `Secure`, so the
+  banner can be tested locally; on any other host it uses the `Domain` from `NEXT_PUBLIC_SITE_URL`.
 - The cookie choice is the `skt_consent` cookie (Skintastic ADR-0047), described in the brief. No
   third-party script or embed loads before consent.
 - Match the existing style: function components, Tailwind classes, the existing `btn-gold` and
