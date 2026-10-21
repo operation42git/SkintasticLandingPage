@@ -47,6 +47,7 @@ links to it.
 ## Git
 
 - Work on your own branch from `main`. Small commits with clear messages in English.
+- Do not push. The person tests the branch locally (`npm run dev`) and pushes it themselves.
 - Never push to `main`, never rewrite shared history.
 
 ## The report
