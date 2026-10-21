@@ -50,7 +50,7 @@ calendar from any "Rezerviraj" in one click, in the same tab.
 - **"Uskoro" centres exist on the landing page only;** the app does not know them (the person,
   2026-10-21, L3; scheduling decision 190).
 - **The cookie choice is one cookie, `skt_consent`, on the main domain,** written by the landing
-  page's banner and only read by the app (the person, 2026-10-21, L1; Skintastic ADR-0047, proposed).
+  page's banner and only read by the app (the person, 2026-10-21, L1; Skintastic ADR-0047, accepted).
   The app loads no tag before the ads brief; the landing page's own tags, when they come, follow the
   same cookie (scheduling decision 193).
 - **Same domain, subdomains:** landing on the main domain, the studio app with online booking on
@@ -66,8 +66,9 @@ calendar from any "Rezerviraj" in one click, in the same tab.
   stays and redirects page by page (301).
 - **O5 · Brand strip target.** Recommendation: the franchisor's main site rather than each franchise.
 
-**Waits for** O1–O3, O5 and the values marked "the person gives"; Skintastic PR #506 (scheduling
-decisions 190–194 and ADR-0047) accepted. The franchisee entry, `?centar=` and `?usluga=` are built
+**Waits for** O1–O3, O5 and the values marked "the person gives". Scheduling decisions 190–194
+(#506) and ADR-0047 (accepted by Ivan Tomić, 2026-10-21, #508) are merged into Skintastic `develop`
+at `5e82fd8a`. The franchisee entry, `?centar=` and `?usluga=` are built
 by the Skintastic brief `scheduling-public-entry-centar`; until it ships, the links open the entry
 without prefill. Written against `main` at `9360318`.
 
