@@ -18,7 +18,7 @@ before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[
 - `src/components/layout/Header.tsx`, `OverlayMenu.tsx`, `Footer.tsx`
 - `src/components/sections/HeroSection.tsx`, `OffersSection.tsx`, `LocationsSection.tsx`,
   `ServicesSection.tsx`, `TechnologySection.tsx`, `ReviewsSection.tsx`, `FaqSection.tsx`
-- new: `src/config/locations.ts`, `src/config/booking.ts`, `src/components/sections/ContactSection.tsx`,
+- new: `src/config/locations.ts`, `src/config/booking.ts`, `src/config/hero-offers.ts`, `src/components/sections/ContactSection.tsx`,
   `src/components/ui/BookButton.tsx`, `src/components/layout/MobileBookBar.tsx`
 - removed from the page (files may stay): `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection`
 - `src/components/legal/CookieConsent.tsx` (storage only: the `skt_consent` cookie replaces
@@ -114,6 +114,7 @@ without prefill. Written against `main` at `9360318`.
 | campaign params passed on | text | — | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `gclid`, `fbclid` | missing: not added | scheduling decision 194 |
 | `skt_consent` cookie | cookie | `Domain` = main domain, `Path=/`, `SameSite=Lax`, `Secure`, 180 days | `v1.<necessary>.<analytics>.<marketing>.<YYYY-MM-DD>`, each `0`/`1`, necessary always `1`, e.g. `v1.1.1.0.2026-10-21` | missing or unreadable = no for analytics and marketing | ADR-0047 |
 | banner categories | rule | — | the banner's categories map to analytics and marketing; necessary is always on | — | ADR-0047 (how today's four categories map is asked before the build) |
+| hero offers | list | 1 or more | today: one, "Pazusi 19,90", `alc_underarms`, valid until 2026-12-31 (texts from `hero.slide2` in `messages/hr.json`) | empty: build fails | decided (the person, 2026-10-21) |
 | offer prices and old prices | money | € with comma | — | old price may be empty | the person gives; today's values in `messages/hr.json` until then |
 | Google rating, count, review texts | text | real Zagreb reviews only | — | section hidden if empty | the person gives |
 | H1 (hr) | text | — | "Laserska epilacija u Zagrebu" | — | canvas |
@@ -133,11 +134,20 @@ The agent picks none of these. A value this brief needs that is not in the table
    `CookieConsent.tsx` writes and reads `skt_consent` (ADR-0047) instead of `localStorage`.
 2. Header: 5 nav items (Ponude, Lokacije, Usluge, Informacije, Kontakt), phone link, language switch,
    a persistent "Rezerviraj termin". Mobile: a fixed bottom bar with WhatsApp and "Rezerviraj termin".
-3. Hero: the background keeps today's two videos of the women's faces (`hero-video-1.mp4`,
-   `hero-video-3.mp4`), playing in turn as now, on desktop and mobile (the person, 2026-10-21);
-   use compressed versions, and the posters while they load. The text over them is one static block
-   (no rotating text, no slide dots): the H1, the offer, "Rezerviraj termin" (booking link) and
-   "Sve ponude" (`#ponude`); a trust row under it.
+3. Hero (the person, 2026-10-21):
+   - **Background:** always today's two videos of the women's faces (`hero-video-1.mp4`,
+     `hero-video-3.mp4`), playing in turn as now, on desktop and mobile; compressed versions, the
+     posters while they load. The videos do not depend on the offers. Mobile loading speed is
+     measured after launch.
+   - **Fixed:** the H1 "Laserska epilacija u Zagrebu", the trust row, "Sve ponude" (`#ponude`).
+   - **Hero offers:** a list in `src/config/hero-offers.ts` (badge, title, subtitle, `code`, optional `validUntil`).
+     Each shows its texts and one "Rezerviraj termin" linking to booking with `?usluga={code}`.
+     Today the list has **one** offer: "Pazusi 19,90" (`alc_underarms`, valid until 2026-12-31). The
+     "Dan bez dlačica" (10 %, last Friday) offer is removed from the page and from the messages.
+   - **With two or more offers** the offer text rotates (with the slide dots), and the button follows
+     the offer on screen; rotation pauses on hover and focus and does not run with
+     `prefers-reduced-motion` (dots only). With one offer: no rotation, no dots. An offer past
+     `validUntil` is not shown.
 4. Offers: a static grid (no autoplay, no dropdown); each card has its own "Rezerviraj" link.
 5. Locations: Zagreb `bookable` and `teaser` cards; the brand strip for `external` ones.
 6. Services and Technology shortened as on the canvas; Reviews from real Zagreb reviews or hidden.
@@ -167,7 +177,9 @@ The agent picks none of these. A value this brief needs that is not in the table
    domain; rejecting all writes `v1.1.0.0.{today}`; no consent value is left in `localStorage` (the language
    switcher's `locale` key stays). Shown.
 7. **The mobile bar** is visible at 390 px on every scroll position. Shown.
-8. **The diff** lists only the Touches paths. Listed.
+8. **The hero** plays both videos at 390 px and 1440 px with one offer and no dots; adding a second
+   offer to the config (and nothing else) makes the text rotate with dots. Shown.
+9. **The diff** lists only the Touches paths. Listed.
 
 **How a person checks it**
 1. Open the page on a phone: the header says Zagreb, "Rezerviraj termin" is always visible.
