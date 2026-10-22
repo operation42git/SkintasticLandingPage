@@ -1,44 +1,40 @@
-# Mockup notes (from the canvas, 2026-10-21)
+# Mockup notes (from the canvas, page "2 · Condensed page", 2026-10-22)
 
-1 · Header
+What changed from the first mockup
+15 blocks on today's page → 11. Every section answers one question a client has, in the order they ask
+it: what & how much → does it work → can I trust you → what do others say → where → questions → how to
+reach you. "Rezerviraj" repeats after each answer; the brand story no longer repeats.
 
-Persistent black “Rezerviraj termin” button + phone number, visible on every scroll position. Nav trimmed from 8 to 5 items. Language switch HR / EN (matches the booking funnel, which ships hr + en).
+Hero
+Only the video (the faces) with the text over it. Today's poster images already have "Posebna ponuda /
+Pazusi" printed in them, so they are not used. The mockup loops one video; the page plays both in turn.
 
-2 · Hero
+Ponude — compact carousel
+Desktop: 4 smaller cards in a row with ‹ › arrows, no autoplay. Phone: swipe, the next card peeks in.
+One row instead of two.
 
-H1 now says what + where: “Laserska epilacija u Zagrebu”. Primary CTA goes straight to the booking funnel (1 click) instead of scrolling to #offers. Trust row under the CTA. Mobile shows the poster image instead of the 10 MB video.
+Kako djeluje (how it works)
+Merges today's "Naša ponuda / Usluge skintastica" and "High-end uređaji": three steps (free
+consultation → 6–8 sessions → lasting result) and the Mediostar facts. No before/after slider: today's
+images are AI-generated, so they are not shown as results.
 
-3 · Offers
+Zašto skintastic (why skintastic)
+Merges the 4 feature icons, "O nama" and "Naši certifikati". Desktop: the text box on the left, the
+photo of the woman on the right (two columns, the box never covers her). Phone: photo above the text.
+Certificates are the brand's (WIFI, WKO), shown as "Certifikati skintastic brenda".
 
-Static grid instead of an auto-rotating carousel. Every card has its own “Rezerviraj” that opens the funnel with that treatment preselected (needs a small ?usluga= param in the funnel). Location dropdown removed.
+Ponosni smo na to (reviews)
+Kept, with real Google reviews of the Zagreb centres: rating, count, three quotes, link to all reviews.
 
-4 · Locations — Zagreb only
+Kontakt
+Every channel in one row: phone and WhatsApp (+385 95 757 5344), e-mail, Instagram, Facebook. One block
+per bookable centre with "Kako do nas". Reached from the header's phone icon, the menu and the
+location cards.
 
-Each location has one of three states: BOOKABLE, TEASER (“Uskoro”, not bookable) or EXTERNAL (links to its own site). Every Rezerviraj opens booking step 1 directly — no popup on the landing page. A location card's button prefills the centre.
+Brand moments kept
+The script font, peach/rose colours, hero videos, the tagline and one quote band (Goethe, in Croatian).
+Dropped: the Sharon Stone quote and the video-logo band.
 
-5 · Brand strip
-
-Wien, Graz and Stuttgart stay visible as “skintastic obitelj — 5 centara u 3 zemlje” for brand strength, linking out to their own sites. They leave the booking dropdown, the menu and the SEO description.
-
-6 · Reviews
-
-Real Google reviews of the Zagreb centre, with rating and count. Shown as placeholders here — the current reviews are translated Austrian ones.
-
-7 · Contact (new)
-
-Address, map, opening hours, phone and a working WhatsApp link. Today “Kontakt” scrolls to a footer with none of these, and the WhatsApp link has no number.
-
-8 · Removed
-
-Sharon Stone quote, video-logo section, Goethe quote, carousel autoplay, the unused 19 MB hero video. Shorter page — price and trust come sooner.
-
-9 · Booking flow prototype
-
-Press Play. Toggle 1 vs 2 bookable centres at the top.
-
-Step 1 gains one new field, Centar, above the treatments:
-• header/hero → /book: centre empty if 2+ centres (auto-filled with 1)
-• location card → /book?centar=…: centre prefilled
-• offer card → /book?usluga=…: treatment prefilled
-Steps 2–4 are the existing funnel, unchanged.
-
+Phone page
+The header stays on top, the black "Rezerviraj termin" bar stays at the bottom. Offers and reviews
+swipe sideways.

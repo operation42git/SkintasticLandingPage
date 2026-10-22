@@ -1,7 +1,7 @@
 # Cursor prompts · landing-zagreb
 
 Two runs on **one local branch**, `cursor/landing-zagreb`, started from this brief's branch
-(`claude/pensive-goldberg-vzyi0d`). Nothing goes to `main` until the person has checked the whole
+(`claude/admiring-cray-d2w5jh`). Nothing goes to `main` until the person has checked the whole
 page locally: `main` deploys the live site. Run 2 continues on the same branch after run 1.
 `.env.local` has `NEXT_PUBLIC_SITE_URL=http://localhost:3000` and `NEXT_PUBLIC_BOOKING_URL`
 (see AGENTS.md).
@@ -14,7 +14,7 @@ The mockup is in the repo: `docs/briefs/landing-zagreb/mockup/`. No screenshots 
 Read AGENTS.md, then docs/briefs/landing-zagreb.md in full. You are on the local branch
 `cursor/landing-zagreb` (.env.local set). Do not merge into or push to main. Build only these parts of it:
 
-- Build step 1: src/config/locations.ts, src/config/booking.ts, src/config/hero-offers.ts,
+- Build step 1: src/config/locations.ts, src/config/booking.ts, src/config/hero-offers.ts, src/config/contact.ts,
   src/components/ui/BookButton.tsx; CookieConsent.tsx writes and reads the skt_consent cookie.
 - Build step 2: the header (5 items, phone, language switch, "Rezerviraj termin"), the overlay menu,
   and src/components/layout/MobileBookBar.tsx.
@@ -37,17 +37,21 @@ Read AGENTS.md, then docs/briefs/landing-zagreb.md in full. Run 1 (config, booki
 mobile bar, cookie, hr + en) is committed on this branch; you are on the local branch
 `cursor/landing-zagreb` (.env.local set). Do not merge into or push to main. Build the rest of the brief:
 
-- Build steps 3 to 11 and the brief's Mockup section: hero (both videos always play; one hero offer from src/config/hero-offers.ts;
-  rotation only with two or more), offers grid, locations and brand strip, services and technology
-  shortened, reviews (real Zagreb reviews or hidden), the new ContactSection, footer, the removed
-  sections (Quote, VideoLogo, Goethe, About, Certificates) and hero-video-2.mp4, compressed hero videos, metadata and JSON-LD.
+- Build steps 3 to 13 and the brief's Mockup section, in the page order of the brief (11 blocks): hero
+  (both videos play in turn, hero-video-1-poster.jpg while loading, no image with printed text; one hero
+  offer from src/config/hero-offers.ts, rotation only with two or more), the compact offers carousel
+  (4 cards + arrows on desktop, swipe on the phone, no autoplay), the new HowItWorksSection and
+  WhySection (box left, woman right on desktop), reviews (real Zagreb reviews or hidden), locations
+  and brand strip, FAQ, the new ContactSection, the Goethe quote band, footer; the sections removed
+  from the page (Quote, VideoLogo, Services, Technology, Features, About, Certificates),
+  hero-video-2.mp4 deleted, compressed hero videos, metadata and JSON-LD.
 
 A value still marked "the person gives" follows the brief's "Values not given yet" rule
 (bracket placeholders, drafted texts listed for review). Read every value from src/config/ and messages/;
 never copy one into a component. The mockup is docs/briefs/landing-zagreb/mockup/ (read its
-README.md); the page must match desktop.html and the mobile boards, except the brief's Mockup section.
+README.md); the page must match desktop.html (1440 px) and mobile.html (390 px), except the brief's Mockup section.
 
-Run npm run lint and npm run build while working. Check every Done when item (1 to 10) in a browser
+Run npm run lint and npm run build while working. Check every Done when item (1 to 12) in a browser
 at 1440 px and 390 px on the built out/ folder. Commit on this branch; do not push. End with the
 report from AGENTS.md, plus every placeholder left.
 ```
@@ -57,7 +61,7 @@ report from AGENTS.md, plus every placeholder left.
 Once, before run 1:
 ```bash
 git fetch origin
-git checkout -B cursor/landing-zagreb origin/claude/pensive-goldberg-vzyi0d
+git checkout -B cursor/landing-zagreb origin/claude/admiring-cray-d2w5jh
 npm install
 git checkout -- package-lock.json
 npm run build
