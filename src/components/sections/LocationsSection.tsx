@@ -3,157 +3,226 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { BookButton } from "@/components/ui/BookButton";
 import { Lightbox } from "@/components/ui/Lightbox";
-
-// The Zagreb location is live on our own platform; all other locations still use Timify.
-// Update NEXT_PUBLIC_BOOKING_URL in .env.local / hosting env when deploying.
-const BOOKING_APP = (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").replace(/\/$/, "");
-
-const LOCATIONS = [
-  {
-    key: "zagreb",
-    image: "/images/locations/zagreb.jpg",
-    bookingUrl: `${BOOKING_APP}/book/zagreb-centar`,
-    gallery: [
-      "/images/locations/zagreb.jpg",
-      "/images/locations/zagreb-2.jpeg",
-      "/images/locations/zagreb-3.jpeg",
-      "/images/locations/zagreb-4.jpeg",
-      "/images/locations/zagreb-5.jpeg",
-    ],
-  },
-  {
-    key: "wien",
-    image: "/images/locations/wien.jpg",
-    bookingUrl: "https://www.timify.com/de/profile/skintastic-wien",
-    gallery: [
-      "/images/locations/wien.jpg",
-      "/images/locations/wien-2.jpg",
-      "/images/locations/wien-3.jpg",
-      "/images/locations/wien-4.jpg",
-      "/images/locations/wien-5.jpg",
-      "/images/locations/wien-6.jpg",
-    ],
-  },
-  {
-    key: "grazPuntigam",
-    image: "/images/locations/graz-puntigam.jpg",
-    bookingUrl: "https://www.timify.com/de/profile/skintastic-graz-puntigam",
-    gallery: [
-      "/images/locations/graz-puntigam.jpg",
-      "/images/locations/graz-puntigam-2.jpg",
-      "/images/locations/graz-puntigam-3.jpg",
-      "/images/locations/graz-puntigam-4.jpg",
-      "/images/locations/graz-puntigam-5.jpg",
-      "/images/locations/graz-puntigam-6.jpg",
-    ],
-  },
-  {
-    key: "grazCity",
-    image: "/images/locations/graz-city.jpg",
-    bookingUrl: "https://www.timify.com/de/profile/skintastic-graz-city",
-    gallery: [
-      "/images/locations/graz-city.jpg",
-      "/images/locations/graz-city-2.jpg",
-    ],
-  },
-  {
-    key: "stuttgart",
-    image: "/images/locations/stuttgart.jpg",
-    bookingUrl: "https://www.timify.com/de/profile/skintastic-stuttgart",
-    gallery: [
-      "/images/locations/stuttgart.jpg",
-      "/images/locations/stuttgart-2.jpg",
-      "/images/locations/stuttgart-3.jpg",
-      "/images/locations/stuttgart-4.jpg",
-      "/images/locations/stuttgart-5.jpg",
-      "/images/locations/stuttgart-6.jpg",
-    ],
-  },
-];
+import {
+  brandCentreCount,
+  externalHref,
+  joinNames,
+  locationsOf,
+  type Location,
+} from "@/config/locations";
 
 export function LocationsSection() {
   const t = useTranslations("locations");
+  const bookable = locationsOf("bookable");
+  const teasers = locationsOf("teaser");
+  const external = locationsOf("external");
+  const names = joinNames(
+    bookable.map((location) => location.name),
+    t("nameOr"),
+  );
   const [gallery, setGallery] = useState<string[] | null>(null);
   const [photo, setPhoto] = useState(0);
 
   return (
-    <section id="locations" className="bg-[#EFD5CA] pb-20 pt-10 md:pb-24 md:pt-14">
-      <div className="mx-auto max-w-[1600px] px-5 md:px-[50px]">
-        <div className="mb-10 text-center md:mb-14">
-          <p className="mb-2 text-[16px] uppercase tracking-[5px] text-[#0C0C0C]">
-            {t("subtitle")}
+    <section id="lokacije" className="scroll-mt-[68px] bg-[#f5e6de] xl:scroll-mt-[84px]">
+      <div className="mx-auto max-w-[1320px] px-4 py-9 xl:px-6 xl:py-20">
+        <div className="mb-4 text-center xl:mb-11">
+          <p className="mb-1 text-[11px] uppercase tracking-[3px] xl:mb-2 xl:text-[15px] xl:tracking-[5px]">
+            {t("eyebrow")}
           </p>
-          <h2 className="font-script text-[3.2rem] font-normal leading-none text-[#0C0C0C] md:text-[3.75rem]">
+          <h2 className="font-script text-[44px] font-normal leading-none xl:text-[60px]">
             {t("title")}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-5 md:gap-6">
-          {LOCATIONS.map((loc) => {
-            const extra = t(`items.${loc.key}.extra`);
+        <div className="flex flex-col gap-3 xl:grid xl:grid-cols-3 xl:gap-7">
+          {bookable.map((location) => (
+            <BookableCard
+              key={location.id}
+              location={location}
+              onGallery={() => {
+                if (!location.image) return;
+                setGallery([location.image]);
+                setPhoto(0);
+              }}
+            />
+          ))}
+          {teasers.map((location) => (
+            <TeaserCard key={location.id} location={location} names={names} />
+          ))}
+        </div>
 
-            return (
-              <article
-                key={loc.key}
-                className="flex w-full min-w-0 flex-col items-center text-center"
-              >
-                <a
-                  href={loc.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative mb-4 aspect-[3/4] w-full overflow-hidden transition-opacity hover:opacity-80"
-                >
-                  <Image
-                    src={loc.image}
-                    alt={t(`items.${loc.key}.name`)}
-                    fill
-                    className="object-cover"
-                    sizes="250px"
-                  />
-                </a>
-
-                <p className="text-[15px] leading-snug text-[#0C0C0C]">
-                  {t(`items.${loc.key}.address`)}
-                </p>
-                {extra ? (
-                  <p className="text-[15px] leading-snug text-[#0C0C0C]">{extra}</p>
-                ) : (
-                  <p className="text-[15px] leading-snug text-transparent">.</p>
-                )}
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    setGallery(loc.gallery);
-                    setPhoto(0);
-                  }}
-                  className="mt-3 inline-block rounded-full bg-[#88C9CD] px-6 py-2.5 text-[13px] font-black uppercase tracking-wide text-[#0C0C0C]"
-                >
-                  {t("gallery")}
-                </button>
-                <a
-                  href={loc.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 inline-block rounded-full bg-white px-5 py-2.5 text-[13px] font-black uppercase tracking-wide text-[#0C0C0C]"
-                >
-                  {t("prices")}
-                </a>
-              </article>
-            );
-          })}
+        <div
+          data-brand-strip
+          className="mt-[18px] flex flex-col gap-2.5 border-t border-[#d9b9ab] pt-3.5 xl:mt-14 xl:flex-row xl:flex-wrap xl:items-center xl:justify-between xl:gap-7 xl:pt-9"
+        >
+          <div className="min-w-0 xl:flex-1 xl:basis-80">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.12em] xl:mb-1.5 xl:text-[13px] xl:tracking-[0.14em]">
+              <span className="xl:hidden">
+                {t("familyShort", { count: brandCentreCount() })}
+              </span>
+              <span className="hidden xl:inline">{t("family")}</span>
+            </p>
+            <p className="hidden text-[22px] font-bold leading-snug xl:block">
+              {t("familyCount", { count: brandCentreCount() })}
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 xl:hidden">
+            {external.map((location) => (
+              <ExternalPill key={location.id} location={location} />
+            ))}
+          </div>
+          <div className="hidden flex-wrap gap-[22px] xl:flex">
+            {external.map((location) => (
+              <ExternalMark key={location.id} location={location} />
+            ))}
+          </div>
         </div>
       </div>
 
-      {gallery && (
+      {gallery ? (
         <Lightbox
           images={gallery}
           index={photo}
           onClose={() => setGallery(null)}
           onIndexChange={setPhoto}
         />
-      )}
+      ) : null}
     </section>
+  );
+}
+
+function BookableCard({ location, onGallery }: { location: Location; onGallery: () => void }) {
+  const t = useTranslations("locations");
+
+  return (
+    <article className="flex flex-col bg-white">
+      {location.image ? (
+        <div className="relative h-[170px] w-full xl:aspect-[4/3] xl:h-auto">
+          <Image src={location.image} alt={location.name} fill className="object-cover" sizes="(min-width: 1280px) 400px, 360px" />
+        </div>
+      ) : null}
+      <div className="flex flex-1 flex-col gap-1 p-3.5 xl:gap-2 xl:p-6">
+        <h3 className="text-[17px] font-extrabold xl:text-[22px]">{location.name}</h3>
+        <p className="text-[13px] xl:hidden">
+          {location.address}
+          {location.hours ? ` · ${location.hours}` : ""}
+        </p>
+        <p className="hidden text-[15px] xl:block">{location.address}</p>
+        {location.hours ? <p className="hidden text-[15px] xl:block">{location.hours}</p> : null}
+        <div className="hidden gap-4 pt-1 text-sm font-bold xl:flex">
+          <button type="button" onClick={onGallery} className="underline-offset-2 hover:underline">
+            {t("gallery")}
+          </button>
+          <a href="#kontakt">{t("directions")}</a>
+        </div>
+        <div className="flex-1" />
+        <div className="mt-2 flex gap-2 xl:mt-2.5 xl:block">
+          <BookButton
+            centar={location.slug}
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-full bg-[#0C0C0C] px-3 text-center text-xs font-extrabold uppercase tracking-[0.04em] text-white xl:h-auto xl:w-full xl:px-5 xl:py-[15px] xl:text-sm xl:tracking-[0.06em]"
+          >
+            {t("bookAt", { name: location.name })}
+          </BookButton>
+          <button
+            type="button"
+            onClick={onGallery}
+            className="inline-flex h-11 items-center rounded-full border-[1.5px] border-[#0C0C0C] px-3.5 text-xs font-extrabold uppercase xl:hidden"
+          >
+            {t("gallery")}
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function TeaserCard({ location, names }: { location: Location; names: string }) {
+  const t = useTranslations("locations");
+  const opening = location.openingLabel ? t("opening", { label: location.openingLabel }) : "";
+
+  return (
+    <article className="bg-white">
+      <div className="flex items-center gap-3 p-3.5 xl:hidden">
+        <div className="flex h-16 w-16 shrink-0 items-center justify-center bg-[#E4BDB0] px-1 text-center font-script text-sm leading-none">
+          {location.address}
+        </div>
+        <div className="min-w-0 flex-1">
+          <strong className="text-[15px]">{location.name}</strong>
+          {opening ? (
+            <>
+              <br />
+              <span className="text-xs text-[#3d3434]">{opening}</span>
+            </>
+          ) : null}
+        </div>
+        <span className="rounded-full bg-[#0C0C0C] px-[9px] py-1 text-[10px] font-extrabold uppercase tracking-[0.1em] text-white">
+          {t("soon")}
+        </span>
+      </div>
+
+      <div className="hidden xl:flex xl:h-full xl:flex-col">
+        <div className="relative flex aspect-[4/3] flex-col items-center justify-center gap-2 bg-[#E4BDB0]">
+          <span className="absolute left-3.5 top-3.5 rounded-full bg-[#0C0C0C] px-3 py-[5px] text-xs font-extrabold uppercase tracking-[0.1em] text-white">
+            {t("soon")}
+          </span>
+          <span className="font-script text-[46px] leading-none">{location.address}</span>
+          {opening ? (
+            <span className="text-sm font-bold uppercase tracking-[0.12em]">{opening}</span>
+          ) : null}
+        </div>
+        <div className="flex flex-1 flex-col gap-2 p-6">
+          <h3 className="text-[22px] font-extrabold">{location.name}</h3>
+          <p className="text-[15px] leading-normal text-[#3d3434]">{t("teaserBody", { names })}</p>
+          <div className="flex-1" />
+          <button
+            type="button"
+            disabled
+            className="mt-2.5 cursor-not-allowed rounded-full border-[1.5px] border-[#6b5f5f] bg-transparent px-5 py-3.5 text-sm font-extrabold uppercase tracking-[0.06em] text-[#4a4040]"
+          >
+            {t("bookSoon")}
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ExternalPill({ location }: { location: Location }) {
+  const href = externalHref(location);
+  const label = href ? `${location.name} ↗` : `${location.name} · ${location.url}`;
+  const className = "rounded-full border border-[#c9b3a8] px-3.5 py-[9px] text-[13px] font-bold";
+  if (!href) return <span className={className}>{label}</span>;
+  return (
+    <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+      {label}
+    </a>
+  );
+}
+
+function ExternalMark({ location }: { location: Location }) {
+  const href = externalHref(location);
+  const body = (
+    <>
+      {location.image ? (
+        <Image src={location.image} alt="" width={52} height={52} className="h-[52px] w-[52px] rounded-full object-cover" />
+      ) : null}
+      <span className="text-[15px] font-bold">
+        {location.name}
+        <br />
+        <span className="text-[13px] font-medium text-[#4a4040]">
+          {href ? "↗" : location.url}
+        </span>
+      </span>
+    </>
+  );
+  const className = "flex items-center gap-2.5 no-underline";
+  if (!href) return <span className={className}>{body}</span>;
+  return (
+    <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+      {body}
+    </a>
   );
 }

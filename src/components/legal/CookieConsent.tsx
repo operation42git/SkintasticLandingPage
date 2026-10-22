@@ -7,6 +7,7 @@ import { consentCookieDomain } from "@/config/booking";
 type CategoryKey = "functional" | "analytics" | "performance" | "ads";
 
 const COOKIE_NAME = "skt_consent";
+export const OPEN_CONSENT_EVENT = "skt:open-consent";
 const COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
 const NON_ESSENTIAL: CategoryKey[] = ["functional", "analytics", "performance", "ads"];
 
@@ -246,6 +247,12 @@ export function CookieConsent() {
     if (cats) setPending(cats);
     setOpen(true);
   }, []);
+
+  useEffect(() => {
+    const openBanner = () => handleReopen();
+    window.addEventListener(OPEN_CONSENT_EVENT, openBanner);
+    return () => window.removeEventListener(OPEN_CONSENT_EVENT, openBanner);
+  }, [handleReopen]);
 
   const toggleCat = useCallback((key: CategoryKey) => {
     setPending((prev) => ({ ...prev, [key]: !prev[key] }));

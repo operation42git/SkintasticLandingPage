@@ -4,13 +4,13 @@ export function GoetheQuoteSection() {
   const t = useTranslations("goetheQuote");
 
   return (
-    <section className="flex flex-col items-center justify-center bg-[#EFD5CA] px-6 py-16 md:py-[100px]">
-      <p className="font-script text-center text-[3.25rem] leading-[1.15] text-[#0C0C0C] md:text-[4.75rem] lg:text-[5.5rem]">
+    <section className="bg-[#E4BDB0] px-4 py-10 text-center xl:px-6 xl:py-16">
+      <p className="font-script text-[38px] leading-[1.1] text-[#0C0C0C] xl:text-[54px]">
         {t("line1")}
         <br />
         {t("line2")}
       </p>
-      <p className="mt-10 text-[14px] uppercase tracking-[5px] text-[#0C0C0C] md:mt-12">
+      <p className="mt-2.5 text-[11px] uppercase tracking-[4px] text-[#0C0C0C] xl:mt-3.5 xl:text-sm xl:tracking-[5px]">
         {t("author")}
       </p>
     </section>

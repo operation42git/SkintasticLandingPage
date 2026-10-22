@@ -15,58 +15,24 @@
     "call": "Call",
     "whatsapp": "WhatsApp",
     "main": "Main navigation",
-    "topBar": "Free consultation · Book online",
-    "submenu": {
-      "offers": [
-        { "label": "Laser underarms", "href": "#offers" },
-        { "label": "Full body for women", "href": "#offers" },
-        { "label": "Face and neck", "href": "#offers" },
-        { "label": "Superman package", "href": "#offers" },
-        { "label": "Beard shaping", "href": "#offers" },
-        { "label": "Full legs", "href": "#offers" },
-        { "label": "Full intimate area", "href": "#offers" },
-        { "label": "Beach package for women", "href": "#offers" }
-      ],
-      "locations": [
-        { "label": "Zagreb Zapad", "href": "#locations" },
-        { "label": "Wien 5. Bezirk", "href": "#locations" },
-        { "label": "Graz Süd Puntigam", "href": "#locations" },
-        { "label": "Graz City Jakominiplatz", "href": "#locations" },
-        { "label": "Stuttgart", "href": "#locations" }
-      ],
-      "booking": [
-        { "label": "Zagreb Zapad", "href": "#booking" },
-        { "label": "Wien 5. Bezirk", "href": "#booking" },
-        { "label": "Graz Süd Puntigam", "href": "#booking" },
-        { "label": "Graz City Jakominiplatz", "href": "#booking" },
-        { "label": "Stuttgart", "href": "#booking" }
-      ],
-      "about": [
-        { "label": "About us", "href": "#about" },
-        { "label": "Seal of quality", "href": "#certificates" },
-        { "label": "Reviews", "href": "#reviews" }
-      ],
-      "contact": [
-        { "label": "Privacy policy", "href": "datenschutz" },
-        { "label": "Impressum", "href": "impressum" }
-      ]
-    }
+    "topBar": "Free consultation · Book online"
   },
   "scroll": "Scroll",
   "scrollTop": "Back to top",
+  "meta": {
+    "title": "Laser hair removal in Zagreb | skintastic",
+    "description": "Laser hair removal in Zagreb. Mediostar diode laser, a free consultation and online booking."
+  },
   "hero": {
-    "slide1": {
-      "badge": "Hair-free day",
-      "title": "10% off laser hair removal",
-      "subtitle": "10% off laser hair removal every last Friday of the month! Book your appointment now!",
-      "cta": "Book now"
-    },
-    "slide2": {
-      "badge": "Special offer",
-      "title": "Underarm laser hair removal now 19,90",
-      "subtitle": "for women and men · Offer valid until 31.12.2026.",
-      "cta": "Book now"
-    }
+    "h1": "Laser hair removal in Zagreb",
+    "book": "Book an appointment",
+    "allOffers": "All offers",
+    "allOffersMobile": "See all offers ↓",
+    "trust1": "Free consultation",
+    "trust2": "Pay by card or cash",
+    "trustCentres": "{names}, Zagreb",
+    "nameJoin": " and ",
+    "dot": "Offer {n}"
   },
   "features": {
     "experts": {
@@ -89,89 +55,123 @@
   "offers": {
     "title": "Best offers",
     "subtitle": "Lastingly affordable",
-    "description": "Check all prices, packages and offers in our <bold>online booking calendar</bold>.",
-    "instead": "instead of",
-    "now": "now",
-    "bookNow": "Book now",
-    "selectLocation": "Choose a location",
-    "allCentres": "Prices & booking",
+    "book": "Book",
+    "amount": "{amount} €",
+    "prev": "Previous offers",
+    "next": "Next offers",
+    "range": "{from}–{to} / {count} offers",
+    "swipeHint": "Swipe for more · {count} offers",
+    "calendar": "All prices and packages are in the <link>online booking calendar</link>.",
     "items": {
       "axilla": {
-        "title": "Underarm laser hair removal",
-        "desc": "for men and women",
+        "title": "Underarms",
+        "desc": "For men and women",
         "price": "19,90",
-        "oldPrice": "49,99"
+        "oldPrice": "49,99",
+        "code": "alc_underarms"
       },
       "fullBody": {
         "title": "Full body (women) small",
-        "desc": "Full body without the back and abdomen (includes the line below the navel and the lower back)",
+        "desc": "Without the back and abdomen, includes the line below the navel",
         "price": "199,90",
-        "oldPrice": "299,90"
+        "oldPrice": "299,90",
+        "code": ""
       },
       "faceNeck": {
-        "title": "Face and neck laser hair removal",
-        "desc": "for silk-smooth skin",
+        "title": "Face and neck",
+        "desc": "For silk-smooth skin",
         "price": "49,90",
-        "oldPrice": "79,80"
+        "oldPrice": "79,80",
+        "code": ""
       },
       "superman": {
         "title": "Superman package",
-        "desc": "laser hair removal for the chest and abdomen",
+        "desc": "Chest and abdomen",
         "price": "99,90",
-        "oldPrice": "169,80"
+        "oldPrice": "169,80",
+        "code": ""
       },
       "legs": {
-        "title": "Leg laser hair removal",
-        "desc": "(including the foot and toes)",
+        "title": "Full legs",
+        "desc": "Including the foot and toes",
         "price": "99,90",
-        "oldPrice": ""
-      },
-      "intimate": {
-        "title": "Laser hair removal",
-        "desc": "Full intimate area (women)",
-        "price": "79,90",
-        "oldPrice": ""
+        "oldPrice": "",
+        "code": ""
       },
       "beach": {
         "title": "Beach package",
-        "desc": "laser hair removal of the bikini area, intimate area, legs and underarms",
+        "desc": "Bikini area, intimate area, legs and underarms",
         "price": "149,90",
-        "oldPrice": "249,70"
+        "oldPrice": "249,70",
+        "code": ""
       }
     }
   },
-  "locations": {
-    "title": "Locations",
-    "subtitle": "all our centres",
-    "gallery": "Gallery",
-    "prices": "Prices & booking",
-    "items": {
-      "zagreb": {
-        "name": "Zagreb Zapad",
-        "address": "Drage Gervaisa 1, 10090 Zagreb",
-        "extra": ""
+  "how": {
+    "eyebrow": "Lasting laser hair removal",
+    "title": "How it works",
+    "cta": "Book a free consultation",
+    "steps": {
+      "1": {
+        "title": "Free consultation",
+        "body": "We look at your skin and hair, answer your questions and agree a plan – individual and free of charge."
       },
-      "wien": {
-        "name": "Wien 5. Bezirk",
-        "address": "Wien 1050, Kliebergasse 7",
-        "extra": "5. Bezirk"
+      "2": {
+        "title": "6 to 8 treatments",
+        "body": "Spaced 4–6 weeks apart, because the laser acts on hairs in the growth phase. You pay only for each treatment."
       },
-      "grazPuntigam": {
-        "name": "Graz Süd Puntigam",
-        "address": "Graz 8055, Triester Straße 369",
-        "extra": "Puntigam"
-      },
-      "grazCity": {
-        "name": "Graz City Jakominiplatz",
-        "address": "Graz 8010, Jakominiplatz 12",
-        "extra": "Steirerhof, 3.Stock"
-      },
-      "stuttgart": {
-        "name": "Stuttgart",
-        "address": "Marktstraße 6, 70173 Stuttgart",
-        "extra": "Dr. med. Jens Neumann"
+      "3": {
+        "title": "Lastingly smooth skin",
+        "body": "No shaving and no waxing. An occasional refresh treatment when you need it."
       }
-    }
+    },
+    "mediostarAlt": "Mediostar diode laser",
+    "mediostarTitle": "Mediostar diode laser – Made in Germany",
+    "mediostarBody": "Asclepion, more than 45 years in medical lasers. A gentle, effective treatment with 360° ICE cooling.",
+    "chips": ["810 and 940 nm", "ICE cooling", "All skin types I–VI", "No UV radiation"]
+  },
+  "why": {
+    "eyebrow": "Skintastic laser | skin | body",
+    "title": "Why skintastic",
+    "features": {
+      "experts": {
+        "title": "Skin care specialists",
+        "body": "Experience and a careful approach – for results you can see."
+      },
+      "technology": {
+        "title": "Technology",
+        "body": "Proven high-end technology."
+      },
+      "hygiene": {
+        "title": "Hygiene",
+        "body": "Strict standards in every area."
+      },
+      "consultation": {
+        "title": "Free consultation",
+        "body": "Individual and free of charge."
+      }
+    },
+    "aboutEyebrow": "About us",
+    "about": "<strong>At skintastic, everything revolves around your skin.</strong> We specialise in laser hair removal with high-performance diode lasers – outstanding results at a fair price, in an elegant setting in Zagreb.",
+    "tagline": "Beauty that lasts.",
+    "certs": "skintastic brand certificates · Quality comes first",
+    "wifiAlt": "WIFI",
+    "wkoAlt": "Wirtschaftskammer Österreich"
+  },
+  "locations": {
+    "eyebrow": "Skintastic Zagreb",
+    "title": "Our locations",
+    "gallery": "Gallery",
+    "directions": "How to find us",
+    "bookAt": "Book at {name}",
+    "bookSoon": "Booking soon",
+    "soon": "Coming soon",
+    "opening": "Opening {label}",
+    "teaserBody": "A new centre opens soon. Until then, visit us at {names}.",
+    "nameOr": " or ",
+    "family": "Part of the skintastic family",
+    "familyCount": "{count} centres in 3 countries — the same technology and quality standard.",
+    "familyShort": "Part of the skintastic family · {count} centres in 3 countries"
   },
   "services": {
     "badge": "Our offer",
@@ -268,28 +268,24 @@
   "reviews": {
     "badge": "We are proud of it",
     "title": "What our community says",
-    "items": [
-      {
-        "headline": "I can only recommend it",
-        "text": "It was my third time there, and the atmosphere was really lovely and comfortable! I am looking forward to the next appointment!",
-        "author": "Jessi"
-      },
-      {
-        "headline": "Perfect atmosphere",
-        "text": "An excellent first appointment. The lady took the time to explain everything, and I knew what was happening the whole time. The atmosphere was perfect and I felt very comfortable. I am already looking forward to the next treatments.",
-        "author": "Diana"
-      },
-      {
-        "headline": "Very affordable",
-        "text": "Very kind, you feel comfortable, and the laser treatment is pleasant! I am looking forward to the next sessions. Do it now; the special packages are very affordable and really worth it.",
-        "author": "Michelle"
-      },
-      {
-        "headline": "Easy appointment booking",
-        "text": "The service was very kind and I felt very comfortable. Easy appointment booking online. I can already see results after the second visit :)",
-        "author": "Margit"
-      }
-    ]
+    "rating": "",
+    "count": "",
+    "countLabel": "{count} reviews on Google",
+    "google": "All reviews on Google ↗",
+    "googleUrl": "",
+    "items": []
+  },
+  "contact": {
+    "eyebrow": "We are here for you",
+    "title": "Contact",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "book": "Book an appointment",
+    "directions": "How to find us ↗",
+    "parking": "Parking: {value}"
   },
   "goetheQuote": {
     "line1": "Beauty is always",
@@ -319,11 +315,18 @@
     "cta": "Prices & booking"
   },
   "footer": {
-    "navigation": "Navigation",
+    "tagline": "Laser hair removal in Zagreb.",
+    "zagreb": "Zagreb",
+    "world": "skintastic worldwide",
     "legal": "Legal",
     "privacyPolicy": "Privacy policy",
     "imprint": "Impressum",
-    "rights": "All rights reserved."
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "soon": "coming soon",
+    "company": "DMT active solutions d.o.o.",
+    "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"
   },
   "cookieConsent": {
     "title": "Customise your consent settings",

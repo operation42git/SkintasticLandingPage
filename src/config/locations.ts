@@ -109,6 +109,24 @@ export function brandCentreCount(list: readonly Location[] = locations): number 
   return list.filter((location) => location.type === "bookable" || location.type === "external").length;
 }
 
+export function locationsOf(type: LocationType, list: readonly Location[] = locations): Location[] {
+  return list.filter((location) => location.type === type);
+}
+
+/** "A i B", or "A, B i C" when the last join word is passed in. */
+export function joinNames(names: readonly string[], lastJoin: string): string {
+  if (names.length <= 1) return names[0] ?? "";
+  if (names.length === 2) return `${names[0]}${lastJoin}${names[1]}`;
+  return `${names.slice(0, -1).join(", ")}${lastJoin}${names[names.length - 1]}`;
+}
+
+/** A bracket address is shown as text and is not sent to a map search. */
+export function mapsSearchHref(address: string): string | null {
+  const trimmed = address.trim();
+  if (!trimmed || trimmed.startsWith("[")) return null;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(trimmed)}`;
+}
+
 /** A bracket placeholder is shown as text and is not used as a link. */
 export function externalHref(location: Location): string | null {
   if (location.type !== "external") return null;

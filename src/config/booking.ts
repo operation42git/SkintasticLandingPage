@@ -37,6 +37,13 @@ export function consentCookieDomain(): string {
   return new URL(SITE_URL).hostname;
 }
 
+/** A bracket placeholder is not a catalogue code, so the link omits ?usluga=. */
+export function confirmedCode(code: string | undefined): string | undefined {
+  const trimmed = code?.trim() ?? "";
+  if (!trimmed || trimmed.startsWith("[")) return undefined;
+  return trimmed;
+}
+
 export function buildBookingHref(
   options: { centar?: string; usluga?: string } = {},
   pageSearch = "",
