@@ -17,7 +17,7 @@ export function MobileBookBar() {
   const t = useTranslations("nav");
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 1279px)");
+    const mq = window.matchMedia("(max-width: 1023px)");
     const apply = () => {
       document.body.style.paddingBottom = mq.matches ? "84px" : "";
     };
@@ -30,7 +30,7 @@ export function MobileBookBar() {
   }, []);
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[210] flex gap-2.5 bg-white px-4 pb-5 pt-3 shadow-[0_-6px_20px_rgba(0,0,0,0.12)] xl:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-[210] flex gap-2.5 bg-white px-4 pb-5 pt-3 shadow-[0_-6px_20px_rgba(0,0,0,0.12)] lg:hidden">
       <a
         href={contact.whatsappHref}
         aria-label={t("whatsapp")}

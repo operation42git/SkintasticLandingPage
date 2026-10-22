@@ -27,7 +27,7 @@ function MenuIcon() {
 }
 
 const bookClass =
-  "hidden items-center justify-center rounded-full bg-[#0C0C0C] px-[26px] py-[13px] text-[14px] font-extrabold uppercase tracking-[0.06em] text-white transition-opacity hover:opacity-90 xl:inline-flex";
+  "hidden items-center justify-center rounded-full bg-[#0C0C0C] px-[26px] py-[13px] text-[14px] font-extrabold uppercase tracking-[0.06em] text-white transition-opacity hover:opacity-90 lg:inline-flex";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -36,26 +36,26 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-[#88c9cd] px-3 py-[5px] text-center text-[11px] font-extrabold uppercase leading-tight tracking-[0.05em] text-[#0C0C0C] xl:px-4 xl:py-1.5 xl:text-[13px] xl:font-bold xl:tracking-[0.06em]">
+      <div className="bg-[#88c9cd] px-3 py-[5px] text-center text-[11px] font-extrabold uppercase leading-tight tracking-[0.05em] text-[#0C0C0C] lg:px-4 lg:py-1.5 lg:text-[13px] lg:font-bold lg:tracking-[0.06em]">
         {t("topBar")}
       </div>
 
-      <header className="sticky top-0 z-50 h-[60px] border-b border-[#eee3dc] bg-[rgba(255,255,255,0.97)] xl:h-[76px]">
-        <div className="mx-auto flex h-full max-w-[1320px] items-center gap-4 px-4 xl:gap-6 xl:px-6">
+      <header className="sticky top-0 z-50 h-[60px] border-b border-[#eee3dc] bg-[rgba(255,255,255,0.97)] lg:h-[76px]">
+        <div className="mx-auto flex h-full max-w-[1320px] items-center gap-4 px-4 lg:gap-6 lg:px-6">
           <Link href={`/${locale}`} className="shrink-0">
             <Image
               src="/images/logos/logo-icon.svg"
               alt="skintastic"
               width={131}
               height={32}
-              className="h-[26px] w-auto xl:h-8"
+              className="h-[26px] w-auto lg:h-8"
               priority
             />
           </Link>
 
           <nav
             aria-label={t("main")}
-            className="hidden min-w-0 flex-1 items-center justify-center gap-[26px] xl:flex"
+            className="hidden min-w-0 flex-1 items-center justify-center gap-[26px] lg:flex"
           >
             {MAIN_NAV.map((link) => (
               <a
@@ -68,25 +68,25 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="ml-auto flex items-center gap-1 xl:gap-4">
-            <span className="px-1.5 text-[12px] font-bold uppercase xl:hidden">{locale.toUpperCase()}</span>
+          <div className="ml-auto flex items-center gap-1 lg:gap-4">
+            <span className="px-1.5 text-[12px] font-bold uppercase lg:hidden">{locale.toUpperCase()}</span>
 
             <a
               href={contact.phoneHref}
-              className="hidden items-center gap-1.5 text-[14px] font-semibold text-[#0C0C0C] xl:flex"
+              className="hidden items-center gap-1.5 text-[14px] font-semibold text-[#0C0C0C] lg:flex"
             >
               <PhoneIcon className="h-[18px] w-[18px]" />
               {contact.phoneDisplay}
             </a>
 
-            <div className="hidden xl:block">
+            <div className="hidden lg:block">
               <LanguageSwitcher />
             </div>
 
             <a
               href={contact.phoneHref}
               aria-label={`${t("call")} ${contact.phoneDisplay}`}
-              className="flex h-11 w-11 items-center justify-center text-[#0C0C0C] xl:hidden"
+              className="flex h-11 w-11 items-center justify-center text-[#0C0C0C] lg:hidden"
             >
               <PhoneIcon className="h-[22px] w-[22px]" />
             </a>
@@ -96,7 +96,7 @@ export function Header() {
               onClick={() => setMenuOpen((open) => !open)}
               aria-label={t("menu")}
               aria-expanded={menuOpen}
-              className="flex h-11 w-11 items-center justify-center text-[#0C0C0C] xl:hidden"
+              className="flex h-11 w-11 items-center justify-center text-[#0C0C0C] lg:hidden"
             >
               <MenuIcon />
             </button>

@@ -3,7 +3,7 @@ import { BookButton } from "@/components/ui/BookButton";
 import { contact, emailHref, facebookHref, instagramHref } from "@/config/contact";
 import { locationsOf, mapsSearchHref } from "@/config/locations";
 
-const iconClass = "h-[22px] w-[22px] xl:h-[26px] xl:w-[26px]";
+const iconClass = "h-[22px] w-[22px] lg:h-[26px] lg:w-[26px]";
 
 function PhoneIcon() {
   return (
@@ -60,26 +60,26 @@ export function ContactSection() {
   ];
 
   return (
-    <section id="kontakt" className="scroll-mt-[68px] bg-[#f5f0e8] xl:scroll-mt-[84px]">
-      <div className="mx-auto flex max-w-[1320px] flex-col gap-4 px-4 py-9 xl:gap-9 xl:px-6 xl:py-20">
+    <section id="kontakt" className="scroll-mt-[68px] bg-[#f5f0e8] lg:scroll-mt-[84px]">
+      <div className="mx-auto flex max-w-[1320px] flex-col gap-4 px-4 py-9 lg:gap-9 lg:px-6 lg:py-20">
         <div className="text-center">
-          <p className="mb-1 text-[11px] uppercase tracking-[3px] xl:mb-2 xl:text-[15px] xl:tracking-[5px]">
+          <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
             {t("eyebrow")}
           </p>
-          <h2 className="font-script text-[44px] font-normal leading-none xl:text-[56px]">{t("title")}</h2>
+          <h2 className="font-script text-[44px] font-normal leading-none lg:text-[56px]">{t("title")}</h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 xl:grid-cols-5 xl:gap-3">
+        <div className="grid grid-cols-2 gap-2 lg:grid-cols-5 lg:gap-3">
           {channels.map((channel) => {
             const inner = (
               <>
                 {channel.icon}
-                <strong className="text-[13px] xl:text-[15px]">{t(channel.key)}</strong>
-                <span className="hidden text-[13px] xl:block">{channel.value}</span>
+                <strong className="text-[13px] lg:text-[15px]">{t(channel.key)}</strong>
+                <span className="hidden text-[13px] lg:block">{channel.value}</span>
               </>
             );
             const className =
-              "flex min-h-11 items-center gap-2.5 bg-white p-3 no-underline xl:flex-col xl:items-center xl:gap-1.5 xl:p-[18px] xl:text-center";
+              "flex min-h-11 items-center gap-2.5 bg-white p-3 no-underline lg:flex-col lg:items-center lg:gap-1.5 lg:p-[18px] lg:text-center";
             return channel.href ? (
               <a key={channel.key} href={channel.href} className={className}>
                 {inner}
@@ -92,19 +92,19 @@ export function ContactSection() {
           })}
         </div>
 
-        <p className="text-center text-[13px] xl:hidden">
+        <p className="text-center text-[13px] lg:hidden">
           {contact.phoneDisplay} · {contact.email}
         </p>
 
-        <div className="grid gap-2.5 xl:grid-cols-2 xl:gap-6">
+        <div className="grid gap-2.5 lg:grid-cols-2 lg:gap-6">
           {bookable.map((location) => {
             const maps = mapsSearchHref(location.address);
             const directionsClass =
-              "inline-flex items-center text-[13px] font-extrabold xl:rounded-full xl:border-[1.5px] xl:border-[#0C0C0C] xl:px-5 xl:py-[11px] xl:uppercase";
+              "inline-flex items-center text-[13px] font-extrabold lg:rounded-full lg:border-[1.5px] lg:border-[#0C0C0C] lg:px-5 lg:py-[11px] lg:uppercase";
             return (
-              <div key={location.id} className="flex flex-col gap-2 bg-white p-3.5 xl:gap-2.5 xl:p-7">
-                <h3 className="text-[15px] font-extrabold xl:text-xl">{location.name}</h3>
-                <p className="text-[13px] leading-normal xl:text-base xl:leading-relaxed">
+              <div key={location.id} className="flex flex-col gap-2 bg-white p-3.5 lg:gap-2.5 lg:p-7">
+                <h3 className="text-[15px] font-extrabold lg:text-xl">{location.name}</h3>
+                <p className="text-[13px] leading-normal lg:text-base lg:leading-relaxed">
                   {location.address}
                   {location.hours ? (
                     <>
@@ -114,8 +114,8 @@ export function ContactSection() {
                   ) : null}
                   {location.parking ? (
                     <>
-                      <br className="hidden xl:block" />
-                      <span className="xl:hidden"> · </span>
+                      <br className="hidden lg:block" />
+                      <span className="lg:hidden"> · </span>
                       {t("parking", { value: location.parking })}
                     </>
                   ) : null}

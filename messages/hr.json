@@ -27,9 +27,10 @@
     "h1": "Laserska epilacija u Zagrebu",
     "book": "Rezerviraj termin",
     "allOffers": "Sve ponude",
-    "allOffersMobile": "Pogledaj sve ponude ↓",
+    "allOffersMobile": "Sve ponude ↓",
     "trust1": "Besplatno savjetovanje",
     "trust2": "Plaćanje karticom ili gotovinom",
+    "trustMobile": "Besplatno savjetovanje · {centres}",
     "trustCentres": "{names}, Zagreb",
     "nameJoin": " i ",
     "dot": "Ponuda {n}"
@@ -268,12 +269,30 @@
   "reviews": {
     "badge": "Ponosni smo na to",
     "title": "Što naša zajednica kaže",
-    "rating": "",
-    "count": "",
+    "rating": "[OCJENA]",
+    "count": "[BROJ]",
     "countLabel": "{count} recenzija na Googleu",
     "google": "Sve recenzije na Googleu ↗",
-    "googleUrl": "",
-    "items": []
+    "googleUrl": "[URL GOOGLE]",
+    "instagram": "Prati nas na Instagramu ↗",
+    "instagramShort": "Instagram ↗",
+    "items": [
+      {
+        "text": "[Google recenzija klijentice — Skintastic Istok]",
+        "author": "[Ime]",
+        "centre": "Skintastic Istok"
+      },
+      {
+        "text": "[Google recenzija klijentice — Skintastic Zapad]",
+        "author": "[Ime]",
+        "centre": "Skintastic Zapad"
+      },
+      {
+        "text": "[Google recenzija klijentice — Skintastic Istok]",
+        "author": "[Ime]",
+        "centre": "Skintastic Istok"
+      }
+    ]
   },
   "contact": {
     "eyebrow": "Tu smo za tebe",

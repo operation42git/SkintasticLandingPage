@@ -27,9 +27,10 @@
     "h1": "Laser hair removal in Zagreb",
     "book": "Book an appointment",
     "allOffers": "All offers",
-    "allOffersMobile": "See all offers ↓",
+    "allOffersMobile": "All offers ↓",
     "trust1": "Free consultation",
     "trust2": "Pay by card or cash",
+    "trustMobile": "Free consultation · {centres}",
     "trustCentres": "{names}, Zagreb",
     "nameJoin": " and ",
     "dot": "Offer {n}"
@@ -268,12 +269,30 @@
   "reviews": {
     "badge": "We are proud of it",
     "title": "What our community says",
-    "rating": "",
-    "count": "",
+    "rating": "[RATING]",
+    "count": "[COUNT]",
     "countLabel": "{count} reviews on Google",
     "google": "All reviews on Google ↗",
-    "googleUrl": "",
-    "items": []
+    "googleUrl": "[GOOGLE URL]",
+    "instagram": "Follow us on Instagram ↗",
+    "instagramShort": "Instagram ↗",
+    "items": [
+      {
+        "text": "[Google review — Skintastic Istok]",
+        "author": "[Name]",
+        "centre": "Skintastic Istok"
+      },
+      {
+        "text": "[Google review — Skintastic Zapad]",
+        "author": "[Name]",
+        "centre": "Skintastic Zapad"
+      },
+      {
+        "text": "[Google review — Skintastic Istok]",
+        "author": "[Name]",
+        "centre": "Skintastic Istok"
+      }
+    ]
   },
   "contact": {
     "eyebrow": "We are here for you",

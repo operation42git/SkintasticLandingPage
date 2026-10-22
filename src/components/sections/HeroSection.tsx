@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { confirmedCode } from "@/config/booking";
 import { visibleHeroOffers, type HeroOffer } from "@/config/hero-offers";
-import { joinNames, locationsOf } from "@/config/locations";
+import { locationsOf } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
 
 const VIDEOS = ["/images/hero/hero-video-1.mp4", "/images/hero/hero-video-3.mp4"];
@@ -12,6 +12,12 @@ const POSTER = "/images/hero/hero-video-1-poster.jpg";
 
 function offerText(offer: HeroOffer, locale: string) {
   return locale === "en" ? offer.texts.en : offer.texts.hr;
+}
+
+function shortCentreNames(locale: string, joinWord: string) {
+  return locationsOf("bookable")
+    .map((location) => location.name.replace(/^Skintastic\s/, ""))
+    .join(joinWord);
 }
 
 export function HeroSection() {
@@ -26,10 +32,7 @@ export function HeroSection() {
 
   const offer = offers[Math.min(offerIndex, Math.max(offers.length - 1, 0))];
   const copy = offer ? offerText(offer, locale) : null;
-  const centres = joinNames(
-    locationsOf("bookable").map((location) => location.name),
-    t("nameJoin"),
-  );
+  const mobileCentres = shortCentreNames(locale, t("nameJoin"));
 
   useEffect(() => {
     const video = videoRef.current;
@@ -59,74 +62,78 @@ export function HeroSection() {
   }, [offers.length, paused, reduceMotion]);
 
   return (
-    <section className="relative flex min-h-[620px] items-end overflow-hidden bg-[#1a1516] xl:min-h-[700px]">
-      <video
-        ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover object-[35%_center] xl:object-center"
-        muted
-        playsInline
-        autoPlay
-        poster={POSTER}
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(180deg, rgba(26,21,22,.15) 0%, rgba(26,21,22,0) 35%, rgba(26,21,22,.78) 100%)",
-        }}
-      />
+    <section className="bg-[#EFD5CA]">
+      <div className="mx-auto flex max-w-[1440px] flex-col lg:min-h-[600px] lg:flex-row lg:items-stretch">
+        <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1a1516] lg:order-2 lg:aspect-auto lg:min-h-[600px] lg:flex-[1.3] lg:basis-[560px]">
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            muted
+            playsInline
+            autoPlay
+            poster={POSTER}
+            aria-hidden
+          />
+        </div>
 
-      <div
-        className="relative mx-auto w-full max-w-[1320px] px-5 pb-9 xl:px-6 xl:pb-[72px]"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPaused(false);
-        }}
-      >
-        <div className="flex max-w-[680px] flex-col items-start gap-3.5 xl:gap-5">
+        <div
+          className="flex flex-col items-start gap-1 px-5 py-3 pb-4 lg:order-1 lg:flex-1 lg:basis-[520px] lg:justify-center lg:gap-5 lg:px-12 lg:py-16 lg:pl-[max(24px,calc((100vw-1320px)/2))] lg:pr-12"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocus={() => setPaused(true)}
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPaused(false);
+          }}
+        >
           {copy ? (
-            <span className="rounded-full bg-[#c9a96e] px-3 py-[5px] text-[11px] font-extrabold uppercase tracking-[0.14em] text-[#0C0C0C] xl:px-4 xl:py-1.5 xl:text-xs xl:tracking-[0.15em]">
+            <span className="rounded-full bg-[#c9a96e] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#0C0C0C] lg:px-4 lg:py-1.5 lg:text-xs lg:tracking-[0.15em]">
               {copy.badge}
             </span>
           ) : null}
 
-          <h1 className="text-[36px] font-extrabold leading-[1.08] text-white xl:text-[60px] xl:leading-[1.05]">
+          <h1 className="text-[30px] font-extrabold leading-[1.1] text-[#0C0C0C] lg:text-[54px] lg:leading-[1.05]">
             {t("h1")}
           </h1>
 
           {copy ? (
-            <p className="text-base leading-normal text-white/90 xl:text-xl">
+            <p className="text-[15px] leading-[1.45] text-[#3d3434] lg:text-[19px] lg:leading-normal">
               {copy.title} {copy.subtitle}
             </p>
           ) : null}
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="hidden flex-wrap items-center gap-3 lg:flex">
             {offer ? (
               <BookButton
                 usluga={confirmedCode(offer.code)}
-                className="hidden items-center justify-center rounded-full bg-white px-[34px] py-[18px] text-base font-extrabold uppercase tracking-[0.05em] text-[#0C0C0C] xl:inline-flex"
+                className="inline-flex items-center justify-center rounded-full bg-[#0C0C0C] px-8 py-[17px] text-[15px] font-extrabold uppercase tracking-[0.05em] text-white"
               >
                 {t("book")}
               </BookButton>
             ) : null}
             <a
               href="#ponude"
-              className="hidden rounded-full border-[1.5px] border-white/85 px-[30px] py-4 text-base font-bold uppercase tracking-[0.05em] text-white xl:inline-block"
+              className="rounded-full border-[1.5px] border-[#0C0C0C] px-7 py-[15px] text-[15px] font-bold uppercase tracking-[0.05em] text-[#0C0C0C]"
             >
               {t("allOffers")}
             </a>
-            <a href="#ponude" className="text-sm font-bold text-white xl:hidden">
-              {t("allOffersMobile")}
-            </a>
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-1 text-xs font-semibold text-white xl:gap-[22px] xl:pt-2 xl:text-sm">
+          <div className="flex flex-wrap items-center gap-3.5 text-xs font-semibold text-[#0C0C0C] lg:hidden">
+            <a href="#ponude" className="text-sm font-extrabold">
+              {t("allOffersMobile")}
+            </a>
+            <span>{t("trustMobile", { centres: mobileCentres })}</span>
+          </div>
+
+          <div className="hidden flex-wrap gap-5 pt-1 text-sm font-semibold text-[#0C0C0C] lg:flex">
             <span>{t("trust1")}</span>
             <span>{t("trust2")}</span>
-            <span>{t("trustCentres", { names: centres })}</span>
+            <span>
+              {locationsOf("bookable")
+                .map((location) => location.name)
+                .join(t("nameJoin"))}
+              , Zagreb
+            </span>
           </div>
 
           {offers.length > 1 ? (
@@ -138,7 +145,7 @@ export function HeroSection() {
                   aria-label={t("dot", { n: index + 1 })}
                   onClick={() => setOfferIndex(index)}
                   className={`rounded-full ${
-                    index === offerIndex ? "h-2 w-8 bg-[#c9a96e]" : "h-2 w-2 bg-white/40"
+                    index === offerIndex ? "h-2 w-8 bg-[#c9a96e]" : "h-2 w-2 bg-[#0C0C0C]/25"
                   }`}
                 />
               ))}
