@@ -1,6 +1,7 @@
 # Brief · landing The Zagreb page sells Zagreb and sends every "Rezerviraj" straight into booking
 
-> **Accepted by Ivan Tomić, 2026-10-21; the condensed structure (v2) accepted 2026-10-22.** Written by
+> **Accepted by Ivan Tomić, 2026-10-21; the condensed structure (v2) accepted 2026-10-22; hero, reviews and
+> breakpoint changes after the first build, 2026-10-22 (run 3 of the Cursor prompts).** Written by
 > the landing-page analysis conversation. The values still marked "the person gives" follow **Values
 > not given yet** (under the Values table).
 
@@ -50,7 +51,7 @@ touched by this brief (see Out of scope). End your report with the output of
 - **Najbolje ponude:** the six offers in the mockup's script (Pazusi, Cijelo tijelo (žena) small,
   Lice i vrat, Superman paket, Noge kompletne, Beach paket), images from `public/images/services/`;
   today's "Intimno kompletno" card is not shown.
-- **Reviews:** hidden until real Zagreb reviews are given (Values); the mockup shows the layout.
+- **Reviews:** always shown, as the mockup (Decided).
 - **Images:** the mockup's `/_blob/…` images are replaced by the matching files in `public/images/`
   (see the mockup `README.md`).
 
@@ -107,6 +108,19 @@ calendar from any "Rezerviraj" in one click, in the same tab.
     "Ljepota koja traje." and the Goethe quote band. **Dropped:** the Sharon Stone quote, the
     video-logo band.
 - **Hero: the videos and the text only** (the person, 2026-10-22). No image with printed text.
+- **Hero text never sits on the video** (the person, 2026-10-22, after the first build: on the phone the
+  text was covered by the book bar, and the video showed only a cropped face). The two videos frame
+  their faces on opposite sides, so text over them always covers one face.
+  - **Desktop (≥ 1024 px):** two columns, as `desktop.html`: the text on the peach background on the
+    left, the video on the right filling its column (at least 600 px high), showing most of the frame.
+  - **Phone (< 1024 px):** the video on top at 4:3 (390 × 292 px at 390 px), the text below it on the
+    peach background, as `mobile.html`: H1 30 px, offer line 15 px, "Sve ponude ↓" and one trust line.
+    No hero text under the fixed book bar at 390 × 664 px.
+- **Phone layout below 1024 px, desktop layout from 1024 px** (the person, 2026-10-22). The first build
+  switched at 1280 px (`xl:`), so laptops and tablets got the phone layout and its book bar.
+- **Ponosni smo na to / Što naša zajednica kaže is always shown** (the person, 2026-10-22, after the
+  first build hid it): rating, count, three review cards, "Sve recenzije na Googleu ↗" and "Prati nas
+  na Instagramu ↗". Until the reviews are given they show as bracket placeholders (Values not given yet).
 - **Najbolje ponude is a compact carousel** (the person, 2026-10-22): desktop shows 4 cards in one
   row with ‹ › arrows and "1–4 / 6 ponuda"; the phone swipes sideways with the next card peeking in.
   No autoplay.
@@ -178,7 +192,7 @@ against `main` at `9360318`.
 | offer prices and old prices | money | € with comma | — | old price may be empty | the person gives; today's values in `messages/hr.json` until then |
 | Kako djeluje texts (hr) | text | — | as `desktop.html`: the three steps, "Mediostar diodni laser – Made in Germany", the four chips (810 i 940 nm, ICE-hlađenje, Svi tipovi kože I–VI, Bez UV-zračenja) | — | mockup; facts from today's `services`, `technology` and `faq` texts |
 | Zašto skintastic texts (hr) | text | — | as `desktop.html`: the four features, the O nama paragraph, "Ljepota koja traje.", "Certifikati skintastic brenda · Kvaliteta je na prvom mjestu" | — | mockup |
-| Google rating, count, review texts | text | real Zagreb reviews only, up to 3 shown | — | section hidden if empty | the person gives |
+| Google rating, count, review texts, the two Google profile URLs | text | real Zagreb reviews only, 3 shown (text, first name, centre) | — | bracket placeholders until given; the section is always shown | the person gives |
 | H1 (hr) | text | — | "Laserska epilacija u Zagrebu" | — | canvas |
 | book button (hr) | text | — | "Rezerviraj termin" (header, hero, contact, mobile bar); "Rezerviraj" (offer cards); "Rezerviraj u {name}" (location cards); "Rezerviraj besplatno savjetovanje" (Kako djeluje) | — | mockup |
 | teaser texts (hr) | text | disabled button | "Rezervacije uskoro"; badge "Uskoro"; "Novi centar uskoro otvara vrata. Do tada nas posjeti u {bookable names}." | — | mockup |
@@ -199,7 +213,8 @@ The agent picks none of these. A value this brief needs that is not in the table
 - **An offer without a confirmed `code`** links to booking without `?usluga=`; the report lists it.
   The same for the free consultation (`?usluga=` once its code is confirmed).
 - **Offer prices:** today's values in `messages/hr.json`.
-- **Reviews:** none given, so the section is hidden.
+- **Reviews:** none given yet, so `[OCJENA]`, `[BROJ]`, `[RECENZIJA]`, `[IME]` and `[URL GOOGLE]`
+  placeholders; the section stays on the page.
 - **Texts** (`en` texts, page `<title>` and description): the agent drafts them within the limits of
   the row; the report lists every drafted key for the person to review.
 - The page is not published while a bracket placeholder is left; every run's report lists them all.
@@ -215,7 +230,8 @@ The agent picks none of these. A value this brief needs that is not in the table
 3. Hero (the person, 2026-10-21 and 2026-10-22):
    - **Background:** today's two videos of the women's faces (`hero-video-1.mp4`, `hero-video-3.mp4`),
      playing in turn as now, on desktop and mobile; compressed versions; `hero-video-1-poster.jpg`
-     while they load; a dark fade at the bottom so the text reads. No image with printed text.
+     while they load. Layout per Decided ("Hero text never sits on the video"): beside the video on
+     desktop, below it on the phone; no dark fade needed. No image with printed text.
    - **Fixed:** the H1 "Laserska epilacija u Zagrebu", the trust row, "Sve ponude" (`#ponude`).
    - **Hero offers:** a list in `src/config/hero-offers.ts` (badge, title, subtitle, `code`, optional
      `validUntil`). Each shows its texts and one "Rezerviraj termin" linking to booking with
@@ -233,8 +249,9 @@ The agent picks none of these. A value this brief needs that is not in the table
 6. `WhySection` (Zašto skintastic) as the mockup: the four feature icons (`public/images/icons/`),
    then the O nama box (left) and `public/images/about/frau-links.png` (right, cropped around the
    woman) on desktop, photo above text on the phone; tagline; the two certificate logos.
-7. Reviews ("Ponosni smo na to / Što naša zajednica kaže"): rating, count, up to three review cards
-   (a swipe row on the phone), "Sve recenzije na Googleu ↗"; hidden while no review is given.
+7. Reviews ("Ponosni smo na to / Što naša zajednica kaže"): rating, count, three review cards (a swipe
+   row on the phone), "Sve recenzije na Googleu ↗", "Prati nas na Instagramu ↗"; always shown, with
+   placeholders until given.
 8. Locations: "Skintastic Zagreb / Naše lokacije", the `bookable` cards (photo, address, hours,
    Galerija, Kako do nas, "Rezerviraj u {name}"), the `teaser` card (a compact row on the phone), and
    the brand strip for `external` ones.
@@ -270,15 +287,19 @@ The agent picks none of these. A value this brief needs that is not in the table
 7. **The mobile bar** is visible at 390 px on every scroll position. Shown.
 8. **The hero** plays both videos at 390 px and 1440 px with one offer and no dots, and no image with
    printed text appears; adding a second offer to the config (and nothing else) makes the text rotate
-   with dots. Shown.
+   with dots. No hero text overlaps the video at 390 px or 1440 px, and at 390 × 664 px every hero
+   line is above the book bar. Shown.
 9. **Najbolje ponude** shows 4 cards in one row at 1440 px and moves with the arrows; at 390 px it
    swipes; nothing moves by itself. Shown.
 10. **Zašto skintastic** at 1440 px shows the box on the left and the whole face of the woman on the
     right, not covered. Shown.
-11. **The page matches the mockup** section by section at 1440 px (`desktop.html`) and 390 px
+11. **The reviews section** is on the page at 390 px and 1440 px (with placeholders). Shown.
+12. **At 1024 px** the page uses the desktop layout (no book bar, nav visible); at 1023 px the phone
+    layout. Shown.
+13. **The page matches the mockup** section by section at 1440 px (`desktop.html`) and 390 px
     (`mobile.html`), except what the **Mockup** section lists. Shown (screenshots next to the mockup's
     sections).
-12. **The diff** lists only the Touches paths. Listed.
+14. **The diff** lists only the Touches paths. Listed.
 
 **How a person checks it**
 1. Open the page on a phone: the header says Zagreb, "Rezerviraj termin" is always visible.

@@ -6,8 +6,10 @@ it: what & how much → does it work → can I trust you → what do others say 
 reach you. "Rezerviraj" repeats after each answer; the brand story no longer repeats.
 
 Hero
-Only the video (the faces) with the text over it. Today's poster images already have "Posebna ponuda /
-Pazusi" printed in them, so they are not used. The mockup loops one video; the page plays both in turn.
+The video and the text, never the text on the video: desktop has the text on peach on the left and the
+video on the right; the phone has the video on top (4:3) and the text below. Today's poster images have
+"Posebna ponuda / Pazusi" printed in them, so they are not used. The mockup loops one video; the page
+plays both in turn.
 
 Ponude — compact carousel
 Desktop: 4 smaller cards in a row with ‹ › arrows, no autoplay. Phone: swipe, the next card peeks in.
@@ -24,7 +26,8 @@ photo of the woman on the right (two columns, the box never covers her). Phone: 
 Certificates are the brand's (WIFI, WKO), shown as "Certifikati skintastic brenda".
 
 Ponosni smo na to (reviews)
-Kept, with real Google reviews of the Zagreb centres: rating, count, three quotes, link to all reviews.
+Always shown, with real Google reviews of the Zagreb centres: rating, count, three quotes, links to all
+reviews and to Instagram.
 
 Kontakt
 Every channel in one row: phone and WhatsApp (+385 95 757 5344), e-mail, Instagram, Facebook. One block

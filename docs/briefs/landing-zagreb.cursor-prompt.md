@@ -56,6 +56,28 @@ at 1440 px and 390 px on the built out/ folder. Commit on this branch; do not pu
 report from AGENTS.md, plus every placeholder left.
 ```
 
+## Run 3 · fixes after the first build (2026-10-22)
+
+```
+Read AGENTS.md, then docs/briefs/landing-zagreb.md in full. Runs 1 and 2 are committed on the local
+branch `cursor/landing-zagreb`. First bring in the updated brief and mockup:
+`git fetch origin && git merge origin/claude/admiring-cray-d2w5jh` (docs only). Do not merge into or
+push to main. Change only these parts, as the brief's Decided, Build and Done when now say:
+
+- Hero: the text never sits on the video. Desktop (>= 1024 px): text on the peach background on the
+  left, the video on the right. Phone (< 1024 px): the video on top at 4:3, the text below on peach,
+  H1 30 px; nothing under the book bar at 390 x 664. Remove the dark fade. See desktop.html and
+  mobile.html in docs/briefs/landing-zagreb/mockup/.
+- Breakpoint: every phone/desktop switch (header, MobileBookBar, hero, offers carousel, Why, contact)
+  moves from xl (1280 px) to lg (1024 px).
+- ReviewsSection is always shown: rating, count, three cards, "Sve recenzije na Googleu" and
+  "Prati nas na Instagramu", with bracket placeholders until the reviews are given.
+
+Run npm run lint and npm run build. Check Done when 8, 11, 12, 13 and 14 at 390 x 664, 1023, 1024 and
+1440 px on the built out/ folder. Commit on this branch; do not push. End with the report from
+AGENTS.md, plus every placeholder left.
+```
+
 ## Commands (Cursor terminal)
 
 Once, before run 1:
