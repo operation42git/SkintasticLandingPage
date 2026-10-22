@@ -13,7 +13,6 @@
 @font-face{font-family:"Lumios";src:url("/_blob/d845fb03553c508e2572b5fd904a9495") format("woff2");font-display:swap}
 body{margin:0}
 a{color:#0C0C0C}a:hover{color:#5a5050}
-.m-shade{background-image:linear-gradient(180deg,rgba(26,21,22,.1) 0%,rgba(26,21,22,0) 30%,rgba(26,21,22,.82) 100%)}
 .m-swipe{scrollbar-width:none}
 .m-swipe::-webkit-scrollbar{display:none}
 </style>
@@ -35,17 +34,18 @@ a{color:#0C0C0C}a:hover{color:#5a5050}
     </div>
   </header>
 
-  <!-- Hero -->
-  <section style="position: relative; height: 620px; display: flex; align-items: flex-end; overflow: hidden; background: #1a1516;">
-    <video src="/_blob/1fff21732a015d359e16efb1fabf11fd" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 35% center;"></video>
-    <div class="m-shade" style="position: absolute; inset: 0;"></div>
-    <div style="position: relative; padding: 0 20px 36px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start;">
-      <span style="background: #c9a96e; color: #0C0C0C; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px;">Ponuda do 31.12.2026.</span>
-      <h1 style="margin: 0; color: #ffffff; font-size: 36px; line-height: 1.08; font-weight: 800;">Laserska epilacija u Zagrebu</h1>
-      <p style="margin: 0; color: rgba(255,255,255,0.92); font-size: 16px; line-height: 1.5;">Pazusi za žene i muškarce sada <strong style="color: #ffffff;">19,90 €</strong> umjesto 49,99 €.</p>
-      <a href="#m-ponude" style="color: #ffffff; font-size: 14px; font-weight: 700;">Pogledaj sve ponude ↓</a>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; color: #ffffff; font-size: 12px; font-weight: 600;">
-        <span>Besplatno savjetovanje</span><span>·</span><span>Istok i Zapad, Zagreb</span>
+  <!-- Hero: video on top (4:3, most of the frame), text below on peach -->
+  <section style="background: #EFD5CA;">
+    <div style="position: relative; width: 390px; height: 292px; overflow: hidden; background: #1a1516;">
+      <video src="/_blob/1fff21732a015d359e16efb1fabf11fd" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+    </div>
+    <div style="padding: 20px 20px 26px; display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+      <span style="background: #c9a96e; color: #0C0C0C; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px;">Ponuda do 31.12.2026.</span>
+      <h1 style="margin: 0; color: #0C0C0C; font-size: 30px; line-height: 1.1; font-weight: 800;">Laserska epilacija u Zagrebu</h1>
+      <p style="margin: 0; color: #3d3434; font-size: 15px; line-height: 1.45;">Pazusi za žene i muškarce sada <strong style="color: #0C0C0C;">19,90 €</strong> umjesto 49,99 €.</p>
+      <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 12px; font-weight: 600;">
+        <a href="#m-ponude" style="font-size: 14px; font-weight: 800;">Sve ponude ↓</a>
+        <span>Besplatno savjetovanje · Istok i Zapad</span>
       </div>
     </div>
   </section>
@@ -131,7 +131,7 @@ a{color:#0C0C0C}a:hover{color:#5a5050}
       <figure style="flex: 0 0 290px; scroll-snap-align: start; margin: 0; background: #ffffff; padding: 18px; display: flex; flex-direction: column; gap: 10px;"><span style="letter-spacing: 0.2em;">★★★★★</span><blockquote style="margin: 0; font-size: 14px; line-height: 1.55;">„[Google recenzija klijentice — Skintastic Zapad]“</blockquote><figcaption style="font-size: 13px; font-weight: 700;">[Ime] · Skintastic Zapad</figcaption></figure>
       <figure style="flex: 0 0 290px; scroll-snap-align: start; margin: 0; background: #ffffff; padding: 18px; display: flex; flex-direction: column; gap: 10px;"><span style="letter-spacing: 0.2em;">★★★★★</span><blockquote style="margin: 0; font-size: 14px; line-height: 1.55;">„[Google recenzija klijentice — Skintastic Istok]“</blockquote><figcaption style="font-size: 13px; font-weight: 700;">[Ime] · Skintastic Istok</figcaption></figure>
     </div>
-    <p style="margin: 12px 0 0; text-align: center;"><a href="#" style="font-size: 13px; font-weight: 700;">Sve recenzije na Googleu ↗</a></p>
+    <p style="margin: 12px 0 0; display: flex; gap: 18px; justify-content: center;"><a href="#" style="font-size: 13px; font-weight: 700;">Sve recenzije na Googleu ↗</a><a href="#" style="font-size: 13px; font-weight: 700;">Instagram ↗</a></p>
   </section>
 
   <!-- Lokacije -->
