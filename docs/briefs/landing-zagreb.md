@@ -3,14 +3,16 @@
 > **Accepted by Ivan Tomić, 2026-10-21.** Written by the landing-page analysis conversation. The
 > values still marked "the person gives" follow **Values not given yet** (under the Values table).
 
-**Canvas:** https://claude.ai/artifact/DCgUZ5TcHXTgG1rv8daDpp ("Skintastic Zagreb landing mockup").
-Boards: `Desktop — new landing page`, the three mobile boards, `Location types — spec`, `Booking flow —
-before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[TELEFON]`,
-`[RADNO VRIJEME]`, `[OCJENA]`) are placeholders, not values.
+**Mockup:** `docs/briefs/landing-zagreb/mockup/` (copied from the canvas
+https://claude.ai/artifact/DCgUZ5TcHXTgG1rv8daDpp on 2026-10-22; its `README.md` says how to read
+it). **The page is built as `desktop.html` and the mobile boards show it**: the sections, their order,
+texts, layout and styles, except where the **Mockup** section below or **Decided** says otherwise.
+Values on the boards in brackets (`[TELEFON]`, `[RADNO VRIJEME]`, `[OCJENA]`) are placeholders, not
+values.
 
 ## Touches
 
-- `src/app/[locale]/page.tsx` (section order only)
+- `src/app/[locale]/page.tsx` (the sections and their order only)
 - `src/app/[locale]/layout.tsx` (`metadata` and the locale type only)
 - `src/i18n/routing.ts` (`locales` only: `["hr", "en"]`, O1), `src/i18n/request.ts` (the locale type only)
 - `src/components/layout/LanguageSwitcher.tsx` (labels only, O1)
@@ -20,9 +22,11 @@ before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[
   `ServicesSection.tsx`, `TechnologySection.tsx`, `ReviewsSection.tsx`, `FaqSection.tsx`
 - new: `src/config/locations.ts`, `src/config/booking.ts`, `src/config/hero-offers.ts`, `src/components/sections/ContactSection.tsx`,
   `src/components/ui/BookButton.tsx`, `src/components/layout/MobileBookBar.tsx`
-- removed from the page (files may stay): `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection`
+- removed from the page (files may stay): `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection`,
+  `AboutSection`, `CertificatesSection` (not in the mockup)
 - `src/components/legal/CookieConsent.tsx` (storage only: the `skt_consent` cookie replaces
-  `localStorage`, ADR-0047; texts and layout unchanged)
+  `localStorage`, ADR-0047; and the footer's "Postavke kolačića" link opens the banner the way its
+  existing reopen button does; texts and layout unchanged)
 - `messages/hr.json`; new `messages/en.json`; `messages/de.json` removed (O1)
 - `public/images/hero/` (remove the unused `hero-video-2.mp4`, the white fabric clip; add compressed
   versions of `hero-video-1.mp4` and `hero-video-3.mp4`, which stay)
@@ -30,6 +34,32 @@ before vs after`, `Clickable booking flow`. Values on the boards in brackets (`[
 Changing any other file: stop and ask. The legal pages (`impressum/`, `datenschutz/`) are **not**
 touched by this brief (see Out of scope). End your report with the
 output of `git diff --stat origin/main...HEAD`.
+
+**Mockup** (where the build differs from `desktop.html`; the person, 2026-10-21 and 2026-10-22)
+- **Page order:** top bar, header, hero, features (4), offers, Naše lokacije with the brand strip,
+  services, technology, reviews, FAQ, contact, footer. Nothing else on the page.
+- **Centres:** the mockup's "Zagreb Zapad" card (Drage Gervaisa 1) is **Skintastic Istok**; the
+  mockup's bookable "Zagreb Istok" variant (the `istokStatus: bookable` tweak) is the layout of
+  **Skintastic Zapad**; "Zagreb Jug" is **Skintastic Jug – Velika Gorica**. Both bookable centres get
+  the full card; their buttons read "Rezerviraj u {name}". The teaser line reads "Novi centar uskoro
+  otvara vrata. Do tada nas posjeti u Skintastic Istok ili Zapad." (built from the `bookable` names).
+- **Hero:** both videos on desktop and mobile (not the poster the mobile board's note mentions), see
+  Build 3. Badge, offer line and price come from `src/config/hero-offers.ts`; today: badge "Posebna
+  ponuda do 31.12.2026.", text "Pazusi za žene i muškarce sada 19,90 € umjesto 49,99 €. Mediostar
+  diodni laser, besplatno savjetovanje." Trust row as the mockup, except: the Google rating item is
+  left out until the rating is given; the address item lists the `bookable` centres' names.
+- **Offers:** the six offers in `desktop.html` (its script: Pazusi, Cijelo tijelo (žena) small, Lice i
+  vrat, Superman paket, Noge kompletne, Beach paket), images from `public/images/services/`; today's
+  "Intimno kompletno" card is not shown. Button "Rezerviraj ovaj tretman".
+- **Services:** the button "Rezerviraj besplatno savjetovanje" is a booking link (`?usluga=consult`
+  once that code is confirmed; until then without `?usluga=`).
+- **Reviews:** hidden until real Zagreb reviews are given (Values).
+- **Contact:** one block per `bookable` centre (the mockup draws one); e-mail and parking lines are
+  placeholders until given.
+- **Footer:** as the mockup, except "skintastic u svijetu" lists each `external` franchise by name and
+  its own site (O5), not "Austrija" / "Njemačka". The company line keeps the placeholder
+  `[NAZIV FRANŠIZE d.o.o.]` until given.
+- **Images:** the mockup's `/_blob/…` images are replaced by the matching files in `public/images/`.
 
 **Goal**
 A person in Zagreb who searched for laser hair removal sees a Zagreb page, and reaches the booking
@@ -166,15 +196,19 @@ The agent picks none of these. A value this brief needs that is not in the table
      the offer on screen; rotation pauses on hover and focus and does not run with
      `prefers-reduced-motion` (dots only). With one offer: no rotation, no dots. An offer past
      `validUntil` is not shown.
-4. Offers: a static grid (no autoplay, no dropdown); each card has its own "Rezerviraj" link.
-5. Locations: Zagreb `bookable` and `teaser` cards; the brand strip for `external` ones.
-6. Services and Technology shortened as on the canvas; Reviews from real Zagreb reviews or hidden.
-7. New Contact section: address, hours, phone, WhatsApp, map placeholder (no third-party map embed
-   until consent exists — Out of scope), "Rezerviraj termin".
-8. Footer: Zagreb locations, "skintastic u svijetu" links, legal links unchanged.
-9. Remove `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection` from the page; delete
-   `hero-video-2.mp4`.
-10. Metadata: title, description, canonical, `LocalBusiness` JSON-LD per `bookable` location, and
+4. Features: the four items with the mockup's shorter texts (`messages/` only).
+5. Offers: a static grid as the mockup (no autoplay, no dropdown); each card has its own "Rezerviraj
+   ovaj tretman" link with `?usluga={code}`.
+6. Locations: "Skintastic Zagreb / Naše lokacije", the `bookable` and `teaser` cards, and the brand
+   strip for `external` ones, as the mockup and the **Mockup** section.
+7. Services and Technology shortened as the mockup; Reviews from real Zagreb reviews or hidden; FAQ
+   as today, styled as the mockup.
+8. New Contact section as the mockup: address, hours, phone, e-mail, parking, WhatsApp, a map
+   placeholder (no third-party map embed until consent exists — Out of scope), "Rezerviraj termin".
+9. Footer as the mockup and the **Mockup** section; legal links unchanged, plus "Postavke kolačića".
+10. Remove `QuoteSection`, `VideoLogoSection`, `GoetheQuoteSection`, `AboutSection`,
+    `CertificatesSection` from the page; delete `hero-video-2.mp4`.
+11. Metadata: title, description, canonical, `LocalBusiness` JSON-LD per `bookable` location, and
     `FAQPage` JSON-LD from the existing FAQ.
 
 **Tests**
@@ -197,7 +231,9 @@ The agent picks none of these. A value this brief needs that is not in the table
 7. **The mobile bar** is visible at 390 px on every scroll position. Shown.
 8. **The hero** plays both videos at 390 px and 1440 px with one offer and no dots; adding a second
    offer to the config (and nothing else) makes the text rotate with dots. Shown.
-9. **The diff** lists only the Touches paths. Listed.
+9. **The page matches the mockup** section by section at 1440 px and 390 px, except what the
+   **Mockup** section lists. Shown (screenshots next to the mockup's sections).
+10. **The diff** lists only the Touches paths. Listed.
 
 **How a person checks it**
 1. Open the page on a phone: the header says Zagreb, "Rezerviraj termin" is always visible.
