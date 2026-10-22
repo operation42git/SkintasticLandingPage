@@ -1,17 +1,21 @@
 {
   "nav": {
     "offers": "Ponude",
-    "locations": "Lokacija",
+    "how": "Kako djeluje",
+    "locations": "Lokacije",
     "booking": "Rezervacija termina",
     "services": "Usluge",
     "technology": "Tehnologija",
-    "info": "Korisne informacije",
+    "info": "Informacije",
     "about": "O nama",
     "contact": "Kontakt",
     "bookNow": "Rezerviraj termin",
     "close": "Zatvori",
-    "topBarOffer": "Lasersko uklanjanje dlačica ispod pazuha sada 19,90",
-    "topBarSite": "skintastic.hr",
+    "menu": "Izbornik",
+    "call": "Nazovi",
+    "whatsapp": "WhatsApp",
+    "main": "Glavna navigacija",
+    "topBar": "Besplatno savjetovanje · Rezerviraj online",
     "submenu": {
       "offers": [
         { "label": "Laserski pazusi", "href": "#offers" },
