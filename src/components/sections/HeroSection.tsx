@@ -77,7 +77,7 @@ export function HeroSection() {
         </div>
 
         <div
-          className="flex flex-col items-start gap-1 px-5 py-3 pb-4 lg:order-1 lg:flex-1 lg:basis-[520px] lg:justify-center lg:gap-5 lg:px-12 lg:py-16 lg:pl-[max(24px,calc((100vw-1320px)/2))] lg:pr-12"
+          className="flex flex-col items-start gap-1 px-5 py-3 pb-4 lg:order-1 lg:flex-1 lg:basis-[520px] lg:justify-center lg:gap-5 lg:px-12 lg:py-16 lg:pl-[max(24px,calc((min(100vw,1440px)-1320px)/2))] lg:pr-12"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocus={() => setPaused(true)}
