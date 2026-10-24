@@ -10,9 +10,10 @@ links to it.
   says. Do not start a brief whose header still says **Draft** or **Not accepted**; report that.
 - **Touches** is a hard limit. Changing a file that is not listed there: stop and ask.
 - **Values** come from the brief's Values table. You pick none of them: no invented prices, phone
-  numbers, addresses, slugs, catalogue codes, reviews, ratings, URLs or texts. A value the brief needs
-  that is missing or still marked "the person gives": stop and ask, listing every missing value at
-  once rather than one per message.
+  numbers, addresses, slugs, catalogue codes, reviews, ratings, URLs or texts. A value still marked
+  "the person gives" follows the brief's **Values not given yet** rule (bracket placeholders,
+  drafted texts listed for review); a brief without that rule, or a value it does not cover: stop
+  and ask, listing every missing value at once rather than one per message.
 - **Decided** is settled. Do not reopen it or offer alternatives in the code.
 - **Out of scope** stays out, even when it looks like a quick fix (the legal pages, tracking tags,
   the booking app).
@@ -46,9 +47,9 @@ links to it.
 
 ## Git
 
-- Work on your own branch from `main`. Small commits with clear messages in English.
+- Work on the branch the prompt names. Small commits with clear messages in English.
 - Do not push. The person tests the branch locally (`npm run dev`) and pushes it themselves.
-- Never push to `main`, never rewrite shared history.
+- Never merge into or push to `main` (it deploys the live site), never rewrite shared history.
 
 ## The report
 

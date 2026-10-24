@@ -2,17 +2,13 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { consentCookieDomain } from "@/config/booking";
 
 type CategoryKey = "functional" | "analytics" | "performance" | "ads";
 
-type ConsentRecord = {
-  v: number;
-  ts: number;
-  cats: Record<CategoryKey, boolean>;
-};
-
-const STORAGE_KEY = "sk_consent";
-const CONSENT_VERSION = 1;
+const COOKIE_NAME = "skt_consent";
+export const OPEN_CONSENT_EVENT = "skt:open-consent";
+const COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
 const NON_ESSENTIAL: CategoryKey[] = ["functional", "analytics", "performance", "ads"];
 
 const DEFAULT_CATS: Record<CategoryKey, boolean> = {
@@ -22,20 +18,62 @@ const DEFAULT_CATS: Record<CategoryKey, boolean> = {
   ads: false,
 };
 
-function readConsent(): ConsentRecord | null {
+function clearStoredConsent(): void {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    const rec = JSON.parse(raw) as ConsentRecord;
-    return rec.v === CONSENT_VERSION ? rec : null;
+    localStorage.removeItem("sk_consent");
+    localStorage.removeItem("skt_consent");
   } catch {
-    return null;
+    /* private mode */
   }
 }
 
+function todayStamp(date = new Date()): string {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
+}
+
+function isLocalHost(hostname: string): boolean {
+  return hostname === "localhost" || hostname === "127.0.0.1";
+}
+
+// functional, analytics and performance share the analytics bit; ads is the marketing bit.
+function encodeConsent(cats: Record<CategoryKey, boolean>, date = new Date()): string {
+  const analytics = cats.functional || cats.analytics || cats.performance ? 1 : 0;
+  const marketing = cats.ads ? 1 : 0;
+  return `v1.1.${analytics}.${marketing}.${todayStamp(date)}`;
+}
+
+function readCookie(name: string): string | null {
+  const prefix = `${name}=`;
+  for (const part of document.cookie.split("; ")) {
+    if (part.startsWith(prefix)) return decodeURIComponent(part.slice(prefix.length));
+  }
+  return null;
+}
+
+function readConsent(): Record<CategoryKey, boolean> | null {
+  const raw = readCookie(COOKIE_NAME);
+  if (!raw) return null;
+  const match = /^v1\.1\.([01])\.([01])\.(\d{4}-\d{2}-\d{2})$/.exec(raw);
+  if (!match) return null;
+  const analytics = match[1] === "1";
+  const marketing = match[2] === "1";
+  return {
+    functional: analytics,
+    analytics,
+    performance: analytics,
+    ads: marketing,
+  };
+}
+
 function writeConsent(cats: Record<CategoryKey, boolean>): void {
-  const rec: ConsentRecord = { v: CONSENT_VERSION, ts: Date.now(), cats };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(rec));
+  const parts = [`Path=/`, `Max-Age=${COOKIE_MAX_AGE}`, `SameSite=Lax`];
+  if (!isLocalHost(window.location.hostname)) {
+    parts.push(`Domain=${consentCookieDomain()}`, `Secure`);
+  }
+  document.cookie = `${COOKIE_NAME}=${encodeConsent(cats)}; ${parts.join("; ")}`;
+  clearStoredConsent();
 }
 
 function CookieIcon() {
@@ -161,11 +199,12 @@ export function CookieConsent() {
   const [pending, setPending] = useState<Record<CategoryKey, boolean>>(DEFAULT_CATS);
 
   useEffect(() => {
-    const rec = readConsent();
-    if (!rec) {
+    clearStoredConsent();
+    const cats = readConsent();
+    if (!cats) {
       setOpen(true);
     } else {
-      setPending(rec.cats);
+      setPending(cats);
       setConsentGiven(true);
     }
   }, []);
@@ -204,10 +243,16 @@ export function CookieConsent() {
   }, [commit, pending]);
 
   const handleReopen = useCallback(() => {
-    const rec = readConsent();
-    if (rec) setPending(rec.cats);
+    const cats = readConsent();
+    if (cats) setPending(cats);
     setOpen(true);
   }, []);
+
+  useEffect(() => {
+    const openBanner = () => handleReopen();
+    window.addEventListener(OPEN_CONSENT_EVENT, openBanner);
+    return () => window.removeEventListener(OPEN_CONSENT_EVENT, openBanner);
+  }, [handleReopen]);
 
   const toggleCat = useCallback((key: CategoryKey) => {
     setPending((prev) => ({ ...prev, [key]: !prev[key] }));

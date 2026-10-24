@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<title>Skintastic Zagreb — condensed page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:"Lumios";src:url("/_blob/d845fb03553c508e2572b5fd904a9495") format("woff2");font-display:swap}
+body{margin:0;background:#ffffff}
+a{color:#0C0C0C}a:hover{color:#5a5050}
+</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #0C0C0C; background: #ffffff; min-width: 0;">
+
+  <!-- 1 · Top bar + header -->
+  <div style="background: #88C9CD; padding: 6px 16px; text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">Besplatno savjetovanje · Rezerviraj online</div>
+  <header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.97); border-bottom: 1px solid #eee3dc;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 0 24px; height: 76px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;">
+      <img src="/_blob/296dc43b550c555435967318a34f541d" alt="skintastic" style="height: 32px; width: auto;">
+      <nav aria-label="Glavna navigacija" style="display: flex; gap: 26px; flex: 1 1 auto; justify-content: center; flex-wrap: wrap;">
+        <a href="#ponude" style="text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Ponude</a>
+        <a href="#kako" style="text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Kako djeluje</a>
+        <a href="#lokacije" style="text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Lokacije</a>
+        <a href="#faq" style="text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Informacije</a>
+        <a href="#kontakt" style="text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Kontakt</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <a href="#kontakt" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-size: 14px; font-weight: 600;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+          +385 95 757 5344
+        </a>
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.05em;">HR <span style="color: #6b5f5f; font-weight: 500;">/ EN</span></span>
+        <button type="button" onClick="{{book}}" style="border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 13px 26px; font: inherit; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;">Rezerviraj termin</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2 · Hero: text panel left, video right (whole frame, never under the text) -->
+  <section style="background: #EFD5CA;">
+    <div style="max-width: 1440px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: stretch; min-height: 600px;">
+      <div style="flex: 1 1 520px; min-width: 0; padding: 64px 48px 64px max(24px, calc((100vw - 1320px) / 2)); box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 20px; align-items: flex-start;">
+        <span style="background: #c9a96e; color: #0C0C0C; font-size: 12px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px;">Posebna ponuda do 31.12.2026.</span>
+        <h1 style="margin: 0; color: #0C0C0C; font-size: 54px; line-height: 1.05; font-weight: 800;">Laserska epilacija u Zagrebu</h1>
+        <p style="margin: 0; color: #3d3434; font-size: 19px; line-height: 1.5;">Pazusi za žene i muškarce sada <strong style="color: #0C0C0C;">19,90 €</strong> umjesto 49,99 €. Mediostar diodni laser, besplatno savjetovanje.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button type="button" onClick="{{bookHero}}" style="border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 17px 32px; font: inherit; font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Rezerviraj termin</button>
+          <a href="#ponude" style="display: inline-block; border: 1.5px solid #0C0C0C; border-radius: 999px; padding: 15px 28px; text-decoration: none; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Sve ponude</a>
+        </div>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 14px; font-weight: 600; padding-top: 4px;">
+          <span>Besplatno savjetovanje</span>
+          <span>Plaćanje karticom ili gotovinom</span>
+          <span>Skintastic Istok i Zapad, Zagreb</span>
+        </div>
+      </div>
+      <div style="flex: 1.3 1 560px; min-width: 0; min-height: 420px; position: relative; overflow: hidden; background: #1a1516;">
+        <video src="/_blob/1fff21732a015d359e16efb1fabf11fd" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Ponude -->
+  <section id="ponude" style="background: #EFD5CA;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Trajno povoljno</p>
+        <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 60px; line-height: 1;">Najbolje ponude</h2>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <button type="button" onClick="{{prev}}" aria-label="Prethodne ponude" style="flex: none; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #0C0C0C; background: #ffffff; cursor: pointer; font: inherit; font-size: 22px;">‹</button>
+        <div style="flex: 1; min-width: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px;">
+          <sc-for list="{{visible}}" as="item" hint-placeholder-count="4">
+            <article style="background: #ffffff; display: flex; flex-direction: column;">
+              <img src="{{item.img}}" alt="{{item.title}}" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block;">
+              <div style="padding: 16px; display: flex; flex-direction: column; gap: 4px; flex: 1;">
+                <h3 style="margin: 0; font-size: 15px; font-weight: 800; text-transform: uppercase;">{{item.title}}</h3>
+                <p style="margin: 0; font-size: 14px; line-height: 1.4; color: #3d3434; flex: 1;">{{item.desc}}</p>
+                <div style="display: flex; align-items: baseline; gap: 8px; padding-top: 6px;">
+                  <span style="font-size: 22px; font-weight: 800;">{{item.price}} €</span>
+                  <span style="font-size: 14px; color: #5a5050; text-decoration: line-through;">{{item.old}}</span>
+                </div>
+                <button type="button" onClick="{{item.book}}" style="margin-top: 8px; border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 12px 16px; font: inherit; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Rezerviraj</button>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+        <button type="button" onClick="{{next}}" aria-label="Sljedeće ponude" style="flex: none; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #0C0C0C; background: #ffffff; cursor: pointer; font: inherit; font-size: 22px;">›</button>
+      </div>
+      <p style="margin: 14px 0 0; text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 0.1em;">{{pageLabel}}</p>
+      <p style="margin: 18px 0 0; text-align: center; font-size: 16px;">Sve cijene i paketi nalaze se u <button type="button" onClick="{{book}}" style="border: 0; background: none; padding: 0; cursor: pointer; font: inherit; font-weight: 800; text-decoration: underline;">online kalendaru za rezervacije</button>.</p>
+    </div>
+  </section>
+
+  <!-- 4 · Kako djeluje (Usluge + Tehnologija) -->
+  <section id="kako" style="background: #E4BDB0;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Trajno uklanjanje dlačica laserom</p>
+        <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 60px; line-height: 1;">Kako djeluje</h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+        <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; gap: 18px; align-items: flex-start; background: #ffffff; padding: 22px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 50%; background: #0C0C0C; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px;">1</span>
+            <div><h3 style="margin: 0 0 6px; font-size: 18px; font-weight: 800;">Besplatno savjetovanje</h3><p style="margin: 0; font-size: 16px; line-height: 1.55;">Pregledamo kožu i dlačice, odgovorimo na pitanja i dogovorimo plan – individualno i bez naknade.</p></div>
+          </div>
+          <div style="display: flex; gap: 18px; align-items: flex-start; background: #ffffff; padding: 22px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 50%; background: #0C0C0C; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px;">2</span>
+            <div><h3 style="margin: 0 0 6px; font-size: 18px; font-weight: 800;">6 do 8 tretmana</h3><p style="margin: 0; font-size: 16px; line-height: 1.55;">U razmaku od 4–6 tjedana, jer laser djeluje na dlačice u fazi rasta. Plaćaš samo pojedinačni tretman.</p></div>
+          </div>
+          <div style="display: flex; gap: 18px; align-items: flex-start; background: #ffffff; padding: 22px;">
+            <span style="flex: none; width: 44px; height: 44px; border-radius: 50%; background: #0C0C0C; color: #ffffff; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px;">3</span>
+            <div><h3 style="margin: 0 0 6px; font-size: 18px; font-weight: 800;">Dugotrajno glatka koža</h3><p style="margin: 0; font-size: 16px; line-height: 1.55;">Bez brijanja i depilacije. Povremeni tretman osvježavanja po potrebi.</p></div>
+          </div>
+          <button type="button" onClick="{{bookConsult}}" style="align-self: flex-start; margin-top: 6px; border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 16px 30px; font: inherit; font-size: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Rezerviraj besplatno savjetovanje</button>
+        </div>
+        <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 18px;">
+          <img src="/_blob/b34e981482f8c9906a4b7e98d6ee69f5" alt="Mediostar diodni laser" style="width: 100%; height: auto; display: block; background: #ffffff;">
+          <h3 style="margin: 0; font-size: 22px; font-weight: 800; text-transform: uppercase;">Mediostar diodni laser – Made in Germany</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6;">Asclepion, više od 45 godina u medicinskim laserima. Nježan i učinkovit tretman uz 360° ICE-hlađenje.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="background: #ffffff; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700;">810 i 940 nm</span>
+            <span style="background: #ffffff; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700;">ICE-hlađenje</span>
+            <span style="background: #ffffff; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700;">Svi tipovi kože I–VI</span>
+            <span style="background: #ffffff; border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 700;">Bez UV-zračenja</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Zašto skintastic (features + O nama + certifikati) -->
+  <section style="background: #ffffff;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 80px 24px 0; box-sizing: border-box;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Skintastic laser | skin | body</p>
+        <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 60px; line-height: 1;">Zašto skintastic</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 36px;">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+          <img src="/_blob/599ee8191f7a7cc67a8afd8507917a7c" alt="" style="width: 52px; height: 52px; object-fit: contain;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 800; text-transform: uppercase;">Stručnjaci za njegu kože</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d3434;">Iskustvo i pažljiv pristup – za rezultate koji se vide.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+          <img src="/_blob/f10cc428d00698bb870944f1143d6086" alt="" style="width: 52px; height: 52px; object-fit: contain;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 800; text-transform: uppercase;">Tehnologija</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d3434;">Provjerena high-end tehnologija.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+          <img src="/_blob/619a84040251e1ba156d933ec875d564" alt="" style="width: 52px; height: 52px; object-fit: contain;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 800; text-transform: uppercase;">Higijena</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d3434;">Strogi standardi u svim područjima.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px;">
+          <img src="/_blob/512747d1a76f53e418990449cfeb27c1" alt="" style="width: 52px; height: 52px; object-fit: contain;">
+          <h3 style="margin: 0; font-size: 16px; font-weight: 800; text-transform: uppercase;">Besplatno savjetovanje</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d3434;">Individualno i bez naknade.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 64px; background-color: #e8c6b6;">
+      <div style="max-width: 1320px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: stretch;">
+        <div style="flex: 0 1 520px; min-width: 0; margin: 64px 0; background: rgba(255,255,255,0.72); padding: 36px; display: flex; flex-direction: column; gap: 16px;">
+          <p style="margin: 0; font-size: 14px; letter-spacing: 5px; text-transform: uppercase;">O nama</p>
+          <p style="margin: 0; font-size: 18px; line-height: 1.6;"><strong>U skintasticu sve se vrti oko tvoje kože.</strong> Specijalizirani smo za lasersko uklanjanje dlačica visokoučinkovitim diodnim laserima – vrhunski rezultati po poštenoj cijeni, u elegantnom ambijentu u Zagrebu.</p>
+          <p style="margin: 0; font-family: 'Lumios', cursive; font-size: 40px; line-height: 1;">Ljepota koja traje.</p>
+          <div style="border-top: 1px solid #d9b9ab; padding-top: 16px; display: flex; flex-direction: column; gap: 12px;">
+            <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Certifikati skintastic brenda · Kvaliteta je na prvom mjestu</span>
+            <div style="display: flex; align-items: center; gap: 28px;">
+              <img src="/_blob/a17c320285935b39890461041b5c5f27" alt="WIFI" style="height: 56px; width: auto;">
+              <img src="/_blob/2e7e70dc3c5e088a19f4a4089b422cd6" alt="Wirtschaftskammer Österreich" style="height: 44px; width: auto;">
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1 1 420px; min-width: 0; min-height: 480px; position: relative;">
+          <img src="/_blob/818a5ea5b4484c9f122f7bd56f969c25" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · Recenzije -->
+  <section id="recenzije" style="background: #EFD5CA;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 40px;">
+        <div>
+          <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Ponosni smo na to</p>
+          <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 56px; line-height: 1;">Što naša zajednica kaže</h2>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 44px; font-weight: 800;">[OCJENA]</span>
+          <span style="font-size: 15px; line-height: 1.4;">★★★★★<br>[BROJ] recenzija na Googleu</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <figure style="margin: 0; background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 16px; letter-spacing: 0.2em;">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; line-height: 1.6;">„[Google recenzija klijentice — Skintastic Istok]“</blockquote>
+          <figcaption style="font-size: 14px; font-weight: 700;">[Ime] · Skintastic Istok</figcaption>
+        </figure>
+        <figure style="margin: 0; background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 16px; letter-spacing: 0.2em;">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; line-height: 1.6;">„[Google recenzija klijentice — Skintastic Zapad]“</blockquote>
+          <figcaption style="font-size: 14px; font-weight: 700;">[Ime] · Skintastic Zapad</figcaption>
+        </figure>
+        <figure style="margin: 0; background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+          <span style="font-size: 16px; letter-spacing: 0.2em;">★★★★★</span>
+          <blockquote style="margin: 0; font-size: 16px; line-height: 1.6;">„[Google recenzija klijentice — Skintastic Istok]“</blockquote>
+          <figcaption style="font-size: 14px; font-weight: 700;">[Ime] · Skintastic Istok</figcaption>
+        </figure>
+      </div>
+      <p style="margin: 28px 0 0; display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;"><a href="#recenzije" style="font-size: 15px; font-weight: 700;">Sve recenzije na Googleu ↗</a><a href="#recenzije" style="font-size: 15px; font-weight: 700;">Prati nas na Instagramu ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 7 · Lokacije -->
+  <section id="lokacije" style="background: #f5e6de;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
+      <div style="text-align: center; margin-bottom: 44px;">
+        <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Skintastic Zagreb</p>
+        <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 60px; line-height: 1;">Naše lokacije</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px;">
+        <article style="background: #ffffff; display: flex; flex-direction: column;">
+          <img src="/_blob/074650e66cf320a510f9ec501e2a996d" alt="Skintastic Istok" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 800;">Skintastic Istok</h3>
+            <p style="margin: 0; font-size: 15px;">Drage Gervaisa 1, 10090 Zagreb</p>
+            <p style="margin: 0; font-size: 15px;">[RADNO VRIJEME]</p>
+            <div style="display: flex; gap: 16px; font-size: 14px; font-weight: 700; padding-top: 4px;"><a href="#lokacije">Galerija</a><a href="#kontakt">Kako do nas</a></div>
+            <div style="flex: 1;"></div>
+            <button type="button" onClick="{{bookIstok}}" style="margin-top: 10px; border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 15px 20px; font: inherit; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;">Rezerviraj u Skintastic Istok</button>
+          </div>
+        </article>
+        <article style="background: #ffffff; display: flex; flex-direction: column;">
+          <img src="/_blob/9b0df8db755d115ef247b5a5275f340d" alt="Skintastic Zapad" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block;">
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 800;">Skintastic Zapad</h3>
+            <p style="margin: 0; font-size: 15px;">[ADRESA ZAPAD]</p>
+            <p style="margin: 0; font-size: 15px;">[RADNO VRIJEME]</p>
+            <div style="display: flex; gap: 16px; font-size: 14px; font-weight: 700; padding-top: 4px;"><a href="#lokacije">Galerija</a><a href="#kontakt">Kako do nas</a></div>
+            <div style="flex: 1;"></div>
+            <button type="button" onClick="{{bookZapad}}" style="margin-top: 10px; border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 15px 20px; font: inherit; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;">Rezerviraj u Skintastic Zapad</button>
+          </div>
+        </article>
+        <article style="background: #ffffff; display: flex; flex-direction: column;">
+          <div style="position: relative; aspect-ratio: 4 / 3; background: #E4BDB0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px;">
+            <span style="position: absolute; top: 14px; left: 14px; background: #0C0C0C; color: #ffffff; font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px;">Uskoro</span>
+            <span style="font-family: 'Lumios', cursive; font-size: 46px; line-height: 1;">Velika Gorica</span>
+            <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Otvaranje [MJESEC GODINA]</span>
+          </div>
+          <div style="padding: 24px; display: flex; flex-direction: column; gap: 8px; flex: 1;">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 800;">Skintastic Jug – Velika Gorica</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #3d3434;">Novi centar uskoro otvara vrata. Do tada nas posjeti u Skintastic Istok ili Zapad.</p>
+            <div style="flex: 1;"></div>
+            <button type="button" disabled="disabled" style="margin-top: 10px; border: 1.5px solid #6b5f5f; background: transparent; color: #4a4040; border-radius: 999px; padding: 14px 20px; font: inherit; font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; cursor: not-allowed;">Rezervacije uskoro</button>
+          </div>
+        </article>
+      </div>
+      <div style="margin-top: 56px; border-top: 1px solid #d9b9ab; padding-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px; justify-content: space-between;">
+        <div style="flex: 1 1 320px; min-width: 0;">
+          <p style="margin: 0 0 6px; font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;">Dio skintastic obitelji</p>
+          <p style="margin: 0; font-size: 22px; font-weight: 700; line-height: 1.3;">6 centara u 3 zemlje — ista tehnologija i standard kvalitete.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 22px;">
+          <a href="#lokacije" style="display: flex; align-items: center; gap: 10px; text-decoration: none;"><img src="/_blob/f2417c2d5aca545895192999dc7c4644" alt="" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;"><span style="font-size: 15px; font-weight: 700;">Wien<br><span style="font-weight: 500; font-size: 13px; color: #4a4040;">[URL WIEN] ↗</span></span></a>
+          <a href="#lokacije" style="display: flex; align-items: center; gap: 10px; text-decoration: none;"><img src="/_blob/6f8caa4a2ce8fe0840175cd2df394b7a" alt="" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;"><span style="font-size: 15px; font-weight: 700;">Graz Puntigam · Graz City<br><span style="font-weight: 500; font-size: 13px; color: #4a4040;">[URL GRAZ] ↗</span></span></a>
+          <a href="#lokacije" style="display: flex; align-items: center; gap: 10px; text-decoration: none;"><img src="/_blob/df7cde8dcdbd1e860f2682bfdbf17049" alt="" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover;"><span style="font-size: 15px; font-weight: 700;">Stuttgart<br><span style="font-weight: 500; font-size: 13px; color: #4a4040;">[URL STUTTGART] ↗</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · FAQ -->
+  <section id="faq" style="background: #ffffff;">
+    <div style="max-width: 900px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
+      <div style="text-align: center; margin-bottom: 36px;">
+        <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Često postavljana pitanja</p>
+        <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 56px; line-height: 1;">Korisne informacije</h2>
+      </div>
+      <div style="border-top: 1px solid #0C0C0C;">
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0;">
+          <div style="display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Je li tretman bolan?</span><span aria-hidden="true">−</span></div>
+          <p style="margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: #3d3434;">Ne. Zahvaljujući ICE-hlađenju osjetit ćeš samo blage trnce i osjećaj topline.</p>
+        </div>
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Kako se pripremiti za tretman?</span><span aria-hidden="true">+</span></div>
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Na što paziti nakon tretmana?</span><span aria-hidden="true">+</span></div>
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Koliko tretmana trebam i u kojem razmaku?</span><span aria-hidden="true">+</span></div>
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Cijene, rezervacija i plaćanje</span><span aria-hidden="true">+</span></div>
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Je li laser pogodan za sve tipove kože?</span><span aria-hidden="true">+</span></div>
+        <div style="border-bottom: 1px solid #e0d2ca; padding: 20px 0; display: flex; justify-content: space-between; font-size: 17px; font-weight: 800;"><span>Česte zablude i mitovi</span><span aria-hidden="true">+</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · Kontakt -->
+  <section id="kontakt" style="background: #f5f0e8;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box; display: flex; flex-direction: column; gap: 36px;">
+      <div style="text-align: center;">
+        <p style="margin: 0 0 8px; font-size: 15px; letter-spacing: 5px; text-transform: uppercase;">Tu smo za tebe</p>
+        <h2 style="margin: 0; font-family: 'Lumios', cursive; font-weight: 400; font-size: 56px; line-height: 1;">Kontakt</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px;">
+        <a href="#kontakt" style="background: #ffffff; padding: 18px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>
+          <strong style="font-size: 15px;">Nazovi</strong><span style="font-size: 13px;">+385 95 757 5344</span>
+        </a>
+        <a href="#kontakt" style="background: #ffffff; padding: 18px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"></path></svg>
+          <strong style="font-size: 15px;">WhatsApp</strong><span style="font-size: 13px;">+385 95 757 5344</span>
+        </a>
+        <a href="#kontakt" style="background: #ffffff; padding: 18px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>
+          <strong style="font-size: 15px;">E-mail</strong><span style="font-size: 13px;">[E-MAIL]</span>
+        </a>
+        <a href="#kontakt" style="background: #ffffff; padding: 18px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="0.8"></circle></svg>
+          <strong style="font-size: 15px;">Instagram</strong><span style="font-size: 13px;">[INSTAGRAM]</span>
+        </a>
+        <a href="#kontakt" style="background: #ffffff; padding: 18px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"></path></svg>
+          <strong style="font-size: 15px;">Facebook</strong><span style="font-size: 13px;">[FACEBOOK]</span>
+        </a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <div style="background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 10px;">
+          <h3 style="margin: 0; font-size: 20px; font-weight: 800;">Skintastic Istok</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6;">Drage Gervaisa 1, 10090 Zagreb<br>[RADNO VRIJEME]<br>Parking: [UPUTE ZA PARKING]</p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 6px;">
+            <button type="button" onClick="{{bookIstok}}" style="border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 13px 22px; font: inherit; font-size: 13px; font-weight: 800; text-transform: uppercase;">Rezerviraj termin</button>
+            <a href="#kontakt" style="border: 1.5px solid #0C0C0C; border-radius: 999px; padding: 11px 20px; text-decoration: none; font-size: 13px; font-weight: 800; text-transform: uppercase;">Kako do nas ↗</a>
+          </div>
+        </div>
+        <div style="background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 10px;">
+          <h3 style="margin: 0; font-size: 20px; font-weight: 800;">Skintastic Zapad</h3>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6;">[ADRESA ZAPAD]<br>[RADNO VRIJEME]<br>Parking: [UPUTE ZA PARKING]</p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 6px;">
+            <button type="button" onClick="{{bookZapad}}" style="border: 0; cursor: pointer; background: #0C0C0C; color: #ffffff; border-radius: 999px; padding: 13px 22px; font: inherit; font-size: 13px; font-weight: 800; text-transform: uppercase;">Rezerviraj termin</button>
+            <a href="#kontakt" style="border: 1.5px solid #0C0C0C; border-radius: 999px; padding: 11px 20px; text-decoration: none; font-size: 13px; font-weight: 800; text-transform: uppercase;">Kako do nas ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · Quote band -->
+  <section style="background: #E4BDB0; padding: 64px 24px; text-align: center;">
+    <p style="margin: 0; font-family: 'Lumios', cursive; font-size: 54px; line-height: 1.1;">Ljepota je uvijek<br>rado viđen gost.</p>
+    <p style="margin: 14px 0 0; font-size: 14px; letter-spacing: 5px; text-transform: uppercase;">Goethe</p>
+  </section>
+
+  <!-- 11 · Footer -->
+  <footer style="background: #1a1516; color: #f5f0e8;">
+    <div style="max-width: 1320px; margin: 0 auto; padding: 56px 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <img src="/_blob/a52ba64b422b1e3663f81f329bf01ae6" alt="skintastic LASER SKIN &amp; BODY" style="height: 30px; width: auto; align-self: flex-start; filter: brightness(0) invert(1);">
+        <p style="margin: 0; font-size: 14px; color: #d8cfc2;">Laserska epilacija u Zagrebu.</p>
+        <p style="margin: 0; font-size: 14px; color: #d8cfc2;">+385 95 757 5344 · [E-MAIL]</p>
+        <div style="display: flex; gap: 14px; font-size: 14px; font-weight: 700;">
+          <a href="#kontakt" style="color: #f5f0e8;">Instagram</a>
+          <a href="#kontakt" style="color: #f5f0e8;">Facebook</a>
+          <a href="#kontakt" style="color: #f5f0e8;">WhatsApp</a>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a96e;">Zagreb</span>
+        <a href="#lokacije" style="color: #f5f0e8; text-decoration: none;">Skintastic Istok</a>
+        <a href="#lokacije" style="color: #f5f0e8; text-decoration: none;">Skintastic Zapad</a>
+        <span style="color: #b9ae9f;">Skintastic Jug – Velika Gorica · uskoro</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a96e;">skintastic u svijetu</span>
+        <a href="#lokacije" style="color: #f5f0e8; text-decoration: none;">Wien ↗</a>
+        <a href="#lokacije" style="color: #f5f0e8; text-decoration: none;">Graz Puntigam ↗</a>
+        <a href="#lokacije" style="color: #f5f0e8; text-decoration: none;">Graz City ↗</a>
+        <a href="#lokacije" style="color: #f5f0e8; text-decoration: none;">Stuttgart ↗</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 14px;">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #c9a96e;">Pravno</span>
+        <a href="#kontakt" style="color: #f5f0e8; text-decoration: none;">Zaštita podataka</a>
+        <a href="#kontakt" style="color: #f5f0e8; text-decoration: none;">Impressum</a>
+        <a href="#kontakt" style="color: #f5f0e8; text-decoration: none;">Postavke kolačića</a>
+      </div>
+    </div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.12); padding: 18px 24px; text-align: center; font-size: 12px; color: #b9ae9f;">© 2026 skintastic LASER SKIN &amp; BODY · DMT active solutions d.o.o.</div>
+  </footer>
+
+  <sc-if value="{{toastShown}}" hint-placeholder-val="{{ false }}">
+    <div role="status" style="position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 40; background: #0C0C0C; color: #ffffff; padding: 16px 20px; border-radius: 14px; display: flex; gap: 16px; align-items: center; max-width: calc(100% - 32px); box-sizing: border-box; box-shadow: 0 10px 30px rgba(0,0,0,0.25);">
+      <span style="font-size: 14px; line-height: 1.4;">Otvara se online rezervacija (ista kartica):<br><strong style="font-family: ui-monospace, monospace; font-size: 13px;">{{toast}}</strong></span>
+      <button type="button" onClick="{{dismiss}}" aria-label="Zatvori" style="border: 0; background: #ffffff; color: #0C0C0C; border-radius: 999px; width: 32px; height: 32px; cursor: pointer; font: inherit; font-weight: 800;">×</button>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { toast: '', start: 0 };
+  }
+  open(centre, service) {
+    var q = [];
+    if (centre) q.push('centar=' + centre);
+    if (service) q.push('usluga=' + service);
+    this.setState({ toast: 'app.[domena]/book/f/[SLUG]' + (q.length ? '?' + q.join('&') : '') });
+  }
+  renderVals() {
+    var self = this;
+    var offers = [
+      { code: 'alc_underarms', img: '/_blob/675efdeee15ca380371acc011e8262f4', title: 'Pazusi', desc: 'Za muškarce i žene', price: '19,90', old: '49,99 €' },
+      { code: '[KOD]', img: '/_blob/b8bc2f53e826771cd1fe9d1df5986488', title: 'Cijelo tijelo (žena) small', desc: 'Bez leđa i trbuha, uključuje liniju ispod pupka', price: '199,90', old: '299,90 €' },
+      { code: '[KOD]', img: '/_blob/9a971b0fc1227169a7ab090cec265e86', title: 'Lice i vrat', desc: 'Za svilenkasto glatku kožu', price: '49,90', old: '79,80 €' },
+      { code: '[KOD]', img: '/_blob/3da3d4ed6634fbdc587608b2e7bda442', title: 'Superman paket', desc: 'Prsa i trbuh', price: '99,90', old: '169,80 €' },
+      { code: '[KOD]', img: '/_blob/30d1962dc3efccbc99b3546412684d7d', title: 'Noge kompletne', desc: 'Uključujući stopalo i prste', price: '99,90', old: '' },
+      { code: '[KOD]', img: '/_blob/56ce5041107430e1a0acec3d7e060747', title: 'Beach paket', desc: 'Bikini zona, intimna zona, noge i pazusi', price: '149,90', old: '249,70 €' }
+    ].map(function (o) { return Object.assign({}, o, { book: function () { self.open('', o.code); } }); });
+    var n = offers.length, st = this.state.start;
+    var visible = [0, 1, 2, 3].map(function (i) { return offers[(st + i) % n]; });
+    return {
+      visible: visible,
+      pageLabel: (st + 1) + '–' + (((st + 3) % n) + 1) + ' / ' + n + ' ponuda',
+      prev: function () { self.setState({ start: (st - 1 + n) % n }); },
+      next: function () { self.setState({ start: (st + 1) % n }); },
+      book: function () { self.open('', ''); },
+      bookHero: function () { self.open('', 'alc_underarms'); },
+      bookConsult: function () { self.open('', '[KOD SAVJETOVANJA]'); },
+      bookIstok: function () { self.open('zagreb-istok', ''); },
+      bookZapad: function () { self.open('zagreb-zapad', ''); },
+      dismiss: function () { self.setState({ toast: '' }); },
+      toast: this.state.toast,
+      toastShown: this.state.toast !== ''
+    };
+  }
+}
+</script>
+</body>
+</html>

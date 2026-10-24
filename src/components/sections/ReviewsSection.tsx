@@ -1,97 +1,105 @@
-"use client";
-
-import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { instagramHref } from "@/config/contact";
 
-function Stars() {
-  return (
-    <p className="mt-3 text-center text-[18px] leading-none tracking-[0.35em] text-[#0C0C0C]">
-      ★★★★★
-    </p>
-  );
+type Review = {
+  text: string;
+  author: string;
+  centre: string;
+};
+
+function externalHref(url: string): string | null {
+  const trimmed = url.trim();
+  if (!trimmed || trimmed.startsWith("[")) return null;
+  return trimmed;
 }
 
 export function ReviewsSection() {
   const t = useTranslations("reviews");
-  const items = t.raw("items") as { headline: string; text: string; author: string }[];
-  const count = items.length;
-
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const prev = useCallback(
-    () => setActive((i) => (i - 1 + count) % count),
-    [count],
-  );
-  const next = useCallback(
-    () => setActive((i) => (i + 1) % count),
-    [count],
-  );
-
-  useEffect(() => {
-    if (paused) return;
-    const id = window.setInterval(next, 6000);
-    return () => window.clearInterval(id);
-  }, [next, paused]);
-
-  const review = items[active];
+  const rawItems = t.raw("items") as Review[];
+  const items = Array.isArray(rawItems) && rawItems.length > 0 ? rawItems : [];
+  const shown = items.slice(0, 3);
+  const googleHref = externalHref(t("googleUrl"));
+  const instagramLink = instagramHref();
 
   return (
-    <section id="reviews" className="bg-[#E4BDB0] py-16 md:py-20">
-      <div className="mx-auto max-w-[1500px] px-6 md:px-[50px]">
-        <p className="mb-2 text-center text-[14px] uppercase tracking-[5px] text-[#0C0C0C]">
-          {t("badge")}
-        </p>
-        <h2 className="font-script mb-8 text-center text-[clamp(2rem,1rem+2.5vw,3rem)] font-normal leading-none text-[#0C0C0C] md:mb-10">
-          {t("title")}
-        </h2>
-
-        <div
-          className="mx-auto w-full max-w-[720px]"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
-          <div className="border-y border-[#0C0C0C] px-6 py-8 md:px-8 md:py-10">
-            <p className="mb-5 text-center text-[16px] font-bold uppercase tracking-wide text-[#0C0C0C] md:text-[18px]">
-              {review.headline}
+    <section id="recenzije" className="scroll-mt-[68px] bg-[#EFD5CA] lg:scroll-mt-[84px]">
+      <div className="mx-auto max-w-[1320px] px-0 py-9 lg:px-6 lg:py-20">
+        <div className="mb-3.5 px-4 text-center lg:mb-10 lg:flex lg:items-end lg:justify-between lg:px-0 lg:text-left">
+          <div>
+            <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
+              {t("badge")}
             </p>
-            <p className="mx-auto mb-5 max-w-[36rem] text-center text-[17px] leading-relaxed text-[#0C0C0C]">
-              „{review.text}“
-            </p>
-            <p className="text-center text-[15px] font-bold uppercase tracking-wide text-[#0C0C0C]">
-              {review.author}
-            </p>
-            <Stars />
+            <h2 className="font-script text-[40px] font-normal leading-none lg:text-[56px]">
+              {t("title")}
+            </h2>
           </div>
-
-          <div className="mt-8 flex flex-col items-center gap-5">
-            <div className="flex items-center gap-10 text-[#0C0C0C]">
-              <button
-                type="button"
-                onClick={prev}
-                aria-label="Previous"
-                className="flex h-10 w-10 items-center justify-center text-3xl leading-none"
-              >
-                ‹
-              </button>
-              <button
-                type="button"
-                onClick={next}
-                aria-label="Next"
-                className="flex h-10 w-10 items-center justify-center text-3xl leading-none"
-              >
-                ›
-              </button>
-            </div>
-            <div className="h-[3px] w-48 overflow-hidden bg-white md:w-64">
-              <div
-                className="h-full bg-[#88C9CD] transition-all duration-300"
-                style={{ width: `${((active + 1) / count) * 100}%` }}
-              />
-            </div>
-          </div>
+          <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
+            <strong className="text-[22px] lg:text-[44px]">{t("rating")}</strong>
+            <span className="lg:hidden"> ★★★★★ · {t("countLabel", { count: t("count") })}</span>
+            <span className="hidden lg:ml-3 lg:inline-block">
+              ★★★★★
+              <br />
+              {t("countLabel", { count: t("count") })}
+            </span>
+          </p>
         </div>
+
+        <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1.5 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
+          {shown.map((review, index) => (
+            <ReviewCard key={index} review={review} className="w-[290px] shrink-0 snap-start p-[18px]" />
+          ))}
+        </div>
+        <div className="hidden gap-6 lg:grid lg:grid-cols-3">
+          {shown.map((review, index) => (
+            <ReviewCard key={index} review={review} className="p-7" />
+          ))}
+        </div>
+
+        <p className="mt-3 flex flex-wrap justify-center gap-[18px] text-center lg:mt-7 lg:gap-7">
+          {googleHref ? (
+            <a
+              href={googleHref}
+              className="text-[13px] font-bold lg:text-[15px]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("google")}
+            </a>
+          ) : (
+            <span className="text-[13px] font-bold lg:text-[15px]">{t("google")}</span>
+          )}
+          {instagramLink ? (
+            <a
+              href={instagramLink}
+              className="text-[13px] font-bold lg:text-[15px]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="lg:hidden">{t("instagramShort")}</span>
+              <span className="hidden lg:inline">{t("instagram")}</span>
+            </a>
+          ) : (
+            <span className="text-[13px] font-bold lg:text-[15px]">
+              <span className="lg:hidden">{t("instagramShort")}</span>
+              <span className="hidden lg:inline">{t("instagram")}</span>
+            </span>
+          )}
+        </p>
       </div>
     </section>
+  );
+}
+
+function ReviewCard({ review, className }: { review: Review; className: string }) {
+  return (
+    <figure className={`m-0 flex flex-col gap-2.5 bg-white lg:gap-3.5 ${className}`}>
+      <span className="tracking-[0.2em]">★★★★★</span>
+      <blockquote className="text-sm leading-snug lg:text-base lg:leading-relaxed">
+        {`\u201E${review.text}\u201C`}
+      </blockquote>
+      <figcaption className="text-[13px] font-bold lg:text-sm">
+        {review.author} · {review.centre}
+      </figcaption>
+    </figure>
   );
 }

@@ -1,0 +1,384 @@
+{
+  "nav": {
+    "offers": "Offers",
+    "how": "How it works",
+    "locations": "Locations",
+    "booking": "Book an appointment",
+    "services": "Treatments",
+    "technology": "Technology",
+    "info": "Information",
+    "about": "About us",
+    "contact": "Contact",
+    "bookNow": "Book an appointment",
+    "close": "Close",
+    "menu": "Menu",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "main": "Main navigation",
+    "topBar": "Free consultation · Book online"
+  },
+  "scroll": "Scroll",
+  "scrollTop": "Back to top",
+  "meta": {
+    "title": "Laser hair removal in Zagreb | skintastic",
+    "description": "Laser hair removal in Zagreb. Mediostar diode laser, a free consultation and online booking."
+  },
+  "hero": {
+    "h1": "Laser hair removal in Zagreb",
+    "book": "Book an appointment",
+    "allOffers": "All offers",
+    "allOffersMobile": "All offers ↓",
+    "trust1": "Free consultation",
+    "trust2": "Pay by card or cash",
+    "trustMobile": "Free consultation · {centres}",
+    "trustCentres": "{names}, Zagreb",
+    "nameJoin": " and ",
+    "dot": "Offer {n}"
+  },
+  "features": {
+    "experts": {
+      "title": "Skin care specialists",
+      "desc": "Our specialist team combines experience and a careful approach – for results you can see."
+    },
+    "technology": {
+      "title": "Technology",
+      "desc": "We use only modern, proven high-end technology – nothing but the best for your skin."
+    },
+    "hygiene": {
+      "title": "Hygiene",
+      "desc": "We look after your safety with strict hygiene standards in every area."
+    },
+    "consultation": {
+      "title": "Free consultation",
+      "desc": "We give you our attention, fully\nindividual and free of charge."
+    }
+  },
+  "offers": {
+    "title": "Best offers",
+    "subtitle": "Lastingly affordable",
+    "book": "Book",
+    "amount": "{amount} €",
+    "prev": "Previous offers",
+    "next": "Next offers",
+    "range": "{from}–{to} / {count} offers",
+    "swipeHint": "Swipe for more · {count} offers",
+    "calendar": "All prices and packages are in the <link>online booking calendar</link>.",
+    "items": {
+      "axilla": {
+        "title": "Underarms",
+        "desc": "For men and women",
+        "price": "19,90",
+        "oldPrice": "49,99",
+        "code": "alc_underarms"
+      },
+      "fullBody": {
+        "title": "Full body (women) small",
+        "desc": "Without the back and abdomen, includes the line below the navel",
+        "price": "199,90",
+        "oldPrice": "299,90",
+        "code": "pkg_wholebody_small_f"
+      },
+      "faceNeck": {
+        "title": "Face and neck",
+        "desc": "For silk-smooth skin",
+        "price": "49,90",
+        "oldPrice": "79,80",
+        "code": "pkg_face_neck"
+      },
+      "superman": {
+        "title": "Superman package",
+        "desc": "Chest and abdomen",
+        "price": "99,90",
+        "oldPrice": "169,80",
+        "code": "pkg_superman_m"
+      },
+      "legs": {
+        "title": "Full legs",
+        "desc": "Including the foot and toes",
+        "price": "99,90",
+        "oldPrice": "",
+        "code": "alc_legs_full"
+      },
+      "beach": {
+        "title": "Beach package",
+        "desc": "Bikini area, intimate area, legs and underarms",
+        "price": "149,90",
+        "oldPrice": "249,70",
+        "code": "pkg_beach_f"
+      }
+    }
+  },
+  "how": {
+    "eyebrow": "Lasting laser hair removal",
+    "title": "How it works",
+    "cta": "Book a free consultation",
+    "steps": {
+      "1": {
+        "title": "Free consultation",
+        "body": "We look at your skin and hair, answer your questions and agree a plan – individual and free of charge."
+      },
+      "2": {
+        "title": "6 to 8 treatments",
+        "body": "Spaced 4–6 weeks apart, because the laser acts on hairs in the growth phase. You pay only for each treatment."
+      },
+      "3": {
+        "title": "Lastingly smooth skin",
+        "body": "No shaving and no waxing. An occasional refresh treatment when you need it."
+      }
+    },
+    "mediostarAlt": "Mediostar diode laser",
+    "mediostarTitle": "Mediostar diode laser – Made in Germany",
+    "mediostarBody": "Asclepion, more than 45 years in medical lasers. A gentle, effective treatment with 360° ICE cooling.",
+    "chips": ["810 and 940 nm", "ICE cooling", "All skin types I–VI", "No UV radiation"]
+  },
+  "why": {
+    "eyebrow": "Skintastic laser | skin | body",
+    "title": "Why skintastic",
+    "features": {
+      "experts": {
+        "title": "Skin care specialists",
+        "body": "Experience and a careful approach – for results you can see."
+      },
+      "technology": {
+        "title": "Technology",
+        "body": "Proven high-end technology."
+      },
+      "hygiene": {
+        "title": "Hygiene",
+        "body": "Strict standards in every area."
+      },
+      "consultation": {
+        "title": "Free consultation",
+        "body": "Individual and free of charge."
+      }
+    },
+    "aboutEyebrow": "About us",
+    "about": "<strong>At skintastic, everything revolves around your skin.</strong> We specialise in laser hair removal with high-performance diode lasers – outstanding results at a fair price, in an elegant setting in Zagreb.",
+    "tagline": "Beauty that lasts.",
+    "certs": "skintastic brand certificates · Quality comes first",
+    "wifiAlt": "WIFI",
+    "wkoAlt": "Wirtschaftskammer Österreich"
+  },
+  "locations": {
+    "eyebrow": "Skintastic Zagreb",
+    "title": "Our locations",
+    "gallery": "Gallery",
+    "directions": "How to find us",
+    "bookAt": "Book at {name}",
+    "bookSoon": "Booking soon",
+    "soon": "Coming soon",
+    "opening": "Opening {label}",
+    "teaserBody": "A new centre opens soon. Until then, visit us at {names}.",
+    "nameOr": " or ",
+    "family": "Part of the skintastic family",
+    "familyCount": "{count} centres in 3 countries — the same technology and quality standard.",
+    "familyShort": "Part of the skintastic family · {count} centres in 3 countries"
+  },
+  "services": {
+    "badge": "Our offer",
+    "title": "skintastic treatments",
+    "subtitle": "Lasting laser hair removal",
+    "lead": "Lastingly smooth skin with high-end laser technology <em>at skintastic</em>.",
+    "body1": "Do you want lastingly smooth skin without shaving, waxing and stubborn hair? At skintastic, gentle and effective laser hair removal with the latest diode lasers is waiting for you. The most popular treatments cover underarms, legs, the intimate area and the face, and after just 6 to 8 treatments you can enjoy long-lasting smooth skin, softer and more radiant than ever.",
+    "body2": "Our technology suits every skin type and hair type, and treatments are carried out only by specially trained laser and skin-care specialists. We pay particular attention to hygiene, safety and how comfortable the treatment feels. Book your free consultation now – we will take time for every question you have. Your path to silk-smooth skin starts <em>at skintastic</em>!",
+    "ctaPrices": "Prices & booking",
+    "ctaTech": "Technology"
+  },
+  "technology": {
+    "badge": "Technology",
+    "title": "High-end devices",
+    "heading": "Mediostar diode laser – highly effective",
+    "p1": "<em>At skintastic</em> we use the most modern technology – the Mediostar diode laser from the German manufacturer Asclepion, one of the world's leading names in medical laser systems. For more than 45 years Asclepion has stood for expertise, quality and innovation, confirming the reliability of “Made in Germany” technology.",
+    "p2": "Our Mediostar was developed especially for lasting hair removal – suitable for all skin types (I–VI) and all hair types. The Monolith Powerline handpiece, with 5,000 W of power, combines outstanding results and a comfortable treatment, with a precise mix of wavelengths. With 360° ice cooling, an ergonomic design and short pulses, even the finest hairs are removed effectively and gently.",
+    "p3": "<em>At skintastic</em> your laser hair removal experience is at the highest level."
+  },
+  "faq": {
+    "badge": "Frequently asked questions",
+    "title": "Useful information",
+    "subtitle": "Curious about lasting hair removal at skintastic, and you have questions? Great! We want you to feel comfortable and well informed. Here we have answered our clients' most common questions:",
+    "items": [
+      {
+        "q": "What does a laser treatment look like?",
+        "a": "Before the first treatment at skintastic we arrange a free consultation – individual and matched to your skin and hair type. The area to be treated should be shaved the evening before, and a few days earlier you should avoid creams and intense sun.<br>During the treatment, our powerful diode laser targets the hair root – quickly, gently and with care for your skin. After the treatment the skin can be a little sensitive, so we recommend SPF 50 for a few days.<br>After the very first treatment you will notice slower hair growth, visible results and lasting smoothness – for silk-smooth skin without shaving."
+      },
+      {
+        "q": "How should I prepare for the treatment?",
+        "a": "We recommend shaving the area to be treated the evening before the treatment. It is important that the hairs do not stick out above the skin, so the laser can work at its best and the treatment stays as comfortable and effective as possible."
+      },
+      {
+        "q": "What should I watch for after the treatment?",
+        "a": "It is important to avoid intense sun immediately before and after the treatment. Protect the treated areas in particular with SPF 50. Our specialists will be glad to tell you about the right aftercare."
+      },
+      {
+        "q": "Is the treatment painful?",
+        "a": "No. Thanks to our modern ICE cooling technology, during the treatment you feel only a mild tingling and a sensation of warmth. The old myth that laser treatments are painful often comes from earlier technologies such as IPL, which created more heat on the surface of the skin."
+      },
+      {
+        "q": "Number of treatments and results",
+        "a": [
+          "<strong>Why does it take more than one laser treatment for the skin to stay hair-free?</strong><br>The laser only acts on hairs in the active growth phase, while so-called “resting” hairs – those in the resting phase – stay untouched during the treatment. Later those hairs enter a new growth phase and become visible, which is why more treatments are needed to remove every hair for good.<br>Our experience shows that an optimal, lasting result usually takes <strong>6 to 8 treatments</strong>. The exact number can vary with how fast the hair grows, hormonal status and the area treated.",
+          "<strong>What is the ideal gap between laser treatments?</strong><br>For the best results we recommend the first treatments about <strong>4–5 weeks</strong> apart. In this phase the laser is especially effective on hairs in their active growth phase. Depending on your own hair growth and how the treatment goes, the gap is adjusted – often to <strong>5–6 weeks</strong>, and sometimes to <strong>7–8 weeks</strong>.<br>skintastic's aim is lastingly smooth skin with as few treatments as possible – effective, gentle on the skin and matched to you.",
+          "<strong>What happens if I skip a treatment or do not keep the recommended gap?</strong><br>For the laser to work well with the hair growth cycle, it is important to keep a regular treatment rhythm.",
+          "<strong>Do I need to come back for further treatments after the laser course is finished?</strong><br>Yes, that is completely normal. Even after a finished course, individual hairs can grow back after 1–2 years – for example because of hormonal changes or the reactivation of resting follicles that were not in the growth phase before.<br>So that the result stays lastingly smooth skin, we recommend an occasional refresh treatment, depending on your individual needs."
+        ]
+      },
+      {
+        "q": "Prices and booking",
+        "a": [
+          "<strong>How much does laser hair removal cost at skintastic?</strong><br><em>At skintastic </em>you pay only for the individual treatment. There are no hidden costs, so you stay flexible and in full control of the cost. You can find every price, package and promotion in our online booking calendar.",
+          "<strong>How can I book and pay for a treatment?</strong><br>You can book a treatment simply and conveniently online. We accept card payment or cash.",
+          "<strong>Use the free consultation</strong><br>Your consultation is completely free and without obligation. We will take time for all your questions, look at your skin and hair, and explain how the treatment works."
+        ]
+      },
+      {
+        "q": "Is the diode laser suitable for every skin type and hair type?",
+        "a": "<strong>Yes, our diode lasers are designed to treat every skin type and hair type effectively.</strong><br>Laser hair removal works with light that is absorbed by the pigment in the hair (melanin). That pigment carries the energy to the hair root, where it is permanently destroyed. White or grey hairs contain little or no melanin, so the laser “does not recognise” them – the energy does not reach the hair root and the follicle is not permanently damaged."
+      },
+      {
+        "q": "What does ICE cooling mean on diode lasers?",
+        "a": [
+          "Our high-tech diode lasers are equipped with innovative ICE cooling in the applicator. How exactly does it work, and what do you gain?",
+          "It is very simple: while the laser acts on your hair follicles, the applicator cools your skin continuously. This contact cooling keeps the upper layers of the skin comfortably cool throughout the treatment. The result is a much more comfortable treatment – you feel only a mild tingling, while the skin stays well protected.",
+          "This advanced cooling technology makes laser hair removal with us not only more effective, but especially gentle and safe for the skin. You can relax completely and look forward to your goal: lastingly silk-smooth skin, without unwanted hair and irritation."
+        ]
+      },
+      {
+        "q": "Wavelengths",
+        "a": [
+          "<strong>What do wavelengths mean in laser hair removal, and why is the number of wavelengths not decisive?</strong>",
+          "Many others advertise four or more wavelengths and suggest that this means especially powerful devices. Be careful: more wavelengths do not automatically mean better results. Often they are only wavelength mixes with no proven effect – a pure marketing promise.",
+          "<em>At skintastic </em>we use the Mediostar diode laser, one of the most modern devices on the market – “Made in Germany”. This high-end system uses specifically proven wavelengths of 810 nm and 940 nm, which reach deep into the skin and treat the hair follicle especially effectively and gently.",
+          "Thanks to individual settings for your skin type and hair type, we work with particular precision, safety and effectiveness – without empty promises. Quality is not measured by the number of wavelengths, but by the device's technological power and how well it can be adjusted. That is exactly why we trust Mediostar – and you can too!"
+        ]
+      },
+      {
+        "q": "Common misconceptions and myths",
+        "a": [
+          "1) <strong>“Laser hair removal is only for dark hair and light skin.”</strong><br>That is no longer true! While the best results used to depend on exactly that contrast, our high-performance diode lasers of the latest generation are advanced enough to treat every skin type and hair type safely and effectively.",
+          "2) <strong>“Laser beams are dangerous or carcinogenic.”</strong><br>Incorrect. The diode laser we use does not emit UV radiation and has been scientifically verified as safe for lasting hair removal. The laser energy acts precisely on the melanin in the hair follicle and does not go deeper into the body.",
+          "3) <strong>“After a laser treatment the hair grows back thicker or stronger.”</strong><br>The opposite is true! The laser energy destroys the hair follicles, so the hairs either stop growing or grow back finer and lighter. The result is lastingly smooth, silky skin.",
+          "4) <strong>“The more wavelengths a device has, the better it is.”</strong><br>This is a common misconception. The number of wavelengths says nothing about the quality or effectiveness of a device. The best-known and most effective manufacturers often use two wavelengths matched to each other. Devices that advertise four or more wavelengths often include a third or fourth “mixed” wavelength that has no real effect on hair removal. Quality, power and the right combination of wavelengths matter more than the number itself."
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "badge": "Quality comes first",
+    "title": "Our certificates"
+  },
+  "reviews": {
+    "badge": "We are proud of it",
+    "title": "What our community says",
+    "rating": "[RATING]",
+    "count": "[COUNT]",
+    "countLabel": "{count} reviews on Google",
+    "google": "All reviews on Google ↗",
+    "googleUrl": "[GOOGLE URL]",
+    "instagram": "Follow us on Instagram ↗",
+    "instagramShort": "Instagram ↗",
+    "items": [
+      {
+        "text": "[Google review — Skintastic Istok]",
+        "author": "[Name]",
+        "centre": "Skintastic Istok"
+      },
+      {
+        "text": "[Google review — Skintastic Zapad]",
+        "author": "[Name]",
+        "centre": "Skintastic Zapad"
+      },
+      {
+        "text": "[Google review — Skintastic Istok]",
+        "author": "[Name]",
+        "centre": "Skintastic Istok"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "We are here for you",
+    "title": "Contact",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "email": "E-mail",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "book": "Book an appointment",
+    "directions": "How to find us ↗",
+    "parking": "Parking: {value}"
+  },
+  "goetheQuote": {
+    "line1": "Beauty is always",
+    "line2": "a welcome guest.",
+    "author": "Goethe"
+  },
+  "quote": {
+    "line1": "It's not easy",
+    "line2": "being as beautiful",
+    "line3": "as you look.",
+    "author": "Sharon Stone"
+  },
+  "about": {
+    "badge": "SKINTASTIC LASER | SKIN | BODY",
+    "title": "About us",
+    "p1": "<strong>At skintastic, everything revolves around your skin.</strong> We specialise in laser hair removal with high-performance diode lasers.",
+    "p2": "Our goal: outstanding results and visible change – at a fair price. Quality comes first, so we use high-end technology and specialist staff who know their work inside out.",
+    "p3": "In an elegant setting we provide individual treatments at the highest level. Trust our expertise and experience the perfect combination of technology, aesthetics and personal attention – for a feeling in your skin that delights.",
+    "tagline": "Beauty that lasts."
+  },
+  "beachBanner": {
+    "title": "Beach package",
+    "price": "€ 149,90",
+    "instead": "instead of",
+    "oldPrice": "€ 249,70",
+    "desc": "Whether you are getting ready for summer or simply want more comfort, with hygienic and effective diode-laser hair removal <em>at skintastic</em> you can forget constant shaving and enjoy long-lasting smooth skin.",
+    "cta": "Prices & booking"
+  },
+  "footer": {
+    "tagline": "Laser hair removal in Zagreb.",
+    "zagreb": "Zagreb",
+    "world": "skintastic worldwide",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy policy",
+    "imprint": "Impressum",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "soon": "coming soon",
+    "company": "DMT active solutions d.o.o.",
+    "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"
+  },
+  "cookieConsent": {
+    "title": "Customise your consent settings",
+    "introShort": "We use cookies to help you move around efficiently and to perform certain functions.",
+    "introLong": "Cookies categorised as \"Necessary\" are stored in your browser because they are essential for the basic functions of the site.\n\nWe also use third-party cookies that help us analyse how you use this website, store your settings, and provide content and ads that are relevant to you. These cookies are stored in your browser only with your prior consent.\n\nYou can choose to enable or disable some or all of these cookies, but disabling some of them may affect your browsing experience.",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "alwaysActive": "Always active",
+    "categories": {
+      "necessary": {
+        "title": "Necessary",
+        "desc": "Necessary cookies are essential for the basic functions of the website, and the website will not work as intended without them. These cookies do not store any personal data."
+      },
+      "functional": {
+        "title": "Functional",
+        "desc": "Functional cookies help with certain features, such as sharing the site's content on social media platforms, collecting feedback and other third-party features."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "desc": "Analytics cookies are used to understand how visitors interact with the website. These cookies help provide data on visitor numbers, bounce rate, traffic source and so on."
+      },
+      "performance": {
+        "title": "Performance",
+        "desc": "Performance cookies are used to understand and analyse the website's key performance indexes, which helps provide a better user experience for visitors."
+      },
+      "ads": {
+        "title": "Ads",
+        "desc": "Advertising cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information in order to provide customised ads."
+      }
+    },
+    "btnReject": "Reject",
+    "btnSave": "Save my settings",
+    "btnAcceptAll": "Accept all",
+    "reopenLabel": "Cookie settings"
+  }
+}
