@@ -20,20 +20,20 @@ function FaqItem({ q, a, open, onToggle }: FaqEntry & { open: boolean; onToggle:
   const paragraphs = Array.isArray(a) ? a : [a];
 
   return (
-    <div className="border-b border-[#e0d2ca] py-3.5 xl:py-5">
+    <div className="border-b border-[#e0d2ca] py-3.5 lg:py-5">
       <button
         type="button"
         aria-expanded={open}
         onClick={onToggle}
-        className="flex w-full items-start justify-between gap-4 text-left text-[15px] font-extrabold xl:text-[17px]"
+        className="flex w-full items-start justify-between gap-4 text-left text-[15px] font-extrabold lg:text-[17px]"
       >
         <span>{q}</span>
         <span aria-hidden>{open ? "−" : "+"}</span>
       </button>
       {open ? (
-        <div className="mt-2 space-y-3 xl:mt-3">
+        <div className="mt-2 space-y-3 lg:mt-3">
           {paragraphs.map((paragraph, index) => (
-            <p key={index} className="text-sm leading-relaxed text-[#3d3434] xl:text-base xl:leading-relaxed">
+            <p key={index} className="text-sm leading-relaxed text-[#3d3434] lg:text-base lg:leading-relaxed">
               <FaqHtml html={paragraph} />
             </p>
           ))}
@@ -49,13 +49,13 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="scroll-mt-[68px] bg-white xl:scroll-mt-[84px]">
-      <div className="mx-auto max-w-[900px] px-4 py-9 xl:px-6 xl:py-20">
-        <div className="mb-4 text-center xl:mb-9">
-          <p className="mb-1 text-[11px] uppercase tracking-[3px] xl:mb-2 xl:text-[15px] xl:tracking-[5px]">
+    <section id="faq" className="scroll-mt-[68px] bg-white lg:scroll-mt-[84px]">
+      <div className="mx-auto max-w-[900px] px-4 py-9 lg:px-6 lg:py-20">
+        <div className="mb-4 text-center lg:mb-9">
+          <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
             {t("badge")}
           </p>
-          <h2 className="font-script text-[40px] font-normal leading-none xl:text-[56px]">{t("title")}</h2>
+          <h2 className="font-script text-[40px] font-normal leading-none lg:text-[56px]">{t("title")}</h2>
         </div>
         <div className="border-t border-[#0C0C0C]">
           {items.map((item, index) => (

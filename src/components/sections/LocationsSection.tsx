@@ -26,18 +26,18 @@ export function LocationsSection() {
   const [photo, setPhoto] = useState(0);
 
   return (
-    <section id="lokacije" className="scroll-mt-[68px] bg-[#f5e6de] xl:scroll-mt-[84px]">
-      <div className="mx-auto max-w-[1320px] px-4 py-9 xl:px-6 xl:py-20">
-        <div className="mb-4 text-center xl:mb-11">
-          <p className="mb-1 text-[11px] uppercase tracking-[3px] xl:mb-2 xl:text-[15px] xl:tracking-[5px]">
+    <section id="lokacije" className="scroll-mt-[68px] bg-[#f5e6de] lg:scroll-mt-[84px]">
+      <div className="mx-auto max-w-[1320px] px-4 py-9 lg:px-6 lg:py-20">
+        <div className="mb-4 text-center lg:mb-11">
+          <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
             {t("eyebrow")}
           </p>
-          <h2 className="font-script text-[44px] font-normal leading-none xl:text-[60px]">
+          <h2 className="font-script text-[44px] font-normal leading-none lg:text-[60px]">
             {t("title")}
           </h2>
         </div>
 
-        <div className="flex flex-col gap-3 xl:grid xl:grid-cols-3 xl:gap-7">
+        <div className="flex flex-col gap-3 lg:grid lg:grid-cols-3 lg:gap-7">
           {bookable.map((location) => (
             <BookableCard
               key={location.id}
@@ -56,25 +56,25 @@ export function LocationsSection() {
 
         <div
           data-brand-strip
-          className="mt-[18px] flex flex-col gap-2.5 border-t border-[#d9b9ab] pt-3.5 xl:mt-14 xl:flex-row xl:flex-wrap xl:items-center xl:justify-between xl:gap-7 xl:pt-9"
+          className="mt-[18px] flex flex-col gap-2.5 border-t border-[#d9b9ab] pt-3.5 lg:mt-14 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between lg:gap-7 lg:pt-9"
         >
-          <div className="min-w-0 xl:flex-1 xl:basis-80">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.12em] xl:mb-1.5 xl:text-[13px] xl:tracking-[0.14em]">
-              <span className="xl:hidden">
+          <div className="min-w-0 lg:flex-1 lg:basis-80">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.12em] lg:mb-1.5 lg:text-[13px] lg:tracking-[0.14em]">
+              <span className="lg:hidden">
                 {t("familyShort", { count: brandCentreCount() })}
               </span>
-              <span className="hidden xl:inline">{t("family")}</span>
+              <span className="hidden lg:inline">{t("family")}</span>
             </p>
-            <p className="hidden text-[22px] font-bold leading-snug xl:block">
+            <p className="hidden text-[22px] font-bold leading-snug lg:block">
               {t("familyCount", { count: brandCentreCount() })}
             </p>
           </div>
-          <div className="flex flex-wrap gap-2 xl:hidden">
+          <div className="flex flex-wrap gap-2 lg:hidden">
             {external.map((location) => (
               <ExternalPill key={location.id} location={location} />
             ))}
           </div>
-          <div className="hidden flex-wrap gap-[22px] xl:flex">
+          <div className="hidden flex-wrap gap-[22px] lg:flex">
             {external.map((location) => (
               <ExternalMark key={location.id} location={location} />
             ))}
@@ -100,36 +100,36 @@ function BookableCard({ location, onGallery }: { location: Location; onGallery: 
   return (
     <article className="flex flex-col bg-white">
       {location.image ? (
-        <div className="relative h-[170px] w-full xl:aspect-[4/3] xl:h-auto">
-          <Image src={location.image} alt={location.name} fill className="object-cover" sizes="(min-width: 1280px) 400px, 360px" />
+        <div className="relative h-[170px] w-full lg:aspect-[4/3] lg:h-auto">
+          <Image src={location.image} alt={location.name} fill className="object-cover" sizes="(min-width: 1024px) 400px, 360px" />
         </div>
       ) : null}
-      <div className="flex flex-1 flex-col gap-1 p-3.5 xl:gap-2 xl:p-6">
-        <h3 className="text-[17px] font-extrabold xl:text-[22px]">{location.name}</h3>
-        <p className="text-[13px] xl:hidden">
+      <div className="flex flex-1 flex-col gap-1 p-3.5 lg:gap-2 lg:p-6">
+        <h3 className="text-[17px] font-extrabold lg:text-[22px]">{location.name}</h3>
+        <p className="text-[13px] lg:hidden">
           {location.address}
           {location.hours ? ` · ${location.hours}` : ""}
         </p>
-        <p className="hidden text-[15px] xl:block">{location.address}</p>
-        {location.hours ? <p className="hidden text-[15px] xl:block">{location.hours}</p> : null}
-        <div className="hidden gap-4 pt-1 text-sm font-bold xl:flex">
+        <p className="hidden text-[15px] lg:block">{location.address}</p>
+        {location.hours ? <p className="hidden text-[15px] lg:block">{location.hours}</p> : null}
+        <div className="hidden gap-4 pt-1 text-sm font-bold lg:flex">
           <button type="button" onClick={onGallery} className="underline-offset-2 hover:underline">
             {t("gallery")}
           </button>
           <a href="#kontakt">{t("directions")}</a>
         </div>
         <div className="flex-1" />
-        <div className="mt-2 flex gap-2 xl:mt-2.5 xl:block">
+        <div className="mt-2 flex gap-2 lg:mt-2.5 lg:block">
           <BookButton
             centar={location.slug}
-            className="inline-flex h-11 flex-1 items-center justify-center rounded-full bg-[#0C0C0C] px-3 text-center text-xs font-extrabold uppercase tracking-[0.04em] text-white xl:h-auto xl:w-full xl:px-5 xl:py-[15px] xl:text-sm xl:tracking-[0.06em]"
+            className="inline-flex h-11 flex-1 items-center justify-center rounded-full bg-[#0C0C0C] px-3 text-center text-xs font-extrabold uppercase tracking-[0.04em] text-white lg:h-auto lg:w-full lg:px-5 lg:py-[15px] lg:text-sm lg:tracking-[0.06em]"
           >
             {t("bookAt", { name: location.name })}
           </BookButton>
           <button
             type="button"
             onClick={onGallery}
-            className="inline-flex h-11 items-center rounded-full border-[1.5px] border-[#0C0C0C] px-3.5 text-xs font-extrabold uppercase xl:hidden"
+            className="inline-flex h-11 items-center rounded-full border-[1.5px] border-[#0C0C0C] px-3.5 text-xs font-extrabold uppercase lg:hidden"
           >
             {t("gallery")}
           </button>
@@ -145,7 +145,7 @@ function TeaserCard({ location, names }: { location: Location; names: string }) 
 
   return (
     <article className="bg-white">
-      <div className="flex items-center gap-3 p-3.5 xl:hidden">
+      <div className="flex items-center gap-3 p-3.5 lg:hidden">
         <div className="flex h-16 w-16 shrink-0 items-center justify-center bg-[#E4BDB0] px-1 text-center font-script text-sm leading-none">
           {location.address}
         </div>
@@ -163,7 +163,7 @@ function TeaserCard({ location, names }: { location: Location; names: string }) 
         </span>
       </div>
 
-      <div className="hidden xl:flex xl:h-full xl:flex-col">
+      <div className="hidden lg:flex lg:h-full lg:flex-col">
         <div className="relative flex aspect-[4/3] flex-col items-center justify-center gap-2 bg-[#E4BDB0]">
           <span className="absolute left-3.5 top-3.5 rounded-full bg-[#0C0C0C] px-3 py-[5px] text-xs font-extrabold uppercase tracking-[0.1em] text-white">
             {t("soon")}
