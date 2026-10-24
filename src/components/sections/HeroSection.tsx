@@ -62,96 +62,101 @@ export function HeroSection() {
   }, [offers.length, paused, reduceMotion]);
 
   return (
-    <section className="bg-[#EFD5CA]">
-      <div className="mx-auto flex max-w-[1440px] flex-col lg:min-h-[600px] lg:flex-row lg:items-stretch">
-        <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1a1516] lg:order-2 lg:aspect-auto lg:min-h-[600px] lg:flex-[1.3] lg:basis-[560px]">
-          <video
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            muted
-            playsInline
-            autoPlay
-            poster={POSTER}
-            aria-hidden
-          />
-        </div>
-
+    <section className="bg-[#EFD5CA] lg:relative lg:flex lg:min-h-[700px] lg:items-end lg:overflow-hidden lg:bg-[#1a1516]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1a1516] lg:absolute lg:inset-0 lg:aspect-auto">
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          muted
+          playsInline
+          autoPlay
+          poster={POSTER}
+          aria-hidden
+        />
         <div
-          className="flex flex-col items-start gap-1 px-5 py-3 pb-4 lg:order-1 lg:flex-1 lg:basis-[520px] lg:justify-center lg:gap-5 lg:px-12 lg:py-16 lg:pl-[max(24px,calc((100vw-1320px)/2))] lg:pr-12"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocus={() => setPaused(true)}
-          onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPaused(false);
+          className="pointer-events-none absolute inset-0 hidden lg:block"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, rgba(26,21,22,.15) 0%, rgba(26,21,22,0) 35%, rgba(26,21,22,.78) 100%)",
           }}
-        >
-          {copy ? (
-            <span className="rounded-full bg-[#c9a96e] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#0C0C0C] lg:px-4 lg:py-1.5 lg:text-xs lg:tracking-[0.15em]">
-              {copy.badge}
-            </span>
-          ) : null}
+        />
+      </div>
 
-          <h1 className="text-[30px] font-extrabold leading-[1.1] text-[#0C0C0C] lg:text-[54px] lg:leading-[1.05]">
-            {t("h1")}
-          </h1>
+      <div
+        className="relative mx-auto flex w-full max-w-[1320px] flex-col items-start gap-1 px-5 py-3 pb-4 lg:gap-5 lg:px-6 lg:pb-[72px] lg:pt-0"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setPaused(false);
+        }}
+      >
+        {copy ? (
+          <span className="rounded-full bg-[#c9a96e] px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-[#0C0C0C] lg:px-4 lg:py-1.5 lg:text-xs lg:tracking-[0.15em]">
+            {copy.badge}
+          </span>
+        ) : null}
 
-          {copy ? (
-            <p className="text-[15px] leading-[1.45] text-[#3d3434] lg:text-[19px] lg:leading-normal">
-              {copy.title} {copy.subtitle}
-            </p>
-          ) : null}
+        <h1 className="text-[30px] font-extrabold leading-[1.1] text-[#0C0C0C] lg:text-[60px] lg:leading-[1.05] lg:text-white">
+          {t("h1")}
+        </h1>
 
-          <div className="hidden flex-wrap items-center gap-3 lg:flex">
-            {offer ? (
-              <BookButton
-                usluga={confirmedCode(offer.code)}
-                className="inline-flex items-center justify-center rounded-full bg-[#0C0C0C] px-8 py-[17px] text-[15px] font-extrabold uppercase tracking-[0.05em] text-white"
-              >
-                {t("book")}
-              </BookButton>
-            ) : null}
-            <a
-              href="#ponude"
-              className="rounded-full border-[1.5px] border-[#0C0C0C] px-7 py-[15px] text-[15px] font-bold uppercase tracking-[0.05em] text-[#0C0C0C]"
+        {copy ? (
+          <p className="max-w-[680px] text-[15px] leading-[1.45] text-[#3d3434] lg:text-xl lg:leading-normal lg:text-white/90">
+            {copy.title} {copy.subtitle}
+          </p>
+        ) : null}
+
+        <div className="hidden flex-wrap items-center gap-3 lg:flex">
+          {offer ? (
+            <BookButton
+              usluga={confirmedCode(offer.code)}
+              className="inline-flex items-center justify-center rounded-full bg-white px-[34px] py-[18px] text-base font-extrabold uppercase tracking-[0.05em] text-[#0C0C0C]"
             >
-              {t("allOffers")}
-            </a>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3.5 text-xs font-semibold text-[#0C0C0C] lg:hidden">
-            <a href="#ponude" className="text-sm font-extrabold">
-              {t("allOffersMobile")}
-            </a>
-            <span>{t("trustMobile", { centres: mobileCentres })}</span>
-          </div>
-
-          <div className="hidden flex-wrap gap-5 pt-1 text-sm font-semibold text-[#0C0C0C] lg:flex">
-            <span>{t("trust1")}</span>
-            <span>{t("trust2")}</span>
-            <span>
-              {locationsOf("bookable")
-                .map((location) => location.name)
-                .join(t("nameJoin"))}
-              , Zagreb
-            </span>
-          </div>
-
-          {offers.length > 1 ? (
-            <div className="flex items-center gap-2" data-hero-dots>
-              {offers.map((item, index) => (
-                <button
-                  key={item.id}
-                  type="button"
-                  aria-label={t("dot", { n: index + 1 })}
-                  onClick={() => setOfferIndex(index)}
-                  className={`rounded-full ${
-                    index === offerIndex ? "h-2 w-8 bg-[#c9a96e]" : "h-2 w-2 bg-[#0C0C0C]/25"
-                  }`}
-                />
-              ))}
-            </div>
+              {t("book")}
+            </BookButton>
           ) : null}
+          <a
+            href="#ponude"
+            className="rounded-full border-[1.5px] border-white/85 px-[30px] py-4 text-base font-bold uppercase tracking-[0.05em] text-white"
+          >
+            {t("allOffers")}
+          </a>
         </div>
+
+        <div className="flex flex-wrap items-center gap-3.5 text-xs font-semibold text-[#0C0C0C] lg:hidden">
+          <a href="#ponude" className="text-sm font-extrabold">
+            {t("allOffersMobile")}
+          </a>
+          <span>{t("trustMobile", { centres: mobileCentres })}</span>
+        </div>
+
+        <div className="hidden flex-wrap gap-[22px] pt-2 text-sm font-semibold text-white lg:flex">
+          <span>{t("trust1")}</span>
+          <span>{t("trust2")}</span>
+          <span>
+            {locationsOf("bookable")
+              .map((location) => location.name)
+              .join(t("nameJoin"))}
+            , Zagreb
+          </span>
+        </div>
+
+        {offers.length > 1 ? (
+          <div className="flex items-center gap-2" data-hero-dots>
+            {offers.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                aria-label={t("dot", { n: index + 1 })}
+                onClick={() => setOfferIndex(index)}
+                className={`rounded-full ${
+                  index === offerIndex ? "h-2 w-8 bg-[#c9a96e]" : "h-2 w-2 bg-[#0C0C0C]/25 lg:bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );
