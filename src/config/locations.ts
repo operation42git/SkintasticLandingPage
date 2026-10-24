@@ -19,10 +19,10 @@ export type Location = {
 
 export const locations: Location[] = [
   {
-    id: "istok",
+    id: "zapad",
     type: "bookable",
-    slug: "zagreb-istok",
-    name: "Skintastic Istok",
+    slug: "zagreb-zapad",
+    name: "Skintastic Zapad",
     address: "Drage Gervaisa 1, 10090 Zagreb",
     hours: "[RADNO VRIJEME]",
     parking: "[PARKIRANJE]",
@@ -31,11 +31,11 @@ export const locations: Location[] = [
     image: "/images/locations/zagreb.jpg",
   },
   {
-    id: "zapad",
+    id: "istok",
     type: "bookable",
-    slug: "zagreb-zapad",
-    name: "Skintastic Zapad",
-    address: "[ADRESA ZAPAD]",
+    slug: "zagreb-istok",
+    name: "Skintastic Istok",
+    address: "[ADRESA ISTOK]",
     hours: "[RADNO VRIJEME]",
     parking: "[PARKIRANJE]",
     openingLabel: "",

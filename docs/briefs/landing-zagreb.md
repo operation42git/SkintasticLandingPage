@@ -90,10 +90,11 @@ calendar from any "Rezerviraj" in one click, in the same tab.
 - **O3 · The domain is not in the code** (the person, 2026-10-21). It is chosen in the env and domain
   setup; the page reads it only from `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL`. If the main
   domain changes, `skintastic.hr` stays and redirects page by page (301), set up on the host.
-- **The Zagreb centres** (the person, 2026-10-21): "Skintastic Istok" (`bookable`, slug
-  `zagreb-istok`, Drage Gervaisa 1, 10090 Zagreb; today's page calls this address "Zagreb Zapad",
-  which is wrong), "Skintastic Zapad" (`bookable`, slug `zagreb-zapad`), "Skintastic Jug – Velika
-  Gorica" (`teaser`). With two `bookable` centres the general "Rezerviraj termin" opens the
+- **The Zagreb centres** (the person, 2026-10-21; corrected 2026-10-24): "Skintastic Zapad"
+  (`bookable`, slug `zagreb-zapad`, Drage Gervaisa 1, 10090 Zagreb: the main centre; the 2026-10-21
+  text had Istok and Zapad the wrong way round), "Skintastic Istok" (`bookable`, slug
+  `zagreb-istok`, address not given yet: `[ADRESA ISTOK]`), "Skintastic Jug – Velika Gorica"
+  (`teaser`). With two `bookable` centres the general "Rezerviraj termin" opens the
   franchisee entry, where the client picks the centre; the card links carry `?centar=`.
 - **O5 · The brand strip links to each franchise's own site** (the person, 2026-10-21): Wien, Graz
   Puntigam, Graz City and Stuttgart are `external` locations, each with its own `url`.
@@ -179,7 +180,7 @@ against `main` at `9360318`.
 | location `type` | enum | — | `bookable`, `teaser`, `external` | not allowed | decided |
 | location `slug` | text | lowercase, digits, dashes | the app's location slug, sent as `?centar=` (scheduling decisions 108, 192) | `teaser`, `external`: empty | decided: `zagreb-istok`, `zagreb-zapad` |
 | location `name` | text | — | `bookable`/`teaser`: the app's name (O2); `external`: "Wien", "Graz Puntigam", "Graz City", "Stuttgart" | not allowed | decided |
-| location address, hours, parking | text | — | — | `teaser`: area only ("Velika Gorica"), may be empty | Istok address decided; the rest the person gives |
+| location address, hours, parking | text | — | — | `teaser`: area only ("Velika Gorica"), may be empty | Zapad address decided (Drage Gervaisa 1); the rest the person gives |
 | teaser `openingLabel` | text | e.g. month + year | — | may be empty → "Uskoro" alone | the person gives |
 | external `url` | absolute URL | — | the franchise's own site, one per franchise (O5) | not allowed | the person gives |
 | phone, WhatsApp | text | E.164 in links (`tel:+385957575344`, `https://wa.me/385957575344`) | "+385 95 757 5344" shown | — | decided (the person, 2026-10-22) |
@@ -205,10 +206,10 @@ against `main` at `9360318`.
 The agent picks none of these. A value this brief needs that is not in the table is a stop.
 
 **Values not given yet** (the person, 2026-10-21). So the build does not wait for them:
-- **Facts** still marked "the person gives" (opening hours, parking, Zapad's address, e-mail,
+- **Facts** still marked "the person gives" (opening hours, parking, Istok's address, e-mail,
   Instagram and Facebook URLs, the franchise website URLs, the franchisee slug, the teaser's
   `openingLabel`) go into `src/config/` as visible placeholders in brackets: `[RADNO VRIJEME]`,
-  `[ADRESA ZAPAD]`, `[E-MAIL]`, `[INSTAGRAM]`, `[URL WIEN]`, … Never a real-looking value. A
+  `[ADRESA ISTOK]`, `[E-MAIL]`, `[INSTAGRAM]`, `[URL WIEN]`, … Never a real-looking value. A
   placeholder in a link (e.g. `mailto:`, an external URL) leaves the link out and shows the bracket text.
 - **An offer without a confirmed `code`** links to booking without `?usluga=`; the report lists it.
   The same for the free consultation (`?usluga=` once its code is confirmed).
