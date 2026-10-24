@@ -37,6 +37,9 @@ export function consentCookieDomain(): string {
   return new URL(SITE_URL).hostname;
 }
 
+/** The catalogue code of the free consultation ("Rezerviraj besplatno savjetovanje"). */
+export const CONSULTATION_CODE = "consult";
+
 /** A bracket placeholder is not a catalogue code, so the link omits ?usluga=. */
 export function confirmedCode(code: string | undefined): string | undefined {
   const trimmed = code?.trim() ?? "";

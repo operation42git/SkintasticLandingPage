@@ -76,35 +76,35 @@
         "desc": "Without the back and abdomen, includes the line below the navel",
         "price": "199,90",
         "oldPrice": "299,90",
-        "code": ""
+        "code": "pkg_wholebody_small_f"
       },
       "faceNeck": {
         "title": "Face and neck",
         "desc": "For silk-smooth skin",
         "price": "49,90",
         "oldPrice": "79,80",
-        "code": ""
+        "code": "pkg_face_neck"
       },
       "superman": {
         "title": "Superman package",
         "desc": "Chest and abdomen",
         "price": "99,90",
         "oldPrice": "169,80",
-        "code": ""
+        "code": "pkg_superman_m"
       },
       "legs": {
         "title": "Full legs",
         "desc": "Including the foot and toes",
         "price": "99,90",
         "oldPrice": "",
-        "code": ""
+        "code": "alc_legs_full"
       },
       "beach": {
         "title": "Beach package",
         "desc": "Bikini area, intimate area, legs and underarms",
         "price": "149,90",
         "oldPrice": "249,70",
-        "code": ""
+        "code": "pkg_beach_f"
       }
     }
   },

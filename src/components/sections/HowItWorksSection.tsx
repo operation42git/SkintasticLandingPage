@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { BookButton } from "@/components/ui/BookButton";
+import { CONSULTATION_CODE } from "@/config/booking";
 
 const STEPS = ["1", "2", "3"] as const;
 
@@ -35,7 +36,7 @@ export function HowItWorksSection() {
                 </div>
               </div>
             ))}
-            <BookButton className="mt-1.5 hidden items-center justify-center self-start rounded-full bg-[#0C0C0C] px-7 py-4 text-[15px] font-extrabold uppercase tracking-[0.05em] text-white xl:inline-flex">
+            <BookButton usluga={CONSULTATION_CODE} className="mt-1.5 hidden items-center justify-center self-start rounded-full bg-[#0C0C0C] px-7 py-4 text-[15px] font-extrabold uppercase tracking-[0.05em] text-white xl:inline-flex">
               {t("cta")}
             </BookButton>
           </div>
@@ -63,7 +64,7 @@ export function HowItWorksSection() {
               ))}
             </div>
           </div>
-          <BookButton className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-7 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white xl:hidden">
+          <BookButton usluga={CONSULTATION_CODE} className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-7 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white xl:hidden">
             {t("cta")}
           </BookButton>
         </div>

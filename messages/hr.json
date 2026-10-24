@@ -76,35 +76,35 @@
         "desc": "Bez leđa i trbuha, uključuje liniju ispod pupka",
         "price": "199,90",
         "oldPrice": "299,90",
-        "code": ""
+        "code": "pkg_wholebody_small_f"
       },
       "faceNeck": {
         "title": "Lice i vrat",
         "desc": "Za svilenkasto glatku kožu",
         "price": "49,90",
         "oldPrice": "79,80",
-        "code": ""
+        "code": "pkg_face_neck"
       },
       "superman": {
         "title": "Superman paket",
         "desc": "Prsa i trbuh",
         "price": "99,90",
         "oldPrice": "169,80",
-        "code": ""
+        "code": "pkg_superman_m"
       },
       "legs": {
         "title": "Noge kompletne",
         "desc": "Uključujući stopalo i prste",
         "price": "99,90",
         "oldPrice": "",
-        "code": ""
+        "code": "alc_legs_full"
       },
       "beach": {
         "title": "Beach paket",
         "desc": "Bikini zona, intimna zona, noge i pazusi",
         "price": "149,90",
         "oldPrice": "249,70",
-        "code": ""
+        "code": "pkg_beach_f"
       }
     }
   },
