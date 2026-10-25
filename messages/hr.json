@@ -26,6 +26,7 @@
   "hero": {
     "h1": "Laserska epilacija u Zagrebu",
     "book": "Rezerviraj termin",
+    "offPeak": "Jutra i mirni dani −10 % →",
     "allOffers": "Sve ponude",
     "allOffersMobile": "Sve ponude ↓",
     "trust1": "Besplatno savjetovanje",
@@ -56,7 +57,7 @@
   "offers": {
     "title": "Najbolje ponude",
     "subtitle": "Trajno povoljno",
-    "book": "Rezerviraj",
+    "book": "Rezerviraj ovaj tretman",
     "amount": "{amount} €",
     "prev": "Prethodne ponude",
     "next": "Sljedeće ponude",
@@ -303,7 +304,7 @@
     "email": "E-mail",
     "instagram": "Instagram",
     "facebook": "Facebook",
-    "book": "Rezerviraj termin",
+    "book": "Rezerviraj u {name}",
     "directions": "Kako do nas ↗",
     "parking": "Parking: {value}"
   },
