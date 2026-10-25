@@ -2,6 +2,8 @@ export type HeroOfferText = {
   badge: string;
   title: string;
   subtitle: string;
+  /** The hero button: says what booking opens with. */
+  cta: string;
 };
 
 export type HeroOffer = {
@@ -24,11 +26,13 @@ export const heroOffers: HeroOffer[] = [
         badge: "Posebna ponuda",
         title: "Lasersko uklanjanje dlačica ispod pazuha sada 19,90",
         subtitle: "za žene i muškarce · Ponuda vrijedi do 31.12.2026.",
+        cta: "Rezerviraj pazuhe · 19,90 €",
       },
       en: {
         badge: "Special offer",
         title: "Underarm laser hair removal now 19,90",
         subtitle: "for women and men · Offer valid until 31.12.2026.",
+        cta: "Book underarms · 19,90 €",
       },
     },
   },

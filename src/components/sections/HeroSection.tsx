@@ -113,7 +113,7 @@ export function HeroSection() {
               usluga={confirmedCode(offer.code)}
               className="inline-flex items-center justify-center rounded-full bg-white px-[34px] py-[18px] text-base font-extrabold uppercase tracking-[0.05em] text-[#0C0C0C]"
             >
-              {t("book")}
+              {copy?.cta ?? t("book")}
             </BookButton>
           ) : null}
           <a
@@ -123,6 +123,15 @@ export function HeroSection() {
             {t("allOffers")}
           </a>
         </div>
+
+        {offer ? (
+          <BookButton
+            usluga={confirmedCode(offer.code)}
+            className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-6 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white lg:hidden"
+          >
+            {copy?.cta ?? t("book")}
+          </BookButton>
+        ) : null}
 
         <div className="flex flex-wrap items-center gap-3.5 text-xs font-semibold text-[#0C0C0C] lg:hidden">
           <a href="#ponude" className="text-sm font-extrabold">
