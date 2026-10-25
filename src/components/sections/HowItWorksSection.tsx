@@ -22,7 +22,7 @@ export function HowItWorksSection() {
         </div>
 
         <div className="flex flex-col items-stretch gap-6 lg:flex-row lg:flex-wrap lg:items-center lg:gap-12">
-          <div className="flex min-w-0 flex-1 basis-[520px] flex-col gap-2.5 lg:gap-[18px]">
+          <div className="flex min-w-0 flex-1 lg:basis-[520px] flex-col gap-2.5 lg:gap-[18px]">
             {STEPS.map((step) => (
               <div key={step} className="flex items-start gap-3 bg-white p-3.5 lg:gap-[18px] lg:p-[22px]">
                 <span className="flex h-[34px] w-[34px] shrink-0 items-center justify-center rounded-full bg-[#0C0C0C] text-base font-extrabold text-white lg:h-11 lg:w-11 lg:text-lg">
@@ -41,7 +41,7 @@ export function HowItWorksSection() {
             </BookButton>
           </div>
 
-          <div className="flex min-w-0 flex-1 basis-[480px] flex-col gap-3 lg:gap-[18px]">
+          <div className="flex min-w-0 flex-1 lg:basis-[480px] flex-col gap-3 lg:gap-[18px]">
             <Image
               src="/images/technology/monolith_v1.png"
               alt={t("mediostarAlt")}
