@@ -124,6 +124,15 @@ export function HeroSection() {
           </a>
         </div>
 
+        {offer ? (
+          <BookButton
+            usluga={confirmedCode(offer.code)}
+            className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-6 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white lg:hidden"
+          >
+            {copy?.cta ?? t("book")}
+          </BookButton>
+        ) : null}
+
         <a
           href="#povoljniji-termini"
           className="text-sm font-extrabold text-[#0C0C0C] underline underline-offset-4 lg:text-base lg:text-white"
