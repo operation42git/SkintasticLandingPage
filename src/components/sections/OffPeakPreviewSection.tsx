@@ -107,6 +107,20 @@ export function OffPeakPreviewSection() {
 
   useEffect(() => setPageSearch(window.location.search), []);
 
+  // A location card links to #povoljni-{slug}: open the calendar on that studio and scroll to it.
+  useEffect(() => {
+    function fromHash() {
+      const slug = window.location.hash.startsWith("#povoljni-") ? window.location.hash.slice("#povoljni-".length) : "";
+      if (!studios.some((item) => item.slug === slug)) return;
+      chooseStudio(slug);
+      document.getElementById("povoljniji-termini")?.scrollIntoView({ behavior: "smooth" });
+    }
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
+    return () => window.removeEventListener("hashchange", fromHash);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const href = (() => {
     const url = new URL(buildBookingHref({ centar: studio }, pageSearch));
     if (day) url.searchParams.set("datum", day.date);
@@ -123,7 +137,7 @@ export function OffPeakPreviewSection() {
   }
 
   return (
-    <section id="povoljniji-termini" className="bg-[#f5e6de] py-9 text-[#0C0C0C] lg:py-20">
+    <section id="povoljniji-termini" className="scroll-mt-[68px] bg-[#f5e6de] py-9 lg:scroll-mt-[84px] text-[#0C0C0C] lg:py-20">
       <div className="mx-auto max-w-[1320px] lg:px-6">
         <div className="mb-6 px-4 text-center lg:mb-10 lg:px-0">
           <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
