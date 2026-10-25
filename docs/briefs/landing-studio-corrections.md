@@ -1,6 +1,6 @@
 # Brief · landing: the studio's text corrections, and no empty space above the laser image on phones
 
-> **Not accepted yet** (the person accepts it before it is built). Written by the Skintastic spec conversation from the studio's
+> **Accepted by Ivan Tomić, 2026-10-25.** Written by the Skintastic spec conversation from the studio's
 > corrections (Savka, sent to the person on 2026-10-24) and the person's phone screenshot.
 
 ## Touches
@@ -40,7 +40,7 @@ Notes on the texts:
 - **Addressing the reader:** the studio wrote the aftercare as instructions ("izbjegavati"). It is put in
   the page's "ti" form, as everywhere else.
 - **The aftercare's last sentence** arrived cut off ("Brijanje je dopušteno kada se koža smiri…"). It
-  ends with a full stop here. If the person sends more, the brief is updated before the build.
+  ends with a full stop here. Accepted with that ending (the person, 2026-10-25).
 
 **The phone gap** (`HowItWorksSection.tsx`)
 - **Cause:** the steps column has `basis-[520px]` and the laser column `basis-[480px]`. On phones the
