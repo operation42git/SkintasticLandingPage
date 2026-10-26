@@ -43,10 +43,10 @@ export function HowItWorksSection() {
 
           <div className="flex min-w-0 flex-1 lg:basis-[480px] flex-col gap-3 lg:gap-[18px]">
             <Image
-              src="/images/technology/mediostar.jpg"
+              src="/images/technology/monolith.webp"
               alt={t("mediostarAlt")}
-              width={1200}
-              height={600}
+              width={1600}
+              height={850}
               className="h-auto w-full"
             />
             <h3 className="text-sm font-extrabold uppercase lg:text-[22px]">
