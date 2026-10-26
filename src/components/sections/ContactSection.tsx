@@ -125,7 +125,7 @@ export function ContactSection() {
                     centar={location.slug}
                     className="inline-flex items-center justify-center rounded-full bg-[#0C0C0C] px-5 py-3 text-[13px] font-extrabold uppercase text-white"
                   >
-                    {t("book")}
+                    {t("book", { name: location.name })}
                   </BookButton>
                   {maps ? (
                     <a href={maps} className={directionsClass} target="_blank" rel="noopener noreferrer">

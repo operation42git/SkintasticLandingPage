@@ -56,7 +56,7 @@
   "offers": {
     "title": "Best offers",
     "subtitle": "Lastingly affordable",
-    "book": "Book",
+    "book": "Book this treatment",
     "amount": "{amount} €",
     "prev": "Previous offers",
     "next": "Next offers",
@@ -302,7 +302,7 @@
     "email": "E-mail",
     "instagram": "Instagram",
     "facebook": "Facebook",
-    "book": "Book an appointment",
+    "book": "Book at {name}",
     "directions": "How to find us ↗",
     "parking": "Parking: {value}"
   },
