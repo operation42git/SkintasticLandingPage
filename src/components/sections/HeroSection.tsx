@@ -6,6 +6,7 @@ import { confirmedCode } from "@/config/booking";
 import { visibleHeroOffers, type HeroOffer } from "@/config/hero-offers";
 import { locationsOf } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
+import { OffPeakLink } from "@/components/ui/OffPeakLink";
 
 const VIDEOS = ["/images/hero/hero-video-1.mp4", "/images/hero/hero-video-3.mp4"];
 const POSTER = "/images/hero/hero-video-1-poster.jpg";
@@ -132,6 +133,10 @@ export function HeroSection() {
             {copy?.cta ?? t("book")}
           </BookButton>
         ) : null}
+
+        <OffPeakLink className="text-sm font-extrabold text-[#0C0C0C] underline underline-offset-4 lg:text-base lg:text-white">
+          {t("offPeak")}
+        </OffPeakLink>
 
         <div className="flex flex-wrap items-center gap-3.5 text-xs font-semibold text-[#0C0C0C] lg:hidden">
           <a href="#ponude" className="text-sm font-extrabold">

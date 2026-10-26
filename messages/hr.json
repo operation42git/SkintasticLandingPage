@@ -33,7 +33,8 @@
     "trustMobile": "Besplatno savjetovanje · {centres}",
     "trustCentres": "{names}, Zagreb",
     "nameJoin": " i ",
-    "dot": "Ponuda {n}"
+    "dot": "Ponuda {n}",
+    "offPeak": "Jutra i mirni dani −10 % →"
   },
   "features": {
     "experts": {
@@ -108,6 +109,58 @@
       }
     }
   },
+  "offPeak": {
+    "eyebrow": "Skintastic Zagreb",
+    "title": "Povoljniji termini",
+    "lead": "<strong>−10 % na sve tretmane</strong> u mirnijim terminima. Odaberi studio i dan – točno vrijeme potvrđuješ u rezervaciji, prema trajanju tretmana.",
+    "studio": "Studio",
+    "weekdaysShort": [
+      "Pon",
+      "Uto",
+      "Sri",
+      "Čet",
+      "Pet",
+      "Sub",
+      "Ned"
+    ],
+    "weekdays": [
+      "Ponedjeljak",
+      "Utorak",
+      "Srijeda",
+      "Četvrtak",
+      "Petak",
+      "Subota",
+      "Nedjelja"
+    ],
+    "cell": {
+      "day": "cijeli dan",
+      "morning": "ujutro",
+      "gap": "kraći tretmani",
+      "regular": "",
+      "full": "popunjeno",
+      "closed": "zatvoreno"
+    },
+    "legend": {
+      "day": "−10 % cijeli dan",
+      "morning": "−10 % ujutro",
+      "gap": "−10 % u rupama, za kraće tretmane",
+      "regular": "Redovna cijena"
+    },
+    "dayTitle": "{weekday} {date} · {studio}",
+    "dayKind": {
+      "day": "Cijeli dan −10 %",
+      "morning": "−10 % ujutro, do {until}",
+      "gap": "−10 % u kraćim rupama u rasporedu",
+      "regular": ""
+    },
+    "examples": "Primjeri slobodnih termina",
+    "shortOnly": "Ove rupe stanu samo za kraće tretmane (npr. pazusi, nadusnica).",
+    "exactNote": "Točni termini ovise o trajanju tretmana. Ako odabrano vrijeme ne odgovara tvom tretmanu, u rezervaciji ti pokazujemo najbliže termine s −10 %.",
+    "regularDay": "Ovaj dan termini su po redovnoj cijeni.",
+    "continue": "Nastavi s ovim danom",
+    "continueAt": "Nastavi · {date} oko {time}",
+    "terms": "Sljedeći korak: odaberi tretman, pa potvrdi vrijeme. −10 % na cijenu iz cjenika · najviše 3 povoljna termina dnevno · samo online · ne zbraja se s drugim popustima."
+  },
   "how": {
     "eyebrow": "Trajno uklanjanje dlačica laserom",
     "title": "Kako djeluje",
@@ -172,7 +225,8 @@
     "nameOr": " ili ",
     "family": "Dio skintastic obitelji",
     "familyCount": "{count} centara u 3 zemlje — ista tehnologija i standard kvalitete.",
-    "familyShort": "Dio skintastic obitelji · {count} centara u 3 zemlje"
+    "familyShort": "Dio skintastic obitelji · {count} centara u 3 zemlje",
+    "offPeak": "Povoljni termini u ovom studiju →"
   },
   "services": {
     "badge": "Naša ponuda",
