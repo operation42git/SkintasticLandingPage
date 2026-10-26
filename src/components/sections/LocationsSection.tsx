@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { BookButton } from "@/components/ui/BookButton";
 import { Lightbox } from "@/components/ui/Lightbox";
+import { OffPeakLink } from "@/components/ui/OffPeakLink";
 import {
   brandCentreCount,
   externalHref,
@@ -119,6 +120,9 @@ function BookableCard({ location, onGallery }: { location: Location; onGallery: 
           <a href="#kontakt">{t("directions")}</a>
         </div>
         <div className="flex-1" />
+        <OffPeakLink studio={location.slug} className="pt-1 text-sm font-bold underline underline-offset-2">
+          {t("offPeak")}
+        </OffPeakLink>
         <div className="mt-2 flex gap-2 lg:mt-2.5 lg:block">
           <BookButton
             centar={location.slug}

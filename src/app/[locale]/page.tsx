@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { OffersSection } from "@/components/sections/OffersSection";
+import { OffPeakSection } from "@/components/sections/OffPeakSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { WhySection } from "@/components/sections/WhySection";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
@@ -25,6 +26,7 @@ export default async function HomePage({
       <main className="max-w-full overflow-x-clip">
         <HeroSection />
         <OffersSection />
+        <OffPeakSection />
         <HowItWorksSection />
         <WhySection />
         <ReviewsSection />
