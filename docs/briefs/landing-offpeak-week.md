@@ -1,6 +1,6 @@
 # Brief · landing: "Povoljniji termini" as a rolling week with the discount in words
 
-> **Not accepted yet** (the person accepts it before it is built). Written by the Skintastic spec conversation from the
+> **Accepted by Ivan Tomić, 2026-10-27.** Written by the Skintastic spec conversation from the
 > person's choices of 2026-10-26: option A on the mockup "words instead of colours, a rolling week from today", wording
 > option A, and the console warning (option c of the staging review).
 
