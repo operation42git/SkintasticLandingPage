@@ -34,7 +34,7 @@
     "trustCentres": "{names}, Zagreb",
     "nameJoin": " i ",
     "dot": "Ponuda {n}",
-    "offPeak": "Jutra i mirni dani −10 % →"
+    "offPeak": "Odabrani termini −10 % →"
   },
   "features": {
     "experts": {
@@ -112,7 +112,7 @@
   "offPeak": {
     "eyebrow": "Skintastic Zagreb",
     "title": "Povoljniji termini",
-    "lead": "<strong>−10 % na sve tretmane</strong> u mirnijim terminima. Odaberi studio i dan – točno vrijeme potvrđuješ u rezervaciji, prema trajanju tretmana.",
+    "lead": "<strong>Isti tretman, 10 % povoljnije</strong> – u označenim terminima u sljedećih 7 dana.",
     "studio": "Studio",
     "weekdaysShort": [
       "Pon",
@@ -133,18 +133,8 @@
       "Nedjelja"
     ],
     "cell": {
-      "day": "cijeli dan",
-      "morning": "ujutro",
-      "gap": "kraći tretmani",
-      "regular": "",
       "full": "popunjeno",
       "closed": "zatvoreno"
-    },
-    "legend": {
-      "day": "−10 % cijeli dan",
-      "morning": "−10 % ujutro",
-      "gap": "−10 % u rupama, za kraće tretmane",
-      "regular": "Redovna cijena"
     },
     "dayTitle": "{weekday} {date} · {studio}",
     "dayKind": {
@@ -159,7 +149,15 @@
     "regularDay": "Ovaj dan termini su po redovnoj cijeni.",
     "continue": "Nastavi s ovim danom",
     "continueAt": "Nastavi · {date} oko {time}",
-    "terms": "Sljedeći korak: odaberi tretman, pa potvrdi vrijeme. −10 % na cijenu iz cjenika · najviše 3 povoljna termina dnevno · samo online · ne zbraja se s drugim popustima."
+    "terms": "Sljedeći korak: odaberi tretman, pa potvrdi vrijeme. −10 % na cijenu iz cjenika · najviše 3 povoljna termina dnevno · samo online · ne zbraja se s drugim popustima.",
+    "today": "Danas",
+    "kind": {
+      "day": "cijeli dan",
+      "morning": "do {until}",
+      "gap": "u rupama"
+    },
+    "otherDays": "<strong>Ne odgovara ti nijedan od ovih dana?</strong> U kalendaru za rezervacije biraš bilo koji termin do 60 dana unaprijed – povoljniji termini su i ondje označeni s −10 %.",
+    "openCalendar": "Otvori kalendar →"
   },
   "how": {
     "eyebrow": "Trajno uklanjanje dlačica laserom",
