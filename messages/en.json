@@ -34,7 +34,7 @@
     "trustCentres": "{names}, Zagreb",
     "nameJoin": " and ",
     "dot": "Offer {n}",
-    "offPeak": "Quiet mornings and days −10 % →"
+    "offPeak": "Selected times −10 % →"
   },
   "features": {
     "experts": {
@@ -112,7 +112,7 @@
   "offPeak": {
     "eyebrow": "Skintastic Zagreb",
     "title": "Off-peak times",
-    "lead": "<strong>−10 % on all treatments</strong> at quieter times. Choose a studio and a day – you confirm the exact time in booking, by the length of your treatment.",
+    "lead": "<strong>The same treatment, 10 % less</strong> – at the marked times in the next 7 days.",
     "studio": "Studio",
     "weekdaysShort": [
       "Mon",
@@ -133,18 +133,8 @@
       "Sunday"
     ],
     "cell": {
-      "day": "all day",
-      "morning": "mornings",
-      "gap": "short treatments",
-      "regular": "",
       "full": "full",
       "closed": "closed"
-    },
-    "legend": {
-      "day": "−10 % all day",
-      "morning": "−10 % mornings",
-      "gap": "−10 % in gaps, for short treatments",
-      "regular": "Regular price"
     },
     "dayTitle": "{weekday} {date} · {studio}",
     "dayKind": {
@@ -159,7 +149,15 @@
     "regularDay": "On this day, times are at the regular price.",
     "continue": "Continue with this day",
     "continueAt": "Continue · {date} around {time}",
-    "terms": "Next step: choose a treatment, then confirm the time. −10 % off the price list · at most 3 discounted times a day · online only · not combined with other discounts."
+    "terms": "Next step: choose a treatment, then confirm the time. −10 % off the price list · at most 3 discounted times a day · online only · not combined with other discounts.",
+    "today": "Today",
+    "kind": {
+      "day": "all day",
+      "morning": "until {until}",
+      "gap": "in gaps"
+    },
+    "otherDays": "<strong>None of these days suit you?</strong> In the booking calendar you can choose any time up to 60 days ahead – the cheaper times are marked with −10 % there too.",
+    "openCalendar": "Open the calendar →"
   },
   "how": {
     "eyebrow": "Lasting laser hair removal",

@@ -6,27 +6,8 @@ import { buildBookingHref } from "@/config/booking";
 import { locationsOf } from "@/config/locations";
 import { fetchOffpeakDays, isDiscounted, setOffpeakStudios, type OffpeakDay } from "@/config/offpeak";
 
-type Tier = OffpeakDay["tier"] | "full" | "closed";
-
-const CELL: Record<Tier, string> = {
-  day: "bg-[#c9a96e]",
-  morning: "bg-[#e2c48f]",
-  gap: "bg-[#cfe0d3]",
-  regular: "bg-white",
-  full: "bg-[#ece5de] text-[#8a7d78]",
-  closed: "bg-[#ddd5cd] text-[#8a7d78]",
-};
-
-const CHIP: Record<OffpeakDay["tier"], string> = {
-  day: "bg-[#c9a96e]",
-  morning: "bg-[#e2c48f]",
-  gap: "bg-[#8fb39a]",
-  regular: "bg-white",
-};
-
-function tierOf(day: OffpeakDay): Tier {
-  return day.status === "open" ? day.tier : day.status;
-}
+/** The cards show the first 7 days of the answer: today and the next 6, the off-peak horizon. */
+const DAYS_SHOWN = 7;
 
 /** Monday 0 … Sunday 6, from a YYYY-MM-DD date. */
 function weekdayOf(date: string): number {
@@ -38,9 +19,10 @@ function shortDate(date: string): string {
 }
 
 /**
- * Povoljniji termini: the off-peak calendar per bookable studio, read from the booking app (decision 236).
- * Informative only: it carries the studio, the day and an optional preferred time into booking, which
- * decides the real time once it knows the treatment (decisions 233–235). Hidden while no studio has data.
+ * Povoljniji termini: the next 7 days per bookable studio, read from the booking app (decision 236), with the
+ * discount in words. Informative only: it carries the studio, the day and an optional preferred time into
+ * booking, which decides the real time once it knows the treatment (decisions 233–235). Hidden while no
+ * studio has a discounted day in the week.
  */
 export function OffPeakSection() {
   const t = useTranslations("offPeak");
@@ -70,7 +52,10 @@ export function OffPeakSection() {
       (results) => {
         if (cancelled) return;
         const loaded: Record<string, OffpeakDay[]> = {};
-        for (const [slug, result] of results) if (result) loaded[slug] = result;
+        for (const [slug, result] of results) {
+          const week = result?.slice(0, DAYS_SHOWN);
+          if (week?.some(isDiscounted)) loaded[slug] = week;
+        }
         setCalendars(loaded);
         const slugs = Object.keys(loaded);
         setOffpeakStudios(slugs);
@@ -85,7 +70,7 @@ export function OffPeakSection() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // A studio card links to #povoljni-{slug}: open the calendar on that studio and scroll to it.
+  // A studio card links to #povoljni-{slug}: open the week on that studio and scroll to it.
   useEffect(() => {
     function fromHash() {
       if (!window.location.hash.startsWith("#povoljni-")) return;
@@ -101,14 +86,21 @@ export function OffPeakSection() {
 
   if (!shown.length || !day) return null;
 
-  const href = (() => {
+  const dayHref = (() => {
     const url = new URL(buildBookingHref({ centar: studio }, pageSearch));
     url.searchParams.set("datum", day.date);
     if (time) url.searchParams.set("vrijeme", time);
     return url.toString();
   })();
+  const calendarHref = buildBookingHref({ centar: studio }, pageSearch);
   const studioName = studios.find((item) => item.slug === studio)?.name ?? "";
-  const lead = weekdayOf(days[0].date);
+  const weekdaysShort: string[] = t.raw("weekdaysShort");
+
+  function kindOf(item: OffpeakDay): string {
+    if (item.tier === "morning" && item.morningUntil) return t("kind.morning", { until: item.morningUntil });
+    if (item.tier === "day") return t("kind.day");
+    return t("kind.gap");
+  }
 
   return (
     <section
@@ -151,107 +143,114 @@ export function OffPeakSection() {
           </div>
         ) : null}
 
-        <div className="flex flex-col gap-6 px-4 lg:flex-row lg:items-start lg:gap-10 lg:px-0">
-          <div className="bg-white p-3 lg:flex-[1.3] lg:p-6">
-            <p className="mb-3 text-center text-sm font-extrabold uppercase">
-              {shortDate(days[0].date)} – {shortDate(days[days.length - 1].date)}
-            </p>
-            <div className="grid grid-cols-7 gap-1 lg:gap-1.5">
-              {t.raw("weekdaysShort").map((name: string) => (
-                <span key={name} className="pb-1 text-center text-[11px] font-bold text-[#3d3434] lg:text-xs">
-                  {name}
+        {/* The week: one row, sideways scroll on the phone with the next card peeking in */}
+        <div className="flex snap-x snap-mandatory scroll-px-4 gap-2.5 overflow-x-auto px-4 py-1 [scrollbar-width:none] lg:grid lg:grid-cols-7 lg:gap-3 lg:overflow-visible lg:px-0 [&::-webkit-scrollbar]:hidden">
+          {days.map((item, index) => {
+            const weekday = weekdaysShort[weekdayOf(item.date)];
+            const discounted = isDiscounted(item);
+            const isSelected = index === selected;
+            const look =
+              item.status === "closed"
+                ? "border border-dashed border-[#c9b8ae] bg-transparent text-[#8a7d78]"
+                : item.status === "full"
+                  ? "bg-[#f3ece7] text-[#8a7d78]"
+                  : "bg-white";
+            return (
+              <button
+                key={item.date}
+                type="button"
+                aria-pressed={isSelected}
+                onClick={() => {
+                  setSelected(index);
+                  setTime(null);
+                }}
+                className={`flex w-[104px] shrink-0 snap-start flex-col items-start gap-1.5 rounded-lg px-2.5 py-3 text-left lg:w-auto lg:p-4 ${look} ${
+                  isSelected ? "outline outline-2 -outline-offset-2 outline-[#0C0C0C]" : ""
+                }`}
+              >
+                <span className="whitespace-nowrap text-xs font-extrabold uppercase lg:text-[13px] lg:tracking-[0.04em]">
+                  {index === 0 ? `${t("today")} · ${weekday.toLowerCase()}` : weekday}
                 </span>
-              ))}
-              {Array.from({ length: lead }, (_, i) => (
-                <span key={`lead-${i}`} />
-              ))}
-              {days.map((item, index) => {
-                const tier = tierOf(item);
-                const disabled = item.status !== "open";
-                return (
-                  <button
-                    key={item.date}
-                    type="button"
-                    disabled={disabled}
-                    aria-pressed={index === selected}
-                    onClick={() => {
-                      setSelected(index);
-                      setTime(null);
-                    }}
-                    className={`flex h-14 flex-col items-center justify-center rounded-md text-sm font-extrabold lg:h-[74px] lg:text-base ${CELL[tier]} ${
-                      index === selected ? "ring-2 ring-[#0C0C0C] ring-offset-1" : ""
-                    }`}
-                  >
-                    {Number(item.date.slice(8, 10))}.
-                    <span className="hidden text-[11px] font-semibold lg:block">{t(`cell.${tier}`)}</span>
-                    {isDiscounted(item) ? <span className="text-[10px] font-bold lg:hidden">−10 %</span> : null}
-                  </button>
-                );
-              })}
-            </div>
-            <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs lg:text-[13px]">
-              {(["day", "morning", "gap", "regular"] as const).map((tier) => (
-                <span key={tier} className="inline-flex items-center gap-2">
-                  <span className={`inline-block h-3.5 w-3.5 rounded-[4px] border border-[#d9cfc7] ${CELL[tier]}`} />
-                  {t(`legend.${tier}`)}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-3 lg:flex-1">
-            <p className="text-lg font-extrabold">
-              {t("dayTitle", {
-                weekday: t.raw("weekdays")[weekdayOf(day.date)],
-                date: shortDate(day.date),
-                studio: studioName,
-              })}
-            </p>
-
-            {isDiscounted(day) ? (
-              <>
-                <p className="text-[15px] font-bold">
-                  {day.tier === "morning" && day.morningUntil
-                    ? t("dayKind.morning", { until: day.morningUntil })
-                    : t(`dayKind.${day.tier}`)}
-                </p>
-                {day.examples.length ? (
+                <span className="text-[13px] text-[#3d3434]">{shortDate(item.date)}</span>
+                {discounted ? (
                   <>
-                    <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#3d3434]">{t("examples")}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {day.examples.map((example) => (
-                        <button
-                          key={example}
-                          type="button"
-                          aria-pressed={time === example}
-                          onClick={() => setTime(time === example ? null : example)}
-                          className={`inline-flex items-center rounded-full px-3.5 py-2 text-[13px] font-bold ${CHIP[day.tier]} ${
-                            time === example ? "ring-2 ring-[#0C0C0C] ring-offset-1" : ""
-                          }`}
-                        >
-                          {example} −10 %
-                        </button>
-                      ))}
-                    </div>
+                    <span className="mt-1 rounded-full bg-[#0C0C0C] px-2.5 py-1 text-xs font-extrabold text-white">
+                      −10 %
+                    </span>
+                    <span className="text-[13px] font-bold leading-snug">{kindOf(item)}</span>
                   </>
+                ) : item.status === "full" ? (
+                  <span className="mt-1 text-[13px]">{t("cell.full")}</span>
+                ) : item.status === "closed" ? (
+                  <span className="mt-1 text-[13px]">{t("cell.closed")}</span>
                 ) : null}
-                <p className="text-xs leading-relaxed text-[#3d3434]">
-                  {day.shortOnly ? `${t("shortOnly")} ` : ""}
-                  {t("exactNote")}
-                </p>
-              </>
-            ) : (
-              <p className="text-[15px] text-[#3d3434]">{t("regularDay")}</p>
-            )}
+              </button>
+            );
+          })}
+        </div>
 
-            <a
-              href={href}
-              className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-8 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white lg:w-auto lg:self-start lg:text-[15px]"
-            >
-              {time ? t("continueAt", { date: shortDate(day.date), time }) : t("continue")}
+        <div className="mt-6 flex flex-col gap-3 px-4 lg:mt-8 lg:px-0">
+          <p className="text-lg font-extrabold">
+            {selected === 0 ? `${t("today")}, ` : ""}
+            {t("dayTitle", {
+              weekday: selected === 0
+                ? t.raw("weekdays")[weekdayOf(day.date)].toLowerCase()
+                : t.raw("weekdays")[weekdayOf(day.date)],
+              date: shortDate(day.date),
+              studio: studioName,
+            })}
+          </p>
+
+          {isDiscounted(day) ? (
+            <>
+              <p className="text-[15px] font-bold">
+                {day.tier === "morning" && day.morningUntil
+                  ? t("dayKind.morning", { until: day.morningUntil })
+                  : t(`dayKind.${day.tier}`)}
+              </p>
+              {day.examples.length ? (
+                <>
+                  <p className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#3d3434]">{t("examples")}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {day.examples.map((example) => (
+                      <button
+                        key={example}
+                        type="button"
+                        aria-pressed={time === example}
+                        onClick={() => setTime(time === example ? null : example)}
+                        className={`inline-flex items-center rounded-full border-[1.5px] border-[#0C0C0C] px-3.5 py-2 text-[13px] font-bold ${
+                          time === example ? "bg-[#0C0C0C] text-white" : "bg-white"
+                        }`}
+                      >
+                        {example} −10 %
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : null}
+              <p className="text-xs leading-relaxed text-[#3d3434]">
+                {day.shortOnly ? `${t("shortOnly")} ` : ""}
+                {t("exactNote")}
+              </p>
+            </>
+          ) : (
+            <p className="text-[15px] text-[#3d3434]">{t("regularDay")}</p>
+          )}
+
+          <a
+            href={dayHref}
+            className="mt-2 inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-8 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white lg:w-auto lg:self-start lg:text-[15px]"
+          >
+            {time ? t("continueAt", { date: shortDate(day.date), time }) : t("continue")}
+          </a>
+
+          <p className="mt-2 text-sm leading-relaxed text-[#3d3434]">
+            {t.rich("otherDays", { strong: (chunks) => <strong className="text-[#0C0C0C]">{chunks}</strong> })}{" "}
+            <a href={calendarHref} className="font-extrabold text-[#0C0C0C] underline underline-offset-2">
+              {t("openCalendar")}
             </a>
-            <p className="text-xs text-[#3d3434]">{t("terms")}</p>
-          </div>
+          </p>
+          <p className="text-xs text-[#3d3434]">{t("terms")}</p>
         </div>
       </div>
     </section>
