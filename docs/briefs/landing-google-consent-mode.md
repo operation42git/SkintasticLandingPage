@@ -52,6 +52,7 @@ data goes to Google. Booking-confirmed conversions are sent by the booking app (
 | changes of choice | on `skt:consent-updated`: recompute the signals and send `gtag("consent","update", …)`; load the script and the configs that newly qualify. |
 | withdrawal | when a signal that was `"granted"` becomes `"denied"`, in this order: send the update; set `window["ga-disable-" + GA4_ID] = true` for analytics; delete the Google cookies of the withdrawn part (below); **reload the page** (`location.reload()`), so the script is gone and cannot send anything. A signal that only turns from `"denied"` to `"granted"` needs no reload. After the reload the load rule decides what, if anything, starts again. |
 | cookies the code may delete | `_ga`, `_ga_<GA4 ID without "G-">` for analytics; `_gcl_au`, `_gcl_aw`, `_gac_*` for ads. These names and lifetimes are **expected, not given**: check them against Google's current cookie documentation and list the source URL of each in the report. Each is deleted (expired, `Path=/`) on the page's host and on every parent suffix of it that has at least two labels, so the domain Google chose is always covered; a prefix match covers `_ga_*` and `_gac_*`. |
+| other tabs | a choice changed in another tab is applied by this tab on its next page load; there is no cross-tab listener. |
 | pure module | `google-consent.ts` holds the signal mapping, the load rule, the ID patterns and the cookie names as functions of their inputs; `GoogleTags.tsx` does the DOM, the script and the `gtag` calls. |
 | `BANNER_VERSION` | bumped (a new counter or date) because the text and the data use change; a new row in `docs/cookie-banner-versions.md`. |
 
@@ -69,6 +70,23 @@ value this brief needs that is not in a table: stop and ask, listing everything 
 
 The sentence about personalised ads is true only while `AD_PERSONALIZATION_ALLOWED` is `false`: if the constant
 changes, the text changes in the same commit.
+
+**Sources** checked 2026-10-28. Google changes these pages, so the builder reads them again before building and
+lists any difference in the report.
+- Consent types and basic versus advanced mode:
+  https://developers.google.com/tag-platform/security/concepts/consent-mode (read).
+- Defaults and updates with `gtag`: https://developers.google.com/tag-platform/security/guides/consent (read).
+- Google Analytics 4 cookies, `_ga` and `_ga_<container-id>`, both 2 years:
+  https://support.google.com/analytics/answer/11397207 (read).
+- The disable flag `ga-disable-<ID>`: https://developers.google.com/tag-platform/security/guides/privacy
+  (**not opened**; known from a search summary). Google's snippet sets the flag before the script loads; setting it
+  after is not shown there. The reload in the withdrawal rule removes the script, so the flag is a second
+  guard, not the only one.
+- Google Ads cookies `_gcl_au`, `_gcl_aw` and `_gac_<wpid>`, 90 days: https://business.safety.google/adscookies/
+  (**not opened**; known from a search summary). Check each name, lifetime and wording before building, and
+  correct the Messages table if they differ.
+- **Build:** the IDs are read when the site is built (`NEXT_PUBLIC_*`), so the person sets them in the hosting
+  service's build settings for each environment (staging, production); a changed ID needs a new build.
 
 **Tests**
 - `node --test src/lib/google-consent.test.mts` (Node 22.18 or later): the mapping for each category alone, for
@@ -113,6 +131,7 @@ changes, the text changes in the same commit.
 - Conversion events (booking confirmed, paid visit): the booking app, ADR-0047 points 3 and 5, its own ads brief.
 - Forwarding `gclid` and `fbclid` only with ads consent: an open question for the person, not changed here.
 - The privacy page text and the lawyer's review (the legal pages).
-- Creating the Google accounts, the GA4 property or the Ads account, and checking DebugView: the person.
+- Creating the Google accounts, the GA4 property or the Ads account, setting the IDs in the host's build settings,
+  and checking DebugView: the person.
 
 **Estimate** One and a half days.
