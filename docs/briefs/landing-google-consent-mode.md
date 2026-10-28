@@ -51,7 +51,7 @@ data goes to Google. Booking-confirmed conversions are sent by the booking app (
 | page changes | one more `page_view` (with `send_to`) when the pathname changes after the first load (a locale switch, a client navigation), only while `analytics_storage` is `"granted"`; the initial path is not a change and sends nothing more. |
 | changes of choice | on `skt:consent-updated`: recompute the signals and send `gtag("consent","update", …)`; load the script and the configs that newly qualify. |
 | withdrawal | when a signal that was `"granted"` becomes `"denied"`, in this order: send the update; set `window["ga-disable-" + GA4_ID] = true` for analytics; delete the Google cookies of the withdrawn part (below); **reload the page** (`location.reload()`), so the script is gone and cannot send anything. A signal that only turns from `"denied"` to `"granted"` needs no reload. After the reload the load rule decides what, if anything, starts again. |
-| cookies the code may delete | `_ga`, `_ga_<GA4 ID without "G-">` for analytics; `_gcl_au`, `_gcl_aw`, `_gac_*` for ads. These names and lifetimes are **expected, not given**: check them against Google's current cookie documentation and list the source URL of each in the report. Each is deleted (expired, `Path=/`) on the page's host and on every parent suffix of it that has at least two labels, so the domain Google chose is always covered; a prefix match covers `_ga_*` and `_gac_*`. |
+| cookies the code may delete | `_ga`, `_ga_<GA4 ID without "G-">` for analytics; `_gcl_au`, `_gcl_aw`, `_gcl_gs`, `_gcl_ag`, `_gcl_gb` and `_gac_*` (including `_gac_gb_*`) for ads. Names and lifetimes (`_ga`, `_ga_<id>` 2 years; the ads ones 90 days) match Google's pages in Sources as read on 2026-10-28; the builder still lists, from the browser checks, every cookie that really appears and any difference. Google's own domains (`google.com`, `doubleclick.net`) may set `NID` or `IDE` when ad requests are made: this page cannot delete them, so report them and add them to the cookie table. Each is deleted (expired, `Path=/`) on the page's host and on every parent suffix of it that has at least two labels, so the domain Google chose is always covered; a prefix match covers `_ga_*` and `_gac_*`. |
 | other tabs | a choice changed in another tab is applied by this tab on its next page load; there is no cross-tab listener. |
 | pure module | `google-consent.ts` holds the signal mapping, the load rule, the ID patterns and the cookie names as functions of their inputs; `GoogleTags.tsx` does the DOM, the script and the `gtag` calls. |
 | `BANNER_VERSION` | bumped (a new counter or date) because the text and the data use change; a new row in `docs/cookie-banner-versions.md`. |
@@ -83,8 +83,9 @@ lists any difference in the report.
   after is not shown there. The reload in the withdrawal rule removes the script, so the flag is a second
   guard, not the only one.
 - Google Ads cookies `_gcl_au`, `_gcl_aw` and `_gac_<wpid>`, 90 days: https://business.safety.google/adscookies/
-  (**not opened**; known from a search summary). Check each name, lifetime and wording before building, and
-  correct the Messages table if they differ.
+  (read 2026-10-28: `_gcl_au`, `_gcl_aw`, `_gcl_gs`, `_gcl_ag`, `_gcl_gb` and `_gac_gb_<wpid>` last 90 days and are set on the
+  site's own domain; `_gac_<wpid>` also 90 days, listed there under Google Analytics; `_ga` 2 years). Read it again
+  before building and correct the Messages table if anything differs.
 - **Build:** the IDs are read when the site is built (`NEXT_PUBLIC_*`), so the person sets them in the hosting
   service's build settings for each environment (staging, production); a changed ID needs a new build.
 
@@ -129,7 +130,7 @@ lists any difference in the report.
 - Google Tag Manager, Advanced Consent Mode, Meta or any other tag.
 - Remarketing audiences: `AD_PERSONALIZATION_ALLOWED` stays `false`.
 - Conversion events (booking confirmed, paid visit): the booking app, ADR-0047 points 3 and 5, its own ads brief.
-- Forwarding `gclid` and `fbclid` only with ads consent: an open question for the person, not changed here.
+- Forwarding `gclid` and `fbclid` only with ads consent: decided and built in `landing-cookie-consent`.
 - The privacy page text and the lawyer's review (the legal pages).
 - Creating the Google accounts, the GA4 property or the Ads account, setting the IDs in the host's build settings,
   and checking DebugView: the person.

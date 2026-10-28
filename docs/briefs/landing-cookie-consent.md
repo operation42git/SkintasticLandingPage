@@ -14,6 +14,8 @@
   the `.mts` name keeps it out of `tsconfig.json`'s `**/*.ts`, so `next build` does not see it)
 - `src/config/consent.ts` (new: `BANNER_VERSION` and the log URL, derived from `BOOKING_URL`)
 - `src/components/ui/ScrollToTop.tsx` (the same overlap as the cookie button; position only)
+- `src/config/booking.ts` (`buildBookingHref` only), `src/components/ui/BookButton.tsx` and
+  `src/components/sections/OffPeakSection.tsx` (the link building only): the ad-click IDs rule below
 - `messages/hr.json`, `messages/en.json` (the `cookieConsent` keys below only)
 - `docs/cookie-consent.md` (new: the rules for any future tag) and `docs/cookie-banner-versions.md` (new)
 
@@ -27,7 +29,7 @@ tapped on a phone.
 
 **Decided** the person, 2026-10-28: four optional categories (functional, analytics, performance, ads) stored
 separately; a second cookie `skt_consent_id` that stays after a reject; `bannerVersion` as a date and a
-counter; Croatian wording fixes as listed under Messages. Skintastic ADR-0047 (accepted): one `skt_consent`
+counter; Croatian wording fixes as listed under Messages; the ad-click IDs `gclid` and `fbclid` travel to the booking app only with ads consent (the person, 2026-10-28; it narrows ADR-0047 point 6 for click IDs, the `utm_*` parameters are unchanged). Skintastic ADR-0047 (accepted): one `skt_consent`
 cookie on the main domain, written by this page; its cookie attributes. **Amended by this brief:** the cookie
 value is `v2…` below, not `v1.<necessary>.<analytics>.<marketing>.<date>` of ADR-0047 and
 `landing-zagreb.md`. No tracking script is added.
@@ -52,6 +54,7 @@ value is `v2…` below, not `v1.<necessary>.<analytics>.<marketing>.<date>` of A
 | `BANNER_VERSION` | `YYYY-MM-DD.N`: the date this brief is accepted (from its first line) and `.1`. Bumped by hand whenever the dialog text, the categories or the data use change; each version is a row in `docs/cookie-banner-versions.md` (version, date, what changed, commit). |
 | privacy link | in the dialog, under the intro, `footer.privacyPolicy` as the text, the same `href` as the footer (`/{locale}/datenschutz`), opening in a new tab (`target="_blank"`, `rel="noopener"`) so the page behind a blocking dialog stays readable (proposed). |
 | reopen button | below `lg` (1024 px): `bottom` = the booking bar's height (84 px, the value `MobileBookBar.tsx` gives the body) + 12 px, so it clears the bar; from `lg`: as today (`bottom-5 left-5`). `z-index` stays below the dialog's. `ScrollToTop` gets the same rule on its own side (`right-3.5`). |
+| click IDs | `utm_source`, `utm_medium`, `utm_campaign` and `utm_content` are forwarded as today. `gclid` and `fbclid` are forwarded **only while `getConsent()` says `ads` is `true`**; otherwise the link has neither, even when the page's own address carries them. `buildBookingHref` takes one more argument (`adsAllowed: boolean`) and its callers pass it; the links update when `skt:consent-updated` fires (`BookButton` already sets its `href` in an effect). This page keeps the click IDs nowhere else. |
 | footer | "Postavke kolačića" in the footer is unchanged and still opens the dialog with the saved state. |
 
 **Values not given yet** The three marked *(proposed)* above (the retry delay, the queue size, the new-tab
@@ -115,13 +118,16 @@ real cookies of each tag here when a tag is added. Use one term for the always-o
     `true` in `getConsent()` or after `skt:consent-updated`, and that Google tags later map the categories to
     Consent Mode v2 (`analytics_storage`, `ad_storage`, `ad_user_data`, `ad_personalization`), default
     `denied`; `docs/cookie-banner-versions.md` has the first row. Listed.
-11. **The diff** lists only the Touches paths. Listed.
+11. **Click IDs:** with a page address carrying `?utm_source=z&gclid=x&fbclid=y`, before a choice and after Reject the
+    booking links (header, hero, offers, the mobile bar, the off-peak calendar link) carry `utm_source` but neither click ID;
+    after Accept all, or ads alone, they carry all three; turning ads off removes the click IDs from the links without
+    a reload; analytics alone does not add them. Shown.
+12. **The diff** lists only the Touches paths. Listed.
 
 **Out of scope**
 - Any tracking tag, Consent Mode wiring or Google/Meta script (the ads brief).
-- Forwarding `gclid` and `fbclid` only with ads consent: an open question for the person, not changed here.
 - The legal pages (the privacy text itself, the cookie table of real cookies, the lawyer's review).
 - The booking app: the table, the route and its CORS (`platform-consent-log`, `api-consent-log-route`).
 - The footer, the header and every section other than the files in Touches.
 
-**Estimate** One and a half days.
+**Estimate** Two days.
