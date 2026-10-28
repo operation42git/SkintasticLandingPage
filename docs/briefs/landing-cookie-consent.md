@@ -10,7 +10,8 @@
 
 - `src/components/legal/CookieConsent.tsx` (the dialog, the reopen button, the calls below)
 - `src/lib/consent.ts` (new: the cookie reader and writer, `getConsent()`, the event, the pending queue, the
-  log call) and `src/lib/consent.test.ts` (new: run with `node --test`, no dependency)
+  log call; imports nothing from `@/`) and `src/lib/consent.test.mts` (new: run with `node --test`, no dependency;
+  the `.mts` name keeps it out of `tsconfig.json`'s `**/*.ts`, so `next build` does not see it)
 - `src/config/consent.ts` (new: `BANNER_VERSION` and the log URL, derived from `BOOKING_URL`)
 - `src/components/ui/ScrollToTop.tsx` (the same overlap as the cookie button; position only)
 - `messages/hr.json`, `messages/en.json` (the `cookieConsent` keys below only)
@@ -37,15 +38,17 @@ value is `v2…` below, not `v1.<necessary>.<analytics>.<marketing>.<date>` of A
 |---|---|
 | `skt_consent` | `v2.<functional>.<analytics>.<performance>.<ads>.<YYYY-MM-DD>`, each category `0` or `1`, the date is the day of the choice; e.g. `v2.0.1.0.0.2026-11-01`. Necessary is not stored. Attributes unchanged: `Path=/`, `Max-Age=15552000`, `SameSite=Lax`, plus `Domain` (from `NEXT_PUBLIC_SITE_URL`) and `Secure` off `localhost`. |
 | reading | only an exact match of the pattern is a choice. A `v1.*` value, a malformed value or no cookie is **no choice**: the dialog opens, nothing optional is allowed. |
-| `skt_consent_id` | a random UUID v4 from `crypto.randomUUID()`, made at the first save, same attributes and lifetime as `skt_consent`. Read only if it matches the UUID v4 pattern, else made again. It stays after Reject and after any later save. Never made before the first choice. |
+| `skt_consent_id` | a random UUID v4 from `crypto.randomUUID()` (where that is missing, for example on a plain-http address on the local network,
+  built from `crypto.getRandomValues` with the version and variant bits set), made at the first save, same attributes and lifetime as `skt_consent`. Read only if it matches the UUID v4 pattern, else made again. It stays after Reject and after any later save. Never made before the first choice. |
 | categories | order `functional`, `analytics`, `performance`, `ads`; all `false` by default. |
 | `getConsent()` | exported from `src/lib/consent.ts`; returns `{ functional, analytics, performance, ads }` (booleans) or `null` when there is no valid choice; returns `null` on the server. |
 | event | after the cookies are written, on every save (Save, Accept all, Reject): `window.dispatchEvent(new CustomEvent("skt:consent-updated", { detail }))`, `detail` = the same object `getConsent()` returns. The constant is exported beside `OPEN_CONSENT_EVENT`. |
 | `action` | `accept_all` (the "Accept all" button); `reject` (the "Reject" button, nothing granted before); `save` (the "Save" button, and nothing previously granted is turned off); `withdraw` (a Reject or Save that turns off at least one category that was granted before). "Before" is the choice read just before this save. |
 | log record | `{ "consentId": <skt_consent_id>, "categories": { functional, analytics, performance, ads }, "bannerVersion": <BANNER_VERSION>, "locale": <the page locale, hr or en>, "action": <as above> }` and no other field. |
-| log call | `POST` to `${new URL(BOOKING_URL).origin}/api/public/consent-log` (as `offpeak.ts` builds its URL; no new variable), `Content-Type: application/json`, `keepalive: true`, `credentials: "omit"`. Success is any `2xx`. It runs after the cookies are written and never delays or blocks the dialog. |
-| failure | a thrown fetch, a `5xx` or a `429`: retry once after 2 seconds (proposed), then keep the record in the queue below. A `4xx` other than `429`: drop that record (it can never succeed) and write one `console.warn`. |
-| queue | `localStorage` key `skt_consent_pending`, a JSON list of log records with `queuedAt`; at most 5, the oldest dropped first (proposed). On every page load, send them oldest first, remove each on success, stop at the first failure. It holds nothing else. The old-key cleanup of `sk_consent` and `skt_consent` in `localStorage` stays and never touches this key. |
+| log call | `POST` to `${new URL(BOOKING_URL).origin}/api/public/consent-log` (as `offpeak.ts` builds its URL; no new variable), `Content-Type: application/json`, `keepalive: true` (dropped only if the browser check in Done when 7 fails), `credentials: "omit"`. Success is any `2xx`. It runs after the cookies are written and never delays or blocks the dialog. |
+| failure | the record is put in the queue below **before** it is sent and removed on a `2xx`, so closing the tab mid-send loses nothing. A thrown fetch, a `5xx` or a `429`: retry once after 2 seconds (proposed), from the queue; if that fails too the record stays there. A `4xx` other than `429`: remove that record (it can never succeed) and write one `console.warn`. |
+| queue | `localStorage` key `skt_consent_pending`, a JSON list of log records with `queuedAt`, which is local only and is removed before sending (the sent body has exactly the log record's fields); at most 5, the oldest dropped first (proposed). On every page load, send them oldest first, remove each on success, stop at the first failure. It holds nothing else. Two open tabs may send the same record twice; the log is append-only and that is harmless. The old-key cleanup of `sk_consent` and `skt_consent` in `localStorage` stays and never touches this key. |
+| `consent.ts` | pure: it imports nothing from `@/` or `next`, and takes the cookie domain, the hostname, the storage, `fetch`, the clock and the random source as arguments, so `node --test` runs it without the environment variables `@/config/booking` needs; `CookieConsent.tsx` passes `consentCookieDomain()`, `window.location.hostname`, `localStorage`, `fetch`, `Date` and `crypto`. |
 | `BANNER_VERSION` | `YYYY-MM-DD.N`: the date this brief is accepted (from its first line) and `.1`. Bumped by hand whenever the dialog text, the categories or the data use change; each version is a row in `docs/cookie-banner-versions.md` (version, date, what changed, commit). |
 | privacy link | in the dialog, under the intro, `footer.privacyPolicy` as the text, the same `href` as the footer (`/{locale}/datenschutz`), opening in a new tab (`target="_blank"`, `rel="noopener"`) so the page behind a blocking dialog stays readable (proposed). |
 | reopen button | below `lg` (1024 px): `bottom` = the booking bar's height (84 px, the value `MobileBookBar.tsx` gives the body) + 12 px, so it clears the bar; from `lg`: as today (`bottom-5 left-5`). `z-index` stays below the dialog's. `ScrollToTop` gets the same rule on its own side (`right-3.5`). |
@@ -78,10 +81,10 @@ real cookies of each tag here when a tag is added. Use one term for the always-o
 `categories.necessary.desc` changes; its claim about personal data is left for the lawyer's review.
 
 **Tests**
-- `node --test src/lib/consent.test.ts` (Node 22.18 or later): the reader and writer for each single
+- `node --test src/lib/consent.test.mts` (Node 22.18 or later): the reader and writer for each single
   category and for none and all (round trip); `v1.1.1.0.2026-10-21`, a malformed value and an empty string read
   as no choice; the four `action` values from "before" and "after"; the queue keeps 5 and drops the oldest;
-  a `4xx` drops a record, a `5xx` keeps it.
+  a `4xx` drops a record, a `5xx` keeps it; a record is in the queue before the send starts; `queuedAt` is not in the sent body; the UUID fallback gives a valid v4.
 - `npm run build` and `npm run lint` pass.
 - In a browser on the `out/` build (Playwright through `npx`, nothing added to `package.json`): the checks in
   Done when, at 1440 px and 390 px, against a throwaway stub of the log endpoint kept outside the repository
@@ -103,7 +106,8 @@ real cookies of each tag here when a tag is added. Use one term for the always-o
 7. **Log:** each of the four actions sends one `POST` with exactly the record in Values (`consentId`
    unchanged between saves in one browser); a stub answering `500` leaves the record in `skt_consent_pending`
    and the next page load sends it; a stub answering `400` drops it with one warning; with the endpoint
-   unreachable the dialog still closes at once. Shown.
+   unreachable the dialog still closes at once. In Chrome and in WebKit (Playwright) the `POST` with its preflight
+   succeeds with `keepalive`; if it fails in either, `keepalive` is removed and the report says so. Shown.
 8. **Texts:** the Messages table is in both files word for word; the dialog links to the privacy page;
    no cookie text says the site currently uses third-party analytics or advertising cookies. Listed.
 9. **Footer:** "Postavke kolačića" still reopens the dialog with the saved state. Shown.
@@ -120,4 +124,4 @@ real cookies of each tag here when a tag is added. Use one term for the always-o
 - The booking app: the table, the route and its CORS (`platform-consent-log`, `api-consent-log-route`).
 - The footer, the header and every section other than the files in Touches.
 
-**Estimate** One day.
+**Estimate** One and a half days.
