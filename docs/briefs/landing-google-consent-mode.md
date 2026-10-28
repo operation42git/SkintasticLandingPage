@@ -45,12 +45,13 @@ data goes to Google. Booking-confirmed conversions are sent by the booking app (
 | `AD_PERSONALIZATION_ALLOWED` | a constant in `src/config/google.ts`, `false`. Changing it is a decision of the person after the lawyer's agreement, and bumps `BANNER_VERSION` with the text of `categories.ads.desc`. |
 | load rule | the Google script (`https://www.googletagmanager.com/gtag/js?id=<one set ID>`) is requested only when `analytics_storage` or `ad_storage` is `"granted"` and its ID is set; once, never twice. Functional alone, performance alone, no choice, Reject: nothing is requested. |
 | start | in the browser, once the consent API says there is a choice: define `window.dataLayer` and `gtag`, `gtag("consent","default", every signal "denied")`, then `gtag("consent","update", the signals)`, then load the script, then `gtag("js", new Date())`, then the configs below. All of this before any `config`. |
-| GA4 config | only when `analytics_storage` is `"granted"` and the GA4 ID is set: `gtag("config", GA4_ID, { send_page_view: false })`, then one `page_view` event with the page's path, title and locale. |
+| GA4 config | only when `analytics_storage` is `"granted"` and the GA4 ID is set: `gtag("config", GA4_ID, { send_page_view: false })`, then one `page_view` event with the page's path, title and locale, sent **once** for the first load (the page-change rule below skips the initial path). |
 | Ads config | only when `ad_storage` is `"granted"` and the Ads ID is set: `gtag("config", ADS_ID, { allow_ad_personalization_signals: false })` while `AD_PERSONALIZATION_ALLOWED` is `false`. No conversion event is sent by this page. |
-| page changes | one more `page_view` when the pathname changes (a locale switch, a client navigation), only while `analytics_storage` is `"granted"`; none for the same path. |
+| events | every `gtag("event", …)` carries `send_to: GA4_ID`. No event is sent without a destination, so none can reach the Ads destination; a test of the pure module and a network check prove it. |
+| page changes | one more `page_view` (with `send_to`) when the pathname changes after the first load (a locale switch, a client navigation), only while `analytics_storage` is `"granted"`; the initial path is not a change and sends nothing more. |
 | changes of choice | on `skt:consent-updated`: recompute the signals and send `gtag("consent","update", …)`; load the script and the configs that newly qualify. |
-| withdrawal | when a signal that was `"granted"` becomes `"denied"`: send the update, set `window["ga-disable-" + GA4_ID] = true` for analytics, stop sending events, and delete the Google cookies of the withdrawn part (below) from the page's host and its parent domain, `Path=/`. Allowing again clears the disable flag. A page reload is not required. |
-| cookies the code may delete | `_ga`, `_ga_<GA4 ID without "G-">` for analytics; `_gcl_au`, `_gcl_aw`, `_gac_*` for ads. These names and lifetimes are **expected, not given**: check them against Google's current cookie documentation and list the source URL of each in the report. |
+| withdrawal | when a signal that was `"granted"` becomes `"denied"`, in this order: send the update; set `window["ga-disable-" + GA4_ID] = true` for analytics; delete the Google cookies of the withdrawn part (below); **reload the page** (`location.reload()`), so the script is gone and cannot send anything. A signal that only turns from `"denied"` to `"granted"` needs no reload. After the reload the load rule decides what, if anything, starts again. |
+| cookies the code may delete | `_ga`, `_ga_<GA4 ID without "G-">` for analytics; `_gcl_au`, `_gcl_aw`, `_gac_*` for ads. These names and lifetimes are **expected, not given**: check them against Google's current cookie documentation and list the source URL of each in the report. Each is deleted (expired, `Path=/`) on the page's host and on every parent suffix of it that has at least two labels, so the domain Google chose is always covered; a prefix match covers `_ga_*` and `_gac_*`. |
 | pure module | `google-consent.ts` holds the signal mapping, the load rule, the ID patterns and the cookie names as functions of their inputs; `GoogleTags.tsx` does the DOM, the script and the `gtag` calls. |
 | `BANNER_VERSION` | bumped (a new counter or date) because the text and the data use change; a new row in `docs/cookie-banner-versions.md`. |
 
@@ -73,7 +74,8 @@ changes, the text changes in the same commit.
 - `node --test src/lib/google-consent.test.mts` (Node 22.18 or later): the mapping for each category alone, for
   none and for all; `ad_personalization` stays `"denied"` with the constant `false` and follows `ads` with it
   `true`; the load rule for every combination; a well-formed and a malformed ID of each kind; the cookie names
-  for a given GA4 ID.
+  for a given GA4 ID; the domains tried for a host (`www.example.hr` gives itself and `example.hr`; `localhost`
+  gives only itself; a bare top-level label is never tried); the event builder always sets `send_to`.
 - `npm run build` and `npm run lint` pass; an unset ID builds, a malformed one fails the build.
 - In a browser on the `out/` build with dummy IDs in `.env.local`, at 1440 px and 390 px (Playwright through
   `npx`, nothing added to `package.json`): the checks in Done when, reading the network log, `document.cookie`
@@ -90,10 +92,13 @@ changes, the text changes in the same commit.
    appears. Shown.
 4. **All:** both configs, the three signals as in 2 and 3, `ad_personalization` still denied. Shown.
 5. **Functional alone and performance alone:** no Google request. Shown.
-6. **Withdrawal:** accept all, then Reject without reloading: an update with every signal denied, no further
-   `collect` request on a later navigation, and the Google cookies are gone. Shown.
+6. **Withdrawal:** accept all, then Reject: the update with every signal denied is sent, the Google cookies are
+   deleted on every domain tried, the page reloads, and afterwards the network log shows **no request to any
+   Google host**. Shown.
 7. **Reload with a saved choice:** the tags start by the same rules with no banner interaction. Shown.
-8. **Page changes:** switching the locale sends one more `page_view`; clicking the same path sends none. Shown.
+8. **Page views and destinations:** one `page_view` on load (not two); switching the locale sends exactly one more;
+   clicking the same path sends none; with only analytics allowed no request goes to the Ads destination, and
+   every event in the log carries the GA4 destination. Shown.
 9. **Environment:** with both IDs unset the build passes and nothing loads in any case above; a malformed ID
    fails the build. Shown.
 10. **Cookie list:** the cookie names seen in the browser in 2 to 4 match the names in the two descriptions, each
