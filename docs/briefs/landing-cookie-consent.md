@@ -1,10 +1,9 @@
 # Brief · landing: the cookie choice stored per category, readable by future tags, and logged in the booking app
 
-> **Draft, not accepted.** Written 2026-10-28 by the landing-page cookie audit conversation from the
-> person's choices of the same day. Do not start it until a person writes "Accepted by …" here. It also
-> waits for **ADR-0068** (booking app repository, status *Proposed*) to be accepted, and for the app briefs
-> `platform-consent-log` and `api-consent-log-route` to be merged to staging before Done when 7 can be
-> shown. This brief cites ADR-0068 as a proposal only; nothing under **Decided** rests on it.
+> **Accepted by Ivan Tomić, 2026-10-29.** Written 2026-10-28 by the landing-page cookie audit conversation
+> from the person's choices of the same day. Done when 7 can be shown only after the app briefs
+> `platform-consent-log` and `api-consent-log-route` are merged to staging. ADR-0068 (booking app
+> repository) is accepted; nothing under **Decided** rests on it.
 
 ## Touches
 

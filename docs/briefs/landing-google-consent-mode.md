@@ -1,11 +1,10 @@
 # Brief · landing: Google Analytics and the Google Ads tag, loaded only after consent (Consent Mode v2, basic)
 
-> **Draft, not accepted.** Written 2026-10-28 by the landing-page cookie audit conversation from the
-> person's choices of the same day. Do not start it until a person writes "Accepted by …" here. It waits
-> for the brief `landing-cookie-consent` to be built and merged (it uses that brief's `getConsent()`, the
-> `skt:consent-updated` event, `BANNER_VERSION` and the two notes in `docs/`). Before the **real** IDs are set
-> in production the lawyer must have reviewed the privacy page and the cookie texts; this brief does not set
-> them.
+> **Accepted by Ivan Tomić, 2026-10-29.** Written 2026-10-28 by the landing-page cookie audit conversation
+> from the person's choices of the same day. It waits for the brief `landing-cookie-consent` to be built
+> and merged (it uses that brief's `getConsent()`, the `skt:consent-updated` event, `BANNER_VERSION` and
+> the two notes in `docs/`). Before the **real** IDs are set in production the lawyer must have reviewed
+> the privacy page and the cookie texts; this brief does not set them.
 
 ## Touches
 
