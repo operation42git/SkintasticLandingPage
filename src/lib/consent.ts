@@ -81,10 +81,19 @@ export function isLocalHost(hostname: string): boolean {
   return hostname === "localhost" || hostname === "127.0.0.1";
 }
 
+/**
+ * A cookie's value, or null. A value that is not valid percent-encoding (set by a script, an extension or a sibling
+ * subdomain) is no cookie at all: it must never throw, because every caller runs while the page renders.
+ */
 export function readCookie(header: string, name: string): string | null {
   const prefix = `${name}=`;
   for (const part of header.split("; ")) {
-    if (part.startsWith(prefix)) return decodeURIComponent(part.slice(prefix.length));
+    if (!part.startsWith(prefix)) continue;
+    try {
+      return decodeURIComponent(part.slice(prefix.length));
+    } catch {
+      return null;
+    }
   }
   return null;
 }
@@ -218,14 +227,14 @@ function bodyOf(item: Queued): string {
 
 type Outcome = "sent" | "dropped" | "retry";
 
-async function sendOnce(env: SendEnv, item: Queued): Promise<Outcome> {
+async function sendOnce(env: SendEnv, item: Queued, keepalive: boolean): Promise<Outcome> {
   let response: Response;
   try {
     response = await env.fetch(env.logUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json", "X-Client-Id": item.consentId },
       body: bodyOf(item),
-      keepalive: env.keepalive,
+      keepalive,
       credentials: "omit",
     });
   } catch {
@@ -244,10 +253,12 @@ async function sendOnce(env: SendEnv, item: Queued): Promise<Outcome> {
 export async function flushQueue(env: SendEnv, unstored: readonly Queued[] = []): Promise<void> {
   // Without storage (private mode) the record that was just made is sent from memory, once or twice, and not kept.
   for (const item of env.store ? loadQueue(env.store) : unstored) {
-    let outcome = await sendOnce(env, item);
+    // The first try may be kept alive if the page unloads; the retry is two seconds later and never needs it, so it goes
+    // without `keepalive`: a browser that refuses `keepalive` with a preflight still logs the choice on the second try.
+    let outcome = await sendOnce(env, item, env.keepalive);
     if (outcome === "retry") {
       await env.wait(RETRY_DELAY_MS);
-      outcome = await sendOnce(env, item);
+      outcome = await sendOnce(env, item, false);
     }
     if (outcome === "retry") return;
     if (outcome === "dropped") env.warn(`The consent log refused a record (${item.action}); it was dropped.`);

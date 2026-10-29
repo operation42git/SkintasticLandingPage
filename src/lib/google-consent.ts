@@ -103,6 +103,19 @@ export function withdrew(before: Signals | null, after: Signals): { readonly ana
   };
 }
 
+/**
+ * The withdrawals that matter: a part whose tag actually started and whose signal is no longer granted. Turning analytics
+ * off when only the Ads tag is live changes the signals but needs no cleanup and no reload.
+ */
+export function liveWithdrawal(
+  before: Signals | null,
+  after: Signals,
+  live: { readonly analytics: boolean; readonly ads: boolean },
+): { readonly analytics: boolean; readonly ads: boolean } {
+  const gone = withdrew(before, after);
+  return { analytics: gone.analytics && live.analytics, ads: gone.ads && live.ads };
+}
+
 // ---- events -------------------------------------------------------------------------------------
 
 export type GtagEvent = readonly ["event", string, Record<string, unknown>];

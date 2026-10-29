@@ -12,6 +12,7 @@ import {
   domainsFor,
   eventTo,
   ga4CookieName,
+  liveWithdrawal,
   pageView,
   parseAdsId,
   parseGa4Id,
@@ -120,6 +121,27 @@ describe("the load rule", () => {
     assert.deepEqual(withdrew(analytics, both), { analytics: false, ads: false });
     assert.deepEqual(withdrew(ads, analytics), { analytics: false, ads: true });
     assert.deepEqual(withdrew(null, both), { analytics: false, ads: false });
+  });
+});
+
+describe("a withdrawal that matters", () => {
+  const both = signalsFor({ ...noConsent(), analytics: true, ads: true }, false);
+  const none = signalsFor(noConsent(), false);
+  const adsOnly = signalsFor(only("ads"), false);
+
+  it("needs a tag that actually started", () => {
+    assert.deepEqual(liveWithdrawal(both, none, { analytics: true, ads: true }), { analytics: true, ads: true });
+    assert.deepEqual(liveWithdrawal(both, none, { analytics: false, ads: true }), { analytics: false, ads: true });
+    assert.deepEqual(liveWithdrawal(both, none, { analytics: true, ads: false }), { analytics: true, ads: false });
+  });
+
+  it("turning analytics off when only the Ads tag is live is not one (no cleanup, no reload)", () => {
+    assert.deepEqual(liveWithdrawal(both, adsOnly, { analytics: false, ads: true }), { analytics: false, ads: false });
+  });
+
+  it("adding a signal, or the first choice, is never one", () => {
+    assert.deepEqual(liveWithdrawal(adsOnly, both, { analytics: true, ads: true }), { analytics: false, ads: false });
+    assert.deepEqual(liveWithdrawal(null, both, { analytics: true, ads: true }), { analytics: false, ads: false });
   });
 });
 

@@ -19,6 +19,7 @@ import {
   noConsent,
   readConsent,
   readConsentId,
+  readCookie,
   saveConsent,
   type Consent,
   type ConsentEnv,
@@ -62,7 +63,7 @@ function jar() {
 
 type Call = { url: string; init: RequestInit & { keepalive?: boolean }; queueAtCall: LogRecord[] };
 
-function world(options: { statuses?: number[]; throws?: boolean; noStore?: boolean; hostname?: string; random?: ConsentEnv["random"] } = {}) {
+function world(options: { statuses?: number[]; throws?: boolean; rejectKeepalive?: boolean; noStore?: boolean; hostname?: string; random?: ConsentEnv["random"] } = {}) {
   const cookies = jar();
   const store = memoryStore();
   const calls: Call[] = [];
@@ -73,6 +74,8 @@ function world(options: { statuses?: number[]; throws?: boolean; noStore?: boole
   const fakeFetch = (async (url: string, init: RequestInit) => {
     calls.push({ url, init, queueAtCall: loadQueue(store) });
     if (options.throws) throw new TypeError("network");
+    // A browser that refuses `keepalive` together with a CORS preflight throws, whatever the server would answer.
+    if (options.rejectKeepalive && init.keepalive) throw new TypeError("keepalive with a preflight is not supported");
     const status = statuses.shift() ?? 201;
     return { ok: status >= 200 && status < 300, status } as Response;
   }) as unknown as typeof fetch;
@@ -132,6 +135,25 @@ describe("the cookie value", () => {
     assert.deepEqual(decodeConsent("v2.0.0.0.0.1.2026-11-01", 2), noConsent());
     assert.deepEqual(decodeConsent("v2.0.1.0.0.2.2026-11-01", 2), { ...noConsent(), analytics: true });
     assert.deepEqual(decodeConsent("v2.0.1.0.0.3.2026-11-01", 2), { ...noConsent(), analytics: true });
+  });
+});
+
+describe("a cookie value that is not valid percent-encoding", () => {
+  it("is no cookie, and never throws", () => {
+    assert.equal(readCookie("skt_consent=%E0%A4%A", "skt_consent"), null);
+    assert.equal(readCookie("skt_consent_id=%", "skt_consent_id"), null);
+    assert.equal(readCookie("other=%; skt_consent=v2.0.1.0.0.1.2026-11-01", "skt_consent"), "v2.0.1.0.0.1.2026-11-01");
+  });
+
+  it("reads as no choice and no ID, and a save over it works", async () => {
+    const w = world();
+    w.cookies.write("skt_consent=%E0%A4%A; Path=/");
+    w.cookies.write("skt_consent_id=%; Path=/");
+    assert.equal(readConsent(w.env), null);
+    assert.equal(readConsentId(w.env), null);
+    await saveConsent(w.env, only("analytics"), "save");
+    assert.deepEqual(readConsent(w.env), only("analytics"));
+    assert.equal(readConsentId(w.env), ID);
   });
 });
 
@@ -233,6 +255,22 @@ describe("the send", () => {
     await flushQueue(w.env.send);
     assert.equal(w.calls.length, 2);
     assert.equal(loadQueue(w.store).length, 1);
+  });
+
+  it("keeps keepalive on the first try and drops it on the retry", async () => {
+    const w = world({ throws: true });
+    enqueue(w.store, { consentId: ID, categories: both, bannerVersion: "v", locale: "hr", action: "save" }, DAY);
+    await flushQueue(w.env.send);
+    assert.deepEqual(w.calls.map((call) => call.init.keepalive), [true, false]);
+  });
+
+  it("still logs the choice in a browser that refuses keepalive with a preflight (the retry goes without it)", async () => {
+    const w = world({ rejectKeepalive: true });
+    await saveConsent(w.env, both, "accept_all");
+    assert.equal(w.calls.length, 2);
+    assert.equal(w.calls[1].init.keepalive, false);
+    assert.equal(loadQueue(w.store).length, 0, "the record was sent on the retry and removed");
+    assert.deepEqual(w.waits, [2000]);
   });
 
   it("succeeds on the retry and removes the record", async () => {

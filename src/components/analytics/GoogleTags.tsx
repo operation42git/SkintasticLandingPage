@@ -14,8 +14,8 @@ import {
   pageView,
   scriptIdFor,
   scriptUrl,
+  liveWithdrawal,
   signalsFor,
-  withdrew,
   type Signals,
 } from "@/lib/google-consent";
 
@@ -97,7 +97,8 @@ export function GoogleTags() {
     function apply() {
       const signals = signalsFor(getConsent(), AD_PERSONALIZATION_ALLOWED);
       const now = state.current;
-      const gone = withdrew(now.signals, signals);
+      // Cleanup and a reload only for a tag that actually started; any other change is just a consent update.
+      const gone = liveWithdrawal(now.signals, signals, { analytics: now.configured.ga4, ads: now.configured.ads });
       if (gone.analytics || gone.ads) {
         withdraw(signals, gone);
         return;
