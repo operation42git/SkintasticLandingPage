@@ -401,7 +401,7 @@
   },
   "cookieConsent": {
     "title": "Prilagodite postavke pristanka",
-    "introShort": "Koristimo kolačiće kako bismo vam pomogli da se učinkovito krećete i izvodite određene funkcije.",
+    "introShort": "Koristimo kolačiće kako bi stranica radila i, uz vaš pristanak, za analitiku i mjerenje oglasa putem usluga Google Ireland Limited. Pristanak možete povući u bilo kojem trenutku.",
     "introLong": "Neophodni kolačići pohranjuju se u vašem pregledniku jer su potrebni za rad stranice i za pamćenje vašeg odabira kolačića: kolačić skt_consent čuva vaš izbor, a ako ste dopustili barem jednu kategoriju, kolačić skt_consent_id čuva nasumični identifikator kojim možemo dokazati da ste pristanak dali.\n\nAnalitički i oglasni kolačići koristit će se samo ako ih uključite, i to tek nakon vaše suglasnosti. Svoj odabir možete u svakom trenutku promijeniti putem poveznice „Postavke kolačića” u podnožju stranice.",
     "showMore": "Prikaži više",
     "showLess": "Prikaži manje",
@@ -417,7 +417,7 @@
       },
       "analytics": {
         "title": "Analitika",
-        "desc": "Analitički kolačići koriste se za razumijevanje načina na koji posjetitelji komuniciraju s web stranicom. Ovi kolačići pomažu u pružanju podataka o broju posjetitelja, stopi napuštanja početne stranice, izvoru prometa itd."
+        "desc": "Analitički kolačići koriste se za razumijevanje načina na koji posjetitelji koriste stranicu. Koristimo Google Analytics (Google Ireland Limited); postavlja kolačiće _ga i _ga_*, koji vrijede do 2 godine. Uključuju se samo uz vaš pristanak."
       },
       "performance": {
         "title": "Izvedba",
@@ -425,7 +425,7 @@
       },
       "ads": {
         "title": "Oglasi",
-        "desc": "Reklamni kolačići koriste se za pružanje relevantnih oglasa i marketinških kampanja posjetiteljima. Ovi kolačići prate posjetitelje na web stranicama i prikupljaju informacije kako bi pružili prilagođene oglase."
+        "desc": "Oglasni kolačići koriste se za mjerenje uspješnosti oglasa. Koristimo Google Ads (Google Ireland Limited); postavlja kolačiće _gcl_au, _gcl_aw i _gac_*, koji vrijede do 90 dana. Prilagođeni oglasi (remarketing) trenutačno su isključeni. Uključuju se samo uz vaš pristanak."
       }
     },
     "btnReject": "Odbij",

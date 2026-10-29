@@ -12,7 +12,7 @@ export const CONSENT_GENERATION = 1;
  * `YYYY-MM-DD.N`: the date of the banner text and a counter. Bumped by hand whenever the dialog text, the categories or
  * the data use change; it is sent with every logged choice, and each version is a row in docs/cookie-banner-versions.md.
  */
-export const BANNER_VERSION = "2026-10-29.1";
+export const BANNER_VERSION = "2026-10-29.2";
 
 /** The booking app serves its API on its own origin, under /api (as `offpeak.ts` reads it). */
 export const CONSENT_LOG_URL = `${new URL(BOOKING_URL).origin}/api/public/consent-log`;

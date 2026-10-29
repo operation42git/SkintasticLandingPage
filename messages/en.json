@@ -401,7 +401,7 @@
   },
   "cookieConsent": {
     "title": "Customise your consent settings",
-    "introShort": "We use cookies to help you move around efficiently and to perform certain functions.",
+    "introShort": "We use cookies to make the site work and, with your consent, for analytics and ad measurement through Google Ireland Limited. You can withdraw your consent at any time.",
     "introLong": "Necessary cookies are stored in your browser because the site needs them to work and to remember your cookie choice: the skt_consent cookie holds your choice and, if you allowed at least one category, skt_consent_id holds a random identifier we can use to show that you gave your consent.\n\nAnalytics and advertising cookies are used only if you switch them on, and only after you consent. You can change your choice at any time with “Cookie settings” in the footer.",
     "showMore": "Show more",
     "showLess": "Show less",
@@ -417,7 +417,7 @@
       },
       "analytics": {
         "title": "Analytics",
-        "desc": "Analytics cookies are used to understand how visitors interact with the website. These cookies help provide data on visitor numbers, bounce rate, traffic source and so on."
+        "desc": "Analytics cookies are used to understand how visitors use the site. We use Google Analytics (Google Ireland Limited); it sets the cookies _ga and _ga_*, which last up to 2 years. They are switched on only with your consent."
       },
       "performance": {
         "title": "Performance",
@@ -425,7 +425,7 @@
       },
       "ads": {
         "title": "Ads",
-        "desc": "Advertising cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information in order to provide customised ads."
+        "desc": "Advertising cookies are used to measure how well our ads perform. We use Google Ads (Google Ireland Limited); it sets the cookies _gcl_au, _gcl_aw and _gac_*, which last up to 90 days. Personalised ads (remarketing) are currently switched off. They are switched on only with your consent."
       }
     },
     "btnReject": "Reject",

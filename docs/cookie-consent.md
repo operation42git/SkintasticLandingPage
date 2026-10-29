@@ -22,19 +22,53 @@ window.addEventListener(CONSENT_UPDATED_EVENT, start); // detail = the same obje
 `getConsent()` returns `{ functional, analytics, performance, ads }` or `null` (no valid choice, and always on the server).
 The dialog shows only **analytics** and **ads**; `functional` and `performance` are stored as `false` and reserved.
 
-## When Google tags are added (a later brief)
+## Google Analytics 4 and the Google Ads tag
 
-Map the categories to Google Consent Mode v2, with every signal **`denied`** by default:
+Built by `docs/briefs/landing-google-consent-mode.md`: `src/components/analytics/GoogleTags.tsx` (the DOM, the script and the
+`gtag` calls), `src/lib/google-consent.ts` (the rules, with unit tests) and `src/config/google.ts` (the IDs and the switch).
+Consent Mode v2 in its **basic** form: no Google script is requested, no `gtag` is defined and no cookie is set until the
+matching category is allowed.
+
+**The IDs** come from the environment only, never from code, and are read when the site is built (a changed ID needs a new
+build): `NEXT_PUBLIC_GA4_MEASUREMENT_ID` (`G-…`) and `NEXT_PUBLIC_GOOGLE_ADS_ID` (`AW-…`). Unset: that tag never loads. Set but
+malformed: the build fails and names the variable.
+
+**The switch.** `AD_PERSONALIZATION_ALLOWED` in `src/config/google.ts` is `false`: ad personalization (remarketing) stays denied for
+everyone until the lawyer agrees. Changing it is a decision of the person, and it changes `cookieConsent.categories.ads.desc`
+and `BANNER_VERSION` in the same commit.
 
 | Google signal | Category |
 |---|---|
 | `analytics_storage` | `analytics` |
 | `ad_storage` | `ads` |
 | `ad_user_data` | `ads` |
-| `ad_personalization` | `ads` |
+| `ad_personalization` | `ads`, but always `denied` while the switch is `false` |
+| `functionality_storage` | `functional` |
+| `personalization_storage` | always `denied` |
+| `security_storage` | always `granted` |
 
-Send `gtag("consent", "default", …)` as `denied` before any tag, and `gtag("consent", "update", …)` on
-`skt:consent-updated`. This page adds no tag.
+`performance` maps to no signal.
+
+**What happens, in order.** A visitor with a choice that allows `analytics` or `ads` (and the matching ID set): `window.dataLayer` and
+`gtag` are defined, `consent default` is sent with everything `denied`, then `consent update` with the signals, then the script
+`https://www.googletagmanager.com/gtag/js?id=<one ID>` is requested once, then `js`, then the configs: GA4 with
+`send_page_view: false` and one `page_view` (path, title, locale), and Ads with `allow_ad_personalization_signals: false`. A change of
+choice sends `consent update` and starts what newly qualifies. Every event carries `send_to: <GA4 ID>`, so none can reach the Ads
+destination. One more `page_view` is sent when the path changes after the first load.
+
+**Withdrawal.** When a granted signal turns `denied`: `consent update`, the `ga-disable-<GA4 ID>` flag, deletion of that part's Google
+cookies on the host and every parent domain, then a **page reload**, so the script is gone and cannot send anything.
+
+| Part | Cookies the page deletes |
+|---|---|
+| analytics | `_ga`, `_ga_*` |
+| ads | `_gcl_au`, `_gcl_aw`, `_gcl_gs`, `_gcl_ag`, `_gcl_gb`, `_gac_*` |
+
+Google's own domains (`google.com`, `doubleclick.net`) may set cookies such as `NID` or `IDE` when ad requests are made; this page cannot
+delete them.
+
+**To add another tag:** read `getConsent()` and `skt:consent-updated` as in the rule above, and add its cookies and its category to this
+note and to the dialog text; a new tool, purpose or recipient also raises `CONSENT_GENERATION`.
 
 ## What is stored
 
