@@ -8,6 +8,7 @@ import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/config/booking";
 import { contact } from "@/config/contact";
 import { locationsOf } from "@/config/locations";
+import { GoogleTags } from "@/components/analytics/GoogleTags";
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import "../globals.css";
@@ -132,6 +133,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
           <CookieConsent />
+          <GoogleTags />
           <ScrollToTop />
         </NextIntlClientProvider>
       </body>
