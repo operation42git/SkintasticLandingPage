@@ -67,6 +67,12 @@ cookies on the host and every parent domain, then a **page reload**, so the scri
 Google's own domains (`google.com`, `doubleclick.net`) may set cookies such as `NID` or `IDE` when ad requests are made; this page cannot
 delete them.
 
+**Deploying: the Google texts and the real IDs go live together.** The dialog texts (`introShort` and the analytics and ads
+descriptions) name Google Ireland Limited and say "we use Google Analytics" and "Google Ads", whether or not an ID is set. A build with
+no IDs loads no Google tag, so its dialog would say something untrue. Never deploy this branch (staging, a preview or production)
+without both IDs, and never set the IDs without these texts. Before the real IDs go in production the lawyer must have reviewed the
+privacy page and the cookie texts.
+
 **To add another tag:** read `getConsent()` and `skt:consent-updated` as in the rule above, and add its cookies and its category to this
 note and to the dialog text; a new tool, purpose or recipient also raises `CONSENT_GENERATION`.
 

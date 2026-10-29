@@ -86,7 +86,7 @@ Any other value this brief needs that is not in a table: stop and ask, listing e
 `btnSave` ("Spremi moje postavke") and the category descriptions stay. The English values above restate the
 current wording where it is not changing. A TODO comment above `introLong` in the component says: list the
 real cookies of each tag here when a tag is added. Use one term for the always-on category everywhere: "Neophodni"
-(`grep -i potrebn messages/hr.json` shows no use of "Potrebno" or "Potrebni" inside `cookieConsent`). Only the first word of
+(the category is "Neophodni" in every title, label and description; the plain adjective "potrebni" appears once, in the drafted `introLong`, as ordinary Croatian and is not the category name). Only the first word of
 `categories.necessary.desc` changes: the lawyer's draft answer says to remove the sentence about personal data, so it is removed. `categories.functional.*` and `categories.performance.*` stay in the files unchanged (not shown).
 
 **Tests**
