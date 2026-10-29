@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { buildBookingHref } from "@/config/booking";
+import { useAdsAllowed } from "@/components/ui/BookButton";
 import { locationsOf } from "@/config/locations";
 import { fetchOffpeakDays, isDiscounted, setOffpeakStudios, type OffpeakDay } from "@/config/offpeak";
 
@@ -32,6 +33,7 @@ export function OffPeakSection() {
   const [selected, setSelected] = useState(0);
   const [time, setTime] = useState<string | null>(null);
   const [pageSearch, setPageSearch] = useState("");
+  const adsAllowed = useAdsAllowed();
 
   const shown = studios.filter((item) => calendars[item.slug]);
   const days = calendars[studio] ?? [];
@@ -87,12 +89,12 @@ export function OffPeakSection() {
   if (!shown.length || !day) return null;
 
   const dayHref = (() => {
-    const url = new URL(buildBookingHref({ centar: studio }, pageSearch));
+    const url = new URL(buildBookingHref({ centar: studio }, pageSearch, adsAllowed));
     url.searchParams.set("datum", day.date);
     if (time) url.searchParams.set("vrijeme", time);
     return url.toString();
   })();
-  const calendarHref = buildBookingHref({ centar: studio }, pageSearch);
+  const calendarHref = buildBookingHref({ centar: studio }, pageSearch, adsAllowed);
   const studioName = studios.find((item) => item.slug === studio)?.name ?? "";
   const weekdaysShort: string[] = t.raw("weekdaysShort");
 

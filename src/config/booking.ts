@@ -1,11 +1,8 @@
-const CAMPAIGN_PARAMS = [
-  "utm_source",
-  "utm_medium",
-  "utm_campaign",
-  "utm_content",
-  "gclid",
-  "fbclid",
-] as const;
+/** Campaign values, not a person: forwarded whatever the visitor chose. */
+const UTM_PARAMS = ["utm_source", "utm_medium", "utm_campaign", "utm_content"] as const;
+
+/** Ad-click identifiers: forwarded only while the visitor has allowed ads (docs/briefs/landing-cookie-consent.md). */
+const CLICK_ID_PARAMS = ["gclid", "fbclid"] as const;
 
 function requireAbsoluteUrl(name: string, value: string | undefined): string {
   if (!value) {
@@ -50,6 +47,7 @@ export function confirmedCode(code: string | undefined): string | undefined {
 export function buildBookingHref(
   options: { centar?: string; usluga?: string } = {},
   pageSearch = "",
+  adsAllowed = false,
 ): string {
   const url = new URL(BOOKING_URL);
   if (options.centar) url.searchParams.set("centar", options.centar);
@@ -58,7 +56,7 @@ export function buildBookingHref(
   const incoming = new URLSearchParams(
     pageSearch.startsWith("?") ? pageSearch.slice(1) : pageSearch,
   );
-  for (const key of CAMPAIGN_PARAMS) {
+  for (const key of adsAllowed ? [...UTM_PARAMS, ...CLICK_ID_PARAMS] : UTM_PARAMS) {
     const value = incoming.get(key);
     if (value) url.searchParams.set(key, value);
   }
