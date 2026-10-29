@@ -402,17 +402,17 @@
   "cookieConsent": {
     "title": "Prilagodite postavke pristanka",
     "introShort": "Koristimo kolačiće kako bismo vam pomogli da se učinkovito krećete i izvodite određene funkcije.",
-    "introLong": "Kolačići koji su kategorizirani kao \"Neophodni\" pohranjuju se u vašem pregledniku jer su neophodni za omogućavanje osnovnih funkcionalnosti stranice.\n\nTakođer koristimo kolačiće trećih strana koji nam pomažu analizirati kako koristite ovu web stranicu, pohranjujemo vaše postavke i pružamo sadržaj i oglase koji su relevantni za vas. Ovi kolačići bit će pohranjeni u vašem pregledniku samo uz vašu prethodnu suglasnost.\n\nMožete odabrati da omogućite ili onemogućite neke ili sve ove kolačiće, ali onemogućavanje nekih od njih može utjecati na vaše iskustvo pregledavanja.",
-    "showMore": "Pokažite više",
-    "showLess": "Pokažite manje",
-    "alwaysActive": "Uvijek aktivan",
+    "introLong": "Neophodni kolačići pohranjuju se u vašem pregledniku jer su potrebni za rad stranice i za pamćenje vašeg odabira kolačića: kolačić skt_consent čuva vaš izbor, a ako ste dopustili barem jednu kategoriju, kolačić skt_consent_id čuva nasumični identifikator kojim možemo dokazati da ste pristanak dali.\n\nAnalitički i oglasni kolačići koristit će se samo ako ih uključite, i to tek nakon vaše suglasnosti. Svoj odabir možete u svakom trenutku promijeniti putem poveznice „Postavke kolačića” u podnožju stranice.",
+    "showMore": "Prikaži više",
+    "showLess": "Prikaži manje",
+    "alwaysActive": "Uvijek aktivni",
     "categories": {
       "necessary": {
-        "title": "Potrebno",
-        "desc": "Potrebni kolačići presudni su za osnovne funkcije web stranice i web stranica bez njih neće raditi na predviđeni način. Ovi kolačići ne pohranjuju nikakve osobne podatke."
+        "title": "Neophodni",
+        "desc": "Neophodni kolačići presudni su za osnovne funkcije web stranice i web stranica bez njih neće raditi na predviđeni način."
       },
       "functional": {
-        "title": "Funkcional",
+        "title": "Funkcionalni",
         "desc": "Funkcionalni kolačići pomažu u izvođenju određenih funkcionalnosti poput dijeljenja sadržaja web mjesta na platformama društvenih medija, prikupljanja povratnih informacija i ostalih značajki trećih strana."
       },
       "analytics": {
@@ -420,7 +420,7 @@
         "desc": "Analitički kolačići koriste se za razumijevanje načina na koji posjetitelji komuniciraju s web stranicom. Ovi kolačići pomažu u pružanju podataka o broju posjetitelja, stopi napuštanja početne stranice, izvoru prometa itd."
       },
       "performance": {
-        "title": "Izvođenje",
+        "title": "Izvedba",
         "desc": "Kolačići izvedbe koriste se za razumijevanje i analizu ključnih indeksa izvedbe web stranice što pomaže u pružanju boljeg korisničkog iskustva posjetiteljima."
       },
       "ads": {
@@ -428,9 +428,10 @@
         "desc": "Reklamni kolačići koriste se za pružanje relevantnih oglasa i marketinških kampanja posjetiteljima. Ovi kolačići prate posjetitelje na web stranicama i prikupljaju informacije kako bi pružili prilagođene oglase."
       }
     },
-    "btnReject": "Odbiti",
+    "btnReject": "Odbij",
     "btnSave": "Spremi moje postavke",
-    "btnAcceptAll": "Prihvatiti sve",
-    "reopenLabel": "Postavke kolačića"
+    "btnAcceptAll": "Prihvati sve",
+    "reopenLabel": "Postavke kolačića",
+    "idLabel": "Vaš identifikator odabira"
   }
 }

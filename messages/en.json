@@ -402,14 +402,14 @@
   "cookieConsent": {
     "title": "Customise your consent settings",
     "introShort": "We use cookies to help you move around efficiently and to perform certain functions.",
-    "introLong": "Cookies categorised as \"Necessary\" are stored in your browser because they are essential for the basic functions of the site.\n\nWe also use third-party cookies that help us analyse how you use this website, store your settings, and provide content and ads that are relevant to you. These cookies are stored in your browser only with your prior consent.\n\nYou can choose to enable or disable some or all of these cookies, but disabling some of them may affect your browsing experience.",
+    "introLong": "Necessary cookies are stored in your browser because the site needs them to work and to remember your cookie choice: the skt_consent cookie holds your choice and, if you allowed at least one category, skt_consent_id holds a random identifier we can use to show that you gave your consent.\n\nAnalytics and advertising cookies are used only if you switch them on, and only after you consent. You can change your choice at any time with “Cookie settings” in the footer.",
     "showMore": "Show more",
     "showLess": "Show less",
     "alwaysActive": "Always active",
     "categories": {
       "necessary": {
         "title": "Necessary",
-        "desc": "Necessary cookies are essential for the basic functions of the website, and the website will not work as intended without them. These cookies do not store any personal data."
+        "desc": "Necessary cookies are essential for the basic functions of the website, and the website will not work as intended without them."
       },
       "functional": {
         "title": "Functional",
@@ -431,6 +431,7 @@
     "btnReject": "Reject",
     "btnSave": "Save my settings",
     "btnAcceptAll": "Accept all",
-    "reopenLabel": "Cookie settings"
+    "reopenLabel": "Cookie settings",
+    "idLabel": "Your consent ID"
   }
 }

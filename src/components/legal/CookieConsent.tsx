@@ -1,22 +1,38 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 import { consentCookieDomain } from "@/config/booking";
+import { BANNER_VERSION, CONSENT_GENERATION, CONSENT_LOG_URL } from "@/config/consent";
+import { routing } from "@/i18n/routing";
+import {
+  CONSENT_UPDATED_EVENT,
+  flushQueue,
+  getConsent,
+  noConsent,
+  readConsent,
+  readConsentId,
+  saveConsent,
+  type Consent,
+  type ConsentEnv,
+  type SendEnv,
+  type Store,
+  type Via,
+} from "@/lib/consent";
 
-type CategoryKey = "functional" | "analytics" | "performance" | "ads";
-
-const COOKIE_NAME = "skt_consent";
 export const OPEN_CONSENT_EVENT = "skt:open-consent";
-const COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
-const NON_ESSENTIAL: CategoryKey[] = ["functional", "analytics", "performance", "ads"];
+// What a later script asks and listens for: see src/lib/consent.ts and docs/cookie-consent.md.
+export { CONSENT_UPDATED_EVENT, getConsent };
 
-const DEFAULT_CATS: Record<CategoryKey, boolean> = {
-  functional: false,
-  analytics: false,
-  performance: false,
-  ads: false,
-};
+/** The dialog shows two choices; functional and performance stay in the cookie as reserved zeros. */
+const SHOWN: readonly ("analytics" | "ads")[] = ["analytics", "ads"];
+
+/** The privacy page and the imprint stay readable without a choice: the dialog does not open there by itself. */
+const SETTINGS_PAGES = new RegExp(`^/(${routing.locales.join("|")})/(datenschutz|impressum)/?$`);
+
+const BUTTON =
+  "flex-1 rounded-full border border-[#1a1516] bg-[#1a1516] py-3 text-sm font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-80";
 
 function clearStoredConsent(): void {
   try {
@@ -27,53 +43,46 @@ function clearStoredConsent(): void {
   }
 }
 
-function todayStamp(date = new Date()): string {
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${date.getFullYear()}-${month}-${day}`;
-}
-
-function isLocalHost(hostname: string): boolean {
-  return hostname === "localhost" || hostname === "127.0.0.1";
-}
-
-// functional, analytics and performance share the analytics bit; ads is the marketing bit.
-function encodeConsent(cats: Record<CategoryKey, boolean>, date = new Date()): string {
-  const analytics = cats.functional || cats.analytics || cats.performance ? 1 : 0;
-  const marketing = cats.ads ? 1 : 0;
-  return `v1.1.${analytics}.${marketing}.${todayStamp(date)}`;
-}
-
-function readCookie(name: string): string | null {
-  const prefix = `${name}=`;
-  for (const part of document.cookie.split("; ")) {
-    if (part.startsWith(prefix)) return decodeURIComponent(part.slice(prefix.length));
+function storage(): Store | null {
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
   }
-  return null;
 }
 
-function readConsent(): Record<CategoryKey, boolean> | null {
-  const raw = readCookie(COOKIE_NAME);
-  if (!raw) return null;
-  const match = /^v1\.1\.([01])\.([01])\.(\d{4}-\d{2}-\d{2})$/.exec(raw);
-  if (!match) return null;
-  const analytics = match[1] === "1";
-  const marketing = match[2] === "1";
+function sendEnv(): SendEnv {
   return {
-    functional: analytics,
-    analytics,
-    performance: analytics,
-    ads: marketing,
+    store: storage(),
+    fetch: window.fetch.bind(window),
+    logUrl: CONSENT_LOG_URL,
+    keepalive: true,
+    wait: (ms) => new Promise((resolve) => window.setTimeout(resolve, ms)),
+    warn: (message) => console.warn(message),
   };
 }
 
-function writeConsent(cats: Record<CategoryKey, boolean>): void {
-  const parts = [`Path=/`, `Max-Age=${COOKIE_MAX_AGE}`, `SameSite=Lax`];
-  if (!isLocalHost(window.location.hostname)) {
-    parts.push(`Domain=${consentCookieDomain()}`, `Secure`);
-  }
-  document.cookie = `${COOKIE_NAME}=${encodeConsent(cats)}; ${parts.join("; ")}`;
-  clearStoredConsent();
+function browserEnv(locale: string): ConsentEnv {
+  return {
+    hostname: window.location.hostname,
+    cookieDomain: consentCookieDomain(),
+    readCookies: () => document.cookie,
+    writeCookie: (cookie) => {
+      document.cookie = cookie;
+    },
+    now: () => new Date(),
+    random: window.crypto,
+    generation: CONSENT_GENERATION,
+    bannerVersion: BANNER_VERSION,
+    locale,
+    dispatch: (detail) => window.dispatchEvent(new CustomEvent(CONSENT_UPDATED_EVENT, { detail })),
+    send: sendEnv(),
+  };
+}
+
+/** Functional and performance are never offered, so they are always off. */
+function shown(consent: Consent): Consent {
+  return { functional: false, analytics: consent.analytics, performance: false, ads: consent.ads };
 }
 
 function CookieIcon() {
@@ -191,23 +200,39 @@ function AlwaysActiveLabel() {
 
 export function CookieConsent() {
   const t = useTranslations("cookieConsent");
+  const footer = useTranslations("footer");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const onSettingsPage = SETTINGS_PAGES.test(pathname ?? "");
 
+  const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
   const [consentGiven, setConsentGiven] = useState(false);
   const [showLong, setShowLong] = useState(false);
   const [expandedCat, setExpandedCat] = useState<string | null>(null);
-  const [pending, setPending] = useState<Record<CategoryKey, boolean>>(DEFAULT_CATS);
+  const [pending, setPending] = useState<Consent>(noConsent());
+  const [consentId, setConsentId] = useState<string | null>(null);
 
   useEffect(() => {
     clearStoredConsent();
-    const cats = readConsent();
-    if (!cats) {
-      setOpen(true);
-    } else {
-      setPending(cats);
+    const env = browserEnv(locale);
+    const saved = readConsent(env);
+    if (saved) {
+      setPending(shown(saved));
       setConsentGiven(true);
     }
+    setConsentId(readConsentId(env));
+    setReady(true);
+    // Records the page could not send before (a closed tab, a stub that was down) go now, oldest first.
+    void flushQueue(sendEnv());
+    // Read once on arrival; the dialog keeps its own state after that.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // The dialog opens by itself while there is no choice, except on the pages that must stay readable.
+  useEffect(() => {
+    if (ready && !consentGiven && !onSettingsPage) setOpen(true);
+  }, [ready, consentGiven, onSettingsPage]);
 
   useEffect(() => {
     if (open) {
@@ -221,32 +246,37 @@ export function CookieConsent() {
   }, [open]);
 
   const commit = useCallback(
-    (cats: Record<CategoryKey, boolean>) => {
-      writeConsent(cats);
-      setPending(cats);
+    (after: Consent, via: Via) => {
+      const env = browserEnv(locale);
+      // The cookies, the event and the queue are done before the answer comes; the dialog never waits for the send.
+      void saveConsent(env, after, via);
+      setPending(shown(after));
       setConsentGiven(true);
+      setConsentId(readConsentId(env));
       setOpen(false);
     },
-    [],
+    [locale],
   );
 
   const handleAcceptAll = useCallback(() => {
-    commit(Object.fromEntries(NON_ESSENTIAL.map((k) => [k, true])) as Record<CategoryKey, boolean>);
+    commit({ functional: false, analytics: true, performance: false, ads: true }, "accept_all");
   }, [commit]);
 
   const handleReject = useCallback(() => {
-    commit({ ...DEFAULT_CATS });
+    commit(noConsent(), "reject");
   }, [commit]);
 
   const handleSave = useCallback(() => {
-    commit({ ...pending });
+    commit(shown(pending), "save");
   }, [commit, pending]);
 
   const handleReopen = useCallback(() => {
-    const cats = readConsent();
-    if (cats) setPending(cats);
+    const env = browserEnv(locale);
+    const saved = readConsent(env);
+    if (saved) setPending(shown(saved));
+    setConsentId(readConsentId(env));
     setOpen(true);
-  }, []);
+  }, [locale]);
 
   useEffect(() => {
     const openBanner = () => handleReopen();
@@ -254,7 +284,7 @@ export function CookieConsent() {
     return () => window.removeEventListener(OPEN_CONSENT_EVENT, openBanner);
   }, [handleReopen]);
 
-  const toggleCat = useCallback((key: CategoryKey) => {
+  const toggleCat = useCallback((key: "analytics" | "ads") => {
     setPending((prev) => ({ ...prev, [key]: !prev[key] }));
   }, []);
 
@@ -290,6 +320,7 @@ export function CookieConsent() {
                 {t("introShort")}
               </p>
               {showLong && (
+                // TODO: list the real cookies of each tag here (name, purpose, duration, provider) when a tag is added.
                 <p className="mb-1 whitespace-pre-line text-sm leading-relaxed text-[#5a5050]">
                   {t("introLong")}
                 </p>
@@ -297,10 +328,21 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={() => setShowLong((v) => !v)}
-                className="mb-6 text-sm text-[#88c9cd] underline-offset-2 hover:underline"
+                className="mb-2 text-sm text-[#88c9cd] underline-offset-2 hover:underline"
               >
                 {showLong ? t("showLess") : t("showMore")}
               </button>
+              <p className="mb-6 text-sm">
+                {/* A new tab: the page behind a blocking dialog stays, and the policy stays readable. */}
+                <a
+                  href={`/${locale}/datenschutz`}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-[#88c9cd] underline-offset-2 hover:underline"
+                >
+                  {footer("privacyPolicy")}
+                </a>
+              </p>
 
               {/* Categories */}
               <div className="divide-y-0 border-t border-[#e8e4de]">
@@ -314,8 +356,8 @@ export function CookieConsent() {
                   onExpand={() => toggleExpand("necessary")}
                 />
 
-                {/* Non-essential */}
-                {NON_ESSENTIAL.map((cat) => (
+                {/* The optional categories the page uses */}
+                {SHOWN.map((cat) => (
                   <CategoryRow
                     key={cat}
                     catKey={cat}
@@ -329,27 +371,21 @@ export function CookieConsent() {
                 ))}
               </div>
 
-              {/* Action buttons */}
+              {consentId && (
+                <p className="mt-4 break-all text-xs text-[#5a5050]">
+                  {t("idLabel")}: <code>{consentId}</code>
+                </p>
+              )}
+
+              {/* Action buttons: the same look, differing only in their words */}
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <button
-                  type="button"
-                  onClick={handleReject}
-                  className="flex-1 rounded-full border border-[#88c9cd] bg-[#88c9cd] py-3 text-sm font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-80"
-                >
+                <button type="button" onClick={handleReject} className={BUTTON}>
                   {t("btnReject")}
                 </button>
-                <button
-                  type="button"
-                  onClick={handleSave}
-                  className="flex-1 rounded-full border border-[#88c9cd] py-3 text-sm font-bold uppercase tracking-wide text-[#88c9cd] transition-colors hover:bg-[#88c9cd] hover:text-white"
-                >
+                <button type="button" onClick={handleSave} className={BUTTON}>
                   {t("btnSave")}
                 </button>
-                <button
-                  type="button"
-                  onClick={handleAcceptAll}
-                  className="flex-1 rounded-full bg-[#1a1516] py-3 text-sm font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-80"
-                >
+                <button type="button" onClick={handleAcceptAll} className={BUTTON}>
                   {t("btnAcceptAll")}
                 </button>
               </div>
@@ -358,14 +394,14 @@ export function CookieConsent() {
         </div>
       )}
 
-      {/* ── Reopen button ── */}
-      {consentGiven && !open && (
+      {/* ── Reopen button: above the booking bar below lg ── */}
+      {(consentGiven || onSettingsPage) && !open && (
         <button
           type="button"
           onClick={handleReopen}
           aria-label={t("reopenLabel")}
           title={t("reopenLabel")}
-          className="fixed bottom-5 left-5 z-[200] flex h-11 w-11 items-center justify-center rounded-full border border-[#e8e4de] bg-white text-[#1a1516] shadow-md transition-colors hover:bg-[#f5f0e8]"
+          className="fixed bottom-[96px] left-5 z-[200] flex h-11 w-11 items-center justify-center rounded-full border border-[#e8e4de] bg-white text-[#1a1516] shadow-md transition-colors hover:bg-[#f5f0e8] lg:bottom-5"
         >
           <CookieIcon />
         </button>

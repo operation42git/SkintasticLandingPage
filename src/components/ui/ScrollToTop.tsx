@@ -23,7 +23,7 @@ export function ScrollToTop() {
       type="button"
       onClick={handleClick}
       aria-label={t("scrollTop")}
-      className={`fixed bottom-9 right-3.5 z-[200] rounded-[50px] bg-white px-5 py-2 text-[13.5px] font-medium text-[#0C0C0C] shadow-sm transition-opacity duration-300 hover:bg-[#f5f0e8] ${
+      className={`fixed bottom-[96px] right-3.5 z-[200] lg:bottom-9 rounded-[50px] bg-white px-5 py-2 text-[13.5px] font-medium text-[#0C0C0C] shadow-sm transition-opacity duration-300 hover:bg-[#f5f0e8] ${
         visible ? "opacity-100" : "pointer-events-none opacity-0"
       }`}
     >
