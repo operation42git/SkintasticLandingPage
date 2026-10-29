@@ -15,8 +15,8 @@
   `src/lib/google-consent.test.mts` (new: run with `node --test`, no dependency)
 - `src/config/google.ts` (new: the two IDs from the environment and the personalization switch)
 - `src/config/consent.ts` (`BANNER_VERSION` only)
-- `messages/hr.json`, `messages/en.json` (`cookieConsent.categories.analytics.desc` and
-  `cookieConsent.categories.ads.desc` only)
+- `messages/hr.json`, `messages/en.json` (`cookieConsent.introShort`,
+  `cookieConsent.categories.analytics.desc` and `cookieConsent.categories.ads.desc` only)
 - `docs/cookie-consent.md` and `docs/cookie-banner-versions.md` (add to the notes the previous brief created)
 
 Changing any other file: stop and ask. End your report with `git diff --stat origin/main...HEAD`.
@@ -65,6 +65,7 @@ value this brief needs that is not in a table: stop and ask, listing everything 
 
 | Key | hr | en |
 |---|---|---|
+| `introShort` (draft) | Koristimo kolačiće kako bi stranica radila i, uz vaš pristanak, za analitiku i mjerenje oglasa putem usluga Google Ireland Limited. Pristanak možete povući u bilo kojem trenutku. | We use cookies to make the site work and, with your consent, for analytics and ad measurement through Google Ireland Limited. You can withdraw your consent at any time. |
 | `categories.analytics.desc` (draft) | Analitički kolačići koriste se za razumijevanje načina na koji posjetitelji koriste stranicu. Koristimo Google Analytics (Google Ireland Limited); postavlja kolačiće _ga i _ga_*, koji vrijede do 2 godine. Uključuju se samo uz vaš pristanak. | Analytics cookies are used to understand how visitors use the site. We use Google Analytics (Google Ireland Limited); it sets the cookies _ga and _ga_*, which last up to 2 years. They are switched on only with your consent. |
 | `categories.ads.desc` (draft) | Oglasni kolačići koriste se za mjerenje uspješnosti oglasa. Koristimo Google Ads (Google Ireland Limited); postavlja kolačiće _gcl_au, _gcl_aw i _gac_*, koji vrijede do 90 dana. Prilagođeni oglasi (remarketing) trenutačno su isključeni. Uključuju se samo uz vaš pristanak. | Advertising cookies are used to measure how well our ads perform. We use Google Ads (Google Ireland Limited); it sets the cookies _gcl_au, _gcl_aw and _gac_*, which last up to 90 days. Personalised ads (remarketing) are currently switched off. They are switched on only with your consent. |
 
@@ -133,6 +134,8 @@ lists any difference in the report.
 - Forwarding `gclid` and `fbclid` only with ads consent: decided and built in `landing-cookie-consent`.
 - The privacy page text and the lawyer's review (the legal pages).
 - Creating the Google accounts, the GA4 property or the Ads account, setting the IDs in the host's build settings,
-  and checking DebugView: the person.
+  and checking DebugView: the person. Also the person's, per the lawyer's draft answer to question 13: accept the GA4
+  data processing terms and the Google Ads controller terms, turn off Google Signals and data sharing with Google in
+  GA4, set GA4 data retention to 2 months, and add both tools to the record of processing.
 
 **Estimate** One and a half days.
