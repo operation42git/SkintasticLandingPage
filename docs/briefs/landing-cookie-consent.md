@@ -55,10 +55,11 @@ value is `v2…` below, not `v1.<necessary>.<analytics>.<marketing>.<date>` of A
 | privacy link | in the dialog, under the intro, `footer.privacyPolicy` as the text, the same `href` as the footer (`/{locale}/datenschutz`), opening in a new tab (`target="_blank"`, `rel="noopener"`) so the page behind a blocking dialog stays readable (proposed). |
 | reopen button | below `lg` (1024 px): `bottom` = the booking bar's height (84 px, the value `MobileBookBar.tsx` gives the body) + 12 px, so it clears the bar; from `lg`: as today (`bottom-5 left-5`). `z-index` stays below the dialog's. `ScrollToTop` gets the same rule on its own side (`right-3.5`). |
 | click IDs | `utm_source`, `utm_medium`, `utm_campaign` and `utm_content` are forwarded as today. `gclid` and `fbclid` are forwarded **only while `getConsent()` says `ads` is `true`**; otherwise the link has neither, even when the page's own address carries them. `buildBookingHref` takes one more argument (`adsAllowed: boolean`) and its callers pass it; the links update when `skt:consent-updated` fires (`BookButton` already sets its `href` in an effect). This page keeps the click IDs nowhere else. |
+| buttons | "Reject" and "Accept all" get **identical styling**: the same size, height, colours, border, font and hover (the current "Accept all" classes: dark fill `#1a1516`, white text, rounded-full), because AZOP's cookie page says the two options must be designed the same way. "Save my settings" stays the third button, the same height but visibly different (the current outline style); the row order, Reject, Save, Accept all, is unchanged. The dialog has no close (X) control and gets none. *(The colour choice is proposed; named in the report for the person to confirm.)* |
 | footer | "Postavke kolačića" in the footer is unchanged and still opens the dialog with the saved state. |
 
-**Values not given yet** The three marked *(proposed)* above (the retry delay, the queue size, the new-tab
-privacy link) are used as written and **named in the report for the person to confirm**; they are not
+**Values not given yet** The four marked *(proposed)* above (the retry delay, the queue size, the new-tab
+privacy link, the shared colour of Reject and Accept all) are used as written and **named in the report for the person to confirm**; they are not
 invented silently. The texts below are drafts for review; use them word for word and list them in the report.
 Any other value this brief needs that is not in a table: stop and ask, listing everything missing at once.
 
@@ -122,7 +123,10 @@ real cookies of each tag here when a tag is added. Use one term for the always-o
     booking links (header, hero, offers, the mobile bar, the off-peak calendar link) carry `utm_source` but neither click ID;
     after Accept all, or ads alone, they carry all three; turning ads off removes the click IDs from the links without
     a reload; analytics alone does not add them. Shown.
-12. **The diff** lists only the Touches paths. Listed.
+12. **Buttons:** in the browser at 390 and 1440 px, `getComputedStyle` of "Reject" and "Accept all" is equal for `background-color`,
+    `color`, `border`, `font-size`, `font-weight`, `padding` and `height`, in rest and in hover; "Save" has the same height and a
+    different style; a screenshot of the three side by side at each width. Shown.
+13. **The diff** lists only the Touches paths. Listed.
 
 **Out of scope**
 - Any tracking tag, Consent Mode wiring or Google/Meta script (the ads brief).
