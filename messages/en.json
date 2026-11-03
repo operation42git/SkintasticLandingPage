@@ -445,7 +445,8 @@
       "faq": "Questions",
       "menu": "Main menu",
       "whatsapp": "WhatsApp message",
-      "whatsappTitle": "WhatsApp {phone}"
+      "whatsappTitle": "WhatsApp {phone}",
+      "language": "Language"
     },
     "book": "Book an appointment →",
     "logoAlt": "skintastic LASER SKIN & BODY",

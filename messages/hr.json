@@ -445,7 +445,8 @@
       "faq": "Pitanja",
       "menu": "Glavni izbornik",
       "whatsapp": "WhatsApp poruka",
-      "whatsappTitle": "WhatsApp {phone}"
+      "whatsappTitle": "WhatsApp {phone}",
+      "language": "Jezik"
     },
     "book": "Rezerviraj termin →",
     "logoAlt": "skintastic LASER SKIN & BODY",

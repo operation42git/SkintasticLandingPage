@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { contact } from "@/config/contact";
 import { BookButton } from "@/components/ui/BookButton";
 import { ChatIcon, PhoneIcon } from "./icons";
+import { LanguageSwitch } from "./LanguageSwitch";
 
 /**
  * Laptop and tablet: sticky, three links in the middle, WhatsApp and phone icons and "Rezerviraj termin".
@@ -23,6 +24,7 @@ export function Header() {
           <a href="#v2-pitanja">{t("nav.faq")}</a>
         </nav>
         <div className="hq">
+          <LanguageSwitch />
           <a
             className="qi"
             href={contact.whatsappHref}
