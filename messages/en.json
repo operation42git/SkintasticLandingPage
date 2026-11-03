@@ -473,15 +473,15 @@
       "items": {
         "faceNeck": {
           "name": "Face and neck",
-          "price": "€49.90"
+          "price": "[PRICE]"
         },
         "intimate": {
           "name": "Intimate area",
-          "price": "€79.90"
+          "price": "[PRICE]"
         },
-        "legs": {
-          "name": "Full legs",
-          "price": "€99.90"
+        "back": {
+          "name": "Whole back",
+          "price": "[PRICE]"
         }
       }
     },

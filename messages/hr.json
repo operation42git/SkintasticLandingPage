@@ -473,15 +473,15 @@
       "items": {
         "faceNeck": {
           "name": "Lice i vrat",
-          "price": "49,90 €"
+          "price": "[CIJENA]"
         },
         "intimate": {
           "name": "Intimna zona",
-          "price": "79,90 €"
+          "price": "[CIJENA]"
         },
-        "legs": {
-          "name": "Noge kompletne",
-          "price": "99,90 €"
+        "back": {
+          "name": "Cijela leđa",
+          "price": "[CIJENA]"
         }
       }
     },
