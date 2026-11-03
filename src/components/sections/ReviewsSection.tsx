@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { instagramHref } from "@/config/contact";
 
 type Review = {
+  title?: string;
   text: string;
   author: string;
   centre: string;
@@ -32,6 +33,7 @@ export function ReviewsSection() {
             <h2 className="font-script text-[40px] font-normal leading-none lg:text-[56px]">
               {t("title")}
             </h2>
+            {t.has("brandLine") ? <p className="mt-2 text-sm lg:text-[15px]">{t("brandLine")}</p> : null}
           </div>
           <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
             <strong className="text-[22px] lg:text-[44px]">{t("rating")}</strong>
@@ -94,11 +96,12 @@ function ReviewCard({ review, className }: { review: Review; className: string }
   return (
     <figure className={`m-0 flex flex-col gap-2.5 bg-white lg:gap-3.5 ${className}`}>
       <span className="tracking-[0.2em]">★★★★★</span>
+      {review.title ? <p className="text-[11px] font-bold uppercase tracking-[0.14em] lg:text-xs">{review.title}</p> : null}
       <blockquote className="text-sm leading-snug lg:text-base lg:leading-relaxed">
         {`\u201E${review.text}\u201C`}
       </blockquote>
       <figcaption className="text-[13px] font-bold lg:text-sm">
-        {review.author} · {review.centre}
+        {review.centre ? `${review.author} · ${review.centre}` : review.author}
       </figcaption>
     </figure>
   );

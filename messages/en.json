@@ -328,21 +328,31 @@
     "googleUrl": "[GOOGLE URL]",
     "instagram": "Follow us on Instagram ↗",
     "instagramShort": "Instagram ↗",
+    "brandLine": "Experiences of clients at Skintastic studios.",
     "items": [
       {
-        "text": "[Google review — Skintastic Istok]",
-        "author": "[Name]",
-        "centre": "Skintastic Istok"
+        "title": "I CAN ONLY RECOMMEND IT",
+        "text": "It was my third time there, and the atmosphere was really lovely and pleasant! I'm looking forward to my next appointment!",
+        "author": "Jessi",
+        "centre": ""
       },
       {
-        "text": "[Google review — Skintastic Zapad]",
-        "author": "[Name]",
-        "centre": "Skintastic Zapad"
+        "title": "PERFECT ATMOSPHERE",
+        "text": "A great first appointment. The lady took the time to explain everything to me, and I knew what was happening the whole time. The atmosphere was perfect and I felt very comfortable. I'm already looking forward to my next treatments.",
+        "author": "Diana",
+        "centre": ""
       },
       {
-        "text": "[Google review — Skintastic Istok]",
-        "author": "[Name]",
-        "centre": "Skintastic Istok"
+        "title": "VERY AFFORDABLE",
+        "text": "Very friendly, you feel at ease, and the laser treatment is pleasant! I'm looking forward to the next sessions. Definitely do it now; the special packages are very affordable and really worth it.",
+        "author": "Michelle",
+        "centre": ""
+      },
+      {
+        "title": "EASY BOOKING",
+        "text": "The service was very friendly, I felt very comfortable. Easy online booking. I can already see results after my second visit :)",
+        "author": "Margit",
+        "centre": ""
       }
     ]
   },
@@ -510,7 +520,7 @@
       "title": "What does a treatment look like?"
     },
     "review": {
-      "link": "Our clients' experiences"
+      "label": "Reviews"
     },
     "why": {
       "title": "Why Skintastic?"

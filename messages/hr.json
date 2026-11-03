@@ -328,21 +328,31 @@
     "googleUrl": "[URL GOOGLE]",
     "instagram": "Prati nas na Instagramu ↗",
     "instagramShort": "Instagram ↗",
+    "brandLine": "Iskustva klijentica Skintastic studija.",
     "items": [
       {
-        "text": "[Google recenzija klijentice — Skintastic Istok]",
-        "author": "[Ime]",
-        "centre": "Skintastic Istok"
+        "title": "MOGU SAMO PREPORUČITI",
+        "text": "Bio mi je treći put tamo, a atmosfera je bila super lijepa i ugodna! Veselim se sljedećem terminu!",
+        "author": "Jessi",
+        "centre": ""
       },
       {
-        "text": "[Google recenzija klijentice — Skintastic Zapad]",
-        "author": "[Ime]",
-        "centre": "Skintastic Zapad"
+        "title": "SAVRŠENA ATMOSFERA",
+        "text": "Odličan prvi termin. Gospođa je odvojila vrijeme da mi sve objasni i cijelo vrijeme sam znala što se događa. Atmosfera je bila savršena i osjećala sam se vrlo ugodno. Već se veselim sljedećim tretmanima.",
+        "author": "Diana",
+        "centre": ""
       },
       {
-        "text": "[Google recenzija klijentice — Skintastic Istok]",
-        "author": "[Ime]",
-        "centre": "Skintastic Istok"
+        "title": "VRLO PRISTUPAČNO",
+        "text": "Vrlo ljubazno, osjećate se ugodno, a laserski tretman je ugodan! Veselim se sljedećim sesijama. Svakako to učinite sada; posebni paketi su vrlo pristupačni i stvarno se isplate.",
+        "author": "Michelle",
+        "centre": ""
+      },
+      {
+        "title": "JEDNOSTAVNO REZERVIRANJE TERMINA",
+        "text": "Usluga je bila jako ljubazna, osjećala sam se vrlo ugodno. Jednostavna rezervacija termina putem interneta. Već vidim rezultate nakon drugog posjeta :)",
+        "author": "Margit",
+        "centre": ""
       }
     ]
   },
@@ -510,7 +520,7 @@
       "title": "Kako izgleda tretman?"
     },
     "review": {
-      "link": "Iskustva naših klijentica"
+      "label": "Recenzije"
     },
     "why": {
       "title": "Zašto Skintastic?"

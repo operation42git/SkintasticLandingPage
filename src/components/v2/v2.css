@@ -112,11 +112,14 @@
 
 /* 6 Review */
 .v2 .quote { background: var(--v2-linen); border-top: 1px solid var(--v2-stone); border-bottom: 1px solid var(--v2-stone); }
-.v2 .quote .wrap { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-block: 52px; flex-wrap: wrap; }
-.v2 .quote blockquote { margin: 0; font-family: var(--disp); font-weight: 300; font-style: italic; font-size: clamp(26px, 3vw, 36px); line-height: 1.2; max-width: 640px; }
-.v2 .quote figcaption { display: block; margin-top: 12px; font-size: 13.5px; letter-spacing: 0.06em; color: var(--v2-taupe); }
-.v2 .quote .go { display: flex; align-items: center; gap: 14px; font-size: 14px; text-decoration: none; }
-.v2 .quote .go i { width: 52px; height: 52px; border: 1px solid var(--v2-taupe); border-radius: 50%; display: grid; place-items: center; font-style: normal; }
+.v2 .rvw { display: grid; grid-template-columns: 0.8fr 2fr; gap: 48px; padding-block: 56px; }
+.v2 .rvh { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.v2 .rvh p { margin: 0; font-size: 16.5px; max-width: 300px; }
+.v2 .rvh .rvr b { font-family: var(--disp); font-size: 32px; font-weight: 300; }
+.v2 .rvg { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 48px; }
+.v2 .rvg figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.v2 .rvg blockquote { margin: 0; font-family: var(--disp); font-weight: 300; font-style: italic; font-size: 22px; line-height: 1.35; }
+.v2 .rvg figcaption { font-size: 14px; font-weight: 600; }
 
 /* 7 Zašto Skintastic */
 .v2 .why { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 72px; }
@@ -243,6 +246,10 @@
   .v2 .st3 { gap: 22px; padding-block: 40px; }
   .v2 .s3c::after { display: none; }
   .v2 .why, .v2 .tg, .v2 .about, .v2 .fg { grid-template-columns: 1fr; }
+  .v2 .rvw, .v2 .rvg { grid-template-columns: 1fr; }
+  .v2 .rvw { gap: 24px; padding-block: 44px; }
+  .v2 .rvg { gap: 26px; }
+  .v2 .rvg blockquote { font-size: 20px; }
   .v2 .wg { grid-template-columns: 1fr; gap: 22px; }
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
