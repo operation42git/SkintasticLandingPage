@@ -462,7 +462,7 @@
       ]
     },
     "heroOffer": {
-      "pazusi": "<strong>Special offer:</strong> underarms 19,90 € instead of 49,99 € until 31 Dec."
+      "pazusi": "<strong>Special offer:</strong> underarms €19.90 instead of €49.99 until 31 Dec."
     },
     "treatments": {
       "label": "Treatments and prices",
@@ -473,15 +473,15 @@
       "items": {
         "faceNeck": {
           "name": "Face and neck",
-          "price": "49,90 €"
+          "price": "€49.90"
         },
         "intimate": {
           "name": "Intimate area",
-          "price": "79,90 €"
+          "price": "€79.90"
         },
         "legs": {
           "name": "Full legs",
-          "price": "99,90 €"
+          "price": "€99.90"
         }
       }
     },
@@ -556,7 +556,7 @@
         },
         {
           "label": "Power",
-          "value": "5.000 W"
+          "value": "5,000 W"
         }
       ],
       "imageAlt": "Mediostar Monolith handpieces"
