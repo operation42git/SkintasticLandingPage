@@ -24,7 +24,7 @@ export function V2Page({ search }: { search: string }) {
   const [offers] = useState(() => activeOffersV2(search));
   return (
     <div className={`v2 ${newsreader.variable} ${hanken.variable}`}>
-      <Header showOffers={offers.length > 0} />
+      <Header />
       <main>
         <Hero />
         <Treatments />

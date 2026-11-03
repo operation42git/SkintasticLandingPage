@@ -440,12 +440,12 @@
       "new": "Novo"
     },
     "nav": {
-      "treatments": "Tretmani",
-      "offers": "Povoljniji termini",
+      "treatments": "Tretmani i cijene",
       "locations": "Lokacije",
       "faq": "Pitanja",
-      "contact": "Kontakt",
-      "menu": "Glavni izbornik"
+      "menu": "Glavni izbornik",
+      "whatsapp": "WhatsApp poruka",
+      "whatsappTitle": "WhatsApp {phone}"
     },
     "book": "Rezerviraj termin →",
     "logoAlt": "skintastic LASER SKIN & BODY",

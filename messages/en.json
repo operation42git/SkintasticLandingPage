@@ -440,12 +440,12 @@
       "new": "New"
     },
     "nav": {
-      "treatments": "Treatments",
-      "offers": "Better prices",
+      "treatments": "Treatments and prices",
       "locations": "Locations",
       "faq": "Questions",
-      "contact": "Contact",
-      "menu": "Main menu"
+      "menu": "Main menu",
+      "whatsapp": "WhatsApp message",
+      "whatsappTitle": "WhatsApp {phone}"
     },
     "book": "Book an appointment →",
     "logoAlt": "skintastic LASER SKIN & BODY",
