@@ -43,6 +43,8 @@ phone. Visitors who don't use the switch see only the current page.
 | SEO | the server-rendered HTML is the current design; the new one is chosen in the browser. No new route, no change to metadata or the sitemap. |
 | analytics/tracking | none added |
 
+For switch users the current design shows briefly before the new one replaces it in the browser; accepted, so ordinary visitors never wait.
+
 ## Colours and type (new tokens, prefixed `v2`)
 
 | Token | Value | Use |
@@ -57,6 +59,7 @@ phone. Visitors who don't use the switch see only the current page.
 | `--v2-night` | `#14100e` | the footer only |
 | display font | Newsreader (Google), weights 300 and 400, italic 300; `subsets: ["latin","latin-ext"]` | headings, treatment names, prices, percentages |
 | text font | Hanken Grotesk (Google), 400/500/600; `subsets: ["latin","latin-ext"]` | everything else |
+| font loading | both new fonts with `preload: false`, and their CSS variables applied only inside the new design's wrapper, so a visitor to the current design downloads neither font | |
 
 Italic is used only where marked *like this* below. Small labels: 11.5 px, letter-spacing .24em, uppercase, taupe.
 
@@ -65,7 +68,7 @@ Italic is used only where marked *like this* below. Small labels: 11.5 px, lette
 | # | Section | Content |
 |---|---|---|
 | 1 | Header | the existing logo; links Tretmani · Povoljniji termini · Lokacije · Pitanja · Kontakt (anchors to sections 3, 4, 9, 10, 11); button "Rezerviraj termin →" (`BOOKING_URL` with the campaign parameters, as today). Phone: logo only; the booking button becomes a sticky bar at the bottom. |
-| 2 | Hero | Heading "Glatka koža." / "*Trajno.*"; line under it, 19 px, ink: "Laserska epilacija za žene i muškarce u Zagrebu, Mediostar diodnim laserom."; button "Rezerviraj termin →" and the text link "Tretmani i cijene →" (to section 3); one line "**Posebna ponuda:** pazusi 19,90 € umjesto 49,99 € do 31. 12." built from `heroOffers` (the first offer whose `validUntil` hasn't passed; the label in rust; hidden when there is none) linking to booking with that offer's `code`; three ticked facts: "Mediostar · Made in Germany", "Za sve tipove kože", "Plaćanje karticom ili gotovinom". Image on the right, fading into the ground; on the phone above the text. No small label above the heading. |
+| 2 | Hero | Heading "Glatka koža." / "*Trajno.*"; line under it, 19 px, ink: "Laserska epilacija za žene i muškarce u Zagrebu, Mediostar diodnim laserom."; button "Rezerviraj termin →" and the text link "Tretmani i cijene →" (to section 3); one line "**Posebna ponuda:** pazusi 19,90 € umjesto 49,99 € do 31. 12.": its text is the `v2.*` message keyed by the offer's `id` (`v2.heroOffer.pazusi`), its booking `code` and its validity (hidden after `validUntil`) come from `heroOffers` (the first offer whose `validUntil` hasn't passed; the label in rust; hidden when there is none; an offer without a `v2.heroOffer.{id}` message shows no line; `hero-offers.ts` stays untouched); three ticked facts: "Mediostar · Made in Germany", "Za sve tipove kože", "Plaćanje karticom ili gotovinom". Image on the right, fading into the ground; on the phone above the text. No small label above the heading. |
 | 3 | Tretmani i cijene | label "Tretmani i cijene", heading "Pronađi svoj tretman", text "Istraži ponudu, provjeri cijene i rezerviraj termin.", link "Svi tretmani i cijene →" (booking); on the right three columns with thin rules: name and "od" price — Lice i vrat od 49,90 € (`pkg_face_neck`), Intimna zona od 79,90 € (Ivan, 2026-11-03; the code: you look it up in the Skintastic catalogue and name it in the report), Noge kompletne od 99,90 € (`alc_legs_full`). Each column links to booking with its code. Phone: a list. Pazusi is **not** in this list (it is the hero offer). |
 | 4 | Povoljniji termini | linen band; photo on the left (see Images), text on the right: label "Povoljniji termini", heading "Uhvati *bolju cijenu*", text "Termin ti je fleksibilan? Iskoristi posebnu ponudu na odabrani tretman." (neutral for women and men; Ivan, 2026-11-03); then one row per offer: name (Newsreader 26 px), under it a clock icon (rust) and **"Uto i Čet · 13:00–16:00"** (600, 17 px) and the studio in taupe; on the right the percentage in italic Newsreader ("do −30 %"; with one offer "Do −30 %" at 56 px). The whole row is one link (no arrow). Under the rows one link "Provjeri dostupne termine →". See **Povoljniji termini data**. |
 | 5 | Kako izgleda tretman | italic heading "*Kako izgleda tretman?*" on the left; three columns with rules: 01 Savjetovanje — "Procjena stanja kože i preporuka tretmana. Besplatno." · 02 Tretman — "Brz, siguran i prilagođen tebi." · 03 Rezultati — "Postupno smanjenje dlačica i glatka koža na duže vrijeme." |
@@ -111,7 +114,8 @@ Drafted en texts are listed in the report for review.
 
 **Tests**
 - `npm run lint` and `npm run build` pass.
-- With the switch off, the page's HTML and screenshots at 390 and 1440 px are identical to `main`.
+- With the switch off, screenshots at 390 and 1440 px are identical to `main`, and the page's text and sections are unchanged.
+- With the switch off, the network tab shows no Newsreader or Hanken Grotesk font file.
 - `?dizajn=novo` shows the new design and the switch; reloading without the parameter keeps it; "Sada" or
   `?dizajn=sada` returns to the current design and hides the switch.
 - Storage blocked (private mode): the current design shows and nothing throws.
@@ -122,7 +126,7 @@ Drafted en texts are listed in the report for review.
 1. **Switch:** the four switch cases above. Shown.
 2. **New design:** screenshots of the whole page at 1440 and 390 px, with and without `ponude=demo`, next to the
    mockup. Shown.
-3. **Current design unchanged:** screenshots match `main`. Shown.
+3. **Current design unchanged:** with the switch off, screenshots at 390 and 1440 px are identical to `main`, and the page's text and sections are unchanged. Shown.
 4. **Content:** every text in the sections table is in `messages/hr.json` under `v2.*` (or reuses an existing key
    where the table says so); no visible text in components. Listed.
 5. **The diff** lists only the Touches paths. Listed.
