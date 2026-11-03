@@ -7,8 +7,8 @@ import { ChatIcon, PhoneIcon } from "./icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 
 /**
- * Laptop and tablet: sticky, three links in the middle, WhatsApp and phone icons and "Rezerviraj termin".
- * Phone: the logo and the two icons; booking is in the bottom bar.
+ * Sticky on every width. Laptop and tablet: three links in the middle, HR / EN, WhatsApp and phone icons and
+ * "Rezerviraj termin". Phone: the logo, HR / EN and the two icons; booking is in the bottom bar.
  */
 export function Header() {
   const t = useTranslations("v2");

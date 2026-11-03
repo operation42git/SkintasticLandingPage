@@ -21,7 +21,7 @@
 .v2 .ph-block { background: var(--v2-linen); }
 
 /* 1 Header */
-/* Sticky on laptop and tablet (on the phone it scrolls away; the bottom bar carries booking). */
+/* Sticky on every width; on the phone the bottom bar carries booking. */
 .v2 .hdw { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: rgba(244, 238, 231, 0.94); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .v2 [id] { scroll-margin-top: 88px; }
 .v2 .hd { display: flex; align-items: center; gap: 36px; padding-block: 22px; }
@@ -218,8 +218,7 @@
 @media (max-width: 900px) {
   .v2 .hd nav, .v2 .hd .btn { display: none; }
   .v2 .hd { justify-content: space-between; }
-  .v2 .hdw { position: static; }
-  .v2 [id] { scroll-margin-top: 0; }
+  .v2 [id] { scroll-margin-top: 76px; }
   .v2 .hd img { height: 28px; }
   .v2 .qi { width: 40px; height: 40px; }
   .v2 .hero { grid-template-columns: 1fr; min-height: 0; }
@@ -247,7 +246,8 @@
   .v2 .wg { grid-template-columns: 1fr; gap: 22px; }
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
-  .v2 .ap { min-height: 300px; }
+  .v2 .tech img { display: none; }
+  .v2 .ap { min-height: 0; height: 200px; background-size: cover; background-position: center 15%; }
   .v2 .at { padding: 40px 24px; }
   .v2 .lg { grid-template-columns: 1fr; gap: 40px; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }
