@@ -485,10 +485,12 @@
         },
         "intimate": {
           "name": "Intimate area",
+          "desc": "[DESCRIPTION]",
           "price": "[PRICE]"
         },
         "back": {
           "name": "Full back",
+          "desc": "[DESCRIPTION]",
           "price": "[PRICE]"
         }
       }
@@ -504,21 +506,7 @@
       "imageAlt": "A calendar with a discount circled"
     },
     "steps": {
-      "title": "What does a treatment look like?",
-      "items": [
-        {
-          "title": "Consultation",
-          "text": "An assessment of your skin and a treatment recommendation. Free."
-        },
-        {
-          "title": "Treatment",
-          "text": "Quick, safe and tailored to you."
-        },
-        {
-          "title": "Results",
-          "text": "Gradually less hair and smooth skin for longer."
-        }
-      ]
+      "title": "What does a treatment look like?"
     },
     "review": {
       "link": "Our clients' experiences"

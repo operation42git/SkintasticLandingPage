@@ -485,10 +485,12 @@
         },
         "intimate": {
           "name": "Intimna zona",
+          "desc": "[OPIS]",
           "price": "[CIJENA]"
         },
         "back": {
           "name": "Cijela leđa",
+          "desc": "[OPIS]",
           "price": "[CIJENA]"
         }
       }
@@ -504,21 +506,7 @@
       "imageAlt": "Kalendar s označenim popustom"
     },
     "steps": {
-      "title": "Kako izgleda tretman?",
-      "items": [
-        {
-          "title": "Savjetovanje",
-          "text": "Procjena stanja kože i preporuka tretmana. Besplatno."
-        },
-        {
-          "title": "Tretman",
-          "text": "Brz, siguran i prilagođen tebi."
-        },
-        {
-          "title": "Rezultati",
-          "text": "Postupno smanjenje dlačica i glatka koža na duže vrijeme."
-        }
-      ]
+      "title": "Kako izgleda tretman?"
     },
     "review": {
       "link": "Iskustva naših klijentica"

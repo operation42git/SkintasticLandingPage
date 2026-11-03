@@ -62,6 +62,9 @@
 .v2 .t3 > a:first-child { padding-left: 0; }
 .v2 .t3 > a + a { border-left: 1px solid var(--v2-stone); }
 .v2 .t3 h3 { font-size: 25px; }
+.v2 .t3 .tn { display: flex; flex-direction: column; gap: 4px; }
+.v2 .t3 .td { font-size: 14px; color: var(--v2-taupe); line-height: 1.4; }
+.v2 .t3 .p { margin-top: auto; }
 .v2 .t3 .p { font-family: var(--disp); font-weight: 300; font-size: 34px; line-height: 1; white-space: nowrap; }
 .v2 .t3 .p small { font-family: var(--body); font-size: 15px; color: var(--v2-taupe); margin-right: 8px; }
 
@@ -207,7 +210,7 @@
   .v2 .tr3 { border-left: 0; padding-left: 0; border-top: 1px solid var(--v2-stone); padding-top: 24px; }
   .v2 .t3 { grid-template-columns: 1fr; }
   .v2 .t3 > a, .v2 .t3 > a + a { padding: 14px 0; border-left: 0; border-bottom: 1px solid var(--v2-stone); flex-direction: row; justify-content: space-between; align-items: baseline; }
-  .v2 .t3 .p { font-size: 30px; }
+  .v2 .t3 .p { font-size: 30px; margin-top: 0; }
   .v2 .oimg { height: 200px; order: -1; margin: 0 -24px; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
   .v2 .otx { padding-block: 8px 20px; }
   .v2 .orows { border-left: 0; padding-left: 0; border-top: 1px solid var(--v2-stone); padding-bottom: 28px; }

@@ -4,7 +4,9 @@ import { useTranslations } from "next-intl";
 
 export function Steps() {
   const t = useTranslations("v2.steps");
-  const items = t.raw("items") as { title: string; text: string }[];
+  // The current page's steps, word for word (how.steps.1–3).
+  const how = useTranslations("how.steps");
+  const items = ["1", "2", "3"].map((n) => ({ title: how(`${n}.title`), text: how(`${n}.body`) }));
   return (
     <div className="wrap">
       <section className="st3">
