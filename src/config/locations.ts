@@ -63,7 +63,7 @@ export const locations: Location[] = [
     hours: "",
     parking: "",
     openingLabel: "",
-    url: "[URL WIEN]",
+    url: "https://connect.shore.com/bookings/skintastic-wien-laser-skin-body/services?locale=de",
     image: "/images/locations/wien.jpg",
   },
   {
@@ -75,7 +75,7 @@ export const locations: Location[] = [
     hours: "",
     parking: "",
     openingLabel: "",
-    url: "[URL GRAZ PUNTIGAM]",
+    url: "https://connect.shore.com/bookings/skintastic/services?locale=de",
     image: "/images/locations/graz-puntigam.jpg",
   },
   {
@@ -87,7 +87,7 @@ export const locations: Location[] = [
     hours: "",
     parking: "",
     openingLabel: "",
-    url: "[URL GRAZ CITY]",
+    url: "https://www.phorest.com/salon/skintasticgrazcity",
     image: "/images/locations/graz-city.jpg",
   },
   {
@@ -99,7 +99,7 @@ export const locations: Location[] = [
     hours: "",
     parking: "",
     openingLabel: "",
-    url: "[URL STUTTGART]",
+    url: "https://connect.shore.com/bookings/plastische-chirurgie-am-markt-dr-med-jens-neumann/services?locale=de",
     image: "/images/locations/stuttgart.jpg",
   },
 ];
