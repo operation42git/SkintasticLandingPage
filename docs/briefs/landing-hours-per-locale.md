@@ -6,7 +6,7 @@
 
 - `src/config/locations.ts` (`hours` becomes per locale)
 - `src/components/sections/LocationsSection.tsx` and `src/components/sections/ContactSection.tsx` (the current design: read the locale's hours)
-- `src/components/v2/` (the v2 Locations: read the locale's hours)
+- `src/components/v2/Locations.tsx` (the v2 Locations: read the locale's hours)
 - `src/app/[locale]/layout.tsx` only if its LocalBusiness JSON-LD reads `hours` (keep it valid; see Values)
 - tests, if any cover these sections
 
@@ -22,7 +22,8 @@ A visitor on /en/ reads the opening hours in English, on both designs; /hr/ is u
 | `hours` | `{ hr: string; en: string }` per location. A bracket placeholder stays a placeholder in both. |
 | Zapad | hr "Pon–Sub 8:00–20:00 · Ned zatvoreno"; en "Mon–Sat 8:00–20:00 · Sun closed" |
 | Istok | hr "[RADNO VRIJEME]"; en "[OPENING HOURS]" (still needed from Ivan) |
-| sections | each reads `hours[locale]`; a missing locale falls back to `hr` |
+| Jug and the external locations | empty hours stay `{ hr: "", en: "" }`, and nothing shows |
+| sections | each reads `hours[locale]` (a missing locale falls back to `hr`) and shows the line only when that text is non-empty |
 | JSON-LD | if `layout.tsx` emits `openingHours` from `hours`, it uses a machine form (`"Mo-Sa 08:00-20:00"`) from a separate field `openingHoursSpec` on the location, not the display text; if it doesn't use hours today, leave it |
 
 **Tests**
