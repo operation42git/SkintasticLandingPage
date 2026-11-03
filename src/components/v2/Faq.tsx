@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { FAQ_GROUPS_V2 } from "@/config/design";
 
 type FaqEntry = { q: string; a: string | string[] };
 
@@ -9,7 +10,19 @@ function sanitize(html: string) {
   return html.replace(/<(?!\/?(?:strong|em|br)\b)[^>]*>/gi, "");
 }
 
-/** All items of the existing FAQ, in order, with their texts unchanged; the first one open. */
+/** Opening one question closes the others: `name` does it natively; this covers browsers without it. */
+function closeOthers(event: React.SyntheticEvent<HTMLDetailsElement>) {
+  const opened = event.currentTarget;
+  if (!opened.open) return;
+  opened
+    .closest(".fg")
+    ?.querySelectorAll<HTMLDetailsElement>("details[open]")
+    .forEach((other) => {
+      if (other !== opened) other.open = false;
+    });
+}
+
+/** All items of the existing FAQ, in order and in three groups, texts unchanged; one open at a time, the first on load. */
 export function Faq() {
   const t = useTranslations("v2.faq");
   const faq = useTranslations("faq");
@@ -22,17 +35,22 @@ export function Faq() {
           <p className="fsub">{faq("subtitle")}</p>
         </div>
         <div>
-          {items.map((item, index) => (
-            <details key={item.q} open={index === 0}>
-              <summary>{item.q}</summary>
-              {/* A <br> in an answer becomes its own paragraph, about 10 px apart. */}
-              {(Array.isArray(item.a) ? item.a : [item.a])
-                .flatMap((answer) => answer.split(/<br\s*\/?>/i))
-                .filter((paragraph) => paragraph.trim())
-                .map((paragraph, i) => (
-                  <p key={i} dangerouslySetInnerHTML={{ __html: sanitize(paragraph) }} />
-                ))}
-            </details>
+          {FAQ_GROUPS_V2.map((group) => (
+            <div className="fgp" key={group.key}>
+              <span className="k">{t(`groups.${group.key}`)}</span>
+              {items.slice(group.from, group.to).map((item, offset) => (
+                <details key={item.q} name="faq" open={group.from + offset === 0} onToggle={closeOthers}>
+                  <summary>{item.q}</summary>
+                  {/* A <br> in an answer becomes its own paragraph, about 10 px apart. */}
+                  {(Array.isArray(item.a) ? item.a : [item.a])
+                    .flatMap((answer) => answer.split(/<br\s*\/?>/i))
+                    .filter((paragraph) => paragraph.trim())
+                    .map((paragraph, i) => (
+                      <p key={i} dangerouslySetInnerHTML={{ __html: sanitize(paragraph) }} />
+                    ))}
+                </details>
+              ))}
+            </div>
           ))}
         </div>
       </div>

@@ -556,7 +556,12 @@
       }
     },
     "faq": {
-      "title": "Frequently asked questions"
+      "title": "Frequently asked questions",
+      "groups": {
+        "treatment": "Treatment",
+        "results": "Results and prices",
+        "technology": "Technology"
+      }
     },
     "contact": {
       "label": "Contact",

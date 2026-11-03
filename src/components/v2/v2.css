@@ -164,7 +164,10 @@
 .v2 .fg > div:first-child { display: flex; flex-direction: column; gap: 16px; }
 .v2 .fsub { margin: 14px 0 0; font-size: 15px; max-width: 360px; color: var(--v2-taupe); }
 .v2 details { border-bottom: 1px solid var(--v2-stone); padding: 18px 0; }
-.v2 details:first-child { border-top: 1px solid var(--v2-stone); }
+.v2 .fgp { display: flex; flex-direction: column; }
+.v2 .fgp + .fgp { margin-top: 40px; }
+.v2 .fgp > .k { padding-bottom: 14px; }
+.v2 .fgp > .k + details { border-top: 1px solid var(--v2-stone); }
 .v2 summary { font-family: var(--disp); font-size: 24px; font-weight: 300; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
 .v2 summary::-webkit-details-marker { display: none; }
 .v2 summary::after { content: "+"; font-family: var(--body); font-size: 22px; color: var(--v2-taupe); }

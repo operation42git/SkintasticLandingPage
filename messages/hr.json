@@ -556,7 +556,12 @@
       }
     },
     "faq": {
-      "title": "Česta pitanja"
+      "title": "Česta pitanja",
+      "groups": {
+        "treatment": "Tretman",
+        "results": "Rezultati i cijene",
+        "technology": "Tehnologija"
+      }
     },
     "contact": {
       "label": "Kontakt",

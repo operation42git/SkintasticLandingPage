@@ -46,3 +46,13 @@ export const HERO_VIDEO_V2 = { src: "", poster: "" };
  * (e.g. /images/v2/offers-calendar.jpg). Empty: a stone tint where the image would show.
  */
 export const OFFERS_IMAGE_V2 = "";
+
+/**
+ * The new design's FAQ groups (landing-redesign row 11): each maps to the existing `faq.items` by index
+ * (0-based, end exclusive); the label is `v2.faq.groups.{key}`.
+ */
+export const FAQ_GROUPS_V2 = [
+  { key: "treatment", from: 0, to: 4 },
+  { key: "results", from: 4, to: 6 },
+  { key: "technology", from: 6, to: 10 },
+] as const;
