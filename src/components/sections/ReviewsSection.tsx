@@ -20,6 +20,9 @@ export function ReviewsSection() {
   const items = Array.isArray(rawItems) && rawItems.length > 0 ? rawItems : [];
   const shown = items.slice(0, 3);
   const googleHref = externalHref(t("googleUrl"));
+  // The rating line shows only once the rating and count are real values, not bracket placeholders.
+  const rating = externalHref(t("rating"));
+  const count = externalHref(t("count"));
   const instagramLink = instagramHref();
 
   return (
@@ -35,15 +38,17 @@ export function ReviewsSection() {
             </h2>
             {t.has("brandLine") ? <p className="mt-2 text-sm lg:text-[15px]">{t("brandLine")}</p> : null}
           </div>
-          <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
-            <strong className="text-[22px] lg:text-[44px]">{t("rating")}</strong>
-            <span className="lg:hidden"> ★★★★★ · {t("countLabel", { count: t("count") })}</span>
-            <span className="hidden lg:ml-3 lg:inline-block">
-              ★★★★★
-              <br />
-              {t("countLabel", { count: t("count") })}
-            </span>
-          </p>
+          {rating && count ? (
+            <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
+              <strong className="text-[22px] lg:text-[44px]">{rating}</strong>
+              <span className="lg:hidden"> ★★★★★ · {t("countLabel", { count })}</span>
+              <span className="hidden lg:ml-3 lg:inline-block">
+                ★★★★★
+                <br />
+                {t("countLabel", { count })}
+              </span>
+            </p>
+          ) : null}
         </div>
 
         <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1.5 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
@@ -67,9 +72,7 @@ export function ReviewsSection() {
             >
               {t("google")}
             </a>
-          ) : (
-            <span className="text-[13px] font-bold lg:text-[15px]">{t("google")}</span>
-          )}
+          ) : null}
           {instagramLink ? (
             <a
               href={instagramLink}
