@@ -160,7 +160,7 @@
 .v2 .lnk2 { font-size: 14.5px; color: var(--v2-taupe); text-decoration: none; }
 .v2 .soon h3 { color: var(--v2-taupe); }
 .v2 .fam { margin: 44px 0 0; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--disp); font-size: 22px; font-weight: 300; }
-.v2 .fam a { text-decoration: none; }
+.v2 .fam a { text-decoration: none; white-space: nowrap; }
 .v2 .fam a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .v2 .fam .fl { font-family: var(--body); font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--v2-taupe); align-self: center; }
 
