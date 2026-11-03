@@ -474,8 +474,9 @@
     "treatments": {
       "label": "Tretmani i cijene",
       "title": "Pronađi svoj tretman",
-      "text": "Istraži ponudu, provjeri cijene i rezerviraj termin.",
+      "text": "Od pojedinačnih zona do kombinacija tretmana. Istraži sve opcije, cijene i rezerviraj termin online.",
       "all": "Svi tretmani i cijene →",
+      "featured": "Izdvojeni tretmani",
       "from": "od",
       "items": {
         "faceNeck": {
@@ -496,12 +497,11 @@
       "label": "Povoljniji termini",
       "title": "Uhvati",
       "titleItalic": "bolju cijenu",
-      "text": "Termin ti je fleksibilan? Iskoristi posebnu ponudu na odabrani tretman.",
+      "text": "Posebne cijene za odabrane tretmane u slobodnijim terminima.",
       "upTo": "do −{percent} %",
       "upToOne": "Do −{percent} %",
       "until": "do {date}",
-      "check": "Provjeri dostupne termine →",
-      "imageAlt": "Glatke noge na dnevnom svjetlu"
+      "imageAlt": "Kalendar s označenim popustom"
     },
     "steps": {
       "title": "Kako izgleda tretman?",

@@ -474,8 +474,9 @@
     "treatments": {
       "label": "Treatments and prices",
       "title": "Find your treatment",
-      "text": "Explore what we offer, check prices and book an appointment.",
+      "text": "From single areas to treatment combinations. Explore every option and price, and book online.",
       "all": "All treatments and prices →",
+      "featured": "Featured treatments",
       "from": "from",
       "items": {
         "faceNeck": {
@@ -496,12 +497,11 @@
       "label": "Better prices",
       "title": "Catch a",
       "titleItalic": "better price",
-      "text": "Flexible about when you come? Take a special offer on a selected treatment.",
+      "text": "Special prices on selected treatments at quieter times.",
       "upTo": "up to −{percent} %",
       "upToOne": "Up to −{percent} %",
       "until": "until {date}",
-      "check": "Check available times →",
-      "imageAlt": "Smooth legs in daylight"
+      "imageAlt": "A calendar with a discount circled"
     },
     "steps": {
       "title": "What does a treatment look like?",
