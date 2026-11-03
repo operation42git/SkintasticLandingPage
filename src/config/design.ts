@@ -34,3 +34,9 @@ export function designFromPage(search: string): Design {
   }
   return readStored();
 }
+
+/**
+ * The new design's hero video (landing-redesign row 2): the person gives the file and its poster
+ * (e.g. /images/v2/hero.mp4 and /images/v2/hero-poster.jpg). Empty: the hero shows a linen block.
+ */
+export const HERO_VIDEO_V2 = { src: "", poster: "" };

@@ -450,19 +450,26 @@
     "book": "Rezerviraj termin →",
     "logoAlt": "skintastic LASER SKIN & BODY",
     "hero": {
+      "label": "Laserska epilacija · Zagreb",
       "title": "Glatka koža.",
-      "titleItalic": "Trajno.",
-      "service": "Laserska epilacija za žene i muškarce u Zagrebu, Mediostar diodnim laserom.",
-      "treatmentsLink": "Tretmani i cijene →",
-      "imageAlt": "Tretman laserom u studiju",
+      "titleItalic": "Dugotrajno.",
+      "service": "Profesionalna laserska epilacija za žene i muškarce uz Mediostar diodni laser.",
+      "videoAlt": "Video tretmana laserom u studiju",
       "facts": [
-        "Mediostar · Made in Germany",
-        "Za sve tipove kože",
-        "Plaćanje karticom ili gotovinom"
+        "Mediostar diodni laser",
+        "Stručan pristup",
+        "Za žene i muškarce"
       ]
     },
     "heroOffer": {
-      "pazusi": "<strong>Posebna ponuda:</strong> pazusi 19,90 € umjesto 49,99 € do 31. 12."
+      "pazusi": {
+        "label": "Posebna ponuda · Pazusi",
+        "price": "19,90 €",
+        "oldPrice": "49,99 €",
+        "note": "Započni tretmane po posebnoj cijeni koju zadržavaš do završetka ciklusa.",
+        "cta": "Iskoristi ponudu →",
+        "until": "Ponuda do 31. 12."
+      }
     },
     "treatments": {
       "label": "Tretmani i cijene",

@@ -450,19 +450,26 @@
     "book": "Book an appointment →",
     "logoAlt": "skintastic LASER SKIN & BODY",
     "hero": {
+      "label": "Laser hair removal · Zagreb",
       "title": "Smooth skin.",
-      "titleItalic": "For good.",
-      "service": "Laser hair removal for women and men in Zagreb, with the Mediostar diode laser.",
-      "treatmentsLink": "Treatments and prices →",
-      "imageAlt": "Laser treatment in the studio",
+      "titleItalic": "Long-lasting.",
+      "service": "Professional laser hair removal for women and men with the Mediostar diode laser.",
+      "videoAlt": "Video of a laser treatment in the studio",
       "facts": [
-        "Mediostar · Made in Germany",
-        "For all skin types",
-        "Pay by card or cash"
+        "Mediostar diode laser",
+        "Expert care",
+        "For women and men"
       ]
     },
     "heroOffer": {
-      "pazusi": "<strong>Special offer:</strong> underarms €19.90 instead of €49.99 until 31 Dec."
+      "pazusi": {
+        "label": "Special offer · Underarms",
+        "price": "€19.90",
+        "oldPrice": "€49.99",
+        "note": "Start your treatments at a special price that you keep until the cycle is complete.",
+        "cta": "Claim the offer →",
+        "until": "Offer until 31 Dec."
+      }
     },
     "treatments": {
       "label": "Treatments and prices",
