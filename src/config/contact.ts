@@ -2,7 +2,7 @@ export const contact = {
   phoneDisplay: "+385 95 757 5344",
   phoneHref: "tel:+385957575344",
   whatsappHref: "https://wa.me/385957575344",
-  email: "[E-MAIL]",
+  email: "hello@skintastic.hr",
   instagram: "[INSTAGRAM]",
   facebook: "[FACEBOOK]",
 } as const;
