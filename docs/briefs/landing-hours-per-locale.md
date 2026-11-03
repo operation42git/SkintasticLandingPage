@@ -1,6 +1,6 @@
 # Brief · landing: opening hours per language
 
-> **Draft, not accepted.** Written by the Skintastic spec conversation from Ivan Tomić's answer of 2026-11-03 (A: hours per language, both designs), after the landing-redesign build found that `hours` is one Croatian string shown on /en/ too.
+> **Accepted by Ivan Tomić, 2026-11-03.** Written by the Skintastic spec conversation from Ivan Tomić's answer of 2026-11-03 (A: hours per language, both designs), after the landing-redesign build found that `hours` is one Croatian string shown on /en/ too.
 
 ## Touches
 
