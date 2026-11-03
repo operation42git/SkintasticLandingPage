@@ -565,9 +565,9 @@
     },
     "contact": {
       "label": "Contact",
-      "call": "Call",
-      "whatsapp": "WhatsApp",
-      "email": "E-mail",
+      "whatsappCta": "Send a WhatsApp message",
+      "callCta": "Call {phone}",
+      "emailLine": "or write to <link>{email}</link>",
       "instagram": "Instagram",
       "facebook": "Facebook"
     }

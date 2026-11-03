@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { facebookHref, instagramHref } from "@/config/contact";
 import { externalHref, locationsOf } from "@/config/locations";
 import { OPEN_CONSENT_EVENT } from "@/components/legal/CookieConsent";
 
@@ -13,6 +14,11 @@ export function Footer() {
   const locale = useLocale();
   const year = new Date().getFullYear();
   const zagreb = [...locationsOf("bookable"), ...locationsOf("teaser")];
+  // Instagram and Facebook only once their real addresses are in contact.ts.
+  const socials = [
+    { label: v2("contact.instagram"), href: instagramHref() },
+    { label: v2("contact.facebook"), href: facebookHref() },
+  ].filter((social): social is { label: string; href: string } => Boolean(social.href));
 
   return (
     <footer className="ft">
@@ -61,6 +67,15 @@ export function Footer() {
             </button>
           </div>
         </div>
+        {socials.length ? (
+          <p className="soc">
+            {socials.map((social) => (
+              <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer">
+                {social.label} ↗
+              </a>
+            ))}
+          </p>
+        ) : null}
         <p className="cp">{t("copyright", { year, company: t("company") })}</p>
       </div>
     </footer>

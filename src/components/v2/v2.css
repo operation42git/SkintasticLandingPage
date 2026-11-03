@@ -177,12 +177,14 @@
 .v2 details p strong { color: var(--v2-ink); font-weight: 600; }
 
 /* 12 Kontakt */
-.v2 .contact { padding-block: 80px; display: flex; flex-direction: column; gap: 14px; }
-.v2 .cg5 { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--v2-stone); }
-.v2 .cg5 > * { padding: 18px 18px 4px 0; display: flex; flex-direction: column; gap: 4px; text-decoration: none; }
-.v2 .cg5 > * + * { padding-left: 18px; border-left: 1px solid var(--v2-stone); }
-.v2 .cg5 span { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v2-taupe); }
-.v2 .cg5 b { font-family: var(--disp); font-weight: 400; font-size: 21px; white-space: nowrap; }
+.v2 .contact { padding-block: 80px; }
+.v2 .cx { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
+.v2 .cx h2 { margin-top: 12px; }
+.v2 .cbt { display: flex; gap: 12px; flex-wrap: wrap; }
+.v2 .cbt svg { flex: none; }
+.v2 .btn2 { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--v2-ink); border-radius: 999px; padding: 13px 24px; font-weight: 600; font-size: 15px; white-space: nowrap; text-decoration: none; }
+.v2 .cm { margin: 16px 0 0; font-size: 15px; color: var(--v2-dusk); }
+.v2 .cm a { color: var(--v2-ink); text-decoration: underline; text-underline-offset: 3px; }
 
 /* 13 Footer */
 .v2 .ft { background: var(--v2-night); color: #cdbfb1; font-size: 14px; }
@@ -192,6 +194,8 @@
 .v2 .ft b { display: block; color: #efe6dc; font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; }
 .v2 .ft a, .v2 .ft .row { display: block; margin: 6px 0; text-decoration: none; }
 .v2 .ft p { margin: 10px 0 0; }
+.v2 .ft .soc { display: flex; gap: 22px; margin: 28px 0 0; }
+.v2 .ft .soc a { margin: 0; }
 .v2 .cp { margin: 44px 0 0; padding-top: 18px; border-top: 1px solid #3b322d; font-size: 12.5px; color: #9d8b7b; }
 
 /* Phone booking bar and the design switch */
@@ -241,10 +245,10 @@
   .v2 .lg { grid-template-columns: 1fr; gap: 40px; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }
   .v2 .fg { padding-block: 56px; gap: 24px; }
-  .v2 .cg5 { grid-template-columns: 1fr; }
-  .v2 .cg5 > *, .v2 .cg5 > * + * { padding: 14px 0; border-left: 0; border-bottom: 1px solid var(--v2-stone); flex-direction: row; justify-content: space-between; align-items: baseline; }
-  .v2 .cg5 b { font-size: 18px; }
   .v2 .fgr { grid-template-columns: 1fr 1fr; }
+  .v2 .cx { grid-template-columns: 1fr; gap: 20px; }
+  .v2 .cbt { flex-direction: column; }
+  .v2 .cbt a { justify-content: center; }
   .v2 .fgr > div:first-child { grid-column: 1 / -1; }
   .v2 .sticky {
     /* The top 54 px of the bar is the switch pill's row (the new design only shows with the switch), so the pill covers no content. */

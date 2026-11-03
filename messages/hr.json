@@ -565,9 +565,9 @@
     },
     "contact": {
       "label": "Kontakt",
-      "call": "Nazovi",
-      "whatsapp": "WhatsApp",
-      "email": "E-mail",
+      "whatsappCta": "Pošalji WhatsApp poruku",
+      "callCta": "Nazovi {phone}",
+      "emailLine": "ili piši na <link>{email}</link>",
       "instagram": "Instagram",
       "facebook": "Facebook"
     }
