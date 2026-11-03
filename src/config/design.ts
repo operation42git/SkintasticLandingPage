@@ -39,7 +39,7 @@ export function designFromPage(search: string): Design {
  * The new design's hero video (landing-redesign row 2): the person gives the file and its poster
  * (e.g. /images/v2/hero.mp4 and /images/v2/hero-poster.jpg). Empty: the hero shows a linen block.
  */
-export const HERO_VIDEO_V2 = { src: "", poster: "" };
+export const HERO_VIDEO_V2 = { src: "/videos/v2/hero.mp4", poster: "/videos/v2/hero-poster.jpg" };
 
 /**
  * The new design's Povoljniji termini image (landing-redesign row 4): the person gives it
