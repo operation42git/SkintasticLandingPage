@@ -497,7 +497,7 @@
       "label": "Better prices",
       "title": "Catch a",
       "titleItalic": "better price",
-      "text": "Special prices on selected treatments at quieter times.",
+      "text": "Special prices on selected treatments at selected times.",
       "upTo": "up to −{percent} %",
       "upToOne": "Up to −{percent} %",
       "until": "until {date}",
