@@ -5,8 +5,6 @@ import { useTranslations } from "next-intl";
 import { externalHref, locationsOf, mapsSearchHref } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
 
-/** Locations with a photo of their own in the new design; the others get a quiet tile with a small label. */
-const PHOTOS: Record<string, string> = { zapad: "/images/locations/zagreb.jpg" };
 
 export function Locations() {
   const t = useTranslations("v2.locations");
@@ -19,7 +17,8 @@ export function Locations() {
       <div className="lg">
         {zagreb.map((location) => {
           const teaser = location.type === "teaser";
-          const photo = PHOTOS[location.id];
+          // The photo from locations.ts, as in the current design; without one, a quiet tile with a small label.
+          const photo = location.image;
           const maps = mapsSearchHref(location.address);
           return (
             <article key={location.id} className={teaser ? "soon" : undefined}>
