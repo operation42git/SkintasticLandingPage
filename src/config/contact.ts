@@ -3,8 +3,8 @@ export const contact = {
   phoneHref: "tel:+385957575344",
   whatsappHref: "https://wa.me/385957575344",
   email: "hello@skintastic.hr",
-  instagram: "[INSTAGRAM]",
-  facebook: "[FACEBOOK]",
+  instagram: "https://www.instagram.com/skintastic.hr/",
+  facebook: "https://www.facebook.com/p/Skintastic-Hrvatska-61580833814549/",
 } as const;
 
 /** A bracket placeholder is shown as text and is not used as a link. */
