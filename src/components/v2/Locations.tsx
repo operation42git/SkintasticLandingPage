@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { locationsOf, mapsSearchHref } from "@/config/locations";
+import { externalHref, locationsOf, mapsSearchHref } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
 
-/** Locations with a photo of their own in the new design; the others get a linen tile with the area. */
+/** Locations with a photo of their own in the new design; the others get a quiet tile with a small label. */
 const PHOTOS: Record<string, string> = { zapad: "/images/locations/zagreb.jpg" };
 
 export function Locations() {
@@ -30,7 +30,7 @@ export function Locations() {
                     alt={location.name}
                     fill
                     className="object-cover"
-                    style={{ objectPosition: "center 18%" }}
+                    style={{ objectPosition: "center 20%" }}
                     sizes="(max-width: 900px) 100vw, 400px"
                   />
                 ) : (
@@ -63,8 +63,24 @@ export function Locations() {
         })}
       </div>
       <p className="fam">
-        <span>{t("family")}</span>
-        <span>{family.map((location) => location.name).join(" · ")}</span>
+        <span className="fl">{t("family")}</span>
+        <span>
+          {family.map((location, index) => {
+            const href = externalHref(location);
+            return (
+              <span key={location.id}>
+                {index > 0 ? " · " : ""}
+                {href ? (
+                  <a href={href} target="_blank" rel="noopener">
+                    {location.name} ↗
+                  </a>
+                ) : (
+                  location.name
+                )}
+              </span>
+            );
+          })}
+        </span>
       </p>
     </section>
   );

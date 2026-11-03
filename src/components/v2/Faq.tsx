@@ -25,9 +25,13 @@ export function Faq() {
           {items.map((item, index) => (
             <details key={item.q} open={index === 0}>
               <summary>{item.q}</summary>
-              {(Array.isArray(item.a) ? item.a : [item.a]).map((paragraph, i) => (
-                <p key={i} dangerouslySetInnerHTML={{ __html: sanitize(paragraph) }} />
-              ))}
+              {/* A <br> in an answer becomes its own paragraph, about 10 px apart. */}
+              {(Array.isArray(item.a) ? item.a : [item.a])
+                .flatMap((answer) => answer.split(/<br\s*\/?>/i))
+                .filter((paragraph) => paragraph.trim())
+                .map((paragraph, i) => (
+                  <p key={i} dangerouslySetInnerHTML={{ __html: sanitize(paragraph) }} />
+                ))}
             </details>
           ))}
         </div>
