@@ -13,6 +13,7 @@
   `src/config/treatments-v2.ts` (new: the three treatments of **Tretmani i cijene**)
 - `messages/hr.json`, `messages/en.json` (new keys under `v2.*` only)
 - `public/images/v2/` (new: the images listed under **Images**)
+- `public/videos/v2/` (new: the hero video `hero.mp4`, without its audio track, and its poster `hero-poster.jpg`; Ivan, 2026-11-03)
 - tests for the new components
 
 The current sections, their messages and their configs stay untouched; the current page must look exactly as
