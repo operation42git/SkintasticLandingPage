@@ -40,3 +40,9 @@ export function designFromPage(search: string): Design {
  * (e.g. /images/v2/hero.mp4 and /images/v2/hero-poster.jpg). Empty: the hero shows a linen block.
  */
 export const HERO_VIDEO_V2 = { src: "", poster: "" };
+
+/**
+ * The new design's Povoljniji termini image (landing-redesign row 4): the person gives it
+ * (e.g. /images/v2/offers-calendar.jpg). Empty: a stone tint where the image would show.
+ */
+export const OFFERS_IMAGE_V2 = "";

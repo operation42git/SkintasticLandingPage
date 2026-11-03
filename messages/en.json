@@ -512,25 +512,7 @@
       "link": "Our clients' experiences"
     },
     "why": {
-      "title": "Why Skintastic?",
-      "items": [
-        {
-          "title": "Long-lasting results",
-          "text": "Less hair after just a few treatments."
-        },
-        {
-          "title": "Expert team",
-          "text": "A personal approach and advice."
-        },
-        {
-          "title": "Proven technology",
-          "text": "Safe and effective laser hair removal."
-        },
-        {
-          "title": "Easy booking",
-          "text": "Choose a time online, no phone call needed."
-        }
-      ]
+      "title": "Why Skintastic?"
     },
     "tech": {
       "label": "Technology",
@@ -558,7 +540,6 @@
     },
     "about": {
       "title": "About us",
-      "p1": "We specialise in laser hair removal with diode lasers. Two studios in Zagreb, the same standard in every Skintastic centre.",
       "p2": "Our aim is top results at a fair price. That's why we work with high-end technology and skilled staff who know their job inside out.",
       "certs": "Skintastic brand certificates · Quality comes first",
       "imageAlt": "Skintastic studio"

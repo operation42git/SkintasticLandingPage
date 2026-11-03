@@ -2,18 +2,24 @@
 
 import { useTranslations } from "next-intl";
 
+/** The current page's four points (why.features.*) and label, under the new design's heading. */
+const FEATURES = ["experts", "technology", "hygiene", "consultation"] as const;
+
 export function Why() {
   const t = useTranslations("v2.why");
-  const items = t.raw("items") as { title: string; text: string }[];
+  const why = useTranslations("why");
   return (
     <div className="wrap">
       <section className="why">
-        <h2>{t("title")}</h2>
+        <div className="wh">
+          <span className="k">{why("eyebrow")}</span>
+          <h2>{t("title")}</h2>
+        </div>
         <div className="wg">
-          {items.map((item) => (
-            <div key={item.title}>
-              <b>{item.title}</b>
-              <p>{item.text}</p>
+          {FEATURES.map((key) => (
+            <div key={key}>
+              <b>{why(`features.${key}.title`)}</b>
+              <p>{why(`features.${key}.body`)}</p>
             </div>
           ))}
         </div>

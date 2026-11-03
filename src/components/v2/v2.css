@@ -69,16 +69,18 @@
 .v2 .t3 .p small { font-family: var(--body); font-size: 15px; color: var(--v2-taupe); margin-right: 8px; }
 
 /* 4 Povoljniji termini: one band, one image in the middle */
-.v2 .ob { background: var(--v2-linen); }
+/* The image is the band's background (mockup version 19): full height at about 46 %, under linen that
+   clears only between 43 % and 52 %. Without an image, a stone tint shows in that gap. */
+.v2 .ob {
+  --ob-fade: linear-gradient(90deg, var(--v2-linen) 0, var(--v2-linen) 33%, rgba(235, 226, 216, 0) 43%, rgba(235, 226, 216, 0) 52%, rgba(235, 226, 216, 0.85) 60%, var(--v2-linen) 66%);
+  background: var(--ob-fade), var(--ob-img, none) 46% center / auto 100% no-repeat, var(--v2-linen);
+}
+.v2 .ob.noimg { background: var(--ob-fade), var(--v2-stone); }
 .v2 .obw { max-width: 1240px; margin: 0 auto; padding-inline: 24px; display: grid; grid-template-columns: 1.2fr 0.7fr 1.3fr; align-items: center; min-height: 290px; }
 .v2 .otx { display: flex; flex-direction: column; gap: 12px; padding-block: 44px; position: relative; z-index: 1; }
 .v2 .otx h2 { font-size: clamp(36px, 3.7vw, 52px); line-height: 1; white-space: nowrap; }
 .v2 .otx p { margin: 0; font-size: 16.5px; max-width: 400px; }
-.v2 .oimg {
-  align-self: stretch; background-color: var(--v2-stone);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 25%, #000 75%, transparent);
-}
+.v2 .oimg { align-self: stretch; }
 .v2 .orows { border-left: 1px solid var(--v2-stone); padding-left: 44px; }
 .v2 .of { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--v2-stone); text-decoration: none; }
 .v2 .of:last-child { border-bottom: 0; }
@@ -111,6 +113,7 @@
 /* 7 Zašto Skintastic */
 .v2 .why { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 72px; }
 .v2 .why h2, .v2 .loc h2, .v2 .faq h2, .v2 .about h2, .v2 .tech h2 { font-size: clamp(40px, 4.4vw, 60px); line-height: 1; }
+.v2 .wh { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 .v2 .wg { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 48px; }
 .v2 .wg b { font-family: var(--disp); font-weight: 400; font-size: 26px; display: block; margin-bottom: 6px; }
 .v2 .wg p { margin: 0; color: var(--v2-taupe); font-size: 15px; }
@@ -211,7 +214,8 @@
   .v2 .t3 { grid-template-columns: 1fr; }
   .v2 .t3 > a, .v2 .t3 > a + a { padding: 14px 0; border-left: 0; border-bottom: 1px solid var(--v2-stone); flex-direction: row; justify-content: space-between; align-items: baseline; }
   .v2 .t3 .p { font-size: 30px; margin-top: 0; }
-  .v2 .oimg { height: 200px; order: -1; margin: 0 -24px; -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
+  .v2 .ob, .v2 .ob.noimg { background: var(--v2-linen); }
+  .v2 .oimg { height: 200px; order: -1; margin: 0 -24px; background: var(--ob-img, none) center / cover no-repeat, var(--v2-stone); -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
   .v2 .otx { padding-block: 8px 20px; }
   .v2 .orows { border-left: 0; padding-left: 0; border-top: 1px solid var(--v2-stone); padding-bottom: 28px; }
   .v2 .of { grid-template-columns: 1fr; gap: 10px; }

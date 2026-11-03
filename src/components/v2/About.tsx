@@ -5,12 +5,14 @@ import { useTranslations } from "next-intl";
 
 export function About() {
   const t = useTranslations("v2.about");
+  const why = useTranslations("why");
   return (
     <section className="about">
       <div className="ap ph-block" role="img" aria-label={t("imageAlt")} />
       <div className="at">
         <h2>{t("title")}</h2>
-        <p>{t("p1")}</p>
+        {/* The current page's text (why.about). */}
+        <p>{why.rich("about", { strong: (chunks) => <b>{chunks}</b> })}</p>
         <p>{t("p2")}</p>
         <div className="certs">
           <span className="k">{t("certs")}</span>

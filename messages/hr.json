@@ -512,25 +512,7 @@
       "link": "Iskustva naših klijentica"
     },
     "why": {
-      "title": "Zašto Skintastic?",
-      "items": [
-        {
-          "title": "Dugotrajni rezultati",
-          "text": "Manje dlačica već nakon nekoliko tretmana."
-        },
-        {
-          "title": "Stručan tim",
-          "text": "Individualni pristup i savjetovanje."
-        },
-        {
-          "title": "Provjerena tehnologija",
-          "text": "Sigurna i učinkovita laserska epilacija."
-        },
-        {
-          "title": "Jednostavna rezervacija",
-          "text": "Odaberi termin online, bez poziva."
-        }
-      ]
+      "title": "Zašto Skintastic?"
     },
     "tech": {
       "label": "Tehnologija",
@@ -558,7 +540,6 @@
     },
     "about": {
       "title": "O nama",
-      "p1": "Specijalizirani smo za lasersko uklanjanje dlačica diodnim laserima. Dva studija u Zagrebu, isti standard u svim Skintastic centrima.",
       "p2": "Naš cilj su vrhunski rezultati po poštenoj cijeni. Zato radimo s high-end tehnologijom i stručnim osobljem koje izvrsno poznaje svoj posao.",
       "certs": "Certifikati Skintastic brenda · Kvaliteta je na prvom mjestu",
       "imageAlt": "Skintastic studio"

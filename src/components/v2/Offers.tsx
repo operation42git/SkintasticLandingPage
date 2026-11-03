@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { confirmedCode } from "@/config/booking";
+import { OFFERS_IMAGE_V2 } from "@/config/design";
 import type { OfferWindowV2 } from "@/config/offers-v2";
 import { BookButton } from "@/components/ui/BookButton";
 
@@ -25,7 +26,11 @@ export function Offers({ offers }: { offers: OfferWindowV2[] }) {
   const one = offers.length === 1;
 
   return (
-    <section className="ob" id="v2-povoljniji">
+    <section
+      className={`ob${OFFERS_IMAGE_V2 ? "" : " noimg"}`}
+      id="v2-povoljniji"
+      style={OFFERS_IMAGE_V2 ? ({ "--ob-img": `url(${OFFERS_IMAGE_V2})` } as React.CSSProperties) : undefined}
+    >
       <div className="obw">
         <div className="otx">
           <span className="k">{t("label")}</span>
