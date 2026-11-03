@@ -1,7 +1,7 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { BookButton } from "@/components/ui/BookButton";
 import { contact, emailHref, facebookHref, instagramHref } from "@/config/contact";
-import { locationsOf, mapsSearchHref } from "@/config/locations";
+import { hoursFor, locationsOf, mapsSearchHref } from "@/config/locations";
 
 const iconClass = "h-[22px] w-[22px] lg:h-[26px] lg:w-[26px]";
 
@@ -50,6 +50,7 @@ function FacebookIcon() {
 
 export function ContactSection() {
   const t = useTranslations("contact");
+  const locale = useLocale();
   const bookable = locationsOf("bookable");
   const channels = [
     { key: "call", href: contact.phoneHref, value: contact.phoneDisplay, icon: <PhoneIcon /> },
@@ -106,10 +107,10 @@ export function ContactSection() {
                 <h3 className="text-[15px] font-extrabold lg:text-xl">{location.name}</h3>
                 <p className="text-[13px] leading-normal lg:text-base lg:leading-relaxed">
                   {location.address}
-                  {location.hours ? (
+                  {hoursFor(location, locale) ? (
                     <>
                       <br />
-                      {location.hours}
+                      {hoursFor(location, locale)}
                     </>
                   ) : null}
                   {location.parking ? (

@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { externalHref, locationsOf, mapsSearchHref } from "@/config/locations";
+import { useLocale, useTranslations } from "next-intl";
+import { externalHref, hoursFor, locationsOf, mapsSearchHref } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
 
 
 export function Locations() {
   const t = useTranslations("v2.locations");
+  const locale = useLocale();
   const zagreb = [...locationsOf("bookable"), ...locationsOf("teaser")];
   const family = locationsOf("external");
 
@@ -42,7 +43,7 @@ export function Locations() {
                 <p className="mut">{t("soon")}</p>
               ) : (
                 <>
-                  {location.hours ? <p className="mut">{location.hours}</p> : null}
+                  {hoursFor(location, locale) ? <p className="mut">{hoursFor(location, locale)}</p> : null}
                   <div className="ll">
                     <BookButton centar={location.slug} className="lnk">
                       {t("book")}
