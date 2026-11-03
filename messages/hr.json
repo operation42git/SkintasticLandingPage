@@ -432,5 +432,163 @@
     "btnSave": "Spremi moje postavke",
     "btnAcceptAll": "Prihvatiti sve",
     "reopenLabel": "Postavke kolačića"
+  },
+  "v2": {
+    "switch": {
+      "label": "Dizajn:",
+      "current": "Sada",
+      "new": "Novo"
+    },
+    "nav": {
+      "treatments": "Tretmani",
+      "offers": "Povoljniji termini",
+      "locations": "Lokacije",
+      "faq": "Pitanja",
+      "contact": "Kontakt",
+      "menu": "Glavni izbornik"
+    },
+    "book": "Rezerviraj termin →",
+    "logoAlt": "skintastic LASER SKIN & BODY",
+    "hero": {
+      "title": "Glatka koža.",
+      "titleItalic": "Trajno.",
+      "service": "Laserska epilacija za žene i muškarce u Zagrebu, Mediostar diodnim laserom.",
+      "treatmentsLink": "Tretmani i cijene →",
+      "imageAlt": "Tretman laserom u studiju",
+      "facts": [
+        "Mediostar · Made in Germany",
+        "Za sve tipove kože",
+        "Plaćanje karticom ili gotovinom"
+      ]
+    },
+    "heroOffer": {
+      "pazusi": "<strong>Posebna ponuda:</strong> pazusi 19,90 € umjesto 49,99 € do 31. 12."
+    },
+    "treatments": {
+      "label": "Tretmani i cijene",
+      "title": "Pronađi svoj tretman",
+      "text": "Istraži ponudu, provjeri cijene i rezerviraj termin.",
+      "all": "Svi tretmani i cijene →",
+      "from": "od",
+      "items": {
+        "faceNeck": {
+          "name": "Lice i vrat",
+          "price": "49,90 €"
+        },
+        "intimate": {
+          "name": "Intimna zona",
+          "price": "79,90 €"
+        },
+        "legs": {
+          "name": "Noge kompletne",
+          "price": "99,90 €"
+        }
+      }
+    },
+    "offers": {
+      "label": "Povoljniji termini",
+      "title": "Uhvati",
+      "titleItalic": "bolju cijenu",
+      "text": "Termin ti je fleksibilan? Iskoristi posebnu ponudu na odabrani tretman.",
+      "upTo": "do −{percent} %",
+      "upToOne": "Do −{percent} %",
+      "until": "do {date}",
+      "check": "Provjeri dostupne termine →",
+      "imageAlt": "Glatke noge na dnevnom svjetlu"
+    },
+    "steps": {
+      "title": "Kako izgleda tretman?",
+      "items": [
+        {
+          "title": "Savjetovanje",
+          "text": "Procjena stanja kože i preporuka tretmana. Besplatno."
+        },
+        {
+          "title": "Tretman",
+          "text": "Brz, siguran i prilagođen tebi."
+        },
+        {
+          "title": "Rezultati",
+          "text": "Postupno smanjenje dlačica i glatka koža na duže vrijeme."
+        }
+      ]
+    },
+    "review": {
+      "link": "Iskustva naših klijentica"
+    },
+    "why": {
+      "title": "Zašto Skintastic?",
+      "items": [
+        {
+          "title": "Dugotrajni rezultati",
+          "text": "Manje dlačica već nakon nekoliko tretmana."
+        },
+        {
+          "title": "Stručan tim",
+          "text": "Individualni pristup i savjetovanje."
+        },
+        {
+          "title": "Provjerena tehnologija",
+          "text": "Sigurna i učinkovita laserska epilacija."
+        },
+        {
+          "title": "Jednostavna rezervacija",
+          "text": "Odaberi termin online, bez poziva."
+        }
+      ]
+    },
+    "tech": {
+      "label": "Tehnologija",
+      "title": "Mediostar diodni laser",
+      "text": "Laser njemačkog proizvođača Asclepion, za sve tipove kože i dlačica. ICE-hlađenje čini tretman ugodnim.",
+      "facts": [
+        {
+          "label": "Valne duljine",
+          "value": "810 | 940 nm"
+        },
+        {
+          "label": "Hlađenje",
+          "value": "360° ICE"
+        },
+        {
+          "label": "Tipovi kože",
+          "value": "I–VI"
+        },
+        {
+          "label": "Snaga",
+          "value": "5.000 W"
+        }
+      ],
+      "imageAlt": "Mediostar Monolith ručni nastavci"
+    },
+    "about": {
+      "title": "O nama",
+      "p1": "Specijalizirani smo za lasersko uklanjanje dlačica diodnim laserima. Dva studija u Zagrebu, isti standard u svim Skintastic centrima.",
+      "p2": "Naš cilj su vrhunski rezultati po poštenoj cijeni. Zato radimo s high-end tehnologijom i stručnim osobljem koje izvrsno poznaje svoj posao.",
+      "certs": "Certifikati Skintastic brenda · Kvaliteta je na prvom mjestu",
+      "imageAlt": "Skintastic studio"
+    },
+    "locations": {
+      "title": "Naše lokacije",
+      "book": "Rezerviraj ovdje →",
+      "directions": "Kako do nas ↗",
+      "soon": "Otvaranje uskoro. Do tada nas posjeti na Zapadu ili Istoku.",
+      "family": "Dio Skintastic obitelji",
+      "tile": {
+        "istok": "Istok",
+        "jug": "Velika Gorica"
+      }
+    },
+    "faq": {
+      "title": "Česta pitanja"
+    },
+    "contact": {
+      "label": "Kontakt",
+      "call": "Nazovi",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
   }
 }

@@ -432,5 +432,163 @@
     "btnSave": "Save my settings",
     "btnAcceptAll": "Accept all",
     "reopenLabel": "Cookie settings"
+  },
+  "v2": {
+    "switch": {
+      "label": "Design:",
+      "current": "Now",
+      "new": "New"
+    },
+    "nav": {
+      "treatments": "Treatments",
+      "offers": "Better prices",
+      "locations": "Locations",
+      "faq": "Questions",
+      "contact": "Contact",
+      "menu": "Main menu"
+    },
+    "book": "Book an appointment →",
+    "logoAlt": "skintastic LASER SKIN & BODY",
+    "hero": {
+      "title": "Smooth skin.",
+      "titleItalic": "For good.",
+      "service": "Laser hair removal for women and men in Zagreb, with the Mediostar diode laser.",
+      "treatmentsLink": "Treatments and prices →",
+      "imageAlt": "Laser treatment in the studio",
+      "facts": [
+        "Mediostar · Made in Germany",
+        "For all skin types",
+        "Pay by card or cash"
+      ]
+    },
+    "heroOffer": {
+      "pazusi": "<strong>Special offer:</strong> underarms 19,90 € instead of 49,99 € until 31 Dec."
+    },
+    "treatments": {
+      "label": "Treatments and prices",
+      "title": "Find your treatment",
+      "text": "Explore what we offer, check prices and book an appointment.",
+      "all": "All treatments and prices →",
+      "from": "from",
+      "items": {
+        "faceNeck": {
+          "name": "Face and neck",
+          "price": "49,90 €"
+        },
+        "intimate": {
+          "name": "Intimate area",
+          "price": "79,90 €"
+        },
+        "legs": {
+          "name": "Full legs",
+          "price": "99,90 €"
+        }
+      }
+    },
+    "offers": {
+      "label": "Better prices",
+      "title": "Catch a",
+      "titleItalic": "better price",
+      "text": "Flexible about when you come? Take a special offer on a selected treatment.",
+      "upTo": "up to −{percent} %",
+      "upToOne": "Up to −{percent} %",
+      "until": "until {date}",
+      "check": "Check available times →",
+      "imageAlt": "Smooth legs in daylight"
+    },
+    "steps": {
+      "title": "What does a treatment look like?",
+      "items": [
+        {
+          "title": "Consultation",
+          "text": "An assessment of your skin and a treatment recommendation. Free."
+        },
+        {
+          "title": "Treatment",
+          "text": "Quick, safe and tailored to you."
+        },
+        {
+          "title": "Results",
+          "text": "Gradually less hair and smooth skin for longer."
+        }
+      ]
+    },
+    "review": {
+      "link": "Our clients' experiences"
+    },
+    "why": {
+      "title": "Why Skintastic?",
+      "items": [
+        {
+          "title": "Long-lasting results",
+          "text": "Less hair after just a few treatments."
+        },
+        {
+          "title": "Expert team",
+          "text": "A personal approach and advice."
+        },
+        {
+          "title": "Proven technology",
+          "text": "Safe and effective laser hair removal."
+        },
+        {
+          "title": "Easy booking",
+          "text": "Choose a time online, no phone call needed."
+        }
+      ]
+    },
+    "tech": {
+      "label": "Technology",
+      "title": "Mediostar diode laser",
+      "text": "A laser by the German maker Asclepion, for all skin and hair types. ICE cooling keeps the treatment comfortable.",
+      "facts": [
+        {
+          "label": "Wavelengths",
+          "value": "810 | 940 nm"
+        },
+        {
+          "label": "Cooling",
+          "value": "360° ICE"
+        },
+        {
+          "label": "Skin types",
+          "value": "I–VI"
+        },
+        {
+          "label": "Power",
+          "value": "5.000 W"
+        }
+      ],
+      "imageAlt": "Mediostar Monolith handpieces"
+    },
+    "about": {
+      "title": "About us",
+      "p1": "We specialise in laser hair removal with diode lasers. Two studios in Zagreb, the same standard in every Skintastic centre.",
+      "p2": "Our aim is top results at a fair price. That's why we work with high-end technology and skilled staff who know their job inside out.",
+      "certs": "Skintastic brand certificates · Quality comes first",
+      "imageAlt": "Skintastic studio"
+    },
+    "locations": {
+      "title": "Our locations",
+      "book": "Book here →",
+      "directions": "Directions ↗",
+      "soon": "Opening soon. Until then, visit us at Zapad or Istok.",
+      "family": "Part of the Skintastic family",
+      "tile": {
+        "istok": "Istok",
+        "jug": "Velika Gorica"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions"
+    },
+    "contact": {
+      "label": "Contact",
+      "call": "Call",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
   }
 }

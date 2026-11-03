@@ -1,0 +1,222 @@
+/* The new design (landing-redesign), from the mockup's "Novo" view. Everything is scoped under .v2. */
+.v2 {
+  --disp: var(--v2-font-display), "Times New Roman", serif;
+  --body: var(--v2-font-text), system-ui, sans-serif;
+  background: var(--v2-sand);
+  color: var(--v2-ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.v2 *, .v2 *::before, .v2 *::after { box-sizing: border-box; }
+.v2 .wrap { max-width: 1240px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.v2 .k { font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--v2-taupe); font-weight: 600; }
+.v2 h1, .v2 h2, .v2 h3 { font-family: var(--disp); font-weight: 300; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+.v2 em { font-style: italic; }
+.v2 a { color: inherit; }
+.v2 .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--v2-ink); color: var(--v2-sand); border-radius: 999px; padding: 14px 26px; font-weight: 600; font-size: 15px; text-decoration: none; }
+.v2 .lnk { font-weight: 600; font-size: 14.5px; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+.v2 .ph-block { background: var(--v2-linen); }
+
+/* 1 Header */
+.v2 .hd { display: flex; align-items: center; gap: 36px; padding-block: 22px; }
+.v2 .hd img { height: 34px; width: auto; }
+.v2 .hd nav { display: flex; gap: 30px; font-size: 12.5px; letter-spacing: 0.12em; text-transform: uppercase; margin-left: auto; }
+.v2 .hd nav a { text-decoration: none; }
+.v2 .hd .btn { padding: 11px 20px; font-size: 13.5px; }
+
+/* 2 Hero */
+.v2 .hero { display: grid; grid-template-columns: 1fr 1.05fr; align-items: stretch; min-height: 540px; }
+.v2 .hero .tx { padding: 56px 0 64px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
+.v2 .hero h1 { font-size: clamp(44px, 5.2vw, 74px); line-height: 1; }
+.v2 .hero .sv { margin: 0; font-size: 19px; line-height: 1.45; color: var(--v2-ink); max-width: 440px; }
+.v2 .cta { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.v2 .offr { margin: 0; font-size: 14.5px; color: var(--v2-dusk); text-decoration: none; }
+.v2 .offr strong { color: var(--v2-rust); font-weight: 600; }
+.v2 .trust { list-style: none; display: flex; gap: 10px 22px; white-space: nowrap; flex-wrap: wrap; margin: 10px 0 0; padding: 16px 0 0; border-top: 1px solid var(--v2-stone); font-size: 13.5px; color: var(--v2-dusk); }
+.v2 .trust li::before { content: "✓"; margin-right: 8px; color: var(--v2-rust); }
+.v2 .hero .ph {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 22%);
+  margin-right: calc(-1 * max(24px, (100vw - 1240px) / 2 + 24px));
+}
+
+/* 3 Tretmani i cijene */
+.v2 .prices { display: grid; grid-template-columns: 1fr 1.5fr; gap: 48px; align-items: end; padding-block: 72px 64px; border-top: 1px solid var(--v2-stone); }
+.v2 .pl { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.v2 .pl h2 { font-size: clamp(36px, 3.6vw, 50px); line-height: 1.02; }
+.v2 .pl p { margin: 0; color: var(--v2-dusk); }
+.v2 .pg3 { display: grid; grid-template-columns: repeat(3, 1fr); }
+.v2 .pg3 > a { padding: 6px 24px; border-left: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 8px; text-decoration: none; }
+.v2 .pg3 h3 { font-size: 24px; }
+.v2 .pg3 .p { font-family: var(--disp); font-weight: 300; font-size: 40px; line-height: 1; white-space: nowrap; }
+.v2 .pg3 .p small { font-family: var(--body); font-size: 13px; color: var(--v2-taupe); margin-right: 6px; }
+
+/* 4 Povoljniji termini */
+.v2 .offer { display: grid; grid-template-columns: 1fr 1fr; background: var(--v2-linen); }
+.v2 .offer .ph { min-height: 560px; background: #e2d6c9; }
+.v2 .offer .tx { padding: 64px max(24px, 6vw); display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.v2 .offer h2 { font-size: clamp(44px, 5vw, 72px); line-height: 0.96; }
+.v2 .offer .lead { margin: 0 0 10px; color: var(--v2-dusk); max-width: 420px; }
+.v2 .of { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--v2-stone); text-decoration: none; }
+.v2 .of h3 { font-size: 26px; }
+.v2 .of .pc { font-family: var(--disp); font-weight: 300; font-style: italic; font-size: 38px; line-height: 1; white-space: nowrap; }
+.v2 .one .of { border: 0; }
+.v2 .one .of .pc { font-size: 56px; }
+.v2 .when { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 8px; font-size: 17px; }
+.v2 .when svg { flex: none; color: var(--v2-rust); }
+.v2 .when b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.v2 .when .wl { font-size: 14px; color: var(--v2-taupe); }
+.v2 .offer .lnk { margin-top: 10px; align-self: flex-start; }
+
+/* 5 Kako izgleda tretman */
+.v2 .steps { display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr; gap: 0; padding-block: 56px; }
+.v2 .steps h2 { font-size: 46px; line-height: 1; font-style: italic; }
+.v2 .st { padding: 0 26px; border-left: 1px solid var(--v2-stone); }
+.v2 .st b { display: block; font-family: var(--disp); font-size: 24px; font-weight: 400; }
+.v2 .st h3 { font-size: 24px; margin: 6px 0 4px; }
+.v2 .st p { margin: 0; font-size: 14px; color: var(--v2-taupe); }
+
+/* 6 Review */
+.v2 .quote { background: var(--v2-linen); border-top: 1px solid var(--v2-stone); border-bottom: 1px solid var(--v2-stone); }
+.v2 .quote .wrap { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding-block: 52px; flex-wrap: wrap; }
+.v2 .quote blockquote { margin: 0; font-family: var(--disp); font-weight: 300; font-style: italic; font-size: clamp(26px, 3vw, 36px); line-height: 1.2; max-width: 640px; }
+.v2 .quote figcaption { display: block; margin-top: 12px; font-size: 13.5px; letter-spacing: 0.06em; color: var(--v2-taupe); }
+.v2 .quote .go { display: flex; align-items: center; gap: 14px; font-size: 14px; text-decoration: none; }
+.v2 .quote .go i { width: 52px; height: 52px; border: 1px solid var(--v2-taupe); border-radius: 50%; display: grid; place-items: center; font-style: normal; }
+
+/* 7 Zašto Skintastic */
+.v2 .why { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 72px; }
+.v2 .why h2, .v2 .loc h2, .v2 .faq h2, .v2 .about h2, .v2 .tech h2 { font-size: clamp(40px, 4.4vw, 60px); line-height: 1; }
+.v2 .wg { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 48px; }
+.v2 .wg b { font-family: var(--disp); font-weight: 400; font-size: 26px; display: block; margin-bottom: 6px; }
+.v2 .wg p { margin: 0; color: var(--v2-taupe); font-size: 15px; }
+
+/* 8 Tehnologija */
+.v2 .tech { background: var(--v2-sand); border-top: 1px solid var(--v2-stone); }
+.v2 .tg { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 72px; }
+.v2 .tech p { color: var(--v2-dusk); max-width: 480px; margin: 12px 0 0; }
+.v2 .tech dl { display: grid; grid-template-columns: repeat(4, auto); gap: 0; margin: 28px 0 0; border-top: 1px solid var(--v2-stone); }
+.v2 .tech dl div { padding: 14px 18px 0 0; }
+.v2 .tech dt { font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v2-taupe); }
+.v2 .tech dd { margin: 4px 0 0; font-family: var(--disp); font-size: 26px; font-weight: 300; }
+.v2 .tech img { width: 100%; height: auto; }
+
+/* 9 O nama */
+.v2 .about { display: grid; grid-template-columns: 0.8fr 1.2fr; background: var(--v2-linen); }
+.v2 .ap { min-height: 480px; background: #e2d6c9; }
+.v2 .at { padding: 64px max(24px, 6vw); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.v2 .at p { margin: 0; max-width: 440px; color: var(--v2-dusk); }
+.v2 .certs { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
+.v2 .cl2 { display: flex; gap: 22px; align-items: center; }
+.v2 .cl2 img { height: 46px; width: auto; }
+
+/* 10 Naše lokacije */
+.v2 .loc { padding-block: 80px; }
+.v2 .loc h2 { margin-bottom: 36px; }
+.v2 .lg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.v2 .lg article { display: flex; flex-direction: column; gap: 10px; }
+.v2 .lp { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--v2-linen); border-radius: 2px; display: grid; place-items: center; }
+.v2 .lp span { font-family: var(--disp); font-style: italic; font-weight: 300; font-size: 44px; color: var(--v2-taupe); }
+.v2 .lp2 { background: linear-gradient(150deg, #e6dace, #f4eee7); }
+.v2 .lp3 { background: linear-gradient(150deg, #efe7de, #f7f3ee); border: 1px dashed var(--v2-stone); }
+.v2 .lg h3 { font-size: 30px; margin-top: 8px; }
+.v2 .lg p { margin: 0; font-size: 15px; }
+.v2 .mut { color: var(--v2-taupe); }
+.v2 .ll { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 4px; }
+.v2 .lnk2 { font-size: 14.5px; color: var(--v2-taupe); text-decoration: none; }
+.v2 .soon h3 { color: var(--v2-taupe); }
+.v2 .fam { margin: 44px 0 0; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--disp); font-size: 22px; font-weight: 300; }
+.v2 .fam span:first-child { font-family: var(--body); font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--v2-taupe); align-self: center; }
+
+/* 11 Česta pitanja */
+.v2 .faq { background: var(--v2-linen); }
+.v2 .fg { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; padding-block: 80px; }
+.v2 .fg > div:first-child { display: flex; flex-direction: column; gap: 16px; }
+.v2 .fsub { margin: 14px 0 0; font-size: 15px; max-width: 360px; color: var(--v2-taupe); }
+.v2 details { border-bottom: 1px solid var(--v2-stone); padding: 18px 0; }
+.v2 details:first-child { border-top: 1px solid var(--v2-stone); }
+.v2 summary { font-family: var(--disp); font-size: 24px; font-weight: 300; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; }
+.v2 summary::-webkit-details-marker { display: none; }
+.v2 summary::after { content: "+"; font-family: var(--body); font-size: 22px; color: var(--v2-taupe); }
+.v2 details[open] summary::after { content: "–"; }
+.v2 details p { margin: 10px 0 0; font-size: 15px; color: var(--v2-dusk); max-width: 620px; }
+.v2 details p strong { color: var(--v2-ink); font-weight: 600; }
+
+/* 12 Kontakt */
+.v2 .contact { padding-block: 80px; display: flex; flex-direction: column; gap: 14px; }
+.v2 .cg5 { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--v2-stone); }
+.v2 .cg5 > * { padding: 18px 18px 4px 0; display: flex; flex-direction: column; gap: 4px; text-decoration: none; }
+.v2 .cg5 > * + * { padding-left: 18px; border-left: 1px solid var(--v2-stone); }
+.v2 .cg5 span { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v2-taupe); }
+.v2 .cg5 b { font-family: var(--disp); font-weight: 400; font-size: 21px; white-space: nowrap; }
+
+/* 13 Footer */
+.v2 .ft { background: var(--v2-night); color: #cdbfb1; font-size: 14px; }
+.v2 .ft .wrap { padding-block: 56px 32px; }
+.v2 .fgr { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 30px; }
+.v2 .ft img { height: 32px; width: auto; filter: invert(1) brightness(1.6); }
+.v2 .ft b { display: block; color: #efe6dc; font-weight: 600; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 12px; }
+.v2 .ft a, .v2 .ft .row { display: block; margin: 6px 0; text-decoration: none; }
+.v2 .ft p { margin: 10px 0 0; }
+.v2 .cp { margin: 44px 0 0; padding-top: 18px; border-top: 1px solid #3b322d; font-size: 12.5px; color: #9d8b7b; }
+
+/* Phone booking bar and the design switch */
+.v2 .sticky { display: none; }
+.v2-switch {
+  position: fixed; left: 16px; bottom: 16px; z-index: 60;
+  display: flex; align-items: center; gap: 6px; padding: 5px 6px 5px 12px;
+  background: rgba(20, 16, 14, 0.92); color: #f4eee7; border-radius: 999px;
+  font: 600 12px/1 system-ui, sans-serif; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.v2-switch button { border: 0; border-radius: 999px; padding: 6px 11px; font: inherit; cursor: pointer; background: transparent; color: inherit; }
+.v2-switch button[aria-pressed="true"] { background: #f4eee7; color: #14100e; }
+
+@media (max-width: 900px) {
+  .v2 .hd nav, .v2 .hd .btn { display: none; }
+  .v2 .hd { justify-content: space-between; }
+  .v2 .hd img { height: 28px; }
+  .v2 .hero { grid-template-columns: 1fr; min-height: 0; }
+  .v2 .hero .ph { order: -1; height: 360px; margin: 0 -24px; -webkit-mask-image: linear-gradient(180deg, #000 75%, transparent); mask-image: linear-gradient(180deg, #000 75%, transparent); }
+  .v2 .hero .tx { padding: 8px 0 40px; gap: 18px; }
+  .v2 .prices, .v2 .offer { grid-template-columns: 1fr; }
+  .v2 .prices { gap: 24px; padding-block: 48px; }
+  .v2 .pg3 { grid-template-columns: 1fr; }
+  .v2 .pg3 > a { border-left: 0; border-top: 1px solid var(--v2-stone); padding: 14px 0; flex-direction: row; justify-content: space-between; align-items: baseline; }
+  .v2 .pg3 .p { font-size: 30px; }
+  .v2 .offer .ph { min-height: 300px; }
+  .v2 .offer .tx { padding: 36px 24px 40px; }
+  .v2 .of h3 { font-size: 24px; }
+  .v2 .of .pc { font-size: 32px; }
+  .v2 .one .of .pc { font-size: 44px; }
+  .v2 .when { font-size: 15.5px; }
+  .v2 .steps { grid-template-columns: 1fr; gap: 18px; padding-block: 40px; }
+  .v2 .st { border-left: 0; border-top: 1px solid var(--v2-stone); padding: 16px 0 0; }
+  .v2 .why, .v2 .tg, .v2 .about, .v2 .fg { grid-template-columns: 1fr; }
+  .v2 .wg { grid-template-columns: 1fr; gap: 22px; }
+  .v2 .why { padding-block: 48px; gap: 24px; }
+  .v2 .tech dl { grid-template-columns: 1fr 1fr; }
+  .v2 .ap { min-height: 300px; }
+  .v2 .at { padding: 40px 24px; }
+  .v2 .lg { grid-template-columns: 1fr; gap: 40px; }
+  .v2 .lp2, .v2 .lp3 { aspect-ratio: 16 / 6; }
+  .v2 .loc, .v2 .contact { padding-block: 56px; }
+  .v2 .fg { padding-block: 56px; gap: 24px; }
+  .v2 summary { font-size: 21px; }
+  .v2 .cg5 { grid-template-columns: 1fr; }
+  .v2 .cg5 > *, .v2 .cg5 > * + * { padding: 14px 0; border-left: 0; border-bottom: 1px solid var(--v2-stone); flex-direction: row; justify-content: space-between; align-items: baseline; }
+  .v2 .cg5 b { font-size: 18px; }
+  .v2 .fgr { grid-template-columns: 1fr 1fr; }
+  .v2 .fgr > div:first-child { grid-column: 1 / -1; }
+  .v2 .sticky {
+    /* The top 54 px of the bar is the switch pill's row (the new design only shows with the switch), so the pill covers no content. */
+    display: flex; position: sticky; bottom: 0; z-index: 50; padding: 54px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+    background: rgba(244, 238, 231, 0.94); backdrop-filter: blur(8px); border-top: 1px solid var(--v2-stone); justify-content: center;
+  }
+  .v2 .sticky .btn { width: 100%; justify-content: center; }
+  .v2-switch { bottom: calc(70px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* The current site's floating buttons (cookie settings, "Na vrh") come from layout.tsx; while the new design
+   shows, the switch pill and the footer's cookie-settings link take their place. This file loads only for switch users. */
+body:has(.v2-switch) > button.fixed { display: none; }
