@@ -1,6 +1,6 @@
 # Brief · landing: both designs show the app's time offers; the current design drops the old week
 
-> **Draft, not accepted.** Written by the Skintastic spec conversation from Ivan Tomić's answer of 2026-11-04 (the current design shows the new offers like the new design; the hero button reads "Povoljniji termini →"). The app's route is Skintastic ADR-0071 point 4 and brief `scheduling-offers-public-route`.
+> **Accepted by Ivan Tomić, 2026-11-04.** Written by the Skintastic spec conversation from Ivan Tomić's answer of 2026-11-04 (the current design shows the new offers like the new design; the hero button reads "Povoljniji termini →"). The app's route is Skintastic ADR-0071 point 4 and brief `scheduling-offers-public-route`.
 
 ## Touches
 
