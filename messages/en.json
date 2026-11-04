@@ -289,7 +289,7 @@
     "googleUrl": "[GOOGLE URL]",
     "instagram": "Follow us on Instagram ↗",
     "instagramShort": "Instagram ↗",
-    "brandLine": "Experiences of clients at Skintastic studios.",
+    "brandLine": "Experiences from Skintastic studios.",
     "items": [
       {
         "title": "I CAN ONLY RECOMMEND IT",
@@ -481,7 +481,8 @@
       "title": "What does a treatment look like?"
     },
     "review": {
-      "label": "Reviews"
+      "label": "Reviews",
+      "title": "What our clients say"
     },
     "why": {
       "title": "Why Skintastic?"

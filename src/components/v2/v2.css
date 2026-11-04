@@ -113,8 +113,9 @@
 
 /* 6 Review */
 .v2 .quote { background: var(--v2-linen); border-top: 1px solid var(--v2-stone); border-bottom: 1px solid var(--v2-stone); }
-.v2 .rvw { display: grid; grid-template-columns: 0.8fr 2fr; gap: 48px; padding-block: 56px; }
-.v2 .rvh { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+/* The same grid as Zašto Skintastic, so the columns line up down the page. */
+.v2 .rvw { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 72px; }
+.v2 .rvh { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 .v2 .rvh p { margin: 0; font-size: 16.5px; max-width: 300px; }
 .v2 .rvh .rvr b { font-family: var(--disp); font-size: 32px; font-weight: 300; }
 .v2 .rvg { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 48px; }

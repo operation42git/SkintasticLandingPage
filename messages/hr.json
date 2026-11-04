@@ -289,7 +289,7 @@
     "googleUrl": "[URL GOOGLE]",
     "instagram": "Prati nas na Instagramu ↗",
     "instagramShort": "Instagram ↗",
-    "brandLine": "Iskustva klijentica Skintastic studija.",
+    "brandLine": "Iskustva iz Skintastic studija.",
     "items": [
       {
         "title": "MOGU SAMO PREPORUČITI",
@@ -481,7 +481,8 @@
       "title": "Kako izgleda tretman?"
     },
     "review": {
-      "label": "Recenzije"
+      "label": "Recenzije",
+      "title": "Što kažu naši klijenti"
     },
     "why": {
       "title": "Zašto Skintastic?"
