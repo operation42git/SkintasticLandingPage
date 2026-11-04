@@ -56,8 +56,9 @@ export function ContactSection() {
     { key: "call", href: contact.phoneHref, value: contact.phoneDisplay, icon: <PhoneIcon /> },
     { key: "whatsapp", href: contact.whatsappHref, value: contact.phoneDisplay, icon: <WhatsAppIcon /> },
     { key: "email", href: emailHref(), value: contact.email, icon: <MailIcon /> },
-    { key: "instagram", href: instagramHref(), value: contact.instagram, icon: <InstagramIcon /> },
-    { key: "facebook", href: facebookHref(), value: contact.facebook, icon: <FacebookIcon /> },
+    // Instagram and Facebook: the box is the link; the address is shown only while it is a placeholder.
+    { key: "instagram", href: instagramHref(), value: instagramHref() ? "" : contact.instagram, icon: <InstagramIcon /> },
+    { key: "facebook", href: facebookHref(), value: facebookHref() ? "" : contact.facebook, icon: <FacebookIcon /> },
   ];
 
   return (
@@ -76,13 +77,18 @@ export function ContactSection() {
               <>
                 {channel.icon}
                 <strong className="text-[13px] lg:text-[15px]">{t(channel.key)}</strong>
-                <span className="hidden text-[13px] lg:block">{channel.value}</span>
+                {channel.value ? <span className="hidden text-[13px] lg:block">{channel.value}</span> : null}
               </>
             );
             const className =
               "flex min-h-11 items-center gap-2.5 bg-white p-3 no-underline lg:flex-col lg:items-center lg:gap-1.5 lg:p-[18px] lg:text-center";
             return channel.href ? (
-              <a key={channel.key} href={channel.href} className={className}>
+              <a
+                key={channel.key}
+                href={channel.href}
+                className={className}
+                {...(channel.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
                 {inner}
               </a>
             ) : (
@@ -113,7 +119,8 @@ export function ContactSection() {
                       {hoursFor(location, locale)}
                     </>
                   ) : null}
-                  {location.parking ? (
+                  {/* Parking shows only once it is a real value, not a bracket placeholder. */}
+                  {location.parking && !location.parking.trim().startsWith("[") ? (
                     <>
                       <br className="hidden lg:block" />
                       <span className="lg:hidden"> · </span>

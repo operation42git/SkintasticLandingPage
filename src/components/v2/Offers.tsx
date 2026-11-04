@@ -3,12 +3,8 @@
 import { useTranslations } from "next-intl";
 import { confirmedCode } from "@/config/booking";
 import { OFFERS_IMAGE_V2 } from "@/config/design";
-import type { OfferWindowV2 } from "@/config/offers-v2";
+import { daysInWords, hoursInWords, shortDate, studiosInWords, type OfferWindowV2 } from "@/config/offers-v2";
 import { BookButton } from "@/components/ui/BookButton";
-
-function shortDate(date: string): string {
-  return `${Number(date.slice(8, 10))}. ${Number(date.slice(5, 7))}.`;
-}
 
 function Clock() {
   return (
@@ -22,8 +18,12 @@ function Clock() {
 /** Povoljniji termini: one linen band (text, image, rows); hidden while there is no offer. */
 export function Offers({ offers }: { offers: OfferWindowV2[] }) {
   const t = useTranslations("v2.offers");
+  // Day names, "Oba studija" and " i " are shared with the current design's offers (offPeak.*).
+  const words = useTranslations("offPeak");
   if (!offers.length) return null;
   const one = offers.length === 1;
+  const short = words.raw("weekdaysShort") as string[];
+  const and = words("and");
 
   return (
     <section
@@ -42,18 +42,25 @@ export function Offers({ offers }: { offers: OfferWindowV2[] }) {
         <div className="oimg" role="img" aria-label={t("imageAlt")} />
         <div className="orows">
           {offers.map((offer) => (
-            <BookButton key={offer.name} usluga={confirmedCode(offer.code)} className="of">
+            <BookButton
+              key={`${offer.name}-${offer.percent}`}
+              usluga={confirmedCode(offer.serviceCode ?? undefined)}
+              centar={offer.locations.length === 1 ? offer.locations[0].slug : undefined}
+              className="of"
+            >
               <div>
                 <h3>{offer.name}</h3>
-                <div className="when">
-                  <Clock />
-                  <b>
-                    {offer.days} · {offer.hours}
-                  </b>
-                  <span className="wl">
-                    {offer.studio}
-                    {offer.validUntil ? ` · ${t("until", { date: shortDate(offer.validUntil) })}` : ""}
-                  </span>
+                {offer.ranges.map((range, index) => (
+                  <div className="when" key={index}>
+                    <Clock />
+                    <b>
+                      {daysInWords(range.weekdays, short, and)} · {hoursInWords(range)}
+                    </b>
+                  </div>
+                ))}
+                <div className="wl">
+                  {studiosInWords(offer.locations, words("bothStudios"), and)}
+                  {offer.validUntil ? ` · ${t("until", { date: shortDate(offer.validUntil) })}` : ""}
                 </div>
               </div>
               <span className="opc">

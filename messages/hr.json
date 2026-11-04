@@ -34,7 +34,7 @@
     "trustCentres": "{names}, Zagreb",
     "nameJoin": " i ",
     "dot": "Ponuda {n}",
-    "offPeak": "Odabrani termini −10 % →"
+    "offPeak": "Povoljniji termini →"
   },
   "features": {
     "experts": {
@@ -112,52 +112,13 @@
   "offPeak": {
     "eyebrow": "Skintastic Zagreb",
     "title": "Povoljniji termini",
-    "lead": "<strong>Isti tretman, 10 % povoljnije</strong> – u označenim terminima u sljedećih 7 dana.",
-    "studio": "Studio",
-    "weekdaysShort": [
-      "Pon",
-      "Uto",
-      "Sri",
-      "Čet",
-      "Pet",
-      "Sub",
-      "Ned"
-    ],
-    "weekdays": [
-      "Ponedjeljak",
-      "Utorak",
-      "Srijeda",
-      "Četvrtak",
-      "Petak",
-      "Subota",
-      "Nedjelja"
-    ],
-    "cell": {
-      "full": "popunjeno",
-      "closed": "zatvoreno"
-    },
-    "dayTitle": "{weekday} {date} · {studio}",
-    "dayKind": {
-      "day": "Cijeli dan −10 %",
-      "morning": "−10 % ujutro, do {until}",
-      "gap": "−10 % u kraćim rupama u rasporedu",
-      "regular": ""
-    },
-    "examples": "Primjeri slobodnih termina",
-    "shortOnly": "Ove rupe stanu samo za kraće tretmane (npr. pazusi, nadusnica).",
-    "exactNote": "Točni termini ovise o trajanju tretmana. Ako odabrano vrijeme ne odgovara tvom tretmanu, u rezervaciji ti pokazujemo najbliže termine s −10 %.",
-    "regularDay": "Ovaj dan termini su po redovnoj cijeni.",
-    "continue": "Nastavi s ovim danom",
-    "continueAt": "Nastavi · {date} oko {time}",
-    "terms": "Sljedeći korak: odaberi tretman, pa potvrdi vrijeme. −10 % na cijenu iz cjenika · najviše 3 povoljna termina dnevno · samo online · ne zbraja se s drugim popustima.",
-    "today": "Danas",
-    "kind": {
-      "day": "cijeli dan",
-      "morning": "do {until}",
-      "gap": "u rupama"
-    },
-    "otherDays": "<strong>Ne odgovara ti nijedan od ovih dana?</strong> U kalendaru za rezervacije biraš bilo koji termin do 60 dana unaprijed – povoljniji termini su i ondje označeni s −10 %.",
-    "openCalendar": "Otvori kalendar →"
+    "lead": "<strong>Isti tretman, povoljnije</strong> – u odabranim terminima.",
+    "weekdaysShort": ["Pon", "Uto", "Sri", "Čet", "Pet", "Sub", "Ned"],
+    "upTo": "do −{n} %",
+    "upToOne": "Do −{n} %",
+    "until": "do {date}",
+    "bothStudios": "Oba studija",
+    "and": " i "
   },
   "how": {
     "eyebrow": "Trajno uklanjanje dlačica laserom",
@@ -224,7 +185,7 @@
     "family": "Dio skintastic obitelji",
     "familyCount": "{count} centara u 3 zemlje — ista tehnologija i standard kvalitete.",
     "familyShort": "Dio skintastic obitelji · {count} centara u 3 zemlje",
-    "offPeak": "Povoljni termini u ovom studiju →"
+    "offPeak": "Povoljniji termini u ovom studiju →"
   },
   "services": {
     "badge": "Naša ponuda",
@@ -328,7 +289,6 @@
     "googleUrl": "[URL GOOGLE]",
     "instagram": "Prati nas na Instagramu ↗",
     "instagramShort": "Instagram ↗",
-    "brandLine": "Iskustva klijentica Skintastic studija.",
     "items": [
       {
         "title": "MOGU SAMO PREPORUČITI",
@@ -490,19 +450,17 @@
       "featured": "Izdvojeni tretmani",
       "from": "od",
       "items": {
-        "faceNeck": {
-          "name": "Lice i vrat",
-          "price": "[CIJENA]"
+        "bikini": {
+          "name": "Bikini zona + prepone",
+          "price": "49,90 €"
         },
-        "intimate": {
-          "name": "Intimna zona",
-          "desc": "[OPIS]",
-          "price": "[CIJENA]"
+        "chest": {
+          "name": "Prsa",
+          "price": "59,90 €"
         },
         "back": {
           "name": "Cijela leđa",
-          "desc": "[OPIS]",
-          "price": "[CIJENA]"
+          "price": "79,90 €"
         }
       }
     },
@@ -520,7 +478,8 @@
       "title": "Kako izgleda tretman?"
     },
     "review": {
-      "label": "Recenzije"
+      "label": "Recenzije",
+      "title": "Što kažu naši klijenti"
     },
     "why": {
       "title": "Zašto Skintastic?"
@@ -574,7 +533,6 @@
       }
     },
     "contact": {
-      "label": "Kontakt",
       "whatsappCta": "Pošalji WhatsApp poruku",
       "callCta": "Nazovi {phone}",
       "emailLine": "ili piši na <link>{email}</link>",

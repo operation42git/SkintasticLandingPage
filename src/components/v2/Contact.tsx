@@ -15,8 +15,8 @@ export function Contact() {
       <section className="contact" id="v2-kontakt">
         <div className="cx">
           <div>
-            <span className="k">{t("label")}</span>
-            <h2>{current("eyebrow")}</h2>
+            <span className="k">{current("eyebrow")}</span>
+            <h2>{current("title")}</h2>
           </div>
           <div>
             <div className="cbt">

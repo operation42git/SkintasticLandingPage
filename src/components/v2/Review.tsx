@@ -25,7 +25,7 @@ export function Review() {
       <div className="wrap rvw">
         <div className="rvh">
           <span className="k">{t("label")}</span>
-          <p>{reviews("brandLine")}</p>
+          <h2>{t("title")}</h2>
           {rating && count ? (
             <p className="rvr">
               <b>{rating}</b> ★★★★★ · {reviews("countLabel", { count })}

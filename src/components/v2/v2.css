@@ -70,8 +70,6 @@
 .v2 .t3 > a:first-child { padding-left: 0; }
 .v2 .t3 > a + a { border-left: 1px solid var(--v2-stone); }
 .v2 .t3 h3 { font-size: 26px; }
-.v2 .t3 .tn { display: flex; flex-direction: column; gap: 4px; }
-.v2 .t3 .td { font-size: 14px; color: var(--v2-taupe); line-height: 1.4; }
 .v2 .t3 .p { margin-top: auto; }
 .v2 .t3 .p { font-family: var(--disp); font-weight: 300; font-size: 34px; line-height: 1; white-space: nowrap; }
 .v2 .t3 .p small { font-family: var(--body); font-size: 15px; color: var(--v2-taupe); margin-right: 8px; }
@@ -97,6 +95,7 @@
 .v2 .when svg { flex: none; color: var(--v2-rust); margin-right: -2px; }
 .v2 .when b { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .v2 .when .wl { font-size: 14px; color: var(--v2-taupe); }
+.v2 .of .wl { margin-top: 6px; font-size: 14px; color: var(--v2-taupe); }
 .v2 .opc { display: flex; align-items: center; gap: 14px; background: rgba(244, 238, 231, 0.85); border-radius: 999px; padding: 6px 6px 6px 22px; }
 .v2 .opc .pc { font-family: var(--disp); font-weight: 300; font-style: italic; font-size: 30px; line-height: 1; white-space: nowrap; }
 .v2 .opc .ar { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid var(--v2-ink); display: grid; place-items: center; font-size: 17px; }
@@ -112,8 +111,9 @@
 
 /* 6 Review */
 .v2 .quote { background: var(--v2-linen); border-top: 1px solid var(--v2-stone); border-bottom: 1px solid var(--v2-stone); }
-.v2 .rvw { display: grid; grid-template-columns: 0.8fr 2fr; gap: 48px; padding-block: 56px; }
-.v2 .rvh { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+/* The same grid as Zašto Skintastic, so the columns line up down the page. */
+.v2 .rvw { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 72px; }
+.v2 .rvh { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 .v2 .rvh p { margin: 0; font-size: 16.5px; max-width: 300px; }
 .v2 .rvh .rvr b { font-family: var(--disp); font-size: 32px; font-weight: 300; }
 .v2 .rvg { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 48px; }
@@ -140,7 +140,8 @@
 
 /* 9 O nama */
 .v2 .about { display: grid; grid-template-columns: 0.8fr 1.2fr; background: var(--v2-linen); }
-.v2 .ap { min-height: 480px; background: #e2d6c9; }
+.v2 .ap { position: relative; overflow: hidden; min-height: 480px; background: #e2d6c9; }
+.v2 .ap img { object-fit: cover; object-position: center; }
 .v2 .at { padding: 64px max(24px, 6vw); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
 .v2 .at p { margin: 0; max-width: 440px; color: var(--v2-dusk); }
 .v2 .certs { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
@@ -171,7 +172,7 @@
 .v2 .faq { background: var(--v2-linen); }
 .v2 .fg { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; padding-block: 64px; }
 .v2 .fg > div:first-child { display: flex; flex-direction: column; gap: 16px; }
-.v2 .fsub { margin: 14px 0 0; font-size: 15px; max-width: 360px; color: var(--v2-taupe); }
+.v2 .fsub { margin: 14px 0 0; font-size: 16.5px; line-height: 1.55; max-width: 400px; color: var(--v2-dusk); }
 .v2 details { border-bottom: 1px solid var(--v2-stone); padding: 18px 0; }
 .v2 .fgp { display: flex; flex-direction: column; }
 .v2 .fgp + .fgp { margin-top: 40px; }
@@ -187,7 +188,9 @@
 
 /* 12 Kontakt */
 .v2 .contact { padding-block: 80px; }
-.v2 .cx { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
+.v2 .cx { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+/* The buttons line up with the "Kontakt" heading: centred on it, below the label. */
+.v2 .cx > div:last-child { padding-top: 37px; }
 .v2 .cx h2 { margin-top: 12px; }
 .v2 .cbt { display: flex; gap: 12px; flex-wrap: wrap; }
 .v2 .cbt svg { flex: none; }
@@ -254,13 +257,15 @@
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
   .v2 .tech img { display: none; }
-  .v2 .ap { min-height: 0; height: 200px; background-size: cover; background-position: center 15%; }
+  .v2 .ap { min-height: 0; height: 200px; }
+  .v2 .ap img { object-position: center 15%; }
   .v2 .at { padding: 40px 24px; }
   .v2 .lg { grid-template-columns: 1fr; gap: 40px; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }
   .v2 .fg { padding-block: 56px; gap: 24px; }
   .v2 .fgr { grid-template-columns: 1fr 1fr; }
   .v2 .cx { grid-template-columns: 1fr; gap: 20px; }
+  .v2 .cx > div:last-child { padding-top: 0; }
   .v2 .cbt { flex-direction: column; }
   .v2 .cbt a { justify-content: center; }
   .v2 .fgr > div:first-child { grid-column: 1 / -1; }
@@ -289,4 +294,13 @@ body:has(.v2-switch) > button.fixed { display: none; }
   .v2 .hd img { height: 22px; }
   .v2 .lng { gap: 6px; }
   .v2 .qi { width: 34px; height: 34px; }
+}
+
+/* Phone: one compact vertical rhythm, 32 px top and bottom per section (about 64 px between two). */
+@media (max-width: 900px) {
+  .v2 .hero .tx { padding-bottom: 32px; }
+  .v2 .tp2, .v2 .st3, .v2 .why, .v2 .tg, .v2 .loc, .v2 .fg, .v2 .rvw, .v2 .contact { padding-block: 32px; }
+  .v2 .otx { padding-block: 8px 16px; }
+  .v2 .orows { padding-bottom: 20px; }
+  .v2 .about .at { padding-block: 32px; }
 }
