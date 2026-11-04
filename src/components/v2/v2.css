@@ -290,3 +290,12 @@ body:has(.v2-switch) > button.fixed { display: none; }
   .v2 .lng { gap: 6px; }
   .v2 .qi { width: 34px; height: 34px; }
 }
+
+/* Phone: one compact vertical rhythm, 32 px top and bottom per section (about 64 px between two). */
+@media (max-width: 900px) {
+  .v2 .hero .tx { padding-bottom: 32px; }
+  .v2 .tp2, .v2 .st3, .v2 .why, .v2 .tg, .v2 .loc, .v2 .fg, .v2 .rvw, .v2 .contact { padding-block: 32px; }
+  .v2 .otx { padding-block: 8px 16px; }
+  .v2 .orows { padding-bottom: 20px; }
+  .v2 .about .at { padding-block: 32px; }
+}
