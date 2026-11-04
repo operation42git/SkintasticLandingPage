@@ -6,7 +6,6 @@ import { BookButton } from "@/components/ui/BookButton";
 
 export function Treatments() {
   const t = useTranslations("v2.treatments");
-  const all = useTranslations();
   return (
     <div className="wrap" id="v2-tretmani">
       <section className="tp2">
@@ -21,10 +20,7 @@ export function Treatments() {
           <div className="t3">
             {treatmentsV2.map((item) => (
               <BookButton key={item.key} usluga={item.code}>
-                <span className="tn">
-                  <h3>{t(`items.${item.key}.name`)}</h3>
-                  <span className="td">{all(item.desc)}</span>
-                </span>
+                <h3>{t(`items.${item.key}.name`)}</h3>
                 <span className="p">
                   <small>{t("from")}</small>
                   {t(`items.${item.key}.price`)}

@@ -450,19 +450,17 @@
       "featured": "Featured treatments",
       "from": "from",
       "items": {
-        "faceNeck": {
-          "name": "Face and neck",
-          "price": "[PRICE]"
+        "bikini": {
+          "name": "Bikini line + groin",
+          "price": "€49.90"
         },
-        "intimate": {
-          "name": "Intimate area",
-          "desc": "[DESCRIPTION]",
-          "price": "[PRICE]"
+        "chest": {
+          "name": "Chest",
+          "price": "€59.90"
         },
         "back": {
           "name": "Full back",
-          "desc": "[DESCRIPTION]",
-          "price": "[PRICE]"
+          "price": "€79.90"
         }
       }
     },

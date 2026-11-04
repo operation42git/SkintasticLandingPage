@@ -450,19 +450,17 @@
       "featured": "Izdvojeni tretmani",
       "from": "od",
       "items": {
-        "faceNeck": {
-          "name": "Lice i vrat",
-          "price": "[CIJENA]"
+        "bikini": {
+          "name": "Bikini zona + prepone",
+          "price": "49,90 €"
         },
-        "intimate": {
-          "name": "Intimna zona",
-          "desc": "[OPIS]",
-          "price": "[CIJENA]"
+        "chest": {
+          "name": "Prsa",
+          "price": "59,90 €"
         },
         "back": {
           "name": "Cijela leđa",
-          "desc": "[OPIS]",
-          "price": "[CIJENA]"
+          "price": "79,90 €"
         }
       }
     },

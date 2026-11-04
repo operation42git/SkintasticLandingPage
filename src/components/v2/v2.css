@@ -70,8 +70,6 @@
 .v2 .t3 > a:first-child { padding-left: 0; }
 .v2 .t3 > a + a { border-left: 1px solid var(--v2-stone); }
 .v2 .t3 h3 { font-size: 26px; }
-.v2 .t3 .tn { display: flex; flex-direction: column; gap: 4px; }
-.v2 .t3 .td { font-size: 14px; color: var(--v2-taupe); line-height: 1.4; }
 .v2 .t3 .p { margin-top: auto; }
 .v2 .t3 .p { font-family: var(--disp); font-weight: 300; font-size: 34px; line-height: 1; white-space: nowrap; }
 .v2 .t3 .p small { font-family: var(--body); font-size: 15px; color: var(--v2-taupe); margin-right: 8px; }
@@ -142,7 +140,8 @@
 
 /* 9 O nama */
 .v2 .about { display: grid; grid-template-columns: 0.8fr 1.2fr; background: var(--v2-linen); }
-.v2 .ap { min-height: 480px; background: #e2d6c9; }
+.v2 .ap { position: relative; overflow: hidden; min-height: 480px; background: #e2d6c9; }
+.v2 .ap img { object-fit: cover; object-position: center; }
 .v2 .at { padding: 64px max(24px, 6vw); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
 .v2 .at p { margin: 0; max-width: 440px; color: var(--v2-dusk); }
 .v2 .certs { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
@@ -258,7 +257,8 @@
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
   .v2 .tech img { display: none; }
-  .v2 .ap { min-height: 0; height: 200px; background-size: cover; background-position: center 15%; }
+  .v2 .ap { min-height: 0; height: 200px; }
+  .v2 .ap img { object-position: center 15%; }
   .v2 .at { padding: 40px 24px; }
   .v2 .lg { grid-template-columns: 1fr; gap: 40px; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }

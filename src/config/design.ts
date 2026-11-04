@@ -45,7 +45,7 @@ export const HERO_VIDEO_V2 = { src: "/videos/v2/hero.mp4", poster: "/videos/v2/h
  * The new design's Povoljniji termini image (landing-redesign row 4): the person gives it
  * (e.g. /images/v2/offers-calendar.jpg). Empty: a stone tint where the image would show.
  */
-export const OFFERS_IMAGE_V2 = "";
+export const OFFERS_IMAGE_V2 = "/images/v2/offers-calendar.jpg";
 
 /**
  * The new design's FAQ groups (landing-redesign row 11): each maps to the existing `faq.items` by index
@@ -56,3 +56,6 @@ export const FAQ_GROUPS_V2 = [
   { key: "results", from: 4, to: 6 },
   { key: "technology", from: 6, to: 10 },
 ] as const;
+
+/** The new design's O nama photo (landing-redesign row 9; Ivan, 2026-11-04: the current site's photo). */
+export const ABOUT_IMAGE_V2 = "/images/about/frau-links.png";
