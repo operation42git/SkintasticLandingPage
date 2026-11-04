@@ -8,7 +8,8 @@ export type Location = {
   name: string;
   /** Street address, or the teaser's area. */
   address: string;
-  hours: string;
+  /** Opening hours per language; empty shows nothing. */
+  hours: { hr: string; en: string };
   parking: string;
   /** Teaser only. Empty means the badge is "Uskoro" on its own. */
   openingLabel: string;
@@ -23,8 +24,8 @@ export const locations: Location[] = [
     type: "bookable",
     slug: "zagreb-zapad",
     name: "Skintastic Zapad",
-    address: "Drage Gervaisa 1, 10090 Zagreb",
-    hours: "[RADNO VRIJEME]",
+    address: "Ul. Drage Gervaisa 1, 10000 Zagreb",
+    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed" },
     parking: "[PARKIRANJE]",
     openingLabel: "",
     url: "",
@@ -36,7 +37,7 @@ export const locations: Location[] = [
     slug: "zagreb-istok",
     name: "Skintastic Istok",
     address: "[ADRESA ISTOK]",
-    hours: "[RADNO VRIJEME]",
+    hours: { hr: "[RADNO VRIJEME]", en: "[OPENING HOURS]" },
     parking: "[PARKIRANJE]",
     openingLabel: "",
     url: "",
@@ -48,7 +49,7 @@ export const locations: Location[] = [
     slug: "",
     name: "Skintastic Jug – Velika Gorica",
     address: "Velika Gorica",
-    hours: "",
+    hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",
     url: "",
@@ -60,10 +61,10 @@ export const locations: Location[] = [
     slug: "",
     name: "Wien",
     address: "",
-    hours: "",
+    hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",
-    url: "[URL WIEN]",
+    url: "https://connect.shore.com/bookings/skintastic-wien-laser-skin-body/services?locale=de",
     image: "/images/locations/wien.jpg",
   },
   {
@@ -72,10 +73,10 @@ export const locations: Location[] = [
     slug: "",
     name: "Graz Puntigam",
     address: "",
-    hours: "",
+    hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",
-    url: "[URL GRAZ PUNTIGAM]",
+    url: "https://connect.shore.com/bookings/skintastic/services?locale=de",
     image: "/images/locations/graz-puntigam.jpg",
   },
   {
@@ -84,10 +85,10 @@ export const locations: Location[] = [
     slug: "",
     name: "Graz City",
     address: "",
-    hours: "",
+    hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",
-    url: "[URL GRAZ CITY]",
+    url: "https://www.phorest.com/salon/skintasticgrazcity",
     image: "/images/locations/graz-city.jpg",
   },
   {
@@ -96,10 +97,10 @@ export const locations: Location[] = [
     slug: "",
     name: "Stuttgart",
     address: "",
-    hours: "",
+    hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",
-    url: "[URL STUTTGART]",
+    url: "https://connect.shore.com/bookings/plastische-chirurgie-am-markt-dr-med-jens-neumann/services?locale=de",
     image: "/images/locations/stuttgart.jpg",
   },
 ];
@@ -118,6 +119,11 @@ export function joinNames(names: readonly string[], lastJoin: string): string {
   if (names.length <= 1) return names[0] ?? "";
   if (names.length === 2) return `${names[0]}${lastJoin}${names[1]}`;
   return `${names.slice(0, -1).join(", ")}${lastJoin}${names[names.length - 1]}`;
+}
+
+/** The location's hours in the page's language; a missing language falls back to hr. */
+export function hoursFor(location: Location, locale: string): string {
+  return (location.hours as Record<string, string | undefined>)[locale] ?? location.hours.hr;
 }
 
 /** A bracket address is shown as text and is not sent to a map search. */

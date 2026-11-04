@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { instagramHref } from "@/config/contact";
 
 type Review = {
+  title?: string;
   text: string;
   author: string;
   centre: string;
@@ -19,6 +20,9 @@ export function ReviewsSection() {
   const items = Array.isArray(rawItems) && rawItems.length > 0 ? rawItems : [];
   const shown = items.slice(0, 3);
   const googleHref = externalHref(t("googleUrl"));
+  // The rating line shows only once the rating and count are real values, not bracket placeholders.
+  const rating = externalHref(t("rating"));
+  const count = externalHref(t("count"));
   const instagramLink = instagramHref();
 
   return (
@@ -32,16 +36,19 @@ export function ReviewsSection() {
             <h2 className="font-script text-[40px] font-normal leading-none lg:text-[56px]">
               {t("title")}
             </h2>
+            {t.has("brandLine") ? <p className="mt-2 text-sm lg:text-[15px]">{t("brandLine")}</p> : null}
           </div>
-          <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
-            <strong className="text-[22px] lg:text-[44px]">{t("rating")}</strong>
-            <span className="lg:hidden"> ★★★★★ · {t("countLabel", { count: t("count") })}</span>
-            <span className="hidden lg:ml-3 lg:inline-block">
-              ★★★★★
-              <br />
-              {t("countLabel", { count: t("count") })}
-            </span>
-          </p>
+          {rating && count ? (
+            <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
+              <strong className="text-[22px] lg:text-[44px]">{rating}</strong>
+              <span className="lg:hidden"> ★★★★★ · {t("countLabel", { count })}</span>
+              <span className="hidden lg:ml-3 lg:inline-block">
+                ★★★★★
+                <br />
+                {t("countLabel", { count })}
+              </span>
+            </p>
+          ) : null}
         </div>
 
         <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1.5 [scrollbar-width:none] lg:hidden [&::-webkit-scrollbar]:hidden">
@@ -65,9 +72,7 @@ export function ReviewsSection() {
             >
               {t("google")}
             </a>
-          ) : (
-            <span className="text-[13px] font-bold lg:text-[15px]">{t("google")}</span>
-          )}
+          ) : null}
           {instagramLink ? (
             <a
               href={instagramLink}
@@ -94,11 +99,12 @@ function ReviewCard({ review, className }: { review: Review; className: string }
   return (
     <figure className={`m-0 flex flex-col gap-2.5 bg-white lg:gap-3.5 ${className}`}>
       <span className="tracking-[0.2em]">★★★★★</span>
+      {review.title ? <p className="text-[11px] font-bold uppercase tracking-[0.14em] lg:text-xs">{review.title}</p> : null}
       <blockquote className="text-sm leading-snug lg:text-base lg:leading-relaxed">
         {`\u201E${review.text}\u201C`}
       </blockquote>
       <figcaption className="text-[13px] font-bold lg:text-sm">
-        {review.author} · {review.centre}
+        {review.centre ? `${review.author} · ${review.centre}` : review.author}
       </figcaption>
     </figure>
   );

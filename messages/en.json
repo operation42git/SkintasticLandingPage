@@ -328,21 +328,31 @@
     "googleUrl": "[GOOGLE URL]",
     "instagram": "Follow us on Instagram ↗",
     "instagramShort": "Instagram ↗",
+    "brandLine": "Experiences of clients at Skintastic studios.",
     "items": [
       {
-        "text": "[Google review — Skintastic Istok]",
-        "author": "[Name]",
-        "centre": "Skintastic Istok"
+        "title": "I CAN ONLY RECOMMEND IT",
+        "text": "It was my third time there, and the atmosphere was really lovely and pleasant! I'm looking forward to my next appointment!",
+        "author": "Jessi",
+        "centre": ""
       },
       {
-        "text": "[Google review — Skintastic Zapad]",
-        "author": "[Name]",
-        "centre": "Skintastic Zapad"
+        "title": "PERFECT ATMOSPHERE",
+        "text": "A great first appointment. The lady took the time to explain everything to me, and I knew what was happening the whole time. The atmosphere was perfect and I felt very comfortable. I'm already looking forward to my next treatments.",
+        "author": "Diana",
+        "centre": ""
       },
       {
-        "text": "[Google review — Skintastic Istok]",
-        "author": "[Name]",
-        "centre": "Skintastic Istok"
+        "title": "VERY AFFORDABLE",
+        "text": "Very friendly, you feel at ease, and the laser treatment is pleasant! I'm looking forward to the next sessions. Definitely do it now; the special packages are very affordable and really worth it.",
+        "author": "Michelle",
+        "centre": ""
+      },
+      {
+        "title": "EASY BOOKING",
+        "text": "The service was very friendly, I felt very comfortable. Easy online booking. I can already see results after my second visit :)",
+        "author": "Margit",
+        "centre": ""
       }
     ]
   },
@@ -432,5 +442,144 @@
     "btnSave": "Save my settings",
     "btnAcceptAll": "Accept all",
     "reopenLabel": "Cookie settings"
+  },
+  "v2": {
+    "switch": {
+      "label": "Design:",
+      "current": "Now",
+      "new": "New"
+    },
+    "nav": {
+      "treatments": "Treatments and prices",
+      "locations": "Locations",
+      "faq": "Questions",
+      "menu": "Main menu",
+      "whatsapp": "WhatsApp message",
+      "whatsappTitle": "WhatsApp {phone}",
+      "language": "Language"
+    },
+    "book": "Book an appointment →",
+    "logoAlt": "skintastic LASER SKIN & BODY",
+    "hero": {
+      "label": "Laser hair removal · Zagreb",
+      "title": "Smooth skin.",
+      "titleItalic": "Long-lasting.",
+      "service": "Professional laser hair removal for women and men with the Mediostar diode laser.",
+      "videoAlt": "Video of a laser treatment in the studio",
+      "facts": [
+        "Mediostar diode laser",
+        "Expert care",
+        "For women and men"
+      ]
+    },
+    "heroOffer": {
+      "pazusi": {
+        "label": "Special offer · Underarms",
+        "price": "€19.90",
+        "oldPrice": "€49.99",
+        "note": "Start your treatments at a special price that you keep until the cycle is complete.",
+        "cta": "Claim the offer →",
+        "until": "Offer until 31 Dec."
+      }
+    },
+    "treatments": {
+      "label": "Treatments and prices",
+      "title": "Find your treatment",
+      "text": "From single areas to treatment combinations. Explore every option and price, and book online.",
+      "all": "All treatments and prices →",
+      "featured": "Featured treatments",
+      "from": "from",
+      "items": {
+        "faceNeck": {
+          "name": "Face and neck",
+          "price": "[PRICE]"
+        },
+        "intimate": {
+          "name": "Intimate area",
+          "desc": "[DESCRIPTION]",
+          "price": "[PRICE]"
+        },
+        "back": {
+          "name": "Full back",
+          "desc": "[DESCRIPTION]",
+          "price": "[PRICE]"
+        }
+      }
+    },
+    "offers": {
+      "label": "Better prices",
+      "title": "Catch a",
+      "titleItalic": "better price",
+      "text": "Special prices on selected treatments at selected times.",
+      "upTo": "up to −{percent} %",
+      "upToOne": "Up to −{percent} %",
+      "until": "until {date}",
+      "imageAlt": "A calendar with a discount circled"
+    },
+    "steps": {
+      "title": "What does a treatment look like?"
+    },
+    "review": {
+      "label": "Reviews"
+    },
+    "why": {
+      "title": "Why Skintastic?"
+    },
+    "tech": {
+      "label": "Technology",
+      "title": "Mediostar diode laser",
+      "text": "A laser by the German maker Asclepion, for all skin and hair types. ICE cooling keeps the treatment comfortable.",
+      "facts": [
+        {
+          "label": "Wavelengths",
+          "value": "810 | 940 nm"
+        },
+        {
+          "label": "Cooling",
+          "value": "360° ICE"
+        },
+        {
+          "label": "Skin types",
+          "value": "I–VI"
+        },
+        {
+          "label": "Power",
+          "value": "5,000 W"
+        }
+      ],
+      "imageAlt": "Mediostar Monolith handpieces"
+    },
+    "about": {
+      "title": "About us",
+      "p2": "Our aim is top results at a fair price. That's why we work with high-end technology and skilled staff who know their job inside out.",
+      "certs": "Skintastic brand certificates · Quality comes first",
+      "imageAlt": "Skintastic studio"
+    },
+    "locations": {
+      "title": "Our locations",
+      "book": "Book here →",
+      "directions": "Directions ↗",
+      "soon": "Opening soon. Until then, visit us at Zapad or Istok.",
+      "family": "Part of the Skintastic family",
+      "tile": {
+        "jug": "Opening soon"
+      }
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "groups": {
+        "treatment": "Treatment",
+        "results": "Results and prices",
+        "technology": "Technology"
+      }
+    },
+    "contact": {
+      "label": "Contact",
+      "whatsappCta": "Send a WhatsApp message",
+      "callCta": "Call {phone}",
+      "emailLine": "or write to <link>{email}</link>",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
   }
 }

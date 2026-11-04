@@ -328,21 +328,31 @@
     "googleUrl": "[URL GOOGLE]",
     "instagram": "Prati nas na Instagramu ↗",
     "instagramShort": "Instagram ↗",
+    "brandLine": "Iskustva klijentica Skintastic studija.",
     "items": [
       {
-        "text": "[Google recenzija klijentice — Skintastic Istok]",
-        "author": "[Ime]",
-        "centre": "Skintastic Istok"
+        "title": "MOGU SAMO PREPORUČITI",
+        "text": "Bio mi je treći put tamo, a atmosfera je bila super lijepa i ugodna! Veselim se sljedećem terminu!",
+        "author": "Jessi",
+        "centre": ""
       },
       {
-        "text": "[Google recenzija klijentice — Skintastic Zapad]",
-        "author": "[Ime]",
-        "centre": "Skintastic Zapad"
+        "title": "SAVRŠENA ATMOSFERA",
+        "text": "Odličan prvi termin. Gospođa je odvojila vrijeme da mi sve objasni i cijelo vrijeme sam znala što se događa. Atmosfera je bila savršena i osjećala sam se vrlo ugodno. Već se veselim sljedećim tretmanima.",
+        "author": "Diana",
+        "centre": ""
       },
       {
-        "text": "[Google recenzija klijentice — Skintastic Istok]",
-        "author": "[Ime]",
-        "centre": "Skintastic Istok"
+        "title": "VRLO PRISTUPAČNO",
+        "text": "Vrlo ljubazno, osjećate se ugodno, a laserski tretman je ugodan! Veselim se sljedećim sesijama. Svakako to učinite sada; posebni paketi su vrlo pristupačni i stvarno se isplate.",
+        "author": "Michelle",
+        "centre": ""
+      },
+      {
+        "title": "JEDNOSTAVNO REZERVIRANJE TERMINA",
+        "text": "Usluga je bila jako ljubazna, osjećala sam se vrlo ugodno. Jednostavna rezervacija termina putem interneta. Već vidim rezultate nakon drugog posjeta :)",
+        "author": "Margit",
+        "centre": ""
       }
     ]
   },
@@ -432,5 +442,144 @@
     "btnSave": "Spremi moje postavke",
     "btnAcceptAll": "Prihvatiti sve",
     "reopenLabel": "Postavke kolačića"
+  },
+  "v2": {
+    "switch": {
+      "label": "Dizajn:",
+      "current": "Sada",
+      "new": "Novo"
+    },
+    "nav": {
+      "treatments": "Tretmani i cijene",
+      "locations": "Lokacije",
+      "faq": "Pitanja",
+      "menu": "Glavni izbornik",
+      "whatsapp": "WhatsApp poruka",
+      "whatsappTitle": "WhatsApp {phone}",
+      "language": "Jezik"
+    },
+    "book": "Rezerviraj termin →",
+    "logoAlt": "skintastic LASER SKIN & BODY",
+    "hero": {
+      "label": "Laserska epilacija · Zagreb",
+      "title": "Glatka koža.",
+      "titleItalic": "Dugotrajno.",
+      "service": "Profesionalna laserska epilacija za žene i muškarce uz Mediostar diodni laser.",
+      "videoAlt": "Video tretmana laserom u studiju",
+      "facts": [
+        "Mediostar diodni laser",
+        "Stručan pristup",
+        "Za žene i muškarce"
+      ]
+    },
+    "heroOffer": {
+      "pazusi": {
+        "label": "Posebna ponuda · Pazusi",
+        "price": "19,90 €",
+        "oldPrice": "49,99 €",
+        "note": "Započni tretmane po posebnoj cijeni koju zadržavaš do završetka ciklusa.",
+        "cta": "Iskoristi ponudu →",
+        "until": "Ponuda do 31. 12."
+      }
+    },
+    "treatments": {
+      "label": "Tretmani i cijene",
+      "title": "Pronađi svoj tretman",
+      "text": "Od pojedinačnih zona do kombinacija tretmana. Istraži sve opcije, cijene i rezerviraj termin online.",
+      "all": "Svi tretmani i cijene →",
+      "featured": "Izdvojeni tretmani",
+      "from": "od",
+      "items": {
+        "faceNeck": {
+          "name": "Lice i vrat",
+          "price": "[CIJENA]"
+        },
+        "intimate": {
+          "name": "Intimna zona",
+          "desc": "[OPIS]",
+          "price": "[CIJENA]"
+        },
+        "back": {
+          "name": "Cijela leđa",
+          "desc": "[OPIS]",
+          "price": "[CIJENA]"
+        }
+      }
+    },
+    "offers": {
+      "label": "Povoljniji termini",
+      "title": "Uhvati",
+      "titleItalic": "bolju cijenu",
+      "text": "Posebne cijene za odabrane tretmane u slobodnijim terminima.",
+      "upTo": "do −{percent} %",
+      "upToOne": "Do −{percent} %",
+      "until": "do {date}",
+      "imageAlt": "Kalendar s označenim popustom"
+    },
+    "steps": {
+      "title": "Kako izgleda tretman?"
+    },
+    "review": {
+      "label": "Recenzije"
+    },
+    "why": {
+      "title": "Zašto Skintastic?"
+    },
+    "tech": {
+      "label": "Tehnologija",
+      "title": "Mediostar diodni laser",
+      "text": "Laser njemačkog proizvođača Asclepion, za sve tipove kože i dlačica. ICE-hlađenje čini tretman ugodnim.",
+      "facts": [
+        {
+          "label": "Valne duljine",
+          "value": "810 | 940 nm"
+        },
+        {
+          "label": "Hlađenje",
+          "value": "360° ICE"
+        },
+        {
+          "label": "Tipovi kože",
+          "value": "I–VI"
+        },
+        {
+          "label": "Snaga",
+          "value": "5.000 W"
+        }
+      ],
+      "imageAlt": "Mediostar Monolith ručni nastavci"
+    },
+    "about": {
+      "title": "O nama",
+      "p2": "Naš cilj su vrhunski rezultati po poštenoj cijeni. Zato radimo s high-end tehnologijom i stručnim osobljem koje izvrsno poznaje svoj posao.",
+      "certs": "Certifikati Skintastic brenda · Kvaliteta je na prvom mjestu",
+      "imageAlt": "Skintastic studio"
+    },
+    "locations": {
+      "title": "Naše lokacije",
+      "book": "Rezerviraj ovdje →",
+      "directions": "Kako do nas ↗",
+      "soon": "Otvaranje uskoro. Do tada nas posjeti na Zapadu ili Istoku.",
+      "family": "Dio Skintastic obitelji",
+      "tile": {
+        "jug": "Otvaranje uskoro"
+      }
+    },
+    "faq": {
+      "title": "Česta pitanja",
+      "groups": {
+        "treatment": "Tretman",
+        "results": "Rezultati i cijene",
+        "technology": "Tehnologija"
+      }
+    },
+    "contact": {
+      "label": "Kontakt",
+      "whatsappCta": "Pošalji WhatsApp poruku",
+      "callCta": "Nazovi {phone}",
+      "emailLine": "ili piši na <link>{email}</link>",
+      "instagram": "Instagram",
+      "facebook": "Facebook"
+    }
   }
 }

@@ -10,6 +10,7 @@ import { LocationsSection } from "@/components/sections/LocationsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { GoetheQuoteSection } from "@/components/sections/GoetheQuoteSection";
+import { DesignRoot } from "@/components/v2/DesignRoot";
 import { setRequestLocale } from "next-intl/server";
 
 export default async function HomePage({
@@ -20,8 +21,10 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  // The current design is what the server sends; DesignRoot swaps in the new one in the browser
+  // only for someone who asked for it (?dizajn=novo).
   return (
-    <>
+    <DesignRoot>
       <Header />
       <main className="max-w-full overflow-x-clip">
         <HeroSection />
@@ -36,6 +39,6 @@ export default async function HomePage({
         <GoetheQuoteSection />
       </main>
       <Footer />
-    </>
+    </DesignRoot>
   );
 }

@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { BookButton } from "@/components/ui/BookButton";
 import { Lightbox } from "@/components/ui/Lightbox";
 import { OffPeakLink } from "@/components/ui/OffPeakLink";
 import {
+  hoursFor,
   brandCentreCount,
   externalHref,
   joinNames,
@@ -97,6 +98,7 @@ export function LocationsSection() {
 
 function BookableCard({ location, onGallery }: { location: Location; onGallery: () => void }) {
   const t = useTranslations("locations");
+  const hours = hoursFor(location, useLocale());
 
   return (
     <article className="flex flex-col bg-white">
@@ -109,10 +111,10 @@ function BookableCard({ location, onGallery }: { location: Location; onGallery: 
         <h3 className="text-[17px] font-extrabold lg:text-[22px]">{location.name}</h3>
         <p className="text-[13px] lg:hidden">
           {location.address}
-          {location.hours ? ` · ${location.hours}` : ""}
+          {hours ? ` · ${hours}` : ""}
         </p>
         <p className="hidden text-[15px] lg:block">{location.address}</p>
-        {location.hours ? <p className="hidden text-[15px] lg:block">{location.hours}</p> : null}
+        {hours ? <p className="hidden text-[15px] lg:block">{hours}</p> : null}
         <div className="hidden gap-4 pt-1 text-sm font-bold lg:flex">
           <button type="button" onClick={onGallery} className="underline-offset-2 hover:underline">
             {t("gallery")}
