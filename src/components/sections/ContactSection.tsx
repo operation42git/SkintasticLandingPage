@@ -119,7 +119,8 @@ export function ContactSection() {
                       {hoursFor(location, locale)}
                     </>
                   ) : null}
-                  {location.parking ? (
+                  {/* Parking shows only once it is a real value, not a bracket placeholder. */}
+                  {location.parking && !location.parking.trim().startsWith("[") ? (
                     <>
                       <br className="hidden lg:block" />
                       <span className="lg:hidden"> · </span>
