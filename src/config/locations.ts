@@ -31,13 +31,14 @@ export const locations: Location[] = [
     url: "",
     image: "/images/locations/zagreb.jpg",
   },
+  // TEST STUDIO, made-up address (Ivan, 2026-11-04). Remove or replace before this reaches production (main).
   {
     id: "istok",
     type: "bookable",
     slug: "zagreb-istok",
     name: "Skintastic Istok",
-    address: "[ADRESA ISTOK]",
-    hours: { hr: "[RADNO VRIJEME]", en: "[OPENING HOURS]" },
+    address: "Avenija Dubrava 47, 10040 Zagreb",
+    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed" },
     parking: "[PARKIRANJE]",
     openingLabel: "",
     url: "",
