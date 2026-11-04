@@ -1,20 +1,21 @@
 "use client";
 
-import { useOffpeakStudios } from "@/config/offpeak";
+import { useOffersShown } from "@/config/offers-v2";
 
 type OffPeakLinkProps = {
-  /** A studio's slug: shown only when that studio has a calendar. Without it: when any studio has one. */
+  /** A studio's slug: shown only when an offer includes that studio. Without it: when there is any offer. */
   studio?: string;
   className?: string;
   children: React.ReactNode;
 };
 
-/** A link to the off-peak calendar, drawn only while the calendar is on the page. */
+/** A link to the offers section, drawn only while the section shows offers (landing-offers-live). */
 export function OffPeakLink({ studio, className, children }: OffPeakLinkProps) {
-  const studios = useOffpeakStudios();
-  if (studio ? !studios.includes(studio) : studios.length === 0) return null;
+  const offers = useOffersShown();
+  const shown = studio ? offers.some((offer) => offer.locations.some((l) => l.slug === studio)) : offers.length > 0;
+  if (!shown) return null;
   return (
-    <a href={studio ? `#povoljni-${studio}` : "#povoljniji-termini"} className={className}>
+    <a href="#povoljniji-termini" className={className}>
       {children}
     </a>
   );
