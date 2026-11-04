@@ -289,7 +289,6 @@
     "googleUrl": "[URL GOOGLE]",
     "instagram": "Prati nas na Instagramu ↗",
     "instagramShort": "Instagram ↗",
-    "brandLine": "Iskustva iz Skintastic studija.",
     "items": [
       {
         "title": "MOGU SAMO PREPORUČITI",
@@ -536,7 +535,6 @@
       }
     },
     "contact": {
-      "label": "Kontakt",
       "whatsappCta": "Pošalji WhatsApp poruku",
       "callCta": "Nazovi {phone}",
       "emailLine": "ili piši na <link>{email}</link>",

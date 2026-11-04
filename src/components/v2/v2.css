@@ -189,7 +189,9 @@
 
 /* 12 Kontakt */
 .v2 .contact { padding-block: 80px; }
-.v2 .cx { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: center; }
+.v2 .cx { display: grid; grid-template-columns: 1fr 1.4fr; gap: 48px; align-items: start; }
+/* The buttons line up with the "Kontakt" heading: centred on it, below the label. */
+.v2 .cx > div:last-child { padding-top: 37px; }
 .v2 .cx h2 { margin-top: 12px; }
 .v2 .cbt { display: flex; gap: 12px; flex-wrap: wrap; }
 .v2 .cbt svg { flex: none; }
@@ -263,6 +265,7 @@
   .v2 .fg { padding-block: 56px; gap: 24px; }
   .v2 .fgr { grid-template-columns: 1fr 1fr; }
   .v2 .cx { grid-template-columns: 1fr; gap: 20px; }
+  .v2 .cx > div:last-child { padding-top: 0; }
   .v2 .cbt { flex-direction: column; }
   .v2 .cbt a { justify-content: center; }
   .v2 .fgr > div:first-child { grid-column: 1 / -1; }

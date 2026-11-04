@@ -289,7 +289,6 @@
     "googleUrl": "[GOOGLE URL]",
     "instagram": "Follow us on Instagram ↗",
     "instagramShort": "Instagram ↗",
-    "brandLine": "Experiences from Skintastic studios.",
     "items": [
       {
         "title": "I CAN ONLY RECOMMEND IT",
@@ -536,7 +535,6 @@
       }
     },
     "contact": {
-      "label": "Contact",
       "whatsappCta": "Send a WhatsApp message",
       "callCta": "Call {phone}",
       "emailLine": "or write to <link>{email}</link>",

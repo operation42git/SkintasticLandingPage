@@ -36,7 +36,6 @@ export function ReviewsSection() {
             <h2 className="font-script text-[40px] font-normal leading-none lg:text-[56px]">
               {t("title")}
             </h2>
-            {t.has("brandLine") ? <p className="mt-2 text-sm lg:text-[15px]">{t("brandLine")}</p> : null}
           </div>
           {rating && count ? (
             <p className="mt-2.5 text-sm lg:mt-0 lg:text-[15px] lg:leading-snug">
