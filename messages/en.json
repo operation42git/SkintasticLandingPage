@@ -111,7 +111,7 @@
   },
   "offPeak": {
     "eyebrow": "Skintastic Zagreb",
-    "title": "Off-peak times",
+    "title": "Better-priced times",
     "lead": "<strong>The same treatment, for less</strong> – at selected times.",
     "weekdaysShort": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     "upTo": "up to −{n} %",
@@ -468,7 +468,7 @@
       }
     },
     "offers": {
-      "label": "Better prices",
+      "label": "Better-priced times",
       "title": "Catch a",
       "titleItalic": "better price",
       "text": "Special prices on selected treatments at selected times.",
