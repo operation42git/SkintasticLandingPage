@@ -171,7 +171,7 @@
 .v2 .faq { background: var(--v2-linen); }
 .v2 .fg { display: grid; grid-template-columns: 1fr 1.6fr; gap: 48px; padding-block: 64px; }
 .v2 .fg > div:first-child { display: flex; flex-direction: column; gap: 16px; }
-.v2 .fsub { margin: 14px 0 0; font-size: 15px; max-width: 360px; color: var(--v2-taupe); }
+.v2 .fsub { margin: 14px 0 0; font-size: 16.5px; line-height: 1.55; max-width: 400px; color: var(--v2-dusk); }
 .v2 details { border-bottom: 1px solid var(--v2-stone); padding: 18px 0; }
 .v2 .fgp { display: flex; flex-direction: column; }
 .v2 .fgp + .fgp { margin-top: 40px; }
