@@ -416,7 +416,6 @@
       "menu": "Glavni izbornik",
       "whatsapp": "WhatsApp poruka",
       "whatsappTitle": "WhatsApp {phone}",
-      "contact": "Kontakt",
       "language": "Jezik"
     },
     "book": "Rezerviraj termin →",
@@ -451,9 +450,9 @@
       "featured": "Izdvojeni tretmani",
       "from": "od",
       "items": {
-        "bikini": {
-          "name": "Bikini zona + prepone",
-          "price": "49,90 €"
+        "abdomen": {
+          "name": "Trbuh",
+          "price": "59,90 €"
         },
         "chest": {
           "name": "Prsa",
