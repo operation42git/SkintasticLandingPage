@@ -41,7 +41,7 @@
 .v2 .lng a[aria-current="true"] { color: var(--v2-ink); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 5px; }
 
 /* 2 Hero */
-.v2 .hero { display: grid; grid-template-columns: 1fr 1.05fr; align-items: stretch; min-height: 540px; }
+.v2 .hero { display: grid; grid-template-columns: 1fr 1.05fr; column-gap: 48px; align-items: stretch; min-height: 540px; }
 .v2 .hero .tx { padding: 56px 0 64px; display: flex; flex-direction: column; justify-content: center; gap: 22px; }
 .v2 .hero h1 { font-size: clamp(44px, 5.2vw, 74px); line-height: 1; }
 .v2 .hero .sv { margin: 0; font-size: 19px; line-height: 1.45; color: var(--v2-ink); max-width: 440px; }
@@ -54,12 +54,8 @@
 .v2 .until { font-size: 14.5px; color: var(--v2-taupe); }
 .v2 .trust { list-style: none; display: flex; gap: 10px 22px; white-space: nowrap; flex-wrap: wrap; margin: 10px 0 0; padding: 16px 0 0; border-top: 1px solid var(--v2-stone); font-size: 13.5px; color: var(--v2-dusk); }
 .v2 .trust li::before { content: "✓"; margin-right: 8px; color: var(--v2-rust); }
-.v2 .hero .ph {
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 22%);
-  mask-image: linear-gradient(90deg, transparent 0, #000 22%);
-  margin-right: calc(-1 * max(24px, (100vw - 1240px) / 2 + 24px));
-  position: relative; overflow: hidden;
-}
+/* Inside the column like every other photo, so all edges line up (Ivan, 2026-11-05). */
+.v2 .hero .ph { position: relative; overflow: hidden; border-radius: 10px; margin-block: 24px; }
 .v2 .hero .ph video, .v2 .hero .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
 /* 3 Tretmani i cijene */
@@ -143,11 +139,13 @@
 .v2 .tech img { width: 100%; height: auto; }
 
 /* 9 O nama */
-.v2 .about { display: grid; grid-template-columns: 0.8fr 1.2fr; background: var(--v2-linen); }
-.v2 .ap { position: relative; overflow: hidden; min-height: 480px; background: #e2d6c9; }
-.v2 .ap img { object-fit: cover; object-position: center; }
-.v2 .at { padding: 64px max(24px, 6vw); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
-.v2 .at p { margin: 0; max-width: 440px; color: var(--v2-dusk); }
+/* A linen band; photo and text inside the column (Ivan, 2026-11-05). */
+.v2 .about { background: var(--v2-linen); }
+.v2 .ab { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; padding-block: 72px; }
+.v2 .ap { position: relative; overflow: hidden; min-height: 380px; border-radius: 10px; background: #e2d6c9; }
+.v2 .ap img { object-fit: cover; object-position: center 20%; }
+.v2 .at { display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.v2 .at p { margin: 0; max-width: 620px; color: var(--v2-dusk); }
 .v2 .certs { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
 .v2 .cl2 { display: flex; gap: 22px; align-items: center; }
 .v2 .cl2 img { height: 46px; width: auto; }
@@ -236,7 +234,7 @@
   .v2 .hd img { height: 28px; }
   .v2 .qi { width: 40px; height: 40px; }
   .v2 .hero { grid-template-columns: 1fr; min-height: 0; }
-  .v2 .hero .ph { order: -1; height: 360px; margin: 0 -24px; -webkit-mask-image: linear-gradient(180deg, #000 75%, transparent); mask-image: linear-gradient(180deg, #000 75%, transparent); }
+  .v2 .hero .ph { order: -1; height: 260px; margin: 0 -24px; border-radius: 0; -webkit-mask-image: linear-gradient(180deg, #000 75%, transparent); mask-image: linear-gradient(180deg, #000 75%, transparent); }
   .v2 .hero .tx { padding: 8px 0 40px; gap: 18px; }
   .v2 .tp2, .v2 .obw, .v2 .st3 { grid-template-columns: 1fr; }
   .v2 .tp2 { gap: 24px; padding-block: 48px; }
@@ -249,14 +247,15 @@
   .v2 .oimg { height: 200px; order: -1; margin: 0 -24px; background: var(--ob-img, none) center / cover no-repeat, var(--v2-stone); -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent); mask-image: linear-gradient(180deg, #000 70%, transparent); }
   .v2 .otx { padding-block: 8px 20px; }
   .v2 .orows { border-left: 0; padding-left: 0; border-top: 1px solid var(--v2-stone); padding-bottom: 28px; }
-  .v2 .of { grid-template-columns: 1fr; gap: 10px; }
+  .v2 .of { grid-template-columns: 1fr auto; gap: 12px; }
+  .v2 .of .when { font-size: 14.5px; gap: 8px; margin-top: 6px; }
   .v2 .of h3 { font-size: 24px; }
   .v2 .opc { padding-left: 14px; justify-self: start; }
   .v2 .opc .pc { font-size: 24px; }
   .v2 .opc .ar { width: 38px; height: 38px; }
   .v2 .st3 { gap: 22px; padding-block: 40px; }
   .v2 .s3c::after { display: none; }
-  .v2 .why, .v2 .tg, .v2 .about, .v2 .fg { grid-template-columns: 1fr; }
+  .v2 .why, .v2 .tg, .v2 .ab, .v2 .fg { grid-template-columns: 1fr; }
   .v2 .rvw, .v2 .rvg { grid-template-columns: 1fr; }
   .v2 .rvw { gap: 24px; padding-block: 44px; }
   .v2 .rvg { gap: 26px; }
@@ -265,9 +264,8 @@
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
   .v2 .tech img { display: none; }
-  .v2 .ap { min-height: 0; height: 200px; }
-  .v2 .ap img { object-position: center 15%; }
-  .v2 .at { padding: 40px 24px; }
+  .v2 .ab { gap: 24px; padding-block: 48px; }
+  .v2 .ap { min-height: 0; height: 220px; }
   .v2 .lg { grid-template-columns: 1fr; gap: 0; }
   /* One row per studio: a 96 px square photo, the texts beside it, thin rules between rows. */
   .v2 .lg article { display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; row-gap: 2px; align-content: start; padding: 14px 0; border-top: 1px solid var(--v2-stone); }
@@ -322,5 +320,32 @@ body:has(.v2-switch) > button.fixed { display: none; }
   .v2 .tp2, .v2 .st3, .v2 .why, .v2 .tg, .v2 .loc, .v2 .fg, .v2 .rvw, .v2 .contact { padding-block: 32px; }
   .v2 .otx { padding-block: 8px 16px; }
   .v2 .orows { padding-bottom: 20px; }
-  .v2 .about .at { padding-block: 32px; }
+  .v2 .about .ab { padding-block: 32px; }
+}
+
+/* Phone type scale (Ivan, 2026-11-05): smaller display sizes so a section fits on a screen; labels, buttons and links unchanged. */
+@media (max-width: 900px) {
+  .v2 .hero h1 { font-size: 36px; }
+  .v2 .hero .sv { font-size: 16.5px; }
+  .v2 .hp { font-size: 40px; }
+  .v2 .hp s { font-size: 18px; }
+  .v2 h2 { font-size: 29px; }
+  .v2 .t3 h3, .v2 .of h3, .v2 .s3c h3, .v2 .wg b, .v2 .tech dd { font-size: 21px; }
+  .v2 .t3 .p, .v2 .opc .pc, .v2 .rvh .rvr b { font-size: 24px; }
+  .v2 .opc { padding: 4px 4px 4px 12px; gap: 8px; }
+  .v2 .opc .pc { font-size: 20px; }
+  .v2 .opc .ar { width: 34px; height: 34px; }
+  /* Steps: the number circle beside its title and text. */
+  .v2 .s3c { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-items: start; }
+  .v2 .s3c i { width: 40px; height: 40px; font-size: 17px; grid-row: 1 / span 2; }
+  .v2 .s3c h3 { margin: 6px 0 4px; }
+  .v2 summary { font-size: 19px; }
+  .v2 details { padding: 13px 0; }
+  .v2 .fgp + .fgp { margin-top: 28px; }
+  .v2 .fgp > .k { padding-bottom: 10px; }
+  .v2 details p { font-size: 15px; }
+  .v2 summary::after { font-size: 19px; }
+  .v2 .rvg blockquote { font-size: 18px; }
+  .v2 .fam { font-size: 19px; }
+  .v2 .tl p, .v2 .otx p, .v2 .rvh p, .v2 .fsub { font-size: 15.5px; }
 }

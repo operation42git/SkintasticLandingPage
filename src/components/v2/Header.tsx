@@ -7,14 +7,12 @@ import { BookButton } from "@/components/ui/BookButton";
 import { ChatIcon, PhoneIcon } from "./icons";
 import { LanguageSwitch } from "./LanguageSwitch";
 
-/** The anchored sections in page order; the laptop links show the first three, the phone strip all four. */
+/** The anchored sections in page order: the laptop links and the phone strip show the same three. */
 const SECTIONS = [
   { id: "v2-tretmani", key: "treatments" },
   { id: "v2-lokacije", key: "locations" },
   { id: "v2-pitanja", key: "faq" },
-  { id: "v2-kontakt", key: "contact" },
 ] as const;
-const LAPTOP = SECTIONS.slice(0, 3);
 
 /** A section is active while it spans this line, in px from the viewport top (just under the sticky header). */
 const ACTIVE_LINE = 140;
@@ -57,7 +55,7 @@ function useActiveSection(): string {
 /**
  * Sticky on every width. Laptop and tablet: three links in the middle (the one in view underlined), HR / EN,
  * WhatsApp and phone icons and "Rezerviraj termin". Phone: the logo, HR / EN and the two icons, and under them
- * a strip of four pill links; booking is in the bottom bar.
+ * the same three links as pills; booking is in the bottom bar.
  */
 export function Header() {
   const t = useTranslations("v2");
@@ -84,7 +82,7 @@ export function Header() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/logos/logo-full-dark.svg" alt={t("logoAlt")} />
         <nav aria-label={t("nav.menu")}>
-          {LAPTOP.map((s) => (
+          {SECTIONS.map((s) => (
             <a key={s.id} href={`#${s.id}`} {...current(s.id)}>
               {t(`nav.${s.key}`)}
             </a>
