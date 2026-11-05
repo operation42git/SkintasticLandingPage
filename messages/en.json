@@ -286,7 +286,7 @@
     "count": "[COUNT]",
     "countLabel": "{count} reviews on Google",
     "google": "All reviews on Google ↗",
-    "googleUrl": "[GOOGLE URL]",
+    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA",
     "instagram": "Follow us on Instagram ↗",
     "instagramShort": "Instagram ↗",
     "items": [
@@ -410,12 +410,13 @@
       "new": "New"
     },
     "nav": {
-      "treatments": "Treatments and prices",
+      "treatments": "Treatments & prices",
       "locations": "Locations",
       "faq": "Questions",
       "menu": "Main menu",
       "whatsapp": "WhatsApp message",
       "whatsappTitle": "WhatsApp {phone}",
+      "contact": "Contact",
       "language": "Language"
     },
     "book": "Book an appointment →",

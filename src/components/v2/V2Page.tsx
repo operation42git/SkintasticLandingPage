@@ -43,12 +43,12 @@ export function V2Page({ search }: { search: string }) {
         <Hero />
         <Treatments />
         <Offers offers={offers} />
+        <Locations />
         <Steps />
         <Review />
         <Why />
         <Technology />
         <About />
-        <Locations />
         <Faq />
         <Contact />
       </main>

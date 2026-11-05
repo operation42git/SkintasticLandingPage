@@ -286,7 +286,7 @@
     "count": "[BROJ]",
     "countLabel": "{count} recenzija na Googleu",
     "google": "Sve recenzije na Googleu ↗",
-    "googleUrl": "[URL GOOGLE]",
+    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA",
     "instagram": "Prati nas na Instagramu ↗",
     "instagramShort": "Instagram ↗",
     "items": [
@@ -416,6 +416,7 @@
       "menu": "Glavni izbornik",
       "whatsapp": "WhatsApp poruka",
       "whatsappTitle": "WhatsApp {phone}",
+      "contact": "Kontakt",
       "language": "Jezik"
     },
     "book": "Rezerviraj termin →",

@@ -23,11 +23,15 @@
 /* 1 Header */
 /* Sticky on every width; on the phone the bottom bar carries booking. */
 .v2 .hdw { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: rgba(244, 238, 231, 0.94); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-.v2 [id] { scroll-margin-top: 88px; }
+.v2 [id] { scroll-margin-top: 96px; }
+@media (prefers-reduced-motion: no-preference) { html:has(.v2) { scroll-behavior: smooth; } }
 .v2 .hd { display: flex; align-items: center; gap: 36px; padding-block: 22px; }
 .v2 .hd img { height: 34px; width: auto; }
 .v2 .hd nav { display: flex; gap: 30px; font-size: 14px; margin: 0 auto; }
-.v2 .hd nav a { text-decoration: none; }
+.v2 .hd nav a { color: var(--v2-ink); text-decoration: none; padding-bottom: 3px; border-bottom: 1.5px solid transparent; }
+.v2 .hd nav a:hover, .v2 .hd nav a[aria-current="true"] { border-color: var(--v2-ink); }
+/* The phone strip of pill links, under the logo (shown below 900 px). */
+.v2 .sc { display: none; }
 .v2 .hd .btn { padding: 11px 20px; font-size: 13.5px; }
 .v2 .hq { display: flex; align-items: center; gap: 8px; }
 .v2 .qi { width: 42px; height: 42px; border: 1px solid var(--v2-stone); border-radius: 50%; display: grid; place-items: center; color: var(--v2-ink); background: rgba(255, 255, 255, 0.4); }
@@ -224,7 +228,11 @@
 @media (max-width: 900px) {
   .v2 .hd nav, .v2 .hd .btn { display: none; }
   .v2 .hd { justify-content: space-between; }
-  .v2 [id] { scroll-margin-top: 76px; }
+  .v2 [id] { scroll-margin-top: 118px; }
+  .v2 .sc { display: flex; gap: 5px; overflow-x: auto; scrollbar-width: none; padding: 0 24px 10px; }
+  .v2 .sc::-webkit-scrollbar { display: none; }
+  .v2 .sc a { flex: none; font-size: 13.5px; line-height: 1.2; padding: 7px 11px; border: 1px solid var(--v2-stone); border-radius: 999px; color: var(--v2-ink); text-decoration: none; white-space: nowrap; }
+  .v2 .sc a[aria-current="true"] { background: var(--v2-ink); border-color: var(--v2-ink); color: var(--v2-linen); }
   .v2 .hd img { height: 28px; }
   .v2 .qi { width: 40px; height: 40px; }
   .v2 .hero { grid-template-columns: 1fr; min-height: 0; }
@@ -260,7 +268,19 @@
   .v2 .ap { min-height: 0; height: 200px; }
   .v2 .ap img { object-position: center 15%; }
   .v2 .at { padding: 40px 24px; }
-  .v2 .lg { grid-template-columns: 1fr; gap: 40px; }
+  .v2 .lg { grid-template-columns: 1fr; gap: 0; }
+  /* One row per studio: a 96 px square photo, the texts beside it, thin rules between rows. */
+  .v2 .lg article { display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; row-gap: 2px; align-content: start; padding: 14px 0; border-top: 1px solid var(--v2-stone); }
+  .v2 .lg article > :not(.lp) { grid-column: 2; }
+  .v2 .lg .lp { grid-row: 1 / span 5; aspect-ratio: 1 / 1; width: 96px; border-radius: 8px; align-self: start; }
+  .v2 .lg h3 { font-size: 21px; margin-top: 0; }
+  .v2 .lg p { font-size: 14px; }
+  .v2 .lg .ll { gap: 2px 18px; margin-top: 2px; }
+  /* Top of the photo, slightly enlarged: Zapad's photo ends in a dark band that a square crop would show. */
+  .v2 .lg .lp img { object-position: center top !important; transform: scale(1.2); transform-origin: center top; }
+  .v2 .lg .soon { grid-template-columns: 1fr; }
+  .v2 .lg .soon .lp { display: none; }
+  .v2 .lg .soon > :not(.lp) { grid-column: 1; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }
   .v2 .fg { padding-block: 56px; gap: 24px; }
   .v2 .fgr { grid-template-columns: 1fr 1fr; }
