@@ -139,11 +139,13 @@
 .v2 .tech img { width: 100%; height: auto; }
 
 /* 9 O nama */
-.v2 .about { display: grid; grid-template-columns: 0.8fr 1.2fr; background: var(--v2-linen); }
-.v2 .ap { position: relative; overflow: hidden; min-height: 480px; background: #e2d6c9; }
-.v2 .ap img { object-fit: cover; object-position: center; }
-.v2 .at { padding: 64px max(24px, 6vw); display: flex; flex-direction: column; justify-content: center; gap: 18px; }
-.v2 .at p { margin: 0; max-width: 440px; color: var(--v2-dusk); }
+/* A linen band; photo and text inside the column (Ivan, 2026-11-05). */
+.v2 .about { background: var(--v2-linen); }
+.v2 .ab { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; padding-block: 72px; }
+.v2 .ap { position: relative; overflow: hidden; min-height: 380px; border-radius: 10px; background: #e2d6c9; }
+.v2 .ap img { object-fit: cover; object-position: center 20%; }
+.v2 .at { display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.v2 .at p { margin: 0; max-width: 620px; color: var(--v2-dusk); }
 .v2 .certs { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
 .v2 .cl2 { display: flex; gap: 22px; align-items: center; }
 .v2 .cl2 img { height: 46px; width: auto; }
@@ -253,7 +255,7 @@
   .v2 .opc .ar { width: 38px; height: 38px; }
   .v2 .st3 { gap: 22px; padding-block: 40px; }
   .v2 .s3c::after { display: none; }
-  .v2 .why, .v2 .tg, .v2 .about, .v2 .fg { grid-template-columns: 1fr; }
+  .v2 .why, .v2 .tg, .v2 .ab, .v2 .fg { grid-template-columns: 1fr; }
   .v2 .rvw, .v2 .rvg { grid-template-columns: 1fr; }
   .v2 .rvw { gap: 24px; padding-block: 44px; }
   .v2 .rvg { gap: 26px; }
@@ -262,9 +264,8 @@
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
   .v2 .tech img { display: none; }
-  .v2 .ap { min-height: 0; height: 200px; }
-  .v2 .ap img { object-position: center 15%; }
-  .v2 .at { padding: 40px 24px; }
+  .v2 .ab { gap: 24px; padding-block: 48px; }
+  .v2 .ap { min-height: 0; height: 220px; }
   .v2 .lg { grid-template-columns: 1fr; gap: 0; }
   /* One row per studio: a 96 px square photo, the texts beside it, thin rules between rows. */
   .v2 .lg article { display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; row-gap: 2px; align-content: start; padding: 14px 0; border-top: 1px solid var(--v2-stone); }
@@ -319,7 +320,7 @@ body:has(.v2-switch) > button.fixed { display: none; }
   .v2 .tp2, .v2 .st3, .v2 .why, .v2 .tg, .v2 .loc, .v2 .fg, .v2 .rvw, .v2 .contact { padding-block: 32px; }
   .v2 .otx { padding-block: 8px 16px; }
   .v2 .orows { padding-bottom: 20px; }
-  .v2 .about .at { padding-block: 32px; }
+  .v2 .about .ab { padding-block: 32px; }
 }
 
 /* Phone type scale (Ivan, 2026-11-05): smaller display sizes so a section fits on a screen; labels, buttons and links unchanged. */
