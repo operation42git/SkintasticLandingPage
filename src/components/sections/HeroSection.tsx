@@ -12,7 +12,7 @@ const VIDEOS = ["/images/hero/hero-video-1.mp4", "/images/hero/hero-video-3.mp4"
 const POSTER = "/images/hero/hero-video-1-poster.jpg";
 
 function offerText(offer: HeroOffer, locale: string) {
-  return locale === "en" ? offer.texts.en : offer.texts.hr;
+  return offer.texts[locale as keyof HeroOffer["texts"]] ?? offer.texts.hr;
 }
 
 function shortCentreNames(locale: string, joinWord: string) {

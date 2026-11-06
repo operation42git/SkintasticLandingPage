@@ -9,7 +9,7 @@ export type Location = {
   /** Street address, or the teaser's area. */
   address: string;
   /** Opening hours per language; empty shows nothing. */
-  hours: { hr: string; en: string };
+  hours: { hr: string; en: string; de?: string };
   parking: string;
   /** Teaser only. Empty means the badge is "Uskoro" on its own. */
   openingLabel: string;
@@ -25,7 +25,7 @@ export const locations: Location[] = [
     slug: "zagreb-zapad",
     name: "Skintastic Zapad",
     address: "Ul. Drage Gervaisa 1, 10000 Zagreb",
-    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed" },
+    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
     parking: "[PARKIRANJE]",
     openingLabel: "",
     url: "",
@@ -38,7 +38,7 @@ export const locations: Location[] = [
     slug: "zagreb-istok",
     name: "Skintastic Istok",
     address: "Avenija Dubrava 47, 10040 Zagreb",
-    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed" },
+    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
     parking: "[PARKIRANJE]",
     openingLabel: "",
     url: "",
