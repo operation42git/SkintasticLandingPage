@@ -1,8 +1,8 @@
 /**
- * The discreet switch between the current design and the new one (landing-redesign).
- * Everyone sees the current design. `?dizajn=novo` turns the new one on and makes this browser a tester:
- * both headers then show a button that flips between the designs (Ivan, 2026-11-06). `?dizajn=sada`
- * turns the new design off and ends testing, so the button goes away. Both are kept in localStorage.
+ * The discreet switch between the new design and the previous one (landing-redesign).
+ * Everyone sees the new design (Ivan, 2026-11-06: the default). `?dizajn=sada` or `?dizajn=novo` makes this
+ * browser a tester and shows that design: both headers then show a button that flips between the designs.
+ * The previous design is remembered in localStorage ("sada"); the new one is the absence of a choice.
  */
 export type Design = "sada" | "novo";
 
@@ -15,11 +15,12 @@ export const DESIGN_EVENT = "skt-design";
 export function isDesignTester(): boolean {
   // The link decides first: the header renders before DesignRoot stores what the link asked for.
   const asked = new URLSearchParams(window.location.search).get(DESIGN_PARAM);
-  if (asked === "novo" || asked === "sada") return asked === "novo";
+  if (asked === "novo" || asked === "sada") return true;
   try {
-    // A browser that already had the new design on before the flag existed counts as a tester too.
+    // A browser that had the new design on (the old opt-in) or chose the previous one counts as a tester too.
     const storage = window.localStorage;
-    return storage.getItem(DESIGN_TESTER_KEY) === "1" || storage.getItem(DESIGN_STORAGE_KEY) === "novo";
+    const stored = storage.getItem(DESIGN_STORAGE_KEY);
+    return storage.getItem(DESIGN_TESTER_KEY) === "1" || stored === "novo" || stored === "sada";
   } catch {
     return false;
   }
@@ -49,18 +50,18 @@ export function chooseDesign(design: Design): void {
 
 function readStored(): Design {
   try {
-    return window.localStorage.getItem(DESIGN_STORAGE_KEY) === "novo" ? "novo" : "sada";
+    return window.localStorage.getItem(DESIGN_STORAGE_KEY) === "sada" ? "sada" : "novo";
   } catch {
-    return "sada";
+    return "novo";
   }
 }
 
 export function rememberDesign(design: Design): void {
   try {
-    if (design === "novo") window.localStorage.setItem(DESIGN_STORAGE_KEY, "novo");
+    if (design === "sada") window.localStorage.setItem(DESIGN_STORAGE_KEY, "sada");
     else window.localStorage.removeItem(DESIGN_STORAGE_KEY);
   } catch {
-    // Storage blocked: the current design shows, nothing to remember.
+    // Storage blocked: the new design shows, nothing to remember.
   }
 }
 
@@ -69,8 +70,8 @@ export function designFromPage(search: string): Design {
   const asked = new URLSearchParams(search).get(DESIGN_PARAM);
   if (asked === "novo" || asked === "sada") {
     rememberDesign(asked);
-    setTester(asked === "novo");
-    return asked === "novo" && readStored() === "novo" ? "novo" : "sada";
+    setTester(true);
+    return asked === "sada" && readStored() === "sada" ? "sada" : "novo";
   }
   return readStored();
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { FAQ_GROUPS_V2 } from "@/config/design";
 
@@ -28,8 +28,10 @@ export function Faq() {
   const t = useTranslations("v2.faq");
   const faq = useTranslations("faq");
   const items = faq.raw("items") as FaqEntry[];
-  // The first question starts open on the laptop only; on the phone all start closed. (v2 renders in the browser.)
-  const [firstOpen] = useState(() => window.matchMedia("(min-width: 901px)").matches);
+  // The first question opens on the laptop only; on the phone all start closed. The server renders all closed,
+  // and the width is read once the page is in the browser.
+  const [firstOpen, setFirstOpen] = useState(false);
+  useEffect(() => setFirstOpen(window.matchMedia("(min-width: 901px)").matches), []);
   return (
     <section className="faq" id="v2-pitanja">
       <div className="wrap fg">
