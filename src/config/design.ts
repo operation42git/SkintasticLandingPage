@@ -1,39 +1,15 @@
 /**
- * The discreet switch between the new design and the previous one (landing-redesign).
- * Everyone sees the new design (Ivan, 2026-11-06: the default). `?dizajn=sada` or `?dizajn=novo` makes this
- * browser a tester and shows that design: both headers then show a button that flips between the designs.
+ * The switch between the new design and the previous one (landing-redesign).
+ * Everyone sees the new design (Ivan, 2026-11-06: the default) and, on staging, a button in both headers that
+ * flips to the other design. `?dizajn=sada` / `?dizajn=novo` open a design directly.
  * The previous design is remembered in localStorage ("sada"); the new one is the absence of a choice.
  */
 export type Design = "sada" | "novo";
 
 export const DESIGN_STORAGE_KEY = "skt_design";
-export const DESIGN_TESTER_KEY = "skt_design_tester";
 export const DESIGN_PARAM = "dizajn";
 /** Window event the header buttons send; DesignRoot listens and swaps the page. */
 export const DESIGN_EVENT = "skt-design";
-
-export function isDesignTester(): boolean {
-  // The link decides first: the header renders before DesignRoot stores what the link asked for.
-  const asked = new URLSearchParams(window.location.search).get(DESIGN_PARAM);
-  if (asked === "novo" || asked === "sada") return true;
-  try {
-    // A browser that had the new design on (the old opt-in) or chose the previous one counts as a tester too.
-    const storage = window.localStorage;
-    const stored = storage.getItem(DESIGN_STORAGE_KEY);
-    return storage.getItem(DESIGN_TESTER_KEY) === "1" || stored === "novo" || stored === "sada";
-  } catch {
-    return false;
-  }
-}
-
-function setTester(on: boolean): void {
-  try {
-    if (on) window.localStorage.setItem(DESIGN_TESTER_KEY, "1");
-    else window.localStorage.removeItem(DESIGN_TESTER_KEY);
-  } catch {
-    // Storage blocked: no button, the URL parameter still works.
-  }
-}
 
 /** The header button: remember the design, tell DesignRoot, start at the top of the page. */
 export function chooseDesign(design: Design): void {
@@ -70,7 +46,6 @@ export function designFromPage(search: string): Design {
   const asked = new URLSearchParams(search).get(DESIGN_PARAM);
   if (asked === "novo" || asked === "sada") {
     rememberDesign(asked);
-    setTester(true);
     return asked === "sada" && readStored() === "sada" ? "sada" : "novo";
   }
   return readStored();

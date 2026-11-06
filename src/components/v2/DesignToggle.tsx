@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { chooseDesign, isDesignTester, type Design } from "@/config/design";
+import { chooseDesign, type Design } from "@/config/design";
 
 /** Two panels side by side: "another layout". */
 export function LayoutIcon({ size = 18 }: { size?: number }) {
@@ -15,15 +14,11 @@ export function LayoutIcon({ size = 18 }: { size?: number }) {
 }
 
 /**
- * The header button that flips between the current and the new design, in both headers. It shows only in a
- * browser that opened a ?dizajn=novo link (a tester), never to ordinary visitors; ?dizajn=sada ends testing.
- * Rendered after mount, because the tester flag is in localStorage.
+ * The header button that flips between the new and the previous design, in both headers, for every visitor
+ * (Ivan, 2026-11-06: the landing is on staging, so the switch is always visible).
  */
 export function DesignToggle({ to, className }: { to: Design; className?: string }) {
   const t = useTranslations("v2.switch");
-  const [tester, setTester] = useState(false);
-  useEffect(() => setTester(isDesignTester()), []);
-  if (!tester) return null;
   const label = t(to === "novo" ? "toNew" : "toCurrent");
   return (
     <button type="button" className={className} aria-label={label} title={label} onClick={() => chooseDesign(to)}>

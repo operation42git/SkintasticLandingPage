@@ -54,7 +54,7 @@ For switch users the current design shows briefly before the new one replaces it
 | default | the **new** design, for everyone; the server-rendered HTML is the new design (so search engines and the first paint see it) |
 | the previous design | `?dizajn=sada`, or the header's design button; stores `skt_design=sada`. The previous page is loaded in the browser only then (ordinary visitors download none of it); a tester on "Sada" sees the new design for a moment first |
 | back to the new design | `?dizajn=novo` or the design button; removes `skt_design` |
-| the switch | the round design button in both headers (row 1), shown only to testers: a browser that opened a `?dizajn=` link, or had the earlier opt-in. No floating pill |
+| the switch | the round design button in both headers (row 1), **visible to every visitor** (Ivan, 2026-11-06: the landing is on staging). No floating pill |
 | SEO | no new route; metadata unchanged |
 
 ## Colours and type (new tokens, prefixed `v2`)
