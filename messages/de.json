@@ -423,21 +423,21 @@
       "label": "Laser-Haarentfernung · Zagreb",
       "title": "Glatte Haut.",
       "titleItalic": "Dauerhaft.",
-      "service": "Professionelle Laser-Haarentfernung für Frauen und Männer mit dem Mediostar Diodenlaser.",
+      "service": "Den Unterschied siehst du schon nach der ersten Behandlung. Jede weitere bringt dich näher zu Haut ohne Rasieren.",
       "videoAlt": "Video einer Laserbehandlung im Studio",
       "facts": [
-        "Mediostar Diodenlaser",
+        "Für Frauen und Männer",
         "Fachkundige Betreuung",
-        "Für Frauen und Männer"
+        "Premium-Technologie aus Deutschland"
       ]
     },
     "heroOffer": {
       "pazusi": {
-        "label": "Sonderangebot · Achseln",
+        "label": "Überzeug dich selbst · erste Behandlung · Achseln",
         "price": "19,90 €",
         "oldPrice": "49,99 €",
-        "note": "Starte deine Behandlungen zum Sonderpreis, der bis zum Ende des Zyklus gilt.",
-        "cta": "Angebot nutzen →",
+        "note": "Der schnellste Weg, den Unterschied zu spüren. Den Preis behältst du bis zum Ende des Zyklus.",
+        "cta": "Erste Behandlung buchen →",
         "until": "Angebot bis 31.12."
       }
     },
@@ -467,7 +467,7 @@
       "label": "Günstigere Termine",
       "title": "Hol dir einen",
       "titleItalic": "besseren Preis",
-      "text": "Sonderpreise für ausgewählte Behandlungen zu ruhigeren Zeiten.",
+      "text": "Derselbe Laser, dasselbe Team, dieselbe Qualität. Ein Sonderpreis, wenn dir ein ruhigerer Termin passt.",
       "upTo": "bis zu −{percent} %",
       "upToOne": "Bis zu −{percent} %",
       "until": "bis {date}",
@@ -478,10 +478,56 @@
     },
     "review": {
       "label": "Bewertungen",
-      "title": "Das sagen unsere Kundinnen und Kunden"
+      "title": "Das sagen unsere Kundinnen und Kunden",
+      "google": "Alle Bewertungen auf Google ★★★★★ ↗",
+      "items": [
+        {
+          "title": "Ergebnis ab der ersten Behandlung",
+          "text": "Das Team ist superfreundlich, und die Ergebnisse waren schon nach der ersten Behandlung sichtbar! Wir sehen uns sicher wieder!",
+          "author": "Laura B."
+        },
+        {
+          "title": "Team und Räume",
+          "text": "Die Räume sind wirklich schön eingerichtet, angenehm und sauber, und das Team ist außergewöhnlich freundlich und professionell.",
+          "author": "Mihael B."
+        },
+        {
+          "title": "Nach anderen Studios",
+          "text": "Ich hatte schlechte Erfahrungen mit Lasern, aber für Skintastic nur Lob!!! Angenehme Atmosphäre und Professionalität auf hohem Niveau!",
+          "author": "Ira K."
+        },
+        {
+          "title": "Schmerzfrei",
+          "text": "Professionelles Team, alles ist tadellos ordentlich und sauber. Die schmerzfreie Behandlung hat mir den Tag verschönert! Und das Ergebnis ist fantastisch.",
+          "author": "Sanja D."
+        }
+      ]
     },
     "why": {
-      "title": "Warum Skintastic?"
+      "title": "Warum Skintastic?",
+      "lead": "<b>Bei Skintastic dreht sich alles um deine Haut.</b> Wir sind ausschließlich auf Laser-Haarentfernung spezialisiert, mit demselben Standard in allen Skintastic Studios in Kroatien, Österreich und Deutschland.",
+      "imageAlt": "Eine Frau sitzt in der Sonne",
+      "staff": {
+        "label": "Geschultes Team",
+        "title": "Ein Laser ist nur so gut wie die Hände, die ihn führen.",
+        "text": "Deshalb führen bei uns ausschließlich zertifizierte Fachkräfte die Behandlungen durch, geschult im Skintastic Netzwerk. Unsere Kundinnen und Kunden merken das und heben es gern in ihren Bewertungen hervor."
+      },
+      "points": {
+        "laser": {
+          "title": "Medizinisch zertifizierter Laser",
+          "text": "Mediostar Monolith, Made in Germany.",
+          "link": "Mehr zum Laser ↓"
+        },
+        "studio": {
+          "title": "Zertifiziertes Studio",
+          "text": "[Name des Siegels]: ein Siegel, das nur zertifizierte Studios erhalten."
+        },
+        "noPackages": {
+          "title": "Ohne Pakete und Verpflichtung",
+          "text": "Kostenlose Beratung und ein Behandlungsplan. Du zahlst pro Behandlung."
+        }
+      },
+      "certs": "Zertifikate der Marke Skintastic · Qualität steht an erster Stelle"
     },
     "tech": {
       "label": "Technologie",
@@ -506,12 +552,6 @@
         }
       ],
       "imageAlt": "Mediostar Monolith Handstücke"
-    },
-    "about": {
-      "title": "Über uns",
-      "p2": "Unser Ziel sind Top-Ergebnisse zum fairen Preis. Deshalb arbeiten wir mit High-End-Technologie und Fachpersonal, das sein Handwerk bestens beherrscht.",
-      "certs": "Zertifikate der Marke Skintastic · Qualität steht an erster Stelle",
-      "imageAlt": "Eine Frau sitzt in der Sonne"
     },
     "locations": {
       "title": "Unsere Standorte",

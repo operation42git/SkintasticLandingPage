@@ -142,10 +142,19 @@
 
 /* 7 Zašto Skintastic */
 .v2 .why { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 72px; }
-.v2 .wh { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
-.v2 .wg { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 48px; }
-.v2 .wg b { font-family: var(--disp); font-weight: 400; font-size: 26px; display: block; margin-bottom: 6px; }
+/* Zašto Skintastic? with O nama merged in (Ivan, 2026-11-06): left the heading, a short paragraph and the photo;
+   right the staff block first (no box, a thin rule under it), three points, the certificates. */
+.v2 .wh { display: flex; flex-direction: column; gap: 14px; }
+.v2 .wh .wl { margin: 0; color: var(--v2-dusk); max-width: 420px; }
+.v2 .wh .ap { margin-top: 10px; }
+.v2 .wr { display: flex; flex-direction: column; gap: 32px; }
+.v2 .staff { display: flex; flex-direction: column; gap: 12px; padding-bottom: 30px; border-bottom: 1px solid var(--v2-stone); }
+.v2 .staff h3 { font-size: clamp(32px, 3vw, 42px); line-height: 1.1; max-width: 640px; }
+.v2 .staff p { margin: 0; max-width: 620px; font-size: 16.5px; color: var(--v2-dusk); }
+.v2 .wg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 36px; }
+.v2 .wg b { font-family: var(--disp); font-weight: 400; font-size: 23px; line-height: 1.2; display: block; margin-bottom: 8px; }
 .v2 .wg p { margin: 0; color: var(--v2-taupe); font-size: 15px; }
+.v2 .wlk { color: var(--v2-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; white-space: nowrap; }
 
 /* 8 Tehnologija */
 .v2 .tech { background: var(--v2-sand); border-top: 1px solid var(--v2-stone); }
@@ -158,14 +167,9 @@
 .v2 .tech img { width: 100%; height: auto; }
 
 /* 9 O nama */
-/* A linen band; photo and text inside the column (Ivan, 2026-11-05). */
-.v2 .about { background: var(--v2-linen); }
-.v2 .ab { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; padding-block: 72px; }
 .v2 .ap { position: relative; overflow: hidden; min-height: 380px; border-radius: 10px; background: #e2d6c9; }
 .v2 .ap img { object-fit: cover; object-position: center 20%; }
-.v2 .at { display: flex; flex-direction: column; justify-content: center; gap: 18px; }
-.v2 .at p { margin: 0; max-width: 620px; color: var(--v2-dusk); }
-.v2 .certs { margin-top: 8px; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
+.v2 .certs { padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; flex-direction: column; gap: 12px; }
 .v2 .cl2 { display: flex; gap: 22px; align-items: center; }
 .v2 .cl2 img { height: 46px; width: auto; }
 
@@ -269,7 +273,7 @@
   .v2 .opc .ar { width: 38px; height: 38px; }
   .v2 .st3 { gap: 22px; padding-block: 40px; }
   .v2 .s3c::after { display: none; }
-  .v2 .why, .v2 .tg, .v2 .ab, .v2 .fg { grid-template-columns: 1fr; }
+  .v2 .why, .v2 .tg, .v2 .fg { grid-template-columns: 1fr; }
   .v2 .rvw, .v2 .rvg { grid-template-columns: 1fr; }
   .v2 .rvw { gap: 24px; padding-block: 44px; }
   .v2 .rvg { gap: 26px; }
@@ -278,8 +282,11 @@
   .v2 .why { padding-block: 48px; gap: 24px; }
   .v2 .tech dl { grid-template-columns: 1fr 1fr; }
   .v2 .tech img { display: none; }
-  .v2 .ab { gap: 24px; padding-block: 48px; }
   .v2 .ap { min-height: 0; height: 220px; }
+  .v2 .wr { gap: 24px; }
+  .v2 .staff { padding-bottom: 22px; }
+  .v2 .staff h3 { font-size: 26px; }
+  .v2 .staff p { font-size: 15.5px; }
   .v2 .lg { grid-template-columns: 1fr; gap: 0; }
   /* One row per studio: a 96 px square photo, the texts beside it, thin rules between rows. */
   .v2 .lg article { display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; row-gap: 2px; align-content: start; padding: 14px 0; border-top: 1px solid var(--v2-stone); }
@@ -334,7 +341,6 @@ body:has(.v2) > button.fixed { display: none; }
   .v2 .tp2, .v2 .st3, .v2 .why, .v2 .tg, .v2 .loc, .v2 .fg, .v2 .rvw, .v2 .contact { padding-block: 32px; }
   .v2 .otx { padding-block: 8px 16px; }
   .v2 .orows { padding-bottom: 20px; }
-  .v2 .about .ab { padding-block: 32px; }
 }
 
 /* Phone type scale (Ivan, 2026-11-05): smaller display sizes so a section fits on a screen; labels, buttons and links unchanged. */
