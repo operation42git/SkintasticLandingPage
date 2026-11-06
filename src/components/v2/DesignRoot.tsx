@@ -2,8 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-import { designFromPage, rememberDesign, type Design } from "@/config/design";
-import { DesignSwitch } from "./DesignSwitch";
+import { DESIGN_EVENT, designFromPage, type Design } from "@/config/design";
 
 // Loaded only when this browser asks for the new design: ordinary visitors download none of its code,
 // styles or fonts.
@@ -20,19 +19,12 @@ export function DesignRoot({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setSearch(window.location.search);
     setDesign(designFromPage(window.location.search));
+    // The design button in either header (DesignToggle) sends the new choice.
+    const onChoose = (event: Event) => setDesign((event as CustomEvent<Design>).detail);
+    window.addEventListener(DESIGN_EVENT, onChoose);
+    return () => window.removeEventListener(DESIGN_EVENT, onChoose);
   }, []);
 
-  function choose(next: Design) {
-    rememberDesign(next);
-    setDesign(next);
-    if (next === "sada") window.scrollTo(0, 0);
-  }
-
   if (design !== "novo") return <>{children}</>;
-  return (
-    <>
-      <V2Page search={search} />
-      <DesignSwitch design={design} onChange={choose} />
-    </>
-  );
+  return <V2Page search={search} />;
 }

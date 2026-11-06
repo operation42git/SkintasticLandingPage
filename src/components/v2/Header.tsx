@@ -6,6 +6,7 @@ import { contact } from "@/config/contact";
 import { BookButton } from "@/components/ui/BookButton";
 import { ChatIcon, PhoneIcon } from "./icons";
 import { LanguageSwitch } from "./LanguageSwitch";
+import { DesignToggle } from "./DesignToggle";
 
 /** The anchored sections in page order: the laptop links and the phone strip show the same three. */
 const SECTIONS = [
@@ -90,6 +91,7 @@ export function Header() {
         </nav>
         <div className="hq">
           <LanguageSwitch />
+          <DesignToggle to="sada" className="qi" />
           <a
             className="qi"
             href={contact.whatsappHref}
