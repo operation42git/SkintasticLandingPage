@@ -3,17 +3,17 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { DESIGN_EVENT, designFromPage, type Design } from "@/config/design";
+import { V2Page } from "./V2Page";
 
-// Loaded only when this browser asks for the new design: ordinary visitors download none of its code,
-// styles or fonts.
-const V2Page = dynamic(() => import("./V2Page").then((module) => module.V2Page), { ssr: false });
+// The previous design is loaded only when a tester asks for it: ordinary visitors download none of it.
+const OldPage = dynamic(() => import("@/components/OldPage").then((module) => module.OldPage), { ssr: false });
 
 /**
- * Renders the current page (server-rendered, passed in as children) unless this browser asked for the
- * new design. The choice is read after load, so switch users see the current design for a moment first.
+ * Renders the new design (server-rendered, so search engines and first paint see it) unless this browser asked
+ * for the previous one. The choice is read after load, so a tester on "Sada" sees the new design for a moment.
  */
-export function DesignRoot({ children }: { children: React.ReactNode }) {
-  const [design, setDesign] = useState<Design>("sada");
+export function DesignRoot() {
+  const [design, setDesign] = useState<Design>("novo");
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -25,6 +25,6 @@ export function DesignRoot({ children }: { children: React.ReactNode }) {
     return () => window.removeEventListener(DESIGN_EVENT, onChoose);
   }, []);
 
-  if (design !== "novo") return <>{children}</>;
+  if (design === "sada") return <OldPage />;
   return <V2Page search={search} />;
 }

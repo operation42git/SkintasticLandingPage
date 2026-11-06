@@ -1,15 +1,3 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { HeroSection } from "@/components/sections/HeroSection";
-import { OffersSection } from "@/components/sections/OffersSection";
-import { OffPeakSection } from "@/components/sections/OffPeakSection";
-import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { WhySection } from "@/components/sections/WhySection";
-import { ReviewsSection } from "@/components/sections/ReviewsSection";
-import { LocationsSection } from "@/components/sections/LocationsSection";
-import { FaqSection } from "@/components/sections/FaqSection";
-import { ContactSection } from "@/components/sections/ContactSection";
-import { GoetheQuoteSection } from "@/components/sections/GoetheQuoteSection";
 import { DesignRoot } from "@/components/v2/DesignRoot";
 import { setRequestLocale } from "next-intl/server";
 
@@ -21,24 +9,7 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  // The current design is what the server sends; DesignRoot swaps in the new one in the browser
-  // only for someone who asked for it (?dizajn=novo).
-  return (
-    <DesignRoot>
-      <Header />
-      <main className="max-w-full overflow-x-clip">
-        <HeroSection />
-        <OffersSection />
-        <OffPeakSection />
-        <HowItWorksSection />
-        <WhySection />
-        <ReviewsSection />
-        <LocationsSection />
-        <FaqSection />
-        <ContactSection />
-        <GoetheQuoteSection />
-      </main>
-      <Footer />
-    </DesignRoot>
-  );
+  // The new design is what the server sends (Ivan, 2026-11-06); DesignRoot swaps in the previous one in the
+  // browser only for a tester who asked for it (?dizajn=sada or the header's design button).
+  return <DesignRoot />;
 }
