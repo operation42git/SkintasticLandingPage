@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { ABOUT_IMAGE_V2 } from "@/config/design";
 
 /** The three smaller points under the staff block; the laser one links to Tehnologija. */
-const POINTS = ["laser", "studio", "noPackages"] as const;
+const POINTS = ["laser", "approved", "noPackages"] as const;
 
 /**
  * Zašto Skintastic? (landing-redesign rows 8 and 9 merged; Ivan, 2026-11-06). Left: label, heading, one short

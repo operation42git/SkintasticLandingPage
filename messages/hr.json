@@ -518,9 +518,9 @@
           "text": "Mediostar Monolith, Made in Germany.",
           "link": "Više o laseru ↓"
         },
-        "studio": {
-          "title": "Certificiran studio",
-          "text": "[naziv oznake]: oznaka koju dobivaju samo certificirani studiji."
+        "approved": {
+          "title": "Odobren od Ministarstva zdravstva",
+          "text": "Naši laseri ispitani su u ovlaštenom laboratoriju i odobreni rješenjem Ministarstva zdravstva, u svakom našem studiju."
         },
         "noPackages": {
           "title": "Bez paketa i obveza",

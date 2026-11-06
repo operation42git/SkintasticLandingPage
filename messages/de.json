@@ -518,9 +518,9 @@
           "text": "Mediostar Monolith, Made in Germany.",
           "link": "Mehr zum Laser ↓"
         },
-        "studio": {
-          "title": "Zertifiziertes Studio",
-          "text": "[Name des Siegels]: ein Siegel, das nur zertifizierte Studios erhalten."
+        "approved": {
+          "title": "Vom Gesundheitsministerium genehmigt",
+          "text": "Unsere Laser werden von einem akkreditierten Labor geprüft und per Bescheid des Gesundheitsministeriums genehmigt, in jedem unserer Studios."
         },
         "noPackages": {
           "title": "Ohne Pakete und Verpflichtung",
