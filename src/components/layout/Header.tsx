@@ -9,6 +9,7 @@ import { BookButton } from "@/components/ui/BookButton";
 import { MAIN_NAV, OverlayMenu } from "./OverlayMenu";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { MobileBookBar } from "./MobileBookBar";
+import { DesignToggle } from "@/components/v2/DesignToggle";
 
 function PhoneIcon({ className }: { className?: string }) {
   return (
@@ -82,6 +83,11 @@ export function Header() {
             <div className="hidden lg:block">
               <LanguageSwitcher />
             </div>
+
+            <DesignToggle
+              to="novo"
+              className="flex h-11 w-11 items-center justify-center rounded-full text-[#0C0C0C] hover:bg-[#f4efe9]"
+            />
 
             <a
               href={contact.phoneHref}

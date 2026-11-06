@@ -405,9 +405,8 @@
   },
   "v2": {
     "switch": {
-      "label": "Dizajn:",
-      "current": "Sada",
-      "new": "Novo"
+      "toNew": "Prikaži novi dizajn",
+      "toCurrent": "Prikaži trenutni dizajn"
     },
     "nav": {
       "treatments": "Tretmani i cijene",

@@ -47,7 +47,10 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    alternates: { canonical: `${SITE_URL}/${locale}/` },
+    alternates: {
+      canonical: `${SITE_URL}/${locale}/`,
+      languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE_URL}/${l}/`])),
+    },
     icons: ICONS,
   };
 }
@@ -112,7 +115,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "hr" | "en")) {
+  if (!(routing.locales as readonly string[]).includes(locale)) {
     notFound();
   }
 

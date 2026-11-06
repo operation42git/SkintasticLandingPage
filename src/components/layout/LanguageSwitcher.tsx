@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 
-const LABELS: Record<string, string> = { hr: "HR", en: "EN" };
+const LABELS: Record<string, string> = { hr: "HR", en: "EN", de: "DE" };
 
 export function LanguageSwitcher({
   className = "",

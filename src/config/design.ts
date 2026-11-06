@@ -1,12 +1,51 @@
 /**
  * The discreet switch between the current design and the new one (landing-redesign).
- * Everyone sees the current design. `?dizajn=novo` turns the new one on and remembers it in
- * localStorage; `?dizajn=sada` or the switch's "Sada" turns it off and forgets it.
+ * Everyone sees the current design. `?dizajn=novo` turns the new one on and makes this browser a tester:
+ * both headers then show a button that flips between the designs (Ivan, 2026-11-06). `?dizajn=sada`
+ * turns the new design off and ends testing, so the button goes away. Both are kept in localStorage.
  */
 export type Design = "sada" | "novo";
 
 export const DESIGN_STORAGE_KEY = "skt_design";
+export const DESIGN_TESTER_KEY = "skt_design_tester";
 export const DESIGN_PARAM = "dizajn";
+/** Window event the header buttons send; DesignRoot listens and swaps the page. */
+export const DESIGN_EVENT = "skt-design";
+
+export function isDesignTester(): boolean {
+  // The link decides first: the header renders before DesignRoot stores what the link asked for.
+  const asked = new URLSearchParams(window.location.search).get(DESIGN_PARAM);
+  if (asked === "novo" || asked === "sada") return asked === "novo";
+  try {
+    // A browser that already had the new design on before the flag existed counts as a tester too.
+    const storage = window.localStorage;
+    return storage.getItem(DESIGN_TESTER_KEY) === "1" || storage.getItem(DESIGN_STORAGE_KEY) === "novo";
+  } catch {
+    return false;
+  }
+}
+
+function setTester(on: boolean): void {
+  try {
+    if (on) window.localStorage.setItem(DESIGN_TESTER_KEY, "1");
+    else window.localStorage.removeItem(DESIGN_TESTER_KEY);
+  } catch {
+    // Storage blocked: no button, the URL parameter still works.
+  }
+}
+
+/** The header button: remember the design, tell DesignRoot, start at the top of the page. */
+export function chooseDesign(design: Design): void {
+  rememberDesign(design);
+  // Drop ?dizajn= from the address, so a reload keeps this choice instead of the link's.
+  const url = new URL(window.location.href);
+  if (url.searchParams.has(DESIGN_PARAM)) {
+    url.searchParams.delete(DESIGN_PARAM);
+    window.history.replaceState(window.history.state, "", url);
+  }
+  window.dispatchEvent(new CustomEvent<Design>(DESIGN_EVENT, { detail: design }));
+  window.scrollTo(0, 0);
+}
 
 function readStored(): Design {
   try {
@@ -30,6 +69,7 @@ export function designFromPage(search: string): Design {
   const asked = new URLSearchParams(search).get(DESIGN_PARAM);
   if (asked === "novo" || asked === "sada") {
     rememberDesign(asked);
+    setTester(asked === "novo");
     return asked === "novo" && readStored() === "novo" ? "novo" : "sada";
   }
   return readStored();

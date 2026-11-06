@@ -13,6 +13,7 @@ export type HeroOffer = {
   texts: {
     hr: HeroOfferText;
     en: HeroOfferText;
+    de?: HeroOfferText;
   };
 };
 
@@ -33,6 +34,12 @@ export const heroOffers: HeroOffer[] = [
         title: "Underarm laser hair removal now 19,90",
         subtitle: "for women and men · Offer valid until 31.12.2026.",
         cta: "Book underarms · 19,90 €",
+      },
+      de: {
+        badge: "Sonderangebot",
+        title: "Laser-Haarentfernung an den Achseln jetzt 19,90",
+        subtitle: "für Frauen und Männer · Angebot gültig bis 31.12.2026.",
+        cta: "Achseln buchen · 19,90 €",
       },
     },
   },

@@ -405,9 +405,8 @@
   },
   "v2": {
     "switch": {
-      "label": "Design:",
-      "current": "Now",
-      "new": "New"
+      "toNew": "Show the new design",
+      "toCurrent": "Show the current design"
     },
     "nav": {
       "treatments": "Treatments & prices",
