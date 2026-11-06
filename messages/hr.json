@@ -510,7 +510,17 @@
       "staff": {
         "label": "Educirano osoblje",
         "title": "Laser je dobar koliko i ruke koje ga vode.",
-        "text": "Zato tretmane kod nas rade samo certificirani stručnjaci, educirani u Skintastic mreži. Naši klijenti to prepoznaju i rado to ističu u svojim recenzijama."
+        "text": "Zato tretmane kod nas rade samo certificirani stručnjaci, educirani u Skintastic mreži. Naši klijenti to prepoznaju i rado to ističu u svojim recenzijama.",
+        "people": {
+          "gabriella": {
+            "name": "Gabriella",
+            "role": "Laser ekspertica"
+          },
+          "savka": {
+            "name": "Savka",
+            "role": "Voditeljica studija"
+          }
+        }
       },
       "points": {
         "laser": {

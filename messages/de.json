@@ -510,7 +510,17 @@
       "staff": {
         "label": "Geschultes Team",
         "title": "Ein Laser ist nur so gut wie die Hände, die ihn führen.",
-        "text": "Deshalb führen bei uns ausschließlich zertifizierte Fachkräfte die Behandlungen durch, geschult im Skintastic Netzwerk. Unsere Kundinnen und Kunden merken das und heben es gern in ihren Bewertungen hervor."
+        "text": "Deshalb führen bei uns ausschließlich zertifizierte Fachkräfte die Behandlungen durch, geschult im Skintastic Netzwerk. Unsere Kundinnen und Kunden merken das und heben es gern in ihren Bewertungen hervor.",
+        "people": {
+          "gabriella": {
+            "name": "Gabriella",
+            "role": "Laser-Expertin"
+          },
+          "savka": {
+            "name": "Savka",
+            "role": "Studioleiterin"
+          }
+        }
       },
       "points": {
         "laser": {

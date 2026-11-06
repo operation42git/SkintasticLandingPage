@@ -510,7 +510,17 @@
       "staff": {
         "label": "Trained staff",
         "title": "A laser is only as good as the hands that guide it.",
-        "text": "That is why our treatments are carried out only by certified specialists, trained in the Skintastic network. Our clients notice it and like to mention it in their reviews."
+        "text": "That is why our treatments are carried out only by certified specialists, trained in the Skintastic network. Our clients notice it and like to mention it in their reviews.",
+        "people": {
+          "gabriella": {
+            "name": "Gabriella",
+            "role": "Laser specialist"
+          },
+          "savka": {
+            "name": "Savka",
+            "role": "Studio manager"
+          }
+        }
       },
       "points": {
         "laser": {

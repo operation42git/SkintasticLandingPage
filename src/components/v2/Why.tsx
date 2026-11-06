@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { ABOUT_IMAGE_V2 } from "@/config/design";
+import { ABOUT_IMAGE_V2, STAFF_V2 } from "@/config/design";
 
 /** The three smaller points under the staff block; the laser one links to Tehnologija. */
 const POINTS = ["laser", "approved", "noPackages"] as const;
@@ -10,7 +10,7 @@ const POINTS = ["laser", "approved", "noPackages"] as const;
 /**
  * Zašto Skintastic? (landing-redesign rows 8 and 9 merged; Ivan, 2026-11-06). Left: label, heading, one short
  * paragraph and the photo. Right: the trained staff first and most prominent (no box), then three points in
- * three columns, then the certificates. A staff row (photo, name, role) comes once Ivan gives them.
+ * three columns, then the certificates. The staff row (photo, name, role) sits under the staff text.
  */
 export function Why() {
   const t = useTranslations("v2.why");
@@ -38,6 +38,21 @@ export function Why() {
             <span className="k ko">{t("staff.label")}</span>
             <h3>{t("staff.title")}</h3>
             <p>{t("staff.text")}</p>
+            <ul className="team">
+              {STAFF_V2.map((person) => {
+                const name = t(`staff.people.${person.key}.name`);
+                const role = t(`staff.people.${person.key}.role`);
+                return (
+                  <li key={person.key}>
+                    <Image src={person.photo} alt={`${name}, ${role}`} width={64} height={64} />
+                    <span>
+                      <b>{name}</b>
+                      <small>{role}</small>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
           <div className="wg">
             {POINTS.map((key) => (
