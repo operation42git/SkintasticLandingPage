@@ -7,7 +7,7 @@ export function Technology() {
   const t = useTranslations("v2.tech");
   const facts = t.raw("facts") as { label: string; value: string }[];
   return (
-    <section className="tech">
+    <section className="tech" id="v2-tehnologija">
       <div className="wrap tg">
         <div>
           <span className="k">{t("label")}</span>

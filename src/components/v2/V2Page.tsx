@@ -13,7 +13,6 @@ import { Steps } from "./Steps";
 import { Review } from "./Review";
 import { Why } from "./Why";
 import { Technology } from "./Technology";
-import { About } from "./About";
 import { Locations } from "./Locations";
 import { Faq } from "./Faq";
 import { Contact } from "./Contact";
@@ -48,7 +47,6 @@ export function V2Page({ search }: { search: string }) {
         <Review />
         <Why />
         <Technology />
-        <About />
         <Faq />
         <Contact />
       </main>

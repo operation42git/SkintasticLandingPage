@@ -3,21 +3,19 @@
 import { useLocale, useTranslations } from "next-intl";
 import { givenLink } from "@/config/contact";
 
-type ReviewItem = { title?: string; text: string; author: string; centre: string };
+type ReviewItem = { title?: string; text: string; author: string };
 
 /**
- * Recenzije: the label and the brand line, then the reviews from `reviews.items` (two columns on the laptop).
- * The Google link, rating and count show only once they are real values, not bracket placeholders.
+ * Recenzije: the label, the heading and one Google link with stars; then the new design's own four real Google
+ * reviews (`v2.review.items`, Ivan, 2026-11-06; the current design keeps `reviews.items`), two columns on the laptop.
  */
 export function Review() {
   const t = useTranslations("v2.review");
   const reviews = useTranslations("reviews");
-  // Croatian „…“, English “…”.
-  const [open, close] = useLocale() === "hr" ? ["\u201E", "\u201C"] : ["\u201C", "\u201D"];
-  const items = reviews.raw("items") as ReviewItem[];
+  // Croatian and German „…“, English “…”.
+  const [open, close] = useLocale() === "en" ? ["\u201C", "\u201D"] : ["\u201E", "\u201C"];
+  const items = t.raw("items") as ReviewItem[];
   const googleUrl = givenLink(reviews("googleUrl"));
-  const rating = givenLink(reviews("rating"));
-  const count = givenLink(reviews("count"));
   if (!items?.length) return null;
 
   return (
@@ -26,14 +24,9 @@ export function Review() {
         <div className="rvh">
           <span className="k">{t("label")}</span>
           <h2>{t("title")}</h2>
-          {rating && count ? (
-            <p className="rvr">
-              <b>{rating}</b> ★★★★★ · {reviews("countLabel", { count })}
-            </p>
-          ) : null}
           {googleUrl ? (
             <a className="lnk" href={googleUrl} target="_blank" rel="noopener noreferrer">
-              {reviews("google")}
+              {t("google")}
             </a>
           ) : null}
         </div>

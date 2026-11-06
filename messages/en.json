@@ -423,21 +423,21 @@
       "label": "Laser hair removal · Zagreb",
       "title": "Smooth skin.",
       "titleItalic": "Long-lasting.",
-      "service": "Professional laser hair removal for women and men with the Mediostar diode laser.",
+      "service": "You see the difference after the very first treatment. Each one after it takes you closer to skin without shaving.",
       "videoAlt": "Video of a laser treatment in the studio",
       "facts": [
-        "Mediostar diode laser",
+        "For women and men",
         "Expert care",
-        "For women and men"
+        "Premium technology from Germany"
       ]
     },
     "heroOffer": {
       "pazusi": {
-        "label": "Special offer · Underarms",
+        "label": "See for yourself · first treatment · Underarms",
         "price": "€19.90",
         "oldPrice": "€49.99",
-        "note": "Start your treatments at a special price that you keep until the cycle is complete.",
-        "cta": "Claim the offer →",
+        "note": "The fastest way to feel the difference. You keep the price until the cycle is complete.",
+        "cta": "Book your first treatment →",
         "until": "Offer until 31 Dec."
       }
     },
@@ -467,7 +467,7 @@
       "label": "Better-priced times",
       "title": "Catch a",
       "titleItalic": "better price",
-      "text": "Special prices on selected treatments at selected times.",
+      "text": "The same laser, the same staff, the same quality. A special price when a quieter time suits you.",
       "upTo": "up to −{percent} %",
       "upToOne": "Up to −{percent} %",
       "until": "until {date}",
@@ -478,10 +478,66 @@
     },
     "review": {
       "label": "Reviews",
-      "title": "What our clients say"
+      "title": "What our clients say",
+      "google": "All reviews on Google ★★★★★ ↗",
+      "items": [
+        {
+          "title": "Results from the first treatment",
+          "text": "The staff are so kind, and the results were visible after the very first treatment! We will definitely see each other again!",
+          "author": "Laura B."
+        },
+        {
+          "title": "Staff and space",
+          "text": "The space is really nicely done, pleasant and clean, and the staff are exceptionally kind and professional.",
+          "author": "Mihael B."
+        },
+        {
+          "title": "After other studios",
+          "text": "I had bad experiences with lasers, but for Skintastic nothing but praise!!! A pleasant atmosphere and true professionalism!",
+          "author": "Ira K."
+        },
+        {
+          "title": "Painless",
+          "text": "Professional staff, everything is impeccably tidy and clean. The painless treatment made my day! And the result is fantastic.",
+          "author": "Sanja D."
+        }
+      ]
     },
     "why": {
-      "title": "Why Skintastic?"
+      "title": "Why Skintastic?",
+      "lead": "<b>At Skintastic, everything revolves around your skin.</b> We specialise only in laser hair removal, with the same standard in every Skintastic studio in Croatia, Austria and Germany.",
+      "imageAlt": "A woman sitting in the sun",
+      "staff": {
+        "label": "Trained staff",
+        "title": "A laser is only as good as the hands that guide it.",
+        "text": "That is why our treatments are carried out only by certified specialists, trained in the Skintastic network. Our clients notice it and like to mention it in their reviews.",
+        "people": {
+          "gabriella": {
+            "name": "Gabriella",
+            "role": "Laser specialist"
+          },
+          "savka": {
+            "name": "Savka",
+            "role": "Studio manager"
+          }
+        }
+      },
+      "points": {
+        "laser": {
+          "title": "Medically certified laser",
+          "text": "Mediostar Monolith, Made in Germany.",
+          "link": "More about the laser ↓"
+        },
+        "approved": {
+          "title": "Approved by the Ministry of Health",
+          "text": "Our lasers are tested by an accredited laboratory and approved by a decision of the Ministry of Health, in every one of our studios."
+        },
+        "noPackages": {
+          "title": "No packages, no commitment",
+          "text": "A free consultation and a treatment plan. You pay per treatment."
+        }
+      },
+      "certs": "Skintastic brand certificates · Quality comes first"
     },
     "tech": {
       "label": "Technology",
@@ -506,12 +562,6 @@
         }
       ],
       "imageAlt": "Mediostar Monolith handpieces"
-    },
-    "about": {
-      "title": "About us",
-      "p2": "Our aim is top results at a fair price. That's why we work with high-end technology and skilled staff who know their job inside out.",
-      "certs": "Skintastic brand certificates · Quality comes first",
-      "imageAlt": "A woman sitting in the sun"
     },
     "locations": {
       "title": "Our locations",

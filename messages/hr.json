@@ -423,21 +423,21 @@
       "label": "Laserska epilacija · Zagreb",
       "title": "Glatka koža.",
       "titleItalic": "Dugotrajno.",
-      "service": "Profesionalna laserska epilacija za žene i muškarce uz Mediostar diodni laser.",
+      "service": "Razlika se vidi već nakon prvog tretmana. Svaki sljedeći te vodi bliže koži bez brijanja.",
       "videoAlt": "Video tretmana laserom u studiju",
       "facts": [
-        "Mediostar diodni laser",
+        "Za žene i muškarce",
         "Stručan pristup",
-        "Za žene i muškarce"
+        "Premium tehnologija iz Njemačke"
       ]
     },
     "heroOffer": {
       "pazusi": {
-        "label": "Posebna ponuda · Pazusi",
+        "label": "Uvjeri se · prvi tretman · Pazusi",
         "price": "19,90 €",
         "oldPrice": "49,99 €",
-        "note": "Započni tretmane po posebnoj cijeni koju zadržavaš do završetka ciklusa.",
-        "cta": "Iskoristi ponudu →",
+        "note": "Najbrži način da osjetiš razliku. Cijenu zadržavaš do kraja ciklusa.",
+        "cta": "Rezerviraj prvi tretman →",
         "until": "Ponuda do 31. 12."
       }
     },
@@ -467,7 +467,7 @@
       "label": "Povoljniji termini",
       "title": "Uhvati",
       "titleItalic": "bolju cijenu",
-      "text": "Posebne cijene za odabrane tretmane u slobodnijim terminima.",
+      "text": "Isti laser, isto osoblje, ista kvaliteta. Posebna cijena kad ti odgovara slobodniji termin.",
       "upTo": "do −{percent} %",
       "upToOne": "Do −{percent} %",
       "until": "do {date}",
@@ -478,10 +478,66 @@
     },
     "review": {
       "label": "Recenzije",
-      "title": "Što kažu naši klijenti"
+      "title": "Što kažu naši klijenti",
+      "google": "Sve recenzije na Googleu ★★★★★ ↗",
+      "items": [
+        {
+          "title": "Rezultat od prvog tretmana",
+          "text": "Osoblje preljubazno, a rezultati vidljivi već nakon prvog tretmana! Sigurno se vidimo opet!",
+          "author": "Laura B."
+        },
+        {
+          "title": "Osoblje i prostor",
+          "text": "Prostor je stvarno lijepo uređen, ugodan i čist, a osoblje izuzetno ljubazno i profesionalno.",
+          "author": "Mihael B."
+        },
+        {
+          "title": "Nakon drugih studija",
+          "text": "Imala sam loša iskustva sa laserima ali za Skintastic samo pohvale!!! Ugodna atmosfera i profesionalnost na nivou!",
+          "author": "Ira K."
+        },
+        {
+          "title": "Bezbolno",
+          "text": "Profesionalno osoblje, sve je besprekorno uredno i čisto. Bezbolan tretman mi je uljepšao dan! A rezultat je fantastičan.",
+          "author": "Sanja D."
+        }
+      ]
     },
     "why": {
-      "title": "Zašto Skintastic?"
+      "title": "Zašto Skintastic?",
+      "lead": "<b>U Skintasticu sve se vrti oko tvoje kože.</b> Specijalizirani smo samo za lasersko uklanjanje dlačica, s istim standardom u svim Skintastic studijima u Hrvatskoj, Austriji i Njemačkoj.",
+      "imageAlt": "Žena sjedi na suncu",
+      "staff": {
+        "label": "Educirano osoblje",
+        "title": "Laser je dobar koliko i ruke koje ga vode.",
+        "text": "Zato tretmane kod nas rade samo certificirani stručnjaci, educirani u Skintastic mreži. Naši klijenti to prepoznaju i rado to ističu u svojim recenzijama.",
+        "people": {
+          "gabriella": {
+            "name": "Gabriella",
+            "role": "Laser ekspertica"
+          },
+          "savka": {
+            "name": "Savka",
+            "role": "Voditeljica studija"
+          }
+        }
+      },
+      "points": {
+        "laser": {
+          "title": "Medicinski certificiran laser",
+          "text": "Mediostar Monolith, Made in Germany.",
+          "link": "Više o laseru ↓"
+        },
+        "approved": {
+          "title": "Odobren od Ministarstva zdravstva",
+          "text": "Naši laseri ispitani su u ovlaštenom laboratoriju i odobreni rješenjem Ministarstva zdravstva, u svakom našem studiju."
+        },
+        "noPackages": {
+          "title": "Bez paketa i obveza",
+          "text": "Besplatno savjetovanje i plan tretmana. Plaćaš pojedinačni tretman."
+        }
+      },
+      "certs": "Certifikati Skintastic brenda · Kvaliteta je na prvom mjestu"
     },
     "tech": {
       "label": "Tehnologija",
@@ -506,12 +562,6 @@
         }
       ],
       "imageAlt": "Mediostar Monolith ručni nastavci"
-    },
-    "about": {
-      "title": "O nama",
-      "p2": "Naš cilj su vrhunski rezultati po poštenoj cijeni. Zato radimo s high-end tehnologijom i stručnim osobljem koje izvrsno poznaje svoj posao.",
-      "certs": "Certifikati Skintastic brenda · Kvaliteta je na prvom mjestu",
-      "imageAlt": "Žena sjedi na suncu"
     },
     "locations": {
       "title": "Naše lokacije",
