@@ -122,7 +122,7 @@ export async function fetchOffers(locale: string): Promise<OfferWindowV2[] | nul
     console.warn(`Povoljniji termini: NEXT_PUBLIC_BOOKING_URL is not a partner entry (/book/f/{slug}), offers not read`);
     return null;
   }
-  const url = `${new URL(BOOKING_URL).origin}/api/public/franchisees/${encodeURIComponent(slug)}/offers?lang=${encodeURIComponent(locale)}`;
+  const url = `${new URL(BOOKING_URL).origin}/api/public/v1/franchisees/${encodeURIComponent(slug)}/offers?lang=${encodeURIComponent(locale)}`;
   let response: Response;
   try {
     response = await fetch(url, { headers: { Accept: "application/json" } });

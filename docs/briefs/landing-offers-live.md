@@ -24,7 +24,7 @@ Both designs show the partner's real time offers from the app (name, percentage,
 
 | Field | Allowed values |
 |---|---|
-| the read | `GET {BOOKING_URL origin}/api/public/franchisees/{slug}/offers?lang={locale}`, the slug parsed from `BOOKING_URL`'s partner entry path `/book/f/{slug}`; if the path isn't a partner entry, the read is skipped with one console warning naming the reason, and the sections are hidden. Failure handling as `offpeak.ts` today: one console warning per page load naming the URL and the reason; a failed read hides the section. |
+| the read | `GET {BOOKING_URL origin}/api/public/v1/franchisees/{slug}/offers?lang={locale}` (the `/v1` address since 2026-11-11, app note 13; same answer as the earlier `/api/public/franchisees/…`), the slug parsed from `BOOKING_URL`'s partner entry path `/book/f/{slug}`; if the path isn't a partner entry, the read is skipped with one console warning naming the reason, and the sections are hidden. Failure handling as `offpeak.ts` today: one console warning per page load naming the URL and the reason; a failed read hides the section. |
 | answer | `{ offers: [{ name, serviceCode, percent, ranges: [{ weekdays, starts, ends }], locations: [{ slug, name }], validUntil }] }`, at most 3, largest first (the app orders them; don't reorder). An offer with no `ranges` or no `locations` is skipped. |
 | ranges in words | weekdays as short day names in the locale; a run of three or more as a span ("Pon–Pet"); two, or with a gap, as a list ("Uto i Čet"; "Pon, Sri, Pet"); time "13:00–16:00". One line per range. |
 | studios in words | the locations' names; all of the partner's bookable studios read "Oba studija" / "Both studios" when there are two, else the names joined with " i " / " and " |
