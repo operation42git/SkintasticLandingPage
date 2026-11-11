@@ -37,7 +37,7 @@ const DEMO: readonly OfferWindowV2[] = [
     serviceCode: "alc_legs_full",
     percent: 30,
     ranges: [{ weekdays: [2, 4], starts: "13:00", ends: "16:00" }],
-    locations: [{ slug: "zagreb-zapad", name: "Skintastic Zapad" }],
+    locations: [{ slug: "skintastic-zagreb-zapad", name: "Skintastic Zapad" }],
     validUntil: null,
   },
   {
@@ -46,8 +46,8 @@ const DEMO: readonly OfferWindowV2[] = [
     percent: 20,
     ranges: [{ weekdays: [1, 2, 3, 4, 5], starts: "08:00", ends: "11:00" }],
     locations: [
-      { slug: "zagreb-zapad", name: "Skintastic Zapad" },
-      { slug: "zagreb-istok", name: "Skintastic Istok" },
+      { slug: "skintastic-zagreb-zapad", name: "Skintastic Zapad" },
+      { slug: "skintastic-zagreb-istok", name: "Skintastic Istok" },
     ],
     validUntil: "2026-11-30",
   },
@@ -60,8 +60,8 @@ const DEMO: readonly OfferWindowV2[] = [
       { weekdays: [6], starts: "18:00", ends: "20:00" },
     ],
     locations: [
-      { slug: "zagreb-zapad", name: "Skintastic Zapad" },
-      { slug: "zagreb-istok", name: "Skintastic Istok" },
+      { slug: "skintastic-zagreb-zapad", name: "Skintastic Zapad" },
+      { slug: "skintastic-zagreb-istok", name: "Skintastic Istok" },
     ],
     validUntil: null,
   },

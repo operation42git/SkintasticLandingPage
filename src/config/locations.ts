@@ -3,7 +3,12 @@ export type LocationType = "bookable" | "teaser" | "external";
 export type Location = {
   id: string;
   type: LocationType;
-  /** App slug sent as ?centar=. Empty for teaser and external. */
+  /**
+   * The studio's CURRENT short name in the app, sent as ?centar= and matched against offers' locations[].slug.
+   * An old name is ignored by ?centar=. Read the names from the app, don't guess them: Administracija > partner >
+   * "Linkovi za rezervaciju", or GET {app}/api/public/franchisees/{partner} (app note 02, 2026-11-11).
+   * Empty for teaser and external.
+   */
   slug: string;
   name: string;
   /** Street address, or the teaser's area. */
@@ -22,7 +27,7 @@ export const locations: Location[] = [
   {
     id: "zapad",
     type: "bookable",
-    slug: "zagreb-zapad",
+    slug: "skintastic-zagreb-zapad", // PLACEHOLDER until app PR #1044 is on staging: confirm from the app
     name: "Skintastic Zapad",
     address: "Ul. Drage Gervaisa 1, 10000 Zagreb",
     hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
@@ -35,7 +40,7 @@ export const locations: Location[] = [
   {
     id: "istok",
     type: "bookable",
-    slug: "zagreb-istok",
+    slug: "skintastic-zagreb-istok", // PLACEHOLDER until app PR #1044 is on staging: confirm from the app
     name: "Skintastic Istok",
     address: "Avenija Dubrava 47, 10040 Zagreb",
     hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
