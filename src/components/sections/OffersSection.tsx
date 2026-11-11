@@ -97,34 +97,34 @@ export function OffersSection() {
           {t("swipeHint", { count })}
         </p>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden grid-cols-4 gap-5 lg:grid">
+          {visible.map((item) => (
+            <OfferCard key={`${item.key}-${start}`} itemKey={item.key} image={item.image} />
+          ))}
+        </div>
+        <div className="mt-6 hidden items-center justify-center gap-5 lg:flex">
           <button
             type="button"
             aria-label={t("prev")}
             onClick={() => setStart((index) => (index - 1 + count) % count)}
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#0C0C0C] bg-white text-[22px]"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#0C0C0C] bg-white text-[22px]"
           >
             ‹
           </button>
-          <div className="grid min-w-0 flex-1 grid-cols-4 gap-5">
-            {visible.map((item) => (
-              <OfferCard key={`${item.key}-${start}`} itemKey={item.key} image={item.image} />
-            ))}
-          </div>
+          <p className="min-w-[130px] text-center text-[13px] font-bold tracking-[0.1em]">
+            {t("range", { from, to, count })}
+          </p>
           <button
             type="button"
             aria-label={t("next")}
             onClick={() => setStart((index) => (index + 1) % count)}
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#0C0C0C] bg-white text-[22px]"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-[1.5px] border-[#0C0C0C] bg-white text-[22px]"
           >
             ›
           </button>
         </div>
-        <p className="mt-3.5 hidden text-center text-[13px] font-bold tracking-[0.1em] lg:block">
-          {t("range", { from, to, count })}
-        </p>
 
-        <p className="mx-auto mt-4 max-w-[1320px] px-4 text-center text-base lg:mt-[18px] lg:px-0">
+        <p className="mx-auto mt-4 max-w-[1320px] px-4 text-center text-base lg:mt-8 lg:px-0">
           {t.rich("calendar", {
             link: (chunks) => (
               <BookButton className="font-extrabold underline">{chunks}</BookButton>
