@@ -24,7 +24,7 @@ Both designs show the partner's real time offers from the app (name, percentage,
 
 | Field | Allowed values |
 |---|---|
-| the read | `GET {BOOKING_URL origin}/api/public/franchisees/{slug}/offers?lang={locale}`, the slug parsed from `BOOKING_URL`'s partner entry path `/book/f/{slug}`; if the path isn't a partner entry, the read is skipped with one console warning naming the reason, and the sections are hidden. Failure handling as `offpeak.ts` today: one console warning per page load naming the URL and the reason; a failed read hides the section. |
+| the read | `GET {BOOKING_URL origin}/api/public/v1/franchisees/{slug}/offers?lang={locale}` (the `/v1` address since 2026-11-11, app note 13; same answer as the earlier `/api/public/franchisees/…`), the slug parsed from `BOOKING_URL`'s partner entry path `/book/f/{slug}`; if the path isn't a partner entry, the read is skipped with one console warning naming the reason, and the sections are hidden. Failure handling as `offpeak.ts` today: one console warning per page load naming the URL and the reason; a failed read hides the section. |
 | answer | `{ offers: [{ name, serviceCode, percent, ranges: [{ weekdays, starts, ends }], locations: [{ slug, name }], validUntil }] }`, at most 3, largest first (the app orders them; don't reorder). An offer with no `ranges` or no `locations` is skipped. |
 | ranges in words | weekdays as short day names in the locale; a run of three or more as a span ("Pon–Pet"); two, or with a gap, as a list ("Uto i Čet"; "Pon, Sri, Pet"); time "13:00–16:00". One line per range. |
 | studios in words | the locations' names; all of the partner's bookable studios read "Oba studija" / "Both studios" when there are two, else the names joined with " i " / " and " |
@@ -46,6 +46,7 @@ Both designs show the partner's real time offers from the app (name, percentage,
 2. **The diff** lists only the Touches paths.
 3. **Order:** merged no later than the app's time offers reach the environment the landing page reads (staging first).
 4. **Before deploy,** the deployment confirms staging's and production's `NEXT_PUBLIC_BOOKING_URL` are `/book/f/{slug}`.
+5. **Booking names (app note 02, 2026-11-11; ship only after app PR #1044 is on staging):** studios and partners get brand-prefixed short names (e.g. `skintastic-zagreb-zapad`, `skintastic-zagreb`); old names keep working as redirects. `locations.ts` carries each studio's CURRENT name, read from the app (Administracija > partner > "Linkovi za rezervaciju", or `GET /api/public/franchisees/{partner}`), because `?centar=` ignores old names and offers' `locations[].slug` carry the new ones. The booking base stays one setting, `NEXT_PUBLIC_BOOKING_URL` (`https://app.…/book/f/{partner}` for now); after the deploy it moves to the partner's new name there, and a later own booking domain changes only that setting. Unchanged: `?usluga=`, `?datum=`, `?vrijeme=`, UTM and click-id parameters. **Names read from staging on 2026-11-11 (after #1044):** partner `skintastic-zagreb`; studios `skintastic-zapad` (Zapad) and `skintastic-istok` (Istok).
 
 **Out of scope**
 - The app's route (built in Skintastic).
