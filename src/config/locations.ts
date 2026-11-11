@@ -27,7 +27,7 @@ export const locations: Location[] = [
   {
     id: "zapad",
     type: "bookable",
-    slug: "skintastic-zagreb-zapad", // PLACEHOLDER until app PR #1044 is on staging: confirm from the app
+    slug: "skintastic-zapad", // read from the app, 2026-11-11
     name: "Skintastic Zapad",
     address: "Ul. Drage Gervaisa 1, 10000 Zagreb",
     hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
@@ -40,7 +40,7 @@ export const locations: Location[] = [
   {
     id: "istok",
     type: "bookable",
-    slug: "skintastic-zagreb-istok", // PLACEHOLDER until app PR #1044 is on staging: confirm from the app
+    slug: "skintastic-istok", // read from the app, 2026-11-11
     name: "Skintastic Istok",
     address: "Avenija Dubrava 47, 10040 Zagreb",
     hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
