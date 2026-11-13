@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { withBrand } from "@/components/ui/Brand";
 
 const FEATURES = [
   { key: "experts", icon: "/images/icons/skintastic-icon-2.svg" },
@@ -16,7 +17,7 @@ export function WhySection() {
       <div className="mx-auto max-w-[1320px] px-4 pb-0 pt-9 lg:px-6 lg:pt-20">
         <div className="mb-[18px] text-center lg:mb-11">
           <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
-            {t("eyebrow")}
+            {withBrand(t("eyebrow"))}
           </p>
           <h2 className="font-script text-[44px] font-normal leading-none lg:text-[60px]">
             {t("title")}
@@ -66,7 +67,7 @@ export function WhySection() {
             <p className="font-script text-[32px] leading-none lg:text-[40px]">{t("tagline")}</p>
             <div className="flex flex-col gap-3 border-t-0 pt-1.5 lg:border-t lg:border-[#d9b9ab] lg:pt-4">
               <span className="text-[11px] font-extrabold uppercase tracking-[0.1em] lg:text-[13px] lg:tracking-[0.12em]">
-                {t("certs")}
+                {withBrand(t("certs"))}
               </span>
               <div className="flex items-center gap-5 lg:gap-7">
                 <Image src="/images/certs/wifi.webp" alt={t("wifiAlt")} width={120} height={56} className="h-10 w-auto lg:h-14" />

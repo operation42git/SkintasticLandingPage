@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ABOUT_IMAGE_V2, STAFF_V2 } from "@/config/design";
+import { withBrand } from "@/components/ui/Brand";
 
 /** The three smaller points under the staff block; the laser one links to Tehnologija. */
 const POINTS = ["laser", "approved", "noPackages"] as const;
@@ -19,7 +20,7 @@ export function Why() {
     <div className="wrap">
       <section className="why">
         <div className="wh">
-          <span className="k">{why("eyebrow")}</span>
+          <span className="k">{withBrand(why("eyebrow"))}</span>
           <h2>{t("title")}</h2>
           <p className="wl">
             {t.rich("lead", { b: (chunks) => <b>{chunks}</b> })}
@@ -73,7 +74,7 @@ export function Why() {
             ))}
           </div>
           <div className="certs">
-            <span className="k">{t("certs")}</span>
+            <span className="k">{withBrand(t("certs"))}</span>
             <div className="cl2">
               <Image
                 src="/images/v2/wifi-ink.png"

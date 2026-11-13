@@ -110,7 +110,7 @@
     }
   },
   "offPeak": {
-    "eyebrow": "Skintastic Zagreb",
+    "eyebrow": "skintastic Zagreb",
     "title": "Povoljniji termini",
     "lead": "<strong>Isti tretman, povoljnije</strong> – u odabranim terminima.",
     "weekdaysShort": ["Pon", "Uto", "Sri", "Čet", "Pet", "Sub", "Ned"],
@@ -144,7 +144,7 @@
     "chips": ["810 i 940 nm", "ICE-hlađenje", "Svi tipovi kože I–VI", "Bez UV-zračenja"]
   },
   "why": {
-    "eyebrow": "Skintastic laser | skin | body",
+    "eyebrow": "skintastic laser | skin | body",
     "title": "Zašto skintastic",
     "features": {
       "experts": {
@@ -172,7 +172,7 @@
     "wkoAlt": "Wirtschaftskammer Österreich"
   },
   "locations": {
-    "eyebrow": "Skintastic Zagreb",
+    "eyebrow": "skintastic Zagreb",
     "title": "Naše lokacije",
     "gallery": "Galerija",
     "directions": "Kako do nas",
@@ -340,7 +340,7 @@
     "author": "Sharon Stone"
   },
   "about": {
-    "badge": "SKINTASTIC LASER | SKIN | BODY",
+    "badge": "skintastic LASER | SKIN | BODY",
     "title": "O nama",
     "p1": "<strong>skintastic sve se vrti oko tvoje kože.</strong> Specijalizirani smo za lasersko uklanjanje dlačica visokoučinkovitim diodnim laserima.",
     "p2": "Naš cilj: vrhunski rezultati i vidljive promjene – po poštenoj cijeni. Kvaliteta nam je na prvom mjestu, zato koristimo high-end tehnologiju i stručno osoblje koje izvrsno poznaje svoj posao.",
@@ -493,7 +493,7 @@
         },
         {
           "title": "Nakon drugih studija",
-          "text": "Imala sam loša iskustva sa laserima ali za Skintastic samo pohvale!!! Ugodna atmosfera i profesionalnost na nivou!",
+          "text": "Imala sam loša iskustva sa laserima ali za skintastic samo pohvale!!! Ugodna atmosfera i profesionalnost na nivou!",
           "author": "Ira K."
         },
         {
@@ -504,13 +504,13 @@
       ]
     },
     "why": {
-      "title": "Zašto Skintastic?",
-      "lead": "<b>U Skintasticu sve se vrti oko tvoje kože.</b> Specijalizirani smo samo za lasersko uklanjanje dlačica, s istim standardom u svim Skintastic studijima u Hrvatskoj, Austriji i Njemačkoj.",
+      "title": "Zašto skintastic?",
+      "lead": "<b>U skintasticu sve se vrti oko tvoje kože.</b> Specijalizirani smo samo za lasersko uklanjanje dlačica, s istim standardom u svim skintastic studijima u Hrvatskoj, Austriji i Njemačkoj.",
       "imageAlt": "Žena sjedi na suncu",
       "staff": {
         "label": "Educirano osoblje",
         "title": "Laser je dobar koliko i ruke koje ga vode.",
-        "text": "Zato tretmane kod nas rade samo certificirani stručnjaci, educirani u Skintastic mreži. Naši klijenti to prepoznaju i rado to ističu u svojim recenzijama.",
+        "text": "Zato tretmane kod nas rade samo certificirani stručnjaci, educirani u skintastic mreži. Naši klijenti to prepoznaju i rado to ističu u svojim recenzijama.",
         "people": {
           "gabriella": {
             "name": "Gabriella",
@@ -537,7 +537,7 @@
           "text": "Besplatno savjetovanje i plan tretmana. Plaćaš pojedinačni tretman."
         }
       },
-      "certs": "Certifikati Skintastic brenda · Kvaliteta je na prvom mjestu"
+      "certs": "Certifikati skintastic brenda · Kvaliteta je na prvom mjestu"
     },
     "tech": {
       "label": "Tehnologija",
@@ -568,7 +568,7 @@
       "book": "Rezerviraj ovdje →",
       "directions": "Kako do nas ↗",
       "soon": "Otvaranje uskoro. Do tada nas posjeti na Zapadu ili Istoku.",
-      "family": "Dio Skintastic obitelji",
+      "family": "Dio skintastic obitelji",
       "tile": {
         "jug": "Otvaranje uskoro"
       }

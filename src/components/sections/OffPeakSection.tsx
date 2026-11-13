@@ -1,5 +1,6 @@
 "use client";
 
+import { withBrand } from "@/components/ui/Brand";
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { buildBookingHref, confirmedCode } from "@/config/booking";
@@ -58,7 +59,7 @@ export function OffPeakSection() {
       <div className="mx-auto max-w-[1320px] px-4 lg:px-6">
         <div className="mb-6 text-center lg:mb-10">
           <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
-            {t("eyebrow")}
+            {withBrand(t("eyebrow"))}
           </p>
           <h2 className="font-script text-[44px] font-normal leading-none lg:text-[60px]">{t("title")}</h2>
           <p className="mx-auto mt-3 max-w-[600px] text-[15px] leading-relaxed text-[#3d3434] lg:text-base">

@@ -6,6 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { OPEN_CONSENT_EVENT } from "@/components/legal/CookieConsent";
 import { contact, facebookHref, instagramHref } from "@/config/contact";
 import { externalHref, locationsOf } from "@/config/locations";
+import { withBrand } from "@/components/ui/Brand";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -60,7 +61,7 @@ export function Footer() {
           ))}
           {locationsOf("teaser").map((location) => (
             <span key={location.id} className="text-[#b9ae9f]">
-              <span className="lg:hidden">{location.name.replace(/^Skintastic\s/, "")}</span>
+              <span className="lg:hidden">{location.name.replace(/^skintastic\s/i, "")}</span>
               <span className="hidden lg:inline">{location.name}</span>
               {" · "}
               {t("soon")}
@@ -70,7 +71,7 @@ export function Footer() {
 
         <div className="hidden flex-col gap-2 text-sm lg:flex">
           <span className="text-[13px] font-extrabold uppercase tracking-[0.14em] text-[#c9a96e]">
-            {t("world")}
+            {withBrand(t("world"))}
           </span>
           {locationsOf("external").map((location) => {
             const href = externalHref(location);

@@ -28,7 +28,7 @@ export const locations: Location[] = [
     id: "zapad",
     type: "bookable",
     slug: "skintastic-zapad", // read from the app, 2026-11-11
-    name: "Skintastic Zapad",
+    name: "skintastic Zapad",
     address: "Ul. Drage Gervaisa 1, 10000 Zagreb",
     hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
     parking: "[PARKIRANJE]",
@@ -41,7 +41,7 @@ export const locations: Location[] = [
     id: "istok",
     type: "bookable",
     slug: "skintastic-istok", // read from the app, 2026-11-11
-    name: "Skintastic Istok",
+    name: "skintastic Istok",
     address: "Avenija Dubrava 47, 10040 Zagreb",
     hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
     parking: "[PARKIRANJE]",
@@ -53,7 +53,7 @@ export const locations: Location[] = [
     id: "jug",
     type: "teaser",
     slug: "",
-    name: "Skintastic Jug – Velika Gorica",
+    name: "skintastic Jug – Velika Gorica",
     address: "Velika Gorica",
     hours: { hr: "", en: "" },
     parking: "",

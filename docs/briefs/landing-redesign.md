@@ -76,6 +76,8 @@ For switch users the current design shows briefly before the new one replaces it
 
 Italic is used only where marked *like this* below. Small labels: 11.5 px, letter-spacing .24em, uppercase, taupe.
 
+**Brand spelling (Ivan, 2026-11-13):** the brand is always written "skintastic", lowercase, everywhere it shows (texts in every language, studio names, alt texts, metadata), also at the start of a sentence and inside labels set in capitals (`withBrand`, `.brand { text-transform: none }`). Studio names that come from the app are shown the same way. URLs, code and file names are not texts.
+
 ## Sections, in this order (hr texts; the en texts are drafted by you and listed for review)
 
 **Order update (Ivan, 2026-11-05, second amendment):** Header · Hero · Tretmani i cijene · Povoljniji termini · Kako izgleda tretman · Naše lokacije · Review · Zašto Skintastic? · Tehnologija · O nama · Česta pitanja · Kontakt · Footer (row 10 moves up after row 5; the row numbers stay). **One column for everything:** every section's text and images keep the header's left and right edges (the logo, the "Rezerviraj termin" button; 1316 px at 1440); only background bands (linen, sand, the dark footer) run edge to edge. The hero video is the exception (Ivan, 2026-11-05, third amendment; row 2). **Order update (Ivan, 2026-11-06, fourth amendment):** … Naše lokacije · Što kažu naši klijenti · Zašto Skintastic? (with O nama merged in) · Tehnologija · Česta pitanja · Kontakt.

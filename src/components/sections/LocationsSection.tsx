@@ -1,5 +1,6 @@
 "use client";
 
+import { withBrand } from "@/components/ui/Brand";
 import Image from "next/image";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -32,7 +33,7 @@ export function LocationsSection() {
       <div className="mx-auto max-w-[1320px] px-4 py-9 lg:px-6 lg:py-20">
         <div className="mb-4 text-center lg:mb-11">
           <p className="mb-1 text-[11px] uppercase tracking-[3px] lg:mb-2 lg:text-[15px] lg:tracking-[5px]">
-            {t("eyebrow")}
+            {withBrand(t("eyebrow"))}
           </p>
           <h2 className="font-script text-[44px] font-normal leading-none lg:text-[60px]">
             {t("title")}
@@ -63,9 +64,9 @@ export function LocationsSection() {
           <div className="min-w-0 lg:flex-1 lg:basis-80">
             <p className="text-[11px] font-extrabold uppercase tracking-[0.12em] lg:mb-1.5 lg:text-[13px] lg:tracking-[0.14em]">
               <span className="lg:hidden">
-                {t("familyShort", { count: brandCentreCount() })}
+                {withBrand(t("familyShort", { count: brandCentreCount() }))}
               </span>
-              <span className="hidden lg:inline">{t("family")}</span>
+              <span className="hidden lg:inline">{withBrand(t("family"))}</span>
             </p>
             <p className="hidden text-[22px] font-bold leading-snug lg:block">
               {t("familyCount", { count: brandCentreCount() })}
@@ -130,7 +131,7 @@ function BookableCard({ location, onGallery }: { location: Location; onGallery: 
             centar={location.slug}
             className="inline-flex h-11 flex-1 items-center justify-center rounded-full bg-[#0C0C0C] px-3 text-center text-xs font-extrabold uppercase tracking-[0.04em] text-white lg:h-auto lg:w-full lg:px-5 lg:py-[15px] lg:text-sm lg:tracking-[0.06em]"
           >
-            {t("bookAt", { name: location.name })}
+            {withBrand(t("bookAt", { name: location.name }))}
           </BookButton>
           <button
             type="button"
