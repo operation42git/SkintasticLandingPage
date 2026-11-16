@@ -17,7 +17,7 @@ function offerText(offer: HeroOffer, locale: string) {
 
 function shortCentreNames(locale: string, joinWord: string) {
   return locationsOf("bookable")
-    .map((location) => location.name.replace(/^Skintastic\s/, ""))
+    .map((location) => location.name.replace(/^skintastic\s/i, ""))
     .join(joinWord);
 }
 

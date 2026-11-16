@@ -2,6 +2,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { BookButton } from "@/components/ui/BookButton";
 import { contact, emailHref, facebookHref, instagramHref } from "@/config/contact";
 import { hoursFor, locationsOf, mapsSearchHref } from "@/config/locations";
+import { withBrand } from "@/components/ui/Brand";
 
 const iconClass = "h-[22px] w-[22px] lg:h-[26px] lg:w-[26px]";
 
@@ -133,7 +134,7 @@ export function ContactSection() {
                     centar={location.slug}
                     className="inline-flex items-center justify-center rounded-full bg-[#0C0C0C] px-5 py-3 text-[13px] font-extrabold uppercase text-white"
                   >
-                    {t("book", { name: location.name })}
+                    {withBrand(t("book", { name: location.name }))}
                   </BookButton>
                   {maps ? (
                     <a href={maps} className={directionsClass} target="_blank" rel="noopener noreferrer">

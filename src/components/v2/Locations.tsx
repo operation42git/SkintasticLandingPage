@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { externalHref, hoursFor, locationsOf, mapsSearchHref } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
+import { withBrand } from "@/components/ui/Brand";
 
 
 export function Locations() {
@@ -63,7 +64,7 @@ export function Locations() {
         })}
       </div>
       <p className="fam">
-        <span className="fl">{t("family")}</span>
+        <span className="fl">{withBrand(t("family"))}</span>
         <span>
           {family.map((location, index) => {
             const href = externalHref(location);

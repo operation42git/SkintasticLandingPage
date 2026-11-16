@@ -110,7 +110,7 @@
     }
   },
   "offPeak": {
-    "eyebrow": "Skintastic Zagreb",
+    "eyebrow": "skintastic Zagreb",
     "title": "Günstigere Termine",
     "lead": "<strong>Dieselbe Behandlung, günstiger</strong> – zu ausgewählten Zeiten.",
     "weekdaysShort": ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
@@ -144,7 +144,7 @@
     "chips": ["810 und 940 nm", "ICE-Kühlung", "Alle Hauttypen I–VI", "Keine UV-Strahlung"]
   },
   "why": {
-    "eyebrow": "Skintastic laser | skin | body",
+    "eyebrow": "skintastic laser | skin | body",
     "title": "Warum skintastic",
     "features": {
       "experts": {
@@ -172,7 +172,7 @@
     "wkoAlt": "Wirtschaftskammer Österreich"
   },
   "locations": {
-    "eyebrow": "Skintastic Zagreb",
+    "eyebrow": "skintastic Zagreb",
     "title": "Unsere Standorte",
     "gallery": "Galerie",
     "directions": "Anfahrt",
@@ -340,7 +340,7 @@
     "author": "Sharon Stone"
   },
   "about": {
-    "badge": "SKINTASTIC LASER | SKIN | BODY",
+    "badge": "skintastic LASER | SKIN | BODY",
     "title": "Über uns",
     "p1": "<strong>Bei skintastic dreht sich alles um deine Haut.</strong> Wir sind auf Laser-Haarentfernung mit Hochleistungs-Diodenlasern spezialisiert.",
     "p2": "Unser Ziel: Top-Ergebnisse und sichtbare Veränderung – zum fairen Preis. Qualität steht an erster Stelle, deshalb arbeiten wir mit High-End-Technologie und Fachpersonal, das sein Handwerk bestens beherrscht.",
@@ -493,7 +493,7 @@
         },
         {
           "title": "Nach anderen Studios",
-          "text": "Ich hatte schlechte Erfahrungen mit Lasern, aber für Skintastic nur Lob!!! Angenehme Atmosphäre und Professionalität auf hohem Niveau!",
+          "text": "Ich hatte schlechte Erfahrungen mit Lasern, aber für skintastic nur Lob!!! Angenehme Atmosphäre und Professionalität auf hohem Niveau!",
           "author": "Ira K."
         },
         {
@@ -504,13 +504,13 @@
       ]
     },
     "why": {
-      "title": "Warum Skintastic?",
-      "lead": "<b>Bei Skintastic dreht sich alles um deine Haut.</b> Wir sind ausschließlich auf Laser-Haarentfernung spezialisiert, mit demselben Standard in allen Skintastic Studios in Kroatien, Österreich und Deutschland.",
+      "title": "Warum skintastic?",
+      "lead": "<b>Bei skintastic dreht sich alles um deine Haut.</b> Wir sind ausschließlich auf Laser-Haarentfernung spezialisiert, mit demselben Standard in allen skintastic Studios in Kroatien, Österreich und Deutschland.",
       "imageAlt": "Eine Frau sitzt in der Sonne",
       "staff": {
         "label": "Geschultes Team",
         "title": "Ein Laser ist nur so gut wie die Hände, die ihn führen.",
-        "text": "Deshalb führen bei uns ausschließlich zertifizierte Fachkräfte die Behandlungen durch, geschult im Skintastic Netzwerk. Unsere Kundinnen und Kunden merken das und heben es gern in ihren Bewertungen hervor.",
+        "text": "Deshalb führen bei uns ausschließlich zertifizierte Fachkräfte die Behandlungen durch, geschult im skintastic Netzwerk. Unsere Kundinnen und Kunden merken das und heben es gern in ihren Bewertungen hervor.",
         "people": {
           "gabriella": {
             "name": "Gabriella",
@@ -537,7 +537,7 @@
           "text": "Kostenlose Beratung und ein Behandlungsplan. Du zahlst pro Behandlung."
         }
       },
-      "certs": "Zertifikate der Marke Skintastic · Qualität steht an erster Stelle"
+      "certs": "Zertifikate der Marke skintastic · Qualität steht an erster Stelle"
     },
     "tech": {
       "label": "Technologie",
@@ -568,7 +568,7 @@
       "book": "Hier buchen →",
       "directions": "Anfahrt ↗",
       "soon": "Eröffnet bald. Bis dahin besuch uns im Studio Zapad oder Istok.",
-      "family": "Teil der Skintastic Familie",
+      "family": "Teil der skintastic Familie",
       "tile": {
         "jug": "Eröffnet bald"
       }

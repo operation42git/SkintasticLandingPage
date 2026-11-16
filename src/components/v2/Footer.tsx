@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { facebookHref, instagramHref } from "@/config/contact";
 import { externalHref, locationsOf } from "@/config/locations";
 import { OPEN_CONSENT_EVENT } from "@/components/legal/CookieConsent";
+import { withBrand } from "@/components/ui/Brand";
 
 /** The only dark area; the existing footer texts and legal links. */
 export function Footer() {
@@ -39,7 +40,7 @@ export function Footer() {
             ))}
           </div>
           <div>
-            <b>{t("world")}</b>
+            <b>{withBrand(t("world"))}</b>
             {locationsOf("external").map((location) => {
               const href = externalHref(location);
               return href ? (

@@ -167,3 +167,6 @@
   --v2-rust: #9a5b3e;
   --v2-night: #14100e;
 }
+
+/* The brand is always lowercase, also inside labels set in capitals (see components/ui/Brand.tsx). */
+.brand { text-transform: none; }
