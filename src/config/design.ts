@@ -55,7 +55,9 @@ export function designFromPage(search: string): Design {
  * The new design's hero video (landing-redesign row 2): the person gives the file and its poster
  * (e.g. /images/v2/hero.mp4 and /images/v2/hero-poster.jpg). Empty: the hero shows a linen block.
  */
-export const HERO_VIDEO_V2 = { src: "/videos/v2/hero.mp4", poster: "/videos/v2/hero-poster.jpg" };
+// Ivan, 2026-11-16: a square cut of the studio's reel (reception logo, branded sheet, therapist at work, laser
+// close-up; no faces), shown in a square box beside the text on the laptop.
+export const HERO_VIDEO_V2 = { src: "/videos/v2/hero-square.mp4", poster: "/videos/v2/hero-square-poster.jpg" };
 
 /**
  * The new design's Povoljniji termini image (landing-redesign row 4): the person gives it
