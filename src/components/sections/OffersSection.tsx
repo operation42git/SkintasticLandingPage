@@ -25,7 +25,6 @@ function OfferCard({
   compact?: boolean;
 }) {
   const t = useTranslations("offers");
-  const oldPrice = t(`items.${itemKey}.oldPrice`);
 
   return (
     <article className="flex flex-col bg-white">
@@ -49,11 +48,6 @@ function OfferCard({
           <span className="text-xl font-extrabold lg:text-[22px]">
             {t("amount", { amount: t(`items.${itemKey}.price`) })}
           </span>
-          {oldPrice ? (
-            <span className="text-[13px] text-[#5a5050] line-through lg:text-sm">
-              {t("amount", { amount: oldPrice })}
-            </span>
-          ) : null}
         </div>
         <BookButton
           usluga={confirmedCode(t(`items.${itemKey}.code`))}

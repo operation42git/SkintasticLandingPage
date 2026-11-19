@@ -59,7 +59,6 @@ export function Hero() {
               <span className="k ko">{t(`${offerKey}.label`)}</span>
               <div className="hp">
                 {t(`${offerKey}.price`)}
-                <s>{t(`${offerKey}.oldPrice`)}</s>
               </div>
               <p className="hn">{t(`${offerKey}.note`)}</p>
               <div className="cta">
