@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { confirmedCode } from "@/config/booking";
 import { BookButton } from "@/components/ui/BookButton";
+import { BaseLine, PriceAmount } from "@/components/ui/Price";
 
 const OFFER_ITEMS = [
   { key: "axilla", image: "/images/services/axilla.jpg" },
@@ -25,6 +26,7 @@ function OfferCard({
   compact?: boolean;
 }) {
   const t = useTranslations("offers");
+  const code = t(`items.${itemKey}.code`);
 
   return (
     <article className="flex flex-col bg-white">
@@ -44,10 +46,11 @@ function OfferCard({
         <p className="flex-1 text-[13px] leading-snug text-[#3d3434] lg:text-sm lg:leading-[1.4]">
           {t(`items.${itemKey}.desc`)}
         </p>
-        <div className="flex items-baseline gap-2 pt-1">
+        <div className="flex flex-col gap-0.5 pt-1">
           <span className="text-xl font-extrabold lg:text-[22px]">
-            {t("amount", { amount: t(`items.${itemKey}.price`) })}
+            <PriceAmount code={code} typed={t("amount", { amount: t(`items.${itemKey}.price`) })} />
           </span>
+          <BaseLine code={code} className="text-xs text-[#5a5050]" />
         </div>
         <BookButton
           usluga={confirmedCode(t(`items.${itemKey}.code`))}

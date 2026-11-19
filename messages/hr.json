@@ -19,6 +19,9 @@
   },
   "scroll": "Pomakni",
   "scrollTop": "Na vrh",
+  "prices": {
+    "base": "Cijena na {date}: {amount}"
+  },
   "meta": {
     "title": "Laserska epilacija u Zagrebu | skintastic",
     "description": "Lasersko uklanjanje dlačica u Zagrebu. Mediostar diodni laser, besplatno savjetovanje i online rezervacija."

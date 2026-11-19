@@ -19,6 +19,9 @@
   },
   "scroll": "Scrollen",
   "scrollTop": "Nach oben",
+  "prices": {
+    "base": "Preis am {date}: {amount}"
+  },
   "meta": {
     "title": "Laser-Haarentfernung in Zagreb | skintastic",
     "description": "Laser-Haarentfernung in Zagreb. Mediostar Diodenlaser, kostenlose Beratung und Online-Buchung."

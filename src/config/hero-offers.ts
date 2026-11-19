@@ -2,7 +2,9 @@ export type HeroOfferText = {
   badge: string;
   title: string;
   subtitle: string;
-  /** The hero button: says what booking opens with. */
+  /** Joins the title and the price ("sada 19,90 €"). */
+  priceLead: string;
+  /** The hero button: says what booking opens with; " · {price}" is added after it. */
   cta: string;
 };
 
@@ -10,6 +12,8 @@ export type HeroOffer = {
   id: string;
   code: string;
   validUntil?: string;
+  /** Today's typed price, shown while prices are not read from the app (config/prices.ts). */
+  typedPriceCents: number;
   texts: {
     hr: HeroOfferText;
     en: HeroOfferText;
@@ -22,24 +26,28 @@ export const heroOffers: HeroOffer[] = [
     id: "pazusi",
     code: "alc_underarms",
     validUntil: "2026-12-31",
+    typedPriceCents: 1990,
     texts: {
       hr: {
         badge: "Posebna ponuda",
-        title: "Lasersko uklanjanje dlačica ispod pazuha sada 19,90",
+        title: "Lasersko uklanjanje dlačica ispod pazuha",
+        priceLead: "sada",
         subtitle: "za žene i muškarce · Ponuda vrijedi do 31.12.2026.",
-        cta: "Rezerviraj pazuhe · 19,90 €",
+        cta: "Rezerviraj pazuhe",
       },
       en: {
         badge: "Special offer",
-        title: "Underarm laser hair removal now 19,90",
+        title: "Underarm laser hair removal",
+        priceLead: "now",
         subtitle: "for women and men · Offer valid until 31.12.2026.",
-        cta: "Book underarms · 19,90 €",
+        cta: "Book underarms",
       },
       de: {
         badge: "Sonderangebot",
-        title: "Laser-Haarentfernung an den Achseln jetzt 19,90",
+        title: "Laser-Haarentfernung an den Achseln",
+        priceLead: "jetzt",
         subtitle: "für Frauen und Männer · Angebot gültig bis 31.12.2026.",
-        cta: "Achseln buchen · 19,90 €",
+        cta: "Achseln buchen",
       },
     },
   },

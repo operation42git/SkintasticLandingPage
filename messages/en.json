@@ -19,6 +19,9 @@
   },
   "scroll": "Scroll",
   "scrollTop": "Back to top",
+  "prices": {
+    "base": "Price on {date}: {amount}"
+  },
   "meta": {
     "title": "Laser hair removal in Zagreb | skintastic",
     "description": "Laser hair removal in Zagreb. Mediostar diode laser, a free consultation and online booking."

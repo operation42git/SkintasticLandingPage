@@ -7,6 +7,8 @@ import { visibleHeroOffers, type HeroOffer } from "@/config/hero-offers";
 import { locationsOf } from "@/config/locations";
 import { BookButton } from "@/components/ui/BookButton";
 import { OffPeakLink } from "@/components/ui/OffPeakLink";
+import { BaseLine, usePrice } from "@/components/ui/Price";
+import { PRICES_FROM_APP, formatAmount } from "@/config/prices";
 
 const VIDEOS = ["/images/hero/hero-video-1.mp4", "/images/hero/hero-video-3.mp4"];
 const POSTER = "/images/hero/hero-video-1-poster.jpg";
@@ -33,6 +35,10 @@ export function HeroSection() {
 
   const offer = offers[Math.min(offerIndex, Math.max(offers.length - 1, 0))];
   const copy = offer ? offerText(offer, locale) : null;
+  // The offer price: the app's lowest when prices are read from it (no price when the app has none), else typed.
+  const appPrice = usePrice(offer?.code ?? "");
+  const priceText = !offer ? null : PRICES_FROM_APP ? appPrice.text : formatAmount(offer.typedPriceCents, locale);
+  const cta = copy ? (priceText ? `${copy.cta} · ${priceText}` : copy.cta) : null;
   const mobileCentres = shortCentreNames(locale, t("nameJoin"));
 
   useEffect(() => {
@@ -104,7 +110,14 @@ export function HeroSection() {
 
         {copy ? (
           <p className="max-w-[680px] text-[15px] leading-[1.45] text-[#3d3434] lg:text-xl lg:leading-normal lg:text-white/90">
-            {copy.title} {copy.subtitle}
+            {copy.title}
+            {priceText ? ` ${copy.priceLead} ${priceText}` : ""} {copy.subtitle}
+            {offer ? (
+              <>
+                {" "}
+                <BaseLine code={offer.code} className="whitespace-nowrap text-[13px] opacity-80 lg:text-base" />
+              </>
+            ) : null}
           </p>
         ) : null}
 
@@ -114,7 +127,7 @@ export function HeroSection() {
               usluga={confirmedCode(offer.code)}
               className="inline-flex items-center justify-center rounded-full bg-white px-[34px] py-[18px] text-base font-extrabold uppercase tracking-[0.05em] text-[#0C0C0C]"
             >
-              {copy?.cta ?? t("book")}
+              {cta ?? t("book")}
             </BookButton>
           ) : null}
           <a
@@ -130,7 +143,7 @@ export function HeroSection() {
             usluga={confirmedCode(offer.code)}
             className="inline-flex h-12 w-full items-center justify-center rounded-full bg-[#0C0C0C] px-6 text-[13px] font-extrabold uppercase tracking-[0.05em] text-white lg:hidden"
           >
-            {copy?.cta ?? t("book")}
+            {cta ?? t("book")}
           </BookButton>
         ) : null}
 
