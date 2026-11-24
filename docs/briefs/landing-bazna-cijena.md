@@ -13,13 +13,6 @@ in `src/config/prices.ts`; shown by `src/components/ui/Price.tsx`.
 |---|---|
 | v2 hero offer (Pazusi) | `alc_underarms` |
 | v2 Izdvojeni tretmani: Trbuh, Prsa, Cijela leđa | `alc_abdomen`, `alc_chest`, `alc_back_full` |
-| old hero sentence and button (Pazusi) | `alc_underarms` |
-| old offer card Pazusi | `alc_underarms` |
-| old offer card Cijelo tijelo (žena) small | `pkg_wholebody_small_f` |
-| old offer card Lice i vrat | `pkg_face_neck` |
-| old offer card Superman paket | `pkg_superman_m` |
-| old offer card Noge kompletne | `alc_legs_full` |
-| old offer card Paket za plažu | `pkg_beach_f` |
 
 Rules:
 - **Across studios:** the lowest `priceCents` across studios (shown with "od" where the design has it), and that same
@@ -43,9 +36,7 @@ Rules:
 2. **Production:** only when Ivan confirms the route is in production, set the same variable there and redeploy.
 3. **Afterwards:** the typed prices in the messages can be removed in a later cleanup.
 
-## Not covered: prices printed inside images
+## The previous design
 
-All six of the old design's offer photos (`public/images/services/`) have a price drawn into the image:
-`axilla.jpg` "€ 19,90", `full-body-woman.jpg` "€ 199,90", `face-neck.jpg` "€ 49,90", `legs.jpg` "€ 99,90",
-`beach-package.jpg` "€ 149,90", `superman-chest.jpg` "€ 99,90". These can't follow the app and carry no bazna cijena;
-they need versions without the price badge (the new design uses none of them).
+Retired on 2026-11-24 (Ivan): its six offer photos had prices printed in the image with no bazna cijena. Its sections,
+offer cards, photos and messages are removed; the landing has one design.

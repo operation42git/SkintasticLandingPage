@@ -1,23 +1,4 @@
 {
-  "nav": {
-    "offers": "Ponude",
-    "how": "Kako djeluje",
-    "locations": "Lokacije",
-    "booking": "Rezervacija termina",
-    "services": "Usluge",
-    "technology": "Tehnologija",
-    "info": "Informacije",
-    "about": "O nama",
-    "contact": "Kontakt",
-    "bookNow": "Rezerviraj termin",
-    "close": "Zatvori",
-    "menu": "Izbornik",
-    "call": "Nazovi",
-    "whatsapp": "WhatsApp",
-    "main": "Glavna navigacija",
-    "topBar": "Besplatno savjetovanje · Rezerviraj online"
-  },
-  "scroll": "Pomakni",
   "scrollTop": "Na vrh",
   "prices": {
     "base": "Cijena na {date}: {amount}"
@@ -26,101 +7,12 @@
     "title": "Laserska epilacija u Zagrebu | skintastic",
     "description": "Lasersko uklanjanje dlačica u Zagrebu. Mediostar diodni laser, besplatno savjetovanje i online rezervacija."
   },
-  "hero": {
-    "h1": "Laserska epilacija u Zagrebu",
-    "book": "Rezerviraj termin",
-    "allOffers": "Sve ponude",
-    "allOffersMobile": "Sve ponude ↓",
-    "trust1": "Besplatno savjetovanje",
-    "trust2": "Plaćanje karticom ili gotovinom",
-    "trustMobile": "Besplatno savjetovanje · {centres}",
-    "trustCentres": "{names}, Zagreb",
-    "nameJoin": " i ",
-    "dot": "Ponuda {n}",
-    "offPeak": "Povoljniji termini →"
-  },
-  "features": {
-    "experts": {
-      "title": "Stručnjaci za njegu kože",
-      "desc": "Naš stručni tim kombinira iskustvo i pažljiv pristup – za rezultate koji se vide."
-    },
-    "technology": {
-      "title": "Tehnologija",
-      "desc": "Koristimo isključivo modernu, provjerenu high-end tehnologiju – samo najbolje za tvoju kožu."
-    },
-    "hygiene": {
-      "title": "Higijena",
-      "desc": "Brinemo za tvoju sigurnost kroz stroge higijenske standarde u svim područjima."
-    },
-    "consultation": {
-      "title": "Besplatno savjetovanje",
-      "desc": "Posvećujemo ti pažnju, potpuno\nindividualno i bez naknade."
-    }
-  },
-  "offers": {
-    "title": "Najbolje ponude",
-    "subtitle": "Trajno povoljno",
-    "book": "Rezerviraj ovaj tretman",
-    "amount": "{amount} €",
-    "prev": "Prethodne ponude",
-    "next": "Sljedeće ponude",
-    "range": "{from}–{to} / {count} ponuda",
-    "swipeHint": "Povuci za više · {count} ponuda",
-    "calendar": "Sve cijene i paketi nalaze se u <link>online kalendaru za rezervacije</link>.",
-    "items": {
-      "axilla": {
-        "title": "Pazusi",
-        "desc": "Za muškarce i žene",
-        "price": "19,90",
-        "code": "alc_underarms"
-      },
-      "fullBody": {
-        "title": "Cijelo tijelo (žena) small",
-        "desc": "Bez leđa i trbuha, uključuje liniju ispod pupka",
-        "price": "199,90",
-        "code": "pkg_wholebody_small_f"
-      },
-      "faceNeck": {
-        "title": "Lice i vrat",
-        "desc": "Za svilenkasto glatku kožu",
-        "price": "49,90",
-        "code": "pkg_face_neck"
-      },
-      "superman": {
-        "title": "Superman paket",
-        "desc": "Prsa i trbuh",
-        "price": "99,90",
-        "code": "pkg_superman_m"
-      },
-      "legs": {
-        "title": "Noge kompletne",
-        "desc": "Uključujući stopalo i prste",
-        "price": "99,90",
-        "code": "alc_legs_full"
-      },
-      "beach": {
-        "title": "Beach paket",
-        "desc": "Bikini zona, intimna zona, noge i pazusi",
-        "price": "149,90",
-        "code": "pkg_beach_f"
-      }
-    }
-  },
   "offPeak": {
-    "eyebrow": "skintastic Zagreb",
-    "title": "Povoljniji termini",
-    "lead": "<strong>Isti tretman, povoljnije</strong> – u odabranim terminima.",
     "weekdaysShort": ["Pon", "Uto", "Sri", "Čet", "Pet", "Sub", "Ned"],
-    "upTo": "do −{n} %",
-    "upToOne": "Do −{n} %",
-    "until": "do {date}",
-    "bothStudios": "Oba studija",
-    "and": " i "
+    "and": " i ",
+    "bothStudios": "Oba studija"
   },
   "how": {
-    "eyebrow": "Trajno uklanjanje dlačica laserom",
-    "title": "Kako djeluje",
-    "cta": "Rezerviraj besplatno savjetovanje",
     "steps": {
       "1": {
         "title": "Besplatno savjetovanje",
@@ -134,77 +26,12 @@
         "title": "Dugotrajno glatka koža",
         "body": "Bez brijanja i depilacije. Jednom godišnje jedan tretman osvježavanja."
       }
-    },
-    "mediostarAlt": "Mediostar diodni laser",
-    "mediostarTitle": "Mediostar diodni laser – Made in Germany",
-    "mediostarBody": "Asclepion, više od 45 godina u medicinskim laserima. Nježan i učinkovit tretman uz 360° ICE-hlađenje.",
-    "chips": ["810 i 940 nm", "ICE-hlađenje", "Svi tipovi kože I–VI", "Bez UV-zračenja"]
+    }
   },
   "why": {
-    "eyebrow": "skintastic laser | skin | body",
-    "title": "Zašto skintastic",
-    "features": {
-      "experts": {
-        "title": "Stručnjaci za njegu kože",
-        "body": "Iskustvo i pažljiv pristup – za rezultate koji se vide."
-      },
-      "technology": {
-        "title": "Tehnologija",
-        "body": "Provjerena high-end tehnologija."
-      },
-      "hygiene": {
-        "title": "Higijena",
-        "body": "Strogi standardi u svim područjima."
-      },
-      "consultation": {
-        "title": "Besplatno savjetovanje",
-        "body": "Individualno i bez naknade."
-      }
-    },
-    "aboutEyebrow": "O nama",
-    "about": "<strong>U skintasticu sve se vrti oko tvoje kože.</strong> Specijalizirani smo za lasersko uklanjanje dlačica visokoučinkovitim diodnim laserima – vrhunski rezultati po poštenoj cijeni, u elegantnom ambijentu u Zagrebu.",
-    "tagline": "Ljepota koja traje.",
-    "certs": "Certifikati skintastic brenda · Kvaliteta je na prvom mjestu",
-    "wifiAlt": "WIFI",
-    "wkoAlt": "Wirtschaftskammer Österreich"
-  },
-  "locations": {
-    "eyebrow": "skintastic Zagreb",
-    "title": "Naše lokacije",
-    "gallery": "Galerija",
-    "directions": "Kako do nas",
-    "bookAt": "Rezerviraj u {name}",
-    "bookSoon": "Rezervacije uskoro",
-    "soon": "Uskoro",
-    "opening": "Otvaranje {label}",
-    "teaserBody": "Novi centar uskoro otvara vrata. Do tada nas posjeti u {names}.",
-    "nameOr": " ili ",
-    "family": "Dio skintastic obitelji",
-    "familyCount": "{count} centara u 3 zemlje — ista tehnologija i standard kvalitete.",
-    "familyShort": "Dio skintastic obitelji · {count} centara u 3 zemlje",
-    "offPeak": "Povoljniji termini u ovom studiju →"
-  },
-  "services": {
-    "badge": "Naša ponuda",
-    "title": "Usluge skintastica",
-    "subtitle": "Trajno uklanjanje dlačica laserom",
-    "lead": "Trajno glatka koža uz vrhunsku lasersku tehnologiju <em>u skintasticu</em>.",
-    "body1": "Želiš trajno glatku kožu bez brijanja, depilacije i dosadnih dlačica? U skintasticu te čeka nježno i učinkovito lasersko uklanjanje dlačica uz najnovije diodne lasere. Najpopularniji tretmani obuhvaćaju pazuhe, noge, intimnu zonu i lice, a već nakon 8 do 10 tretmana možeš uživati u dugotrajnoj glatkoj koži, nježnoj i blistavoj kao nikada prije.",
-    "body2": "Naša tehnologija pogodna je za sve tipove kože i dlačica, a tretmane provode isključivo posebno educirani stručnjaci za lasersku i njegu kože. Posebnu pažnju posvećujemo higijeni, sigurnosti i podnošljivosti tretmana. Rezerviraj sada svoje besplatno savjetovanje – posvetit ćemo vrijeme svakom tvojem pitanju. Tvoj put do svilenkasto glatke kože počinje <em>u skintasticu</em>!",
-    "ctaPrices": "Cijene & rezervacije",
-    "ctaTech": "Tehnologija"
-  },
-  "technology": {
-    "badge": "Tehnologija",
-    "title": "High-End uređaji",
-    "heading": "Mediostar diodni laser – maksimalno učinkovit",
-    "p1": "<em>U skintasticu</em> koristimo najmoderniju tehnologiju – Mediostar diodni laser njemačkog proizvođača Asclepion, jednog od vodećih svjetskih imena u medicinskim laserskim sustavima. Više od 45 godina Asclepion stoji za stručnost, kvalitetu i inovacije, potvrđujući pouzdanost tehnologije „Made in Germany“.",
-    "p2": "Naš Mediostar posebno je razvijen za trajno uklanjanje dlačica – pogodan za sve tipove kože (I–VI) i sve tipove dlačica. Monolith Powerline ručka s 5.000 W snage kombinira vrhunske rezultate i ugodan tretman, uz savršeni miks valnih duljina. S 360° Ice-hlađenjem, ergonomskim dizajnom i kratkim impulsima, i najsuptilnije dlačice uklanjaju se učinkovito i nježno.",
-    "p3": "<em>U skintasticu</em> je tvoje iskustvo laserskog uklanjanja dlačica na vrhunskom nivou."
+    "eyebrow": "skintastic laser | skin | body"
   },
   "faq": {
-    "badge": "Često postavljana pitanja",
-    "title": "Korisne informacije",
     "subtitle": "Zanima te trajno uklanjanje dlačica u skintasticu i imaš pitanja? Super! Želimo da se osjećaš ugodno i dobro informirano. Ovdje smo odgovorili na najčešća pitanja naših klijenata:",
     "items": [
       {
@@ -272,83 +99,12 @@
       }
     ]
   },
-  "certificates": {
-    "badge": "Kvaliteta je na prvom mjestu",
-    "title": "Naši certifikati"
-  },
   "reviews": {
-    "badge": "Ponosni smo na to",
-    "title": "Što naša zajednica kaže",
-    "rating": "[OCJENA]",
-    "count": "[BROJ]",
-    "countLabel": "{count} recenzija na Googleu",
-    "google": "Sve recenzije na Googleu ↗",
-    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA",
-    "instagram": "Prati nas na Instagramu ↗",
-    "instagramShort": "Instagram ↗",
-    "items": [
-      {
-        "title": "MOGU SAMO PREPORUČITI",
-        "text": "Bio mi je treći put tamo, a atmosfera je bila super lijepa i ugodna! Veselim se sljedećem terminu!",
-        "author": "Jessi",
-        "centre": ""
-      },
-      {
-        "title": "SAVRŠENA ATMOSFERA",
-        "text": "Odličan prvi termin. Gospođa je odvojila vrijeme da mi sve objasni i cijelo vrijeme sam znala što se događa. Atmosfera je bila savršena i osjećala sam se vrlo ugodno. Već se veselim sljedećim tretmanima.",
-        "author": "Diana",
-        "centre": ""
-      },
-      {
-        "title": "VRLO PRISTUPAČNO",
-        "text": "Vrlo ljubazno, osjećate se ugodno, a laserski tretman je ugodan! Veselim se sljedećim sesijama. Svakako to učinite sada; posebni paketi su vrlo pristupačni i stvarno se isplate.",
-        "author": "Michelle",
-        "centre": ""
-      },
-      {
-        "title": "JEDNOSTAVNO REZERVIRANJE TERMINA",
-        "text": "Usluga je bila jako ljubazna, osjećala sam se vrlo ugodno. Jednostavna rezervacija termina putem interneta. Već vidim rezultate nakon drugog posjeta :)",
-        "author": "Margit",
-        "centre": ""
-      }
-    ]
+    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA"
   },
   "contact": {
     "eyebrow": "Tu smo za tebe",
-    "title": "Kontakt",
-    "call": "Nazovi",
-    "whatsapp": "WhatsApp",
-    "email": "E-mail",
-    "instagram": "Instagram",
-    "facebook": "Facebook",
-    "book": "Rezerviraj u {name}",
-    "directions": "Kako do nas ↗",
-    "parking": "Parking: {value}"
-  },
-  "goetheQuote": {
-    "line1": "Ljepota je uvijek",
-    "line2": "rado viđen gost.",
-    "author": "Goethe"
-  },
-  "quote": {
-    "line1": "It's not easy",
-    "line2": "being as beautiful",
-    "line3": "as you look.",
-    "author": "Sharon Stone"
-  },
-  "about": {
-    "badge": "skintastic LASER | SKIN | BODY",
-    "title": "O nama",
-    "p1": "<strong>skintastic sve se vrti oko tvoje kože.</strong> Specijalizirani smo za lasersko uklanjanje dlačica visokoučinkovitim diodnim laserima.",
-    "p2": "Naš cilj: vrhunski rezultati i vidljive promjene – po poštenoj cijeni. Kvaliteta nam je na prvom mjestu, zato koristimo high-end tehnologiju i stručno osoblje koje izvrsno poznaje svoj posao.",
-    "p3": "U elegantnom ambijentu pružamo individualne tretmane na najvišoj razini. Vjeruj našoj stručnosti i doživi savršenu kombinaciju tehnologije, estetike i osobne pažnje – za osjećaj kože koji oduševljava.",
-    "tagline": "Ljepota koja traje."
-  },
-  "beachBanner": {
-    "title": "Beach paket",
-    "price": "€ 149,90",
-    "desc": "Bilo da se pripremaš za ljeto ili jednostavno želiš više udobnosti, uz higijensku i učinkovitu lasersku epilaciju diodnim laserom <em>u skintasticu</em>, možeš zaboraviti na stalno brijanje i uživati u dugotrajno glatkoj koži.",
-    "cta": "Cijene & rezervacije"
+    "title": "Kontakt"
   },
   "footer": {
     "tagline": "Laserska epilacija u Zagrebu.",
@@ -357,9 +113,6 @@
     "legal": "Pravno",
     "privacyPolicy": "Zaštita podataka",
     "imprint": "Impressum",
-    "instagram": "Instagram",
-    "facebook": "Facebook",
-    "whatsapp": "WhatsApp",
     "soon": "uskoro",
     "company": "DMT active solutions d.o.o.",
     "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"

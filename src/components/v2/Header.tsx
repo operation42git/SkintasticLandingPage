@@ -1,12 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { contact } from "@/config/contact";
 import { BookButton } from "@/components/ui/BookButton";
 import { ChatIcon, PhoneIcon } from "./icons";
 import { LanguageSwitch } from "./LanguageSwitch";
-import { DesignToggle } from "./DesignToggle";
 
 /** The anchored sections in page order: the laptop links and the phone strip show the same three. */
 const SECTIONS = [
@@ -60,6 +59,7 @@ function useActiveSection(): string {
  */
 export function Header() {
   const t = useTranslations("v2");
+  const locale = useLocale();
   const call = t("contact.callCta", { phone: contact.phoneDisplay });
   const active = useActiveSection();
   const strip = useRef<HTMLElement>(null);
@@ -84,14 +84,13 @@ export function Header() {
         <img src="/images/logos/logo-full-dark.svg" alt={t("logoAlt")} />
         <nav aria-label={t("nav.menu")}>
           {SECTIONS.map((s) => (
-            <a key={s.id} href={`#${s.id}`} {...current(s.id)}>
+            <a key={s.id} href={`/${locale}/#${s.id}`} {...current(s.id)}>
               {t(`nav.${s.key}`)}
             </a>
           ))}
         </nav>
         <div className="hq">
           <LanguageSwitch />
-          <DesignToggle to="sada" className="qi" />
           <a
             className="qi"
             href={contact.whatsappHref}
@@ -110,7 +109,7 @@ export function Header() {
       </header>
       <nav className="sc" aria-label={t("nav.menu")} ref={strip}>
         {SECTIONS.map((s) => (
-          <a key={s.id} href={`#${s.id}`} {...current(s.id)}>
+          <a key={s.id} href={`/${locale}/#${s.id}`} {...current(s.id)}>
             {t(`nav.${s.key}`)}
           </a>
         ))}

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { setRequestLocale } from "next-intl/server";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { V2Shell } from "@/components/v2/Shell";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -246,9 +245,8 @@ export default async function DatenschutzPage({
   setRequestLocale(locale);
 
   return (
-    <>
-      <Header />
-      <main className="bg-white pt-[110px] pb-24">
+    <V2Shell>
+      <main className="bg-white pb-24">
         <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
           {locale === "de" ? <DatenschutzDE /> : <DatenschutzHR />}
 
@@ -268,7 +266,6 @@ export default async function DatenschutzPage({
           </div>
         </div>
       </main>
-      <Footer />
-    </>
+    </V2Shell>
   );
 }

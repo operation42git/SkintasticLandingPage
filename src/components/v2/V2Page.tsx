@@ -20,13 +20,13 @@ import { Footer } from "./Footer";
 import { StickyBar } from "./StickyBar";
 
 /** The new design, in the mockup's "Novo" order. */
-export function V2Page({ search }: { search: string }) {
+export function V2Page() {
   const locale = useLocale();
   // The partner's offers from the app (or the ?ponude=demo set), read once the page is in the browser.
   const [offers, setOffers] = useState<OfferWindowV2[]>([]);
   useEffect(() => {
     let cancelled = false;
-    loadOffers(search, locale).then((loaded) => {
+    loadOffers(window.location.search, locale).then((loaded) => {
       if (cancelled) return;
       setOffers(loaded);
       setOffersShown(loaded);
@@ -34,7 +34,7 @@ export function V2Page({ search }: { search: string }) {
     return () => {
       cancelled = true;
     };
-  }, [search, locale]);
+  }, [locale]);
   return (
     <div className={`v2 ${newsreader.variable} ${hanken.variable}`}>
       <Header />

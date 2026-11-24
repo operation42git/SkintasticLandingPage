@@ -33,7 +33,7 @@ export function Footer() {
           <div>
             <b>{t("zagreb")}</b>
             {zagreb.map((location) => (
-              <a key={location.id} href="#v2-lokacije">
+              <a key={location.id} href={`/${locale}/#v2-lokacije`}>
                 {location.name}
                 {location.type === "teaser" ? ` · ${t("soon")}` : ""}
               </a>

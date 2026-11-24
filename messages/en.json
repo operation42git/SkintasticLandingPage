@@ -1,23 +1,4 @@
 {
-  "nav": {
-    "offers": "Offers",
-    "how": "How it works",
-    "locations": "Locations",
-    "booking": "Book an appointment",
-    "services": "Treatments",
-    "technology": "Technology",
-    "info": "Information",
-    "about": "About us",
-    "contact": "Contact",
-    "bookNow": "Book an appointment",
-    "close": "Close",
-    "menu": "Menu",
-    "call": "Call",
-    "whatsapp": "WhatsApp",
-    "main": "Main navigation",
-    "topBar": "Free consultation · Book online"
-  },
-  "scroll": "Scroll",
   "scrollTop": "Back to top",
   "prices": {
     "base": "Price on {date}: {amount}"
@@ -26,101 +7,12 @@
     "title": "Laser hair removal in Zagreb | skintastic",
     "description": "Laser hair removal in Zagreb. Mediostar diode laser, a free consultation and online booking."
   },
-  "hero": {
-    "h1": "Laser hair removal in Zagreb",
-    "book": "Book an appointment",
-    "allOffers": "All offers",
-    "allOffersMobile": "All offers ↓",
-    "trust1": "Free consultation",
-    "trust2": "Pay by card or cash",
-    "trustMobile": "Free consultation · {centres}",
-    "trustCentres": "{names}, Zagreb",
-    "nameJoin": " and ",
-    "dot": "Offer {n}",
-    "offPeak": "Better-priced times →"
-  },
-  "features": {
-    "experts": {
-      "title": "Skin care specialists",
-      "desc": "Our specialist team combines experience and a careful approach – for results you can see."
-    },
-    "technology": {
-      "title": "Technology",
-      "desc": "We use only modern, proven high-end technology – nothing but the best for your skin."
-    },
-    "hygiene": {
-      "title": "Hygiene",
-      "desc": "We look after your safety with strict hygiene standards in every area."
-    },
-    "consultation": {
-      "title": "Free consultation",
-      "desc": "We give you our attention, fully\nindividual and free of charge."
-    }
-  },
-  "offers": {
-    "title": "Best offers",
-    "subtitle": "Lastingly affordable",
-    "book": "Book this treatment",
-    "amount": "{amount} €",
-    "prev": "Previous offers",
-    "next": "Next offers",
-    "range": "{from}–{to} / {count} offers",
-    "swipeHint": "Swipe for more · {count} offers",
-    "calendar": "All prices and packages are in the <link>online booking calendar</link>.",
-    "items": {
-      "axilla": {
-        "title": "Underarms",
-        "desc": "For men and women",
-        "price": "19,90",
-        "code": "alc_underarms"
-      },
-      "fullBody": {
-        "title": "Full body (women) small",
-        "desc": "Without the back and abdomen, includes the line below the navel",
-        "price": "199,90",
-        "code": "pkg_wholebody_small_f"
-      },
-      "faceNeck": {
-        "title": "Face and neck",
-        "desc": "For silk-smooth skin",
-        "price": "49,90",
-        "code": "pkg_face_neck"
-      },
-      "superman": {
-        "title": "Superman package",
-        "desc": "Chest and abdomen",
-        "price": "99,90",
-        "code": "pkg_superman_m"
-      },
-      "legs": {
-        "title": "Full legs",
-        "desc": "Including the foot and toes",
-        "price": "99,90",
-        "code": "alc_legs_full"
-      },
-      "beach": {
-        "title": "Beach package",
-        "desc": "Bikini area, intimate area, legs and underarms",
-        "price": "149,90",
-        "code": "pkg_beach_f"
-      }
-    }
-  },
   "offPeak": {
-    "eyebrow": "skintastic Zagreb",
-    "title": "Better-priced times",
-    "lead": "<strong>The same treatment, for less</strong> – at selected times.",
     "weekdaysShort": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-    "upTo": "up to −{n} %",
-    "upToOne": "Up to −{n} %",
-    "until": "until {date}",
-    "bothStudios": "Both studios",
-    "and": " and "
+    "and": " and ",
+    "bothStudios": "Both studios"
   },
   "how": {
-    "eyebrow": "Lasting laser hair removal",
-    "title": "How it works",
-    "cta": "Book a free consultation",
     "steps": {
       "1": {
         "title": "Free consultation",
@@ -134,77 +26,12 @@
         "title": "Lastingly smooth skin",
         "body": "No shaving and no waxing. One refresh treatment once a year."
       }
-    },
-    "mediostarAlt": "Mediostar diode laser",
-    "mediostarTitle": "Mediostar diode laser – Made in Germany",
-    "mediostarBody": "Asclepion, more than 45 years in medical lasers. A gentle, effective treatment with 360° ICE cooling.",
-    "chips": ["810 and 940 nm", "ICE cooling", "All skin types I–VI", "No UV radiation"]
+    }
   },
   "why": {
-    "eyebrow": "skintastic laser | skin | body",
-    "title": "Why skintastic",
-    "features": {
-      "experts": {
-        "title": "Skin care specialists",
-        "body": "Experience and a careful approach – for results you can see."
-      },
-      "technology": {
-        "title": "Technology",
-        "body": "Proven high-end technology."
-      },
-      "hygiene": {
-        "title": "Hygiene",
-        "body": "Strict standards in every area."
-      },
-      "consultation": {
-        "title": "Free consultation",
-        "body": "Individual and free of charge."
-      }
-    },
-    "aboutEyebrow": "About us",
-    "about": "<strong>At skintastic, everything revolves around your skin.</strong> We specialise in laser hair removal with high-performance diode lasers – outstanding results at a fair price, in an elegant setting in Zagreb.",
-    "tagline": "Beauty that lasts.",
-    "certs": "skintastic brand certificates · Quality comes first",
-    "wifiAlt": "WIFI",
-    "wkoAlt": "Wirtschaftskammer Österreich"
-  },
-  "locations": {
-    "eyebrow": "skintastic Zagreb",
-    "title": "Our locations",
-    "gallery": "Gallery",
-    "directions": "How to find us",
-    "bookAt": "Book at {name}",
-    "bookSoon": "Booking soon",
-    "soon": "Coming soon",
-    "opening": "Opening {label}",
-    "teaserBody": "A new centre opens soon. Until then, visit us at {names}.",
-    "nameOr": " or ",
-    "family": "Part of the skintastic family",
-    "familyCount": "{count} centres in 3 countries — the same technology and quality standard.",
-    "familyShort": "Part of the skintastic family · {count} centres in 3 countries",
-    "offPeak": "Better-priced times at this studio →"
-  },
-  "services": {
-    "badge": "Our offer",
-    "title": "skintastic treatments",
-    "subtitle": "Lasting laser hair removal",
-    "lead": "Lastingly smooth skin with high-end laser technology <em>at skintastic</em>.",
-    "body1": "Do you want lastingly smooth skin without shaving, waxing and stubborn hair? At skintastic, gentle and effective laser hair removal with the latest diode lasers is waiting for you. The most popular treatments cover underarms, legs, the intimate area and the face, and after just 8 to 10 treatments you can enjoy long-lasting smooth skin, softer and more radiant than ever.",
-    "body2": "Our technology suits every skin type and hair type, and treatments are carried out only by specially trained laser and skin-care specialists. We pay particular attention to hygiene, safety and how comfortable the treatment feels. Book your free consultation now – we will take time for every question you have. Your path to silk-smooth skin starts <em>at skintastic</em>!",
-    "ctaPrices": "Prices & booking",
-    "ctaTech": "Technology"
-  },
-  "technology": {
-    "badge": "Technology",
-    "title": "High-end devices",
-    "heading": "Mediostar diode laser – highly effective",
-    "p1": "<em>At skintastic</em> we use the most modern technology – the Mediostar diode laser from the German manufacturer Asclepion, one of the world's leading names in medical laser systems. For more than 45 years Asclepion has stood for expertise, quality and innovation, confirming the reliability of “Made in Germany” technology.",
-    "p2": "Our Mediostar was developed especially for lasting hair removal – suitable for all skin types (I–VI) and all hair types. The Monolith Powerline handpiece, with 5,000 W of power, combines outstanding results and a comfortable treatment, with a precise mix of wavelengths. With 360° ice cooling, an ergonomic design and short pulses, even the finest hairs are removed effectively and gently.",
-    "p3": "<em>At skintastic</em> your laser hair removal experience is at the highest level."
+    "eyebrow": "skintastic laser | skin | body"
   },
   "faq": {
-    "badge": "Frequently asked questions",
-    "title": "Useful information",
     "subtitle": "Curious about lasting hair removal at skintastic, and you have questions? Great! We want you to feel comfortable and well informed. Here we have answered our clients' most common questions:",
     "items": [
       {
@@ -272,83 +99,12 @@
       }
     ]
   },
-  "certificates": {
-    "badge": "Quality comes first",
-    "title": "Our certificates"
-  },
   "reviews": {
-    "badge": "We are proud of it",
-    "title": "What our community says",
-    "rating": "[RATING]",
-    "count": "[COUNT]",
-    "countLabel": "{count} reviews on Google",
-    "google": "All reviews on Google ↗",
-    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA",
-    "instagram": "Follow us on Instagram ↗",
-    "instagramShort": "Instagram ↗",
-    "items": [
-      {
-        "title": "I CAN ONLY RECOMMEND IT",
-        "text": "It was my third time there, and the atmosphere was really lovely and pleasant! I'm looking forward to my next appointment!",
-        "author": "Jessi",
-        "centre": ""
-      },
-      {
-        "title": "PERFECT ATMOSPHERE",
-        "text": "A great first appointment. The lady took the time to explain everything to me, and I knew what was happening the whole time. The atmosphere was perfect and I felt very comfortable. I'm already looking forward to my next treatments.",
-        "author": "Diana",
-        "centre": ""
-      },
-      {
-        "title": "VERY AFFORDABLE",
-        "text": "Very friendly, you feel at ease, and the laser treatment is pleasant! I'm looking forward to the next sessions. Definitely do it now; the special packages are very affordable and really worth it.",
-        "author": "Michelle",
-        "centre": ""
-      },
-      {
-        "title": "EASY BOOKING",
-        "text": "The service was very friendly, I felt very comfortable. Easy online booking. I can already see results after my second visit :)",
-        "author": "Margit",
-        "centre": ""
-      }
-    ]
+    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA"
   },
   "contact": {
     "eyebrow": "We are here for you",
-    "title": "Contact",
-    "call": "Call",
-    "whatsapp": "WhatsApp",
-    "email": "E-mail",
-    "instagram": "Instagram",
-    "facebook": "Facebook",
-    "book": "Book at {name}",
-    "directions": "How to find us ↗",
-    "parking": "Parking: {value}"
-  },
-  "goetheQuote": {
-    "line1": "Beauty is always",
-    "line2": "a welcome guest.",
-    "author": "Goethe"
-  },
-  "quote": {
-    "line1": "It's not easy",
-    "line2": "being as beautiful",
-    "line3": "as you look.",
-    "author": "Sharon Stone"
-  },
-  "about": {
-    "badge": "skintastic LASER | SKIN | BODY",
-    "title": "About us",
-    "p1": "<strong>At skintastic, everything revolves around your skin.</strong> We specialise in laser hair removal with high-performance diode lasers.",
-    "p2": "Our goal: outstanding results and visible change – at a fair price. Quality comes first, so we use high-end technology and specialist staff who know their work inside out.",
-    "p3": "In an elegant setting we provide individual treatments at the highest level. Trust our expertise and experience the perfect combination of technology, aesthetics and personal attention – for a feeling in your skin that delights.",
-    "tagline": "Beauty that lasts."
-  },
-  "beachBanner": {
-    "title": "Beach package",
-    "price": "€ 149,90",
-    "desc": "Whether you are getting ready for summer or simply want more comfort, with hygienic and effective diode-laser hair removal <em>at skintastic</em> you can forget constant shaving and enjoy long-lasting smooth skin.",
-    "cta": "Prices & booking"
+    "title": "Contact"
   },
   "footer": {
     "tagline": "Laser hair removal in Zagreb.",
@@ -357,9 +113,6 @@
     "legal": "Legal",
     "privacyPolicy": "Privacy policy",
     "imprint": "Impressum",
-    "instagram": "Instagram",
-    "facebook": "Facebook",
-    "whatsapp": "WhatsApp",
     "soon": "coming soon",
     "company": "DMT active solutions d.o.o.",
     "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"
