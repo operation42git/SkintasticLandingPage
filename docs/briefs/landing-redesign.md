@@ -1,5 +1,7 @@
 # Brief · landing: the new design, behind a discreet switch
 
+**Update (Ivan, 2026-11-24): the previous design is retired.** The new design is the only one: the header's design button, the previous page, its sections, offer photos and messages are removed; an old `?dizajn=` link shows the new design. Impressum and Datenschutz use the new header and footer. The Switch section below is history.
+
 > **Accepted by Ivan Tomić, 2026-11-03.** Written by the Skintastic spec conversation from Ivan Tomić's choices of 2026-11-02 and
 > 2026-11-03 on the mockup https://claude.ai/artifact/EVDgTV8fpg2MgHZoDtgbea (version 14, the "Novo" view).
 

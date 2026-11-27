@@ -1,129 +1,18 @@
 {
-  "nav": {
-    "offers": "Angebote",
-    "how": "So funktioniert's",
-    "locations": "Standorte",
-    "booking": "Termin buchen",
-    "services": "Behandlungen",
-    "technology": "Technologie",
-    "info": "Informationen",
-    "about": "Über uns",
-    "contact": "Kontakt",
-    "bookNow": "Termin buchen",
-    "close": "Schließen",
-    "menu": "Menü",
-    "call": "Anrufen",
-    "whatsapp": "WhatsApp",
-    "main": "Hauptnavigation",
-    "topBar": "Kostenlose Beratung · Online buchen"
-  },
-  "scroll": "Scrollen",
   "scrollTop": "Nach oben",
+  "prices": {
+    "base": "Preis am {date}: {amount}"
+  },
   "meta": {
     "title": "Laser-Haarentfernung in Zagreb | skintastic",
     "description": "Laser-Haarentfernung in Zagreb. Mediostar Diodenlaser, kostenlose Beratung und Online-Buchung."
   },
-  "hero": {
-    "h1": "Laser-Haarentfernung in Zagreb",
-    "book": "Termin buchen",
-    "allOffers": "Alle Angebote",
-    "allOffersMobile": "Alle Angebote ↓",
-    "trust1": "Kostenlose Beratung",
-    "trust2": "Zahlung mit Karte oder bar",
-    "trustMobile": "Kostenlose Beratung · {centres}",
-    "trustCentres": "{names}, Zagreb",
-    "nameJoin": " und ",
-    "dot": "Angebot {n}",
-    "offPeak": "Günstigere Termine →"
-  },
-  "features": {
-    "experts": {
-      "title": "Expertinnen für Hautpflege",
-      "desc": "Unser Fachteam verbindet Erfahrung mit einem sorgfältigen Zugang – für Ergebnisse, die man sieht."
-    },
-    "technology": {
-      "title": "Technologie",
-      "desc": "Wir setzen ausschließlich moderne, bewährte High-End-Technologie ein – nur das Beste für deine Haut."
-    },
-    "hygiene": {
-      "title": "Hygiene",
-      "desc": "Mit strengen Hygienestandards in allen Bereichen sorgen wir für deine Sicherheit."
-    },
-    "consultation": {
-      "title": "Kostenlose Beratung",
-      "desc": "Wir nehmen uns Zeit für dich, ganz\nindividuell und kostenlos."
-    }
-  },
-  "offers": {
-    "title": "Top-Angebote",
-    "subtitle": "Dauerhaft günstig",
-    "book": "Diese Behandlung buchen",
-    "amount": "{amount} €",
-    "prev": "Vorherige Angebote",
-    "next": "Weitere Angebote",
-    "range": "{from}–{to} / {count} Angebote",
-    "swipeHint": "Wischen für mehr · {count} Angebote",
-    "calendar": "Alle Preise und Pakete findest du im <link>Online-Buchungskalender</link>.",
-    "items": {
-      "axilla": {
-        "title": "Achseln",
-        "desc": "Für Männer und Frauen",
-        "price": "19,90",
-        "oldPrice": "49,99",
-        "code": "alc_underarms"
-      },
-      "fullBody": {
-        "title": "Ganzkörper (Frauen) klein",
-        "desc": "Ohne Rücken und Bauch, inklusive Linie unterhalb des Nabels",
-        "price": "199,90",
-        "oldPrice": "299,90",
-        "code": "pkg_wholebody_small_f"
-      },
-      "faceNeck": {
-        "title": "Gesicht und Hals",
-        "desc": "Für seidig glatte Haut",
-        "price": "49,90",
-        "oldPrice": "79,80",
-        "code": "pkg_face_neck"
-      },
-      "superman": {
-        "title": "Superman-Paket",
-        "desc": "Brust und Bauch",
-        "price": "99,90",
-        "oldPrice": "169,80",
-        "code": "pkg_superman_m"
-      },
-      "legs": {
-        "title": "Beine komplett",
-        "desc": "Inklusive Fuß und Zehen",
-        "price": "99,90",
-        "oldPrice": "",
-        "code": "alc_legs_full"
-      },
-      "beach": {
-        "title": "Beach-Paket",
-        "desc": "Bikinizone, Intimbereich, Beine und Achseln",
-        "price": "149,90",
-        "oldPrice": "249,70",
-        "code": "pkg_beach_f"
-      }
-    }
-  },
   "offPeak": {
-    "eyebrow": "skintastic Zagreb",
-    "title": "Günstigere Termine",
-    "lead": "<strong>Dieselbe Behandlung, günstiger</strong> – zu ausgewählten Zeiten.",
     "weekdaysShort": ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"],
-    "upTo": "bis zu −{n} %",
-    "upToOne": "Bis zu −{n} %",
-    "until": "bis {date}",
-    "bothStudios": "Beide Studios",
-    "and": " und "
+    "and": " und ",
+    "bothStudios": "Beide Studios"
   },
   "how": {
-    "eyebrow": "Dauerhafte Laser-Haarentfernung",
-    "title": "So funktioniert's",
-    "cta": "Kostenlose Beratung buchen",
     "steps": {
       "1": {
         "title": "Kostenlose Beratung",
@@ -137,77 +26,12 @@
         "title": "Dauerhaft glatte Haut",
         "body": "Kein Rasieren und kein Waxing mehr. Einmal im Jahr eine Auffrischungsbehandlung."
       }
-    },
-    "mediostarAlt": "Mediostar Diodenlaser",
-    "mediostarTitle": "Mediostar Diodenlaser – Made in Germany",
-    "mediostarBody": "Asclepion, mehr als 45 Jahre Erfahrung mit medizinischen Lasern. Eine sanfte, wirksame Behandlung mit 360° ICE-Kühlung.",
-    "chips": ["810 und 940 nm", "ICE-Kühlung", "Alle Hauttypen I–VI", "Keine UV-Strahlung"]
+    }
   },
   "why": {
-    "eyebrow": "skintastic laser | skin | body",
-    "title": "Warum skintastic",
-    "features": {
-      "experts": {
-        "title": "Expertinnen für Hautpflege",
-        "body": "Erfahrung und ein sorgfältiger Zugang – für Ergebnisse, die man sieht."
-      },
-      "technology": {
-        "title": "Technologie",
-        "body": "Bewährte High-End-Technologie."
-      },
-      "hygiene": {
-        "title": "Hygiene",
-        "body": "Strenge Standards in allen Bereichen."
-      },
-      "consultation": {
-        "title": "Kostenlose Beratung",
-        "body": "Individuell und kostenlos."
-      }
-    },
-    "aboutEyebrow": "Über uns",
-    "about": "<strong>Bei skintastic dreht sich alles um deine Haut.</strong> Wir sind auf Laser-Haarentfernung mit Hochleistungs-Diodenlasern spezialisiert – Top-Ergebnisse zum fairen Preis, in einem eleganten Ambiente in Zagreb.",
-    "tagline": "Schönheit, die bleibt.",
-    "certs": "Zertifikate der Marke skintastic · Qualität steht an erster Stelle",
-    "wifiAlt": "WIFI",
-    "wkoAlt": "Wirtschaftskammer Österreich"
-  },
-  "locations": {
-    "eyebrow": "skintastic Zagreb",
-    "title": "Unsere Standorte",
-    "gallery": "Galerie",
-    "directions": "Anfahrt",
-    "bookAt": "Buchen bei {name}",
-    "bookSoon": "Buchung bald möglich",
-    "soon": "Demnächst",
-    "opening": "Eröffnung {label}",
-    "teaserBody": "Ein neues Studio eröffnet bald. Bis dahin besuch uns bei {names}.",
-    "nameOr": " oder ",
-    "family": "Teil der skintastic Familie",
-    "familyCount": "{count} Studios in 3 Ländern — dieselbe Technologie und derselbe Qualitätsstandard.",
-    "familyShort": "Teil der skintastic Familie · {count} Studios in 3 Ländern",
-    "offPeak": "Günstigere Termine in diesem Studio →"
-  },
-  "services": {
-    "badge": "Unser Angebot",
-    "title": "skintastic Behandlungen",
-    "subtitle": "Dauerhafte Laser-Haarentfernung",
-    "lead": "Dauerhaft glatte Haut mit High-End-Lasertechnologie <em>bei skintastic</em>.",
-    "body1": "Du wünschst dir dauerhaft glatte Haut ohne Rasieren, Waxing und lästige Haare? Bei skintastic erwartet dich eine sanfte und wirksame Laser-Haarentfernung mit modernsten Diodenlasern. Die beliebtesten Behandlungen sind Achseln, Beine, Intimbereich und Gesicht, und schon nach 8 bis 10 Behandlungen genießt du lang anhaltend glatte Haut, weicher und strahlender als je zuvor.",
-    "body2": "Unsere Technologie eignet sich für jeden Haut- und Haartyp, und die Behandlungen führen ausschließlich speziell geschulte Laser- und Hautpflege-Expertinnen durch. Besonders achten wir auf Hygiene, Sicherheit und eine angenehme Behandlung. Buch jetzt deine kostenlose Beratung – wir nehmen uns Zeit für jede deiner Fragen. Dein Weg zu seidig glatter Haut beginnt <em>bei skintastic</em>!",
-    "ctaPrices": "Preise & Buchung",
-    "ctaTech": "Technologie"
-  },
-  "technology": {
-    "badge": "Technologie",
-    "title": "High-End-Geräte",
-    "heading": "Mediostar Diodenlaser – hochwirksam",
-    "p1": "<em>Bei skintastic</em> setzen wir modernste Technologie ein – den Mediostar Diodenlaser des deutschen Herstellers Asclepion, eines der weltweit führenden Namen für medizinische Lasersysteme. Seit mehr als 45 Jahren steht Asclepion für Kompetenz, Qualität und Innovation und bestätigt die Zuverlässigkeit von Technologie „Made in Germany“.",
-    "p2": "Unser Mediostar wurde speziell für die dauerhafte Haarentfernung entwickelt – geeignet für alle Hauttypen (I–VI) und alle Haartypen. Das Handstück Monolith Powerline mit 5.000 W Leistung verbindet Top-Ergebnisse mit einer angenehmen Behandlung, dank einer präzisen Kombination von Wellenlängen. Mit 360° Eiskühlung, ergonomischem Design und kurzen Pulsen werden selbst feinste Haare wirksam und schonend entfernt.",
-    "p3": "<em>Bei skintastic</em> erlebst du Laser-Haarentfernung auf höchstem Niveau."
+    "eyebrow": "skintastic laser | skin | body"
   },
   "faq": {
-    "badge": "Häufige Fragen",
-    "title": "Wissenswertes",
     "subtitle": "Du interessierst dich für dauerhafte Haarentfernung bei skintastic und hast Fragen? Super! Wir möchten, dass du dich wohl und gut informiert fühlst. Hier haben wir die häufigsten Fragen unserer Kundinnen und Kunden beantwortet:",
     "items": [
       {
@@ -275,85 +99,12 @@
       }
     ]
   },
-  "certificates": {
-    "badge": "Qualität steht an erster Stelle",
-    "title": "Unsere Zertifikate"
-  },
   "reviews": {
-    "badge": "Darauf sind wir stolz",
-    "title": "Das sagt unsere Community",
-    "rating": "[RATING]",
-    "count": "[COUNT]",
-    "countLabel": "{count} Bewertungen auf Google",
-    "google": "Alle Bewertungen auf Google ↗",
-    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA",
-    "instagram": "Folge uns auf Instagram ↗",
-    "instagramShort": "Instagram ↗",
-    "items": [
-      {
-        "title": "KANN ICH NUR EMPFEHLEN",
-        "text": "Ich war zum dritten Mal dort, und die Atmosphäre war wirklich schön und angenehm! Ich freue mich schon auf meinen nächsten Termin!",
-        "author": "Jessi",
-        "centre": ""
-      },
-      {
-        "title": "PERFEKTE ATMOSPHÄRE",
-        "text": "Ein toller erster Termin. Die Dame hat sich Zeit genommen, mir alles zu erklären, und ich wusste die ganze Zeit, was passiert. Die Atmosphäre war perfekt und ich habe mich sehr wohlgefühlt. Ich freue mich schon auf die nächsten Behandlungen.",
-        "author": "Diana",
-        "centre": ""
-      },
-      {
-        "title": "SEHR PREISWERT",
-        "text": "Sehr freundlich, man fühlt sich wohl, und die Laserbehandlung ist angenehm! Ich freue mich auf die nächsten Sitzungen. Unbedingt jetzt machen; die Spezialpakete sind sehr preiswert und lohnen sich wirklich.",
-        "author": "Michelle",
-        "centre": ""
-      },
-      {
-        "title": "EINFACHE BUCHUNG",
-        "text": "Der Service war sehr freundlich, ich habe mich sehr wohlgefühlt. Einfache Online-Buchung. Nach dem zweiten Besuch sehe ich schon Ergebnisse :)",
-        "author": "Margit",
-        "centre": ""
-      }
-    ]
+    "googleUrl": "https://maps.app.goo.gl/iP5gGWXhM4ECYWoCA"
   },
   "contact": {
     "eyebrow": "Wir sind für dich da",
-    "title": "Kontakt",
-    "call": "Anrufen",
-    "whatsapp": "WhatsApp",
-    "email": "E-Mail",
-    "instagram": "Instagram",
-    "facebook": "Facebook",
-    "book": "Buchen bei {name}",
-    "directions": "Anfahrt ↗",
-    "parking": "Parken: {value}"
-  },
-  "goetheQuote": {
-    "line1": "Schönheit ist überall",
-    "line2": "ein gar willkommener Gast.",
-    "author": "Goethe"
-  },
-  "quote": {
-    "line1": "Es ist nicht leicht,",
-    "line2": "so schön zu sein,",
-    "line3": "wie man aussieht.",
-    "author": "Sharon Stone"
-  },
-  "about": {
-    "badge": "skintastic LASER | SKIN | BODY",
-    "title": "Über uns",
-    "p1": "<strong>Bei skintastic dreht sich alles um deine Haut.</strong> Wir sind auf Laser-Haarentfernung mit Hochleistungs-Diodenlasern spezialisiert.",
-    "p2": "Unser Ziel: Top-Ergebnisse und sichtbare Veränderung – zum fairen Preis. Qualität steht an erster Stelle, deshalb arbeiten wir mit High-End-Technologie und Fachpersonal, das sein Handwerk bestens beherrscht.",
-    "p3": "In elegantem Ambiente bieten wir individuelle Behandlungen auf höchstem Niveau. Vertrau auf unsere Expertise und erlebe die perfekte Verbindung aus Technologie, Ästhetik und persönlicher Betreuung – für ein Hautgefühl, das begeistert.",
-    "tagline": "Schönheit, die bleibt."
-  },
-  "beachBanner": {
-    "title": "Beach-Paket",
-    "price": "149,90 €",
-    "instead": "statt",
-    "oldPrice": "249,70 €",
-    "desc": "Ob du dich auf den Sommer vorbereitest oder einfach mehr Komfort möchtest: Mit der hygienischen und wirksamen Dioden-Laser-Haarentfernung <em>bei skintastic</em> vergisst du das ständige Rasieren und genießt lang anhaltend glatte Haut.",
-    "cta": "Preise & Buchung"
+    "title": "Kontakt"
   },
   "footer": {
     "tagline": "Laser-Haarentfernung in Zagreb.",
@@ -362,45 +113,36 @@
     "legal": "Rechtliches",
     "privacyPolicy": "Datenschutzerklärung",
     "imprint": "Impressum",
-    "instagram": "Instagram",
-    "facebook": "Facebook",
-    "whatsapp": "WhatsApp",
     "soon": "demnächst",
     "company": "DMT active solutions d.o.o.",
     "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"
   },
   "cookieConsent": {
-    "title": "Einwilligungseinstellungen anpassen",
-    "introShort": "Wir verwenden Cookies, damit du effizient navigieren kannst und bestimmte Funktionen ausgeführt werden können.",
-    "introLong": "Cookies der Kategorie \"Notwendig\" werden in deinem Browser gespeichert, weil sie für die Grundfunktionen der Website unerlässlich sind.\n\nWir verwenden außerdem Cookies von Drittanbietern, die uns helfen zu analysieren, wie du diese Website nutzt, deine Einstellungen speichern und dir relevante Inhalte und Werbung anzeigen. Diese Cookies werden nur mit deiner vorherigen Einwilligung in deinem Browser gespeichert.\n\nDu kannst einige oder alle dieser Cookies aktivieren oder deaktivieren; das Deaktivieren einiger Cookies kann jedoch dein Surferlebnis beeinträchtigen.",
-    "showMore": "Mehr anzeigen",
-    "showLess": "Weniger anzeigen",
+    "title": "Cookies",
+    "text": "Wir verwenden Cookies, um zu sehen, welche Leistungen dich interessieren, und um dir passende Angebote zu zeigen.",
+    "note": "Du kannst deine Auswahl jederzeit ändern.",
+    "btnAcceptAll": "Alle akzeptieren",
+    "btnRejectOptional": "Optionale ablehnen",
+    "btnSettings": "Einstellungen",
+    "settingsTitle": "Cookie-Einstellungen",
+    "settingsIntro": "Wähle, welche Cookies du zulässt.",
     "alwaysActive": "Immer aktiv",
+    "btnSave": "Auswahl speichern",
+    "btnReject": "Ablehnen",
     "categories": {
       "necessary": {
         "title": "Notwendig",
-        "desc": "Notwendige Cookies sind für die Grundfunktionen der Website unerlässlich; ohne sie funktioniert die Website nicht wie vorgesehen. Diese Cookies speichern keine personenbezogenen Daten."
-      },
-      "functional": {
-        "title": "Funktional",
-        "desc": "Funktionale Cookies unterstützen bestimmte Funktionen, etwa das Teilen von Inhalten der Website auf Social-Media-Plattformen, das Sammeln von Feedback und andere Funktionen von Drittanbietern."
+        "desc": "Für den Betrieb der Website erforderlich."
       },
       "analytics": {
         "title": "Analyse",
-        "desc": "Analyse-Cookies helfen zu verstehen, wie Besucherinnen und Besucher mit der Website interagieren. Sie liefern Daten zu Besucherzahlen, Absprungrate, Herkunft der Zugriffe und Ähnlichem."
-      },
-      "performance": {
-        "title": "Leistung",
-        "desc": "Leistungs-Cookies helfen, die wichtigsten Leistungskennzahlen der Website zu verstehen und zu analysieren, um ein besseres Nutzungserlebnis zu bieten."
+        "desc": "Zeigen uns, welche Seiten und Leistungen Besucher ansehen (Google Analytics)."
       },
       "ads": {
         "title": "Werbung",
-        "desc": "Werbe-Cookies dienen dazu, relevante Werbung und Marketingkampagnen anzuzeigen. Diese Cookies verfolgen Besucherinnen und Besucher über Websites hinweg und sammeln Informationen, um personalisierte Werbung anzuzeigen."
+        "desc": "Wir zeigen dir Angebote, die dich interessieren, auf Google, Facebook und Instagram."
       }
     },
-    "btnReject": "Ablehnen",
-    "btnSave": "Meine Einstellungen speichern",
-    "btnAcceptAll": "Alle akzeptieren",
     "reopenLabel": "Cookie-Einstellungen"
   },
   "v2": {
@@ -435,7 +177,6 @@
       "pazusi": {
         "label": "Überzeug dich selbst · erste Behandlung · Achseln",
         "price": "19,90 €",
-        "oldPrice": "49,99 €",
         "note": "Der schnellste Weg, den Unterschied zu spüren. Den Preis behältst du bis zum Ende des Zyklus.",
         "cta": "Erste Behandlung buchen →",
         "until": "Angebot bis 31.12."

@@ -6,6 +6,7 @@ import { confirmedCode } from "@/config/booking";
 import { HERO_VIDEO_V2 } from "@/config/design";
 import { visibleHeroOffers } from "@/config/hero-offers";
 import { BookButton } from "@/components/ui/BookButton";
+import { BaseLine, PriceAmount, usePrice } from "@/components/ui/Price";
 
 /** The hero's right side: the video, the poster alone for reduced motion, or a linen block until the file is given. */
 function HeroMedia({ label }: { label: string }) {
@@ -35,6 +36,20 @@ function HeroMedia({ label }: { label: string }) {
   );
 }
 
+/** The offer price (the app's when the switch is on) and its bazna cijena line; nothing without a price. */
+function HeroPrice({ code, typed }: { code: string; typed: string }) {
+  const { show } = usePrice(code);
+  if (!show) return null;
+  return (
+    <div className="hpw">
+      <div className="hp">
+        <PriceAmount code={code} typed={typed} />
+      </div>
+      <BaseLine code={code} className="bz" />
+    </div>
+  );
+}
+
 export function Hero() {
   const t = useTranslations("v2");
   // The first offer still running, and only if the new design has texts for it.
@@ -57,10 +72,7 @@ export function Hero() {
           {offer && hasOffer ? (
             <div className="hof">
               <span className="k ko">{t(`${offerKey}.label`)}</span>
-              <div className="hp">
-                {t(`${offerKey}.price`)}
-                <s>{t(`${offerKey}.oldPrice`)}</s>
-              </div>
+              <HeroPrice code={offer.code} typed={t(`${offerKey}.price`)} />
               <p className="hn">{t(`${offerKey}.note`)}</p>
               <div className="cta">
                 <BookButton usluga={confirmedCode(offer.code)} className="btn">

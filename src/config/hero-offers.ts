@@ -1,53 +1,14 @@
-export type HeroOfferText = {
-  badge: string;
-  title: string;
-  subtitle: string;
-  /** The hero button: says what booking opens with. */
-  cta: string;
-};
-
+/**
+ * The hero offer (landing-redesign row 2). Its texts are in messages under `v2.heroOffer.{id}`; `code` is the
+ * booking app's catalogue code (?usluga= and the price read in config/prices.ts).
+ */
 export type HeroOffer = {
   id: string;
   code: string;
   validUntil?: string;
-  texts: {
-    hr: HeroOfferText;
-    en: HeroOfferText;
-    de?: HeroOfferText;
-  };
 };
 
-export const heroOffers: HeroOffer[] = [
-  {
-    id: "pazusi",
-    code: "alc_underarms",
-    validUntil: "2026-12-31",
-    texts: {
-      hr: {
-        badge: "Posebna ponuda",
-        title: "Lasersko uklanjanje dlačica ispod pazuha sada 19,90",
-        subtitle: "za žene i muškarce · Ponuda vrijedi do 31.12.2026.",
-        cta: "Rezerviraj pazuhe · 19,90 €",
-      },
-      en: {
-        badge: "Special offer",
-        title: "Underarm laser hair removal now 19,90",
-        subtitle: "for women and men · Offer valid until 31.12.2026.",
-        cta: "Book underarms · 19,90 €",
-      },
-      de: {
-        badge: "Sonderangebot",
-        title: "Laser-Haarentfernung an den Achseln jetzt 19,90",
-        subtitle: "für Frauen und Männer · Angebot gültig bis 31.12.2026.",
-        cta: "Achseln buchen · 19,90 €",
-      },
-    },
-  },
-];
-
-if (heroOffers.length < 1) {
-  throw new Error("hero offers must not be empty");
-}
+export const heroOffers: HeroOffer[] = [{ id: "pazusi", code: "alc_underarms", validUntil: "2026-12-31" }];
 
 /** Offers past validUntil are not shown. An offer without a date stays. */
 export function visibleHeroOffers(now = new Date()): HeroOffer[] {
