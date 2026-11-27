@@ -52,3 +52,14 @@ choices already made stay valid. The landing page and the booking page look the 
 - On the phone the sheet sits directly above the page's sticky "Rezerviraj termin" bar, which stays tappable.
 - The cookie format and the 180 days are unchanged: Analitika is the analytics bit, Oglasi the marketing bit.
 - The landing writes no consent log.
+
+**Addition (Ivan, 2026-11-27: decision A):**
+- **Consent log (ADR-0068):** `src/lib/consent.ts`, ported from the unmerged branch `claude/cookie-consent-fixes` with its unit tests (`node --test src/lib/consent.test.mts`).
+  - Each choice that allows or withdraws something is queued and sent: `POST {app}/api/public/consent-log` with `consentId`, `categories` (functional and performance always false), `bannerVersion` `2026-11-27.1`, `locale` and `action`.
+  - A failed send is tried once more after 2 s; what's left is resent on the next visit.
+  - A first-time reject sends nothing.
+  - The consent id lives in `skt_consent_id`.
+- **Cookie format:** `skt_consent` is now written as `v2.<f>.<a>.<p>.<ads>.<generation>.<date>`, the format the app reads. An earlier landing choice `v1.1.<analytics>.<marketing>.<date>` stays that choice, so nobody is asked again.
+- **Handover (ADR-0075 point 3):** every booking link adds `consent` (the `skt_consent` value) and `cid` (the consent id) once a `v2` choice with an id exists.
+- **Ad-click IDs:** `gclid` and `fbclid` are forwarded only while ads are allowed; the `utm_*` parameters always.
+- **German:** the banner uses "du", like the rest of the site.

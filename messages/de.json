@@ -119,13 +119,13 @@
   },
   "cookieConsent": {
     "title": "Cookies",
-    "text": "Wir verwenden Cookies, um zu sehen, welche Leistungen Sie interessieren, und um Ihnen passende Angebote zu zeigen.",
-    "note": "Sie können Ihre Auswahl jederzeit ändern.",
+    "text": "Wir verwenden Cookies, um zu sehen, welche Leistungen dich interessieren, und um dir passende Angebote zu zeigen.",
+    "note": "Du kannst deine Auswahl jederzeit ändern.",
     "btnAcceptAll": "Alle akzeptieren",
     "btnRejectOptional": "Optionale ablehnen",
     "btnSettings": "Einstellungen",
     "settingsTitle": "Cookie-Einstellungen",
-    "settingsIntro": "Wählen Sie, welche Cookies Sie zulassen.",
+    "settingsIntro": "Wähle, welche Cookies du zulässt.",
     "alwaysActive": "Immer aktiv",
     "btnSave": "Auswahl speichern",
     "btnReject": "Ablehnen",
@@ -140,7 +140,7 @@
       },
       "ads": {
         "title": "Werbung",
-        "desc": "Wir zeigen Ihnen Angebote, die Sie interessieren, auf Google, Facebook und Instagram."
+        "desc": "Wir zeigen dir Angebote, die dich interessieren, auf Google, Facebook und Instagram."
       }
     },
     "reopenLabel": "Cookie-Einstellungen"

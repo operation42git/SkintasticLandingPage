@@ -1,23 +1,36 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { consentCookieDomain } from "@/config/booking";
+import { BANNER_VERSION, CONSENT_GENERATION, CONSENT_LOG_URL } from "@/config/consent";
+import {
+  CONSENT_UPDATED_EVENT,
+  flushQueue,
+  noConsent,
+  readConsent,
+  saveConsent,
+  type Consent,
+  type ConsentEnv,
+  type SendEnv,
+  type Store,
+  type Via,
+} from "@/lib/consent";
 
 /**
  * The cookie banner (brief consent-banner-v2, Ivan 2026-11-27; Skintastic scheduling decision 336).
  * First layer: a card at the bottom right (computer) or a bottom sheet (phone) that does not block the page and stays
  * until a choice: "Prihvati sve" (filled, first) and "Odbij neobavezne" (outlined, the same size), "Postavke" a link.
  * The settings window: Nužni (always on), Analitika, Oglasi, nothing pre-ticked.
- * The choice is the shared `skt_consent` cookie (Skintastic ADR-0047), unchanged: `v1.1.{analytics}.{marketing}.{date}`,
- * 180 days, so a choice made with the earlier wording stays valid and nobody is asked again.
+ * The choice is the shared `skt_consent` cookie (ADR-0047, ADR-0068 point 1, `v2` with its generation, 180 days) and
+ * `skt_consent_id`; each choice that allows something or withdraws it is logged in the app (ADR-0068) through
+ * src/lib/consent.ts, ported from the unmerged branch claude/cookie-consent-fixes. A choice made with the earlier wording
+ * (`v1.1…`) stays valid, so nobody is asked again.
  */
 
 type Choice = { analytics: boolean; ads: boolean };
 
-const COOKIE_NAME = "skt_consent";
 export const OPEN_CONSENT_EVENT = "skt:open-consent";
-const COOKIE_MAX_AGE = 180 * 24 * 60 * 60;
 const NONE: Choice = { analytics: false, ads: false };
 const ALL: Choice = { analytics: true, ads: true };
 
@@ -36,38 +49,51 @@ function clearStoredConsent(): void {
   }
 }
 
-function todayStamp(date = new Date()): string {
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return `${date.getFullYear()}-${month}-${day}`;
-}
-
-function isLocalHost(hostname: string): boolean {
-  return hostname === "localhost" || hostname === "127.0.0.1";
-}
-
-function readCookie(name: string): string | null {
-  const prefix = `${name}=`;
-  for (const part of document.cookie.split("; ")) {
-    if (part.startsWith(prefix)) return decodeURIComponent(part.slice(prefix.length));
+function storage(): Store | null {
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
   }
-  return null;
 }
 
-function readConsent(): Choice | null {
-  const match = /^v1\.1\.([01])\.([01])\.(\d{4}-\d{2}-\d{2})$/.exec(readCookie(COOKIE_NAME) ?? "");
-  if (!match) return null;
-  return { analytics: match[1] === "1", ads: match[2] === "1" };
+function sendEnv(): SendEnv {
+  return {
+    store: storage(),
+    fetch: window.fetch.bind(window),
+    logUrl: CONSENT_LOG_URL,
+    keepalive: true,
+    wait: (ms) => new Promise((resolve) => window.setTimeout(resolve, ms)),
+    warn: (message) => console.warn(message),
+  };
 }
 
-function writeConsent(choice: Choice): void {
-  const parts = [`Path=/`, `Max-Age=${COOKIE_MAX_AGE}`, `SameSite=Lax`];
-  if (!isLocalHost(window.location.hostname)) {
-    parts.push(`Domain=${consentCookieDomain()}`, `Secure`);
-  }
-  const value = `v1.1.${choice.analytics ? 1 : 0}.${choice.ads ? 1 : 0}.${todayStamp()}`;
-  document.cookie = `${COOKIE_NAME}=${value}; ${parts.join("; ")}`;
-  clearStoredConsent();
+function browserEnv(locale: string): ConsentEnv {
+  return {
+    hostname: window.location.hostname,
+    cookieDomain: consentCookieDomain(),
+    readCookies: () => document.cookie,
+    writeCookie: (cookie) => {
+      document.cookie = cookie;
+    },
+    now: () => new Date(),
+    random: window.crypto,
+    generation: CONSENT_GENERATION,
+    bannerVersion: BANNER_VERSION,
+    locale,
+    dispatch: (detail) => window.dispatchEvent(new CustomEvent(CONSENT_UPDATED_EVENT, { detail })),
+    send: sendEnv(),
+  };
+}
+
+/** The banner's two choices; functional and performance stay in the cookie and the log as reserved zeros. */
+function toConsent(choice: Choice): Consent {
+  return { ...noConsent(), analytics: choice.analytics, ads: choice.ads };
+}
+
+function stored(locale: string): Choice | null {
+  const consent = readConsent(browserEnv(locale));
+  return consent ? { analytics: consent.analytics, ads: consent.ads } : null;
 }
 
 /** On the phone the sheet sits above the page's sticky "Rezerviraj termin" bar, so it never covers it. */
@@ -110,6 +136,7 @@ function Switch({ checked, label, onToggle }: { checked: boolean; label: string;
 
 export function CookieConsent() {
   const t = useTranslations("cookieConsent");
+  const locale = useLocale();
   // "card": the first layer; "settings": the window; null: closed.
   const [view, setView] = useState<"card" | "settings" | null>(null);
   const [hasChoice, setHasChoice] = useState(false);
@@ -119,26 +146,34 @@ export function CookieConsent() {
 
   useEffect(() => {
     clearStoredConsent();
-    const stored = readConsent();
-    if (stored) {
-      setPending(stored);
+    const choice = stored(locale);
+    if (choice) {
+      setPending(choice);
       setHasChoice(true);
     } else {
       setView("card");
     }
+    // Records the page could not send before (a closed tab, the app down) go now, oldest first.
+    void flushQueue(sendEnv());
+    // Read once on arrival; the banner keeps its own state after that.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const commit = useCallback((choice: Choice) => {
-    writeConsent(choice);
-    setPending(choice);
-    setHasChoice(true);
-    setView(null);
-  }, []);
+  const commit = useCallback(
+    (choice: Choice, via: Via) => {
+      // The cookies, the event and the queue are done at once; the banner never waits for the send.
+      void saveConsent(browserEnv(locale), toConsent(choice), via);
+      setPending(choice);
+      setHasChoice(true);
+      setView(null);
+    },
+    [locale],
+  );
 
   const openSettings = useCallback(() => {
-    setPending(readConsent() ?? NONE);
+    setPending(stored(locale) ?? NONE);
     setView("settings");
-  }, []);
+  }, [locale]);
 
   // The footer's "Postavke kolačića" opens the window with the current choice.
   useEffect(() => {
@@ -173,10 +208,10 @@ export function CookieConsent() {
         </h2>
         <p className="mb-4 text-[14.5px] leading-relaxed text-[#5a5050]">{t("text")}</p>
         <div className="flex flex-col gap-2.5 sm:flex-row">
-          <button type="button" onClick={() => commit(ALL)} className={`${BUTTON} ${ACCEPT}`}>
+          <button type="button" onClick={() => commit(ALL, "accept_all")} className={`${BUTTON} ${ACCEPT}`}>
             {t("btnAcceptAll")}
           </button>
-          <button type="button" onClick={() => commit(NONE)} className={`${BUTTON} ${OUTLINE}`}>
+          <button type="button" onClick={() => commit(NONE, "reject")} className={`${BUTTON} ${OUTLINE}`}>
             {t("btnRejectOptional")}
           </button>
         </div>
@@ -234,13 +269,13 @@ export function CookieConsent() {
           ))}
 
           <div className="mt-4 flex flex-col gap-2.5 sm:flex-row">
-            <button ref={firstButton} type="button" onClick={() => commit(ALL)} className={`${BUTTON} ${ACCEPT}`}>
+            <button ref={firstButton} type="button" onClick={() => commit(ALL, "accept_all")} className={`${BUTTON} ${ACCEPT}`}>
               {t("btnAcceptAll")}
             </button>
-            <button type="button" onClick={() => commit({ ...pending })} className={`${BUTTON} ${OUTLINE}`}>
+            <button type="button" onClick={() => commit({ ...pending }, "save")} className={`${BUTTON} ${OUTLINE}`}>
               {t("btnSave")}
             </button>
-            <button type="button" onClick={() => commit(NONE)} className={`${BUTTON} ${OUTLINE}`}>
+            <button type="button" onClick={() => commit(NONE, "reject")} className={`${BUTTON} ${OUTLINE}`}>
               {t("btnReject")}
             </button>
           </div>
