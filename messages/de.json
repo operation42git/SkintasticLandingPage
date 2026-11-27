@@ -118,37 +118,31 @@
     "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"
   },
   "cookieConsent": {
-    "title": "Einwilligungseinstellungen anpassen",
-    "introShort": "Wir verwenden Cookies, damit du effizient navigieren kannst und bestimmte Funktionen ausgeführt werden können.",
-    "introLong": "Cookies der Kategorie \"Notwendig\" werden in deinem Browser gespeichert, weil sie für die Grundfunktionen der Website unerlässlich sind.\n\nWir verwenden außerdem Cookies von Drittanbietern, die uns helfen zu analysieren, wie du diese Website nutzt, deine Einstellungen speichern und dir relevante Inhalte und Werbung anzeigen. Diese Cookies werden nur mit deiner vorherigen Einwilligung in deinem Browser gespeichert.\n\nDu kannst einige oder alle dieser Cookies aktivieren oder deaktivieren; das Deaktivieren einiger Cookies kann jedoch dein Surferlebnis beeinträchtigen.",
-    "showMore": "Mehr anzeigen",
-    "showLess": "Weniger anzeigen",
+    "title": "Cookies",
+    "text": "Wir verwenden Cookies, um zu sehen, welche Leistungen Sie interessieren, und um Ihnen passende Angebote zu zeigen.",
+    "note": "Sie können Ihre Auswahl jederzeit ändern.",
+    "btnAcceptAll": "Alle akzeptieren",
+    "btnRejectOptional": "Optionale ablehnen",
+    "btnSettings": "Einstellungen",
+    "settingsTitle": "Cookie-Einstellungen",
+    "settingsIntro": "Wählen Sie, welche Cookies Sie zulassen.",
     "alwaysActive": "Immer aktiv",
+    "btnSave": "Auswahl speichern",
+    "btnReject": "Ablehnen",
     "categories": {
       "necessary": {
         "title": "Notwendig",
-        "desc": "Notwendige Cookies sind für die Grundfunktionen der Website unerlässlich; ohne sie funktioniert die Website nicht wie vorgesehen. Diese Cookies speichern keine personenbezogenen Daten."
-      },
-      "functional": {
-        "title": "Funktional",
-        "desc": "Funktionale Cookies unterstützen bestimmte Funktionen, etwa das Teilen von Inhalten der Website auf Social-Media-Plattformen, das Sammeln von Feedback und andere Funktionen von Drittanbietern."
+        "desc": "Für den Betrieb der Website erforderlich."
       },
       "analytics": {
         "title": "Analyse",
-        "desc": "Analyse-Cookies helfen zu verstehen, wie Besucherinnen und Besucher mit der Website interagieren. Sie liefern Daten zu Besucherzahlen, Absprungrate, Herkunft der Zugriffe und Ähnlichem."
-      },
-      "performance": {
-        "title": "Leistung",
-        "desc": "Leistungs-Cookies helfen, die wichtigsten Leistungskennzahlen der Website zu verstehen und zu analysieren, um ein besseres Nutzungserlebnis zu bieten."
+        "desc": "Zeigen uns, welche Seiten und Leistungen Besucher ansehen (Google Analytics)."
       },
       "ads": {
         "title": "Werbung",
-        "desc": "Werbe-Cookies dienen dazu, relevante Werbung und Marketingkampagnen anzuzeigen. Diese Cookies verfolgen Besucherinnen und Besucher über Websites hinweg und sammeln Informationen, um personalisierte Werbung anzuzeigen."
+        "desc": "Wir zeigen Ihnen Angebote, die Sie interessieren, auf Google, Facebook und Instagram."
       }
     },
-    "btnReject": "Ablehnen",
-    "btnSave": "Meine Einstellungen speichern",
-    "btnAcceptAll": "Alle akzeptieren",
     "reopenLabel": "Cookie-Einstellungen"
   },
   "v2": {

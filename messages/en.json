@@ -118,37 +118,31 @@
     "copyright": "© {year} skintastic LASER SKIN & BODY · {company}"
   },
   "cookieConsent": {
-    "title": "Customise your consent settings",
-    "introShort": "We use cookies to help you move around efficiently and to perform certain functions.",
-    "introLong": "Cookies categorised as \"Necessary\" are stored in your browser because they are essential for the basic functions of the site.\n\nWe also use third-party cookies that help us analyse how you use this website, store your settings, and provide content and ads that are relevant to you. These cookies are stored in your browser only with your prior consent.\n\nYou can choose to enable or disable some or all of these cookies, but disabling some of them may affect your browsing experience.",
-    "showMore": "Show more",
-    "showLess": "Show less",
-    "alwaysActive": "Always active",
+    "title": "Cookies",
+    "text": "We use cookies to see which services interest you and to show you offers that are useful to you.",
+    "note": "You can change your choice at any time.",
+    "btnAcceptAll": "Accept all",
+    "btnRejectOptional": "Reject optional",
+    "btnSettings": "Settings",
+    "settingsTitle": "Cookie settings",
+    "settingsIntro": "Choose which cookies you allow.",
+    "alwaysActive": "Always on",
+    "btnSave": "Save choice",
+    "btnReject": "Reject",
     "categories": {
       "necessary": {
         "title": "Necessary",
-        "desc": "Necessary cookies are essential for the basic functions of the website, and the website will not work as intended without them. These cookies do not store any personal data."
-      },
-      "functional": {
-        "title": "Functional",
-        "desc": "Functional cookies help with certain features, such as sharing the site's content on social media platforms, collecting feedback and other third-party features."
+        "desc": "Needed for the site to work."
       },
       "analytics": {
         "title": "Analytics",
-        "desc": "Analytics cookies are used to understand how visitors interact with the website. These cookies help provide data on visitor numbers, bounce rate, traffic source and so on."
-      },
-      "performance": {
-        "title": "Performance",
-        "desc": "Performance cookies are used to understand and analyse the website's key performance indexes, which helps provide a better user experience for visitors."
+        "desc": "Show us which pages and services visitors look at (Google Analytics)."
       },
       "ads": {
         "title": "Ads",
-        "desc": "Advertising cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information in order to provide customised ads."
+        "desc": "We show you offers that interest you on Google, Facebook and Instagram."
       }
     },
-    "btnReject": "Reject",
-    "btnSave": "Save my settings",
-    "btnAcceptAll": "Accept all",
     "reopenLabel": "Cookie settings"
   },
   "v2": {
