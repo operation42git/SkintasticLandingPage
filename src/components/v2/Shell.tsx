@@ -2,7 +2,6 @@
 
 import "./v2.css";
 import type { ReactNode } from "react";
-import { hanken, newsreader } from "./fonts";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 
@@ -11,14 +10,13 @@ import { Footer } from "./Footer";
  * outside `.v2`, so the landing's heading styles don't apply to the legal text.
  */
 export function V2Shell({ children }: { children: ReactNode }) {
-  const fonts = `${newsreader.variable} ${hanken.variable}`;
   return (
     <>
-      <div className={`v2 ${fonts}`}>
+      <div className="v2">
         <Header />
       </div>
       {children}
-      <div className={`v2 ${fonts}`}>
+      <div className="v2">
         <Footer />
       </div>
     </>

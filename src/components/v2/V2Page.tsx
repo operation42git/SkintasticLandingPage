@@ -4,7 +4,6 @@ import "./v2.css";
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import { loadOffers, setOffersShown, type OfferWindowV2 } from "@/config/offers-v2";
-import { hanken, newsreader } from "./fonts";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { Treatments } from "./Treatments";
@@ -36,7 +35,7 @@ export function V2Page() {
     };
   }, [locale]);
   return (
-    <div className={`v2 ${newsreader.variable} ${hanken.variable}`}>
+    <div className="v2">
       <Header />
       <main>
         <Hero />
