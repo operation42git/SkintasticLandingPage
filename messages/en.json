@@ -253,10 +253,6 @@
         "title": "A laser is only as good as the hands that guide it.",
         "text": "That is why our treatments are carried out only by certified specialists, trained in the skintastic network. Our clients notice it and like to mention it in their reviews.",
         "people": {
-          "gabriella": {
-            "name": "Gabriella",
-            "role": "Laser specialist"
-          },
           "savka": {
             "name": "Savka",
             "role": "Studio manager"
@@ -308,7 +304,7 @@
       "title": "Our locations",
       "book": "Book here →",
       "directions": "Directions ↗",
-      "soon": "Opening soon. Until then, visit us at Zapad.",
+      "soon": "We're opening a new location near Arena on 4 January.",
       "family": "Part of the skintastic family",
       "tile": {
         "arena": "Coming soon"

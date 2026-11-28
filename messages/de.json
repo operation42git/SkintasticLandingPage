@@ -253,10 +253,6 @@
         "title": "Ein Laser ist nur so gut wie die Hände, die ihn führen.",
         "text": "Deshalb führen bei uns ausschließlich zertifizierte Fachkräfte die Behandlungen durch, geschult im skintastic Netzwerk. Unsere Kundinnen und Kunden merken das und heben es gern in ihren Bewertungen hervor.",
         "people": {
-          "gabriella": {
-            "name": "Gabriella",
-            "role": "Laser-Expertin"
-          },
           "savka": {
             "name": "Savka",
             "role": "Studioleiterin"
@@ -308,7 +304,7 @@
       "title": "Unsere Standorte",
       "book": "Hier buchen →",
       "directions": "Anfahrt ↗",
-      "soon": "Eröffnet bald. Bis dahin besuch uns im Studio Zapad.",
+      "soon": "Wir eröffnen am 4. Januar einen neuen Standort in der Nähe der Arena.",
       "family": "Teil der skintastic Familie",
       "tile": {
         "arena": "Demnächst"

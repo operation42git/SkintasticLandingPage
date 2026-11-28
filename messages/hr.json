@@ -253,10 +253,6 @@
         "title": "Laser je dobar koliko i ruke koje ga vode.",
         "text": "Zato tretmane kod nas rade samo certificirani stručnjaci, educirani u skintastic mreži. Naši klijenti to prepoznaju i rado to ističu u svojim recenzijama.",
         "people": {
-          "gabriella": {
-            "name": "Gabriella",
-            "role": "Laser ekspertica"
-          },
           "savka": {
             "name": "Savka",
             "role": "Voditeljica studija"
@@ -308,7 +304,7 @@
       "title": "Naše lokacije",
       "book": "Rezerviraj ovdje →",
       "directions": "Kako do nas ↗",
-      "soon": "Otvaranje uskoro. Do tada nas posjeti na Zapadu.",
+      "soon": "Otvaramo novu lokaciju blizu Arene od 04.01.",
       "family": "Dio skintastic obitelji",
       "tile": {
         "arena": "Uskoro"
