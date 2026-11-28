@@ -191,6 +191,17 @@
 .v2 .ll { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 4px; }
 .v2 .lnk2 { font-size: 14.5px; color: var(--v2-taupe); text-decoration: none; }
 .v2 .soon h3 { color: var(--v2-taupe); }
+/* The teaser tile of a studio that opens soon (Ivan, 2026-11-28): the date in the brand style, a warm glow and a slow
+   shimmer, instead of a photo the studio doesn't have yet. */
+.v2 .lpt { background: radial-gradient(120% 90% at 85% 10%, rgba(201, 154, 110, 0.55), transparent 55%), radial-gradient(90% 80% at 10% 100%, rgba(154, 91, 62, 0.55), transparent 60%), var(--v2-ink); }
+.v2 .lpt::after { content: ""; position: absolute; inset: 0; background: linear-gradient(115deg, transparent 35%, rgba(255, 244, 230, 0.16) 50%, transparent 65%); transform: translateX(-100%); animation: v2-shimmer 5s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .v2 .lpt::after { animation: none; display: none; } }
+@keyframes v2-shimmer { 0%, 35% { transform: translateX(-100%); } 75%, 100% { transform: translateX(100%); } }
+.v2 .lp .ta { display: flex; flex-direction: column; align-items: center; gap: 10px; color: #f4eee7; text-transform: none; letter-spacing: normal; font-weight: 400; z-index: 1; }
+.v2 .lp .ta span { text-transform: none; letter-spacing: normal; font-weight: 400; }
+.v2 .lp .ta .ta-k { font-size: 11.5px; letter-spacing: 0.32em; text-transform: uppercase; font-weight: 600; color: #e9c9a8; }
+.v2 .lp .ta .ta-d { font-family: var(--disp); font-style: italic; font-weight: 300; font-size: clamp(56px, 6vw, 84px); line-height: 1; color: #fbf6f0; letter-spacing: -0.01em; }
+.v2 .lp .ta .ta-n { font-family: var(--disp); font-size: 19px; color: #f4eee7; opacity: 0.85; }
 .v2 .fam { margin: 44px 0 0; padding-top: 18px; border-top: 1px solid var(--v2-stone); display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--disp); font-size: 22px; font-weight: 300; }
 .v2 .fam a { text-decoration: none; white-space: nowrap; }
 .v2 .fam a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -306,7 +317,13 @@
   /* Top of the photo, slightly enlarged: Zapad's photo ends in a dark band that a square crop would show. */
   .v2 .lg .lp img { object-position: center top !important; transform: scale(1.2); transform-origin: center top; }
   .v2 .lg .soon { grid-template-columns: 1fr; }
-  .v2 .lg .soon .lp { display: none; }
+  .v2 .lg .soon .lp:not(.lpt) { display: none; }
+  .v2 .lg .soon:has(.lpt) { grid-template-columns: 96px 1fr; }
+  .v2 .lg .soon:has(.lpt) > :not(.lp) { grid-column: 2; }
+  .v2 .lp .ta { gap: 4px; }
+  .v2 .lp .ta .ta-k { font-size: 8.5px; letter-spacing: 0.22em; }
+  .v2 .lp .ta .ta-d { font-size: 30px; }
+  .v2 .lp .ta .ta-n { display: none; }
   .v2 .lg .soon .sb { display: inline-block; justify-self: start; margin-bottom: 6px; padding: 3px 9px; border: 1px solid var(--v2-stone); border-radius: 999px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--v2-taupe); }
   .v2 .lg .soon > :not(.lp) { grid-column: 1; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }

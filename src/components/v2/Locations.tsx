@@ -24,7 +24,7 @@ export function Locations() {
           const maps = mapsSearchHref(location.address);
           return (
             <article key={location.id} className={teaser ? "soon" : undefined}>
-              <div className={`lp ${photo ? "" : teaser ? "lp3" : "lp2"}`}>
+              <div className={`lp ${photo ? "" : teaser ? (t.has(`opening.${location.id}`) ? "lpt" : "lp3") : "lp2"}`}>
                 {photo ? (
                   <Image
                     src={photo}
@@ -34,12 +34,19 @@ export function Locations() {
                     style={{ objectPosition: "center 20%" }}
                     sizes="(max-width: 900px) 100vw, 400px"
                   />
+                ) : teaser && t.has(`opening.${location.id}`) ? (
+                  // The teaser tile (Ivan, 2026-11-28): no photo of the studio yet, so the opening date in the brand style.
+                  <span className="ta" aria-hidden="true">
+                    <span className="ta-k">{t(`tile.${location.id}`)}</span>
+                    <span className="ta-d">{t(`opening.${location.id}`)}</span>
+                    <span className="ta-n">{location.name}</span>
+                  </span>
                 ) : (
                   <span>{t.has(`tile.${location.id}`) ? t(`tile.${location.id}`) : location.name}</span>
                 )}
               </div>
               {/* The "Uskoro" badge on the phone, where the tile is hidden (Ivan, 2026-11-28). */}
-              {teaser && t.has(`tile.${location.id}`) ? <span className="sb">{t(`tile.${location.id}`)}</span> : null}
+              {teaser && t.has(`tile.${location.id}`) && !t.has(`opening.${location.id}`) ? <span className="sb">{t(`tile.${location.id}`)}</span> : null}
               <h3>{location.name}</h3>
               <p>{location.address}</p>
               {teaser ? (

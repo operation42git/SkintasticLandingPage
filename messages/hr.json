@@ -308,6 +308,9 @@
       "family": "Dio skintastic obitelji",
       "tile": {
         "arena": "Uskoro"
+      },
+      "opening": {
+        "arena": "04.01."
       }
     },
     "faq": {

@@ -308,6 +308,9 @@
       "family": "Part of the skintastic family",
       "tile": {
         "arena": "Coming soon"
+      },
+      "opening": {
+        "arena": "4 Jan"
       }
     },
     "faq": {
