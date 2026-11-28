@@ -43,7 +43,7 @@ export const locations: Location[] = [
     type: "teaser",
     slug: "",
     name: "skintastic Arena",
-    address: "Jaruščica 8, Zagreb",
+    address: "Jaruščica 9b, Zagreb",
     hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",

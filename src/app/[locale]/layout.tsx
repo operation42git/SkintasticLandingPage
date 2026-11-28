@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Plus_Jakarta_Sans, Great_Vibes } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -10,21 +9,8 @@ import { contact } from "@/config/contact";
 import { locationsOf } from "@/config/locations";
 import { CookieConsent } from "@/components/legal/CookieConsent";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import "../fonts.css";
 import "../globals.css";
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta",
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const greatVibes = Great_Vibes({
-  subsets: ["latin"],
-  variable: "--font-great-vibes",
-  display: "swap",
-  weight: "400",
-});
 
 const lumiosMarker = localFont({
   src: "../../fonts/Lumios-Marker.woff2",
@@ -128,7 +114,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakartaSans.variable} ${greatVibes.variable} ${lumiosMarker.variable}`}
+      className={lumiosMarker.variable}
     >
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
