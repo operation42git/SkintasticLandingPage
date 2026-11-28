@@ -308,10 +308,10 @@
       "title": "Unsere Standorte",
       "book": "Hier buchen →",
       "directions": "Anfahrt ↗",
-      "soon": "Eröffnet bald. Bis dahin besuch uns im Studio Zapad oder Istok.",
+      "soon": "Eröffnet bald. Bis dahin besuch uns im Studio Zapad.",
       "family": "Teil der skintastic Familie",
       "tile": {
-        "jug": "Eröffnet bald"
+        "arena": "Demnächst"
       }
     },
     "faq": {

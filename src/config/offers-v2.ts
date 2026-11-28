@@ -47,7 +47,6 @@ const DEMO: readonly OfferWindowV2[] = [
     ranges: [{ weekdays: [1, 2, 3, 4, 5], starts: "08:00", ends: "11:00" }],
     locations: [
       { slug: "skintastic-zapad", name: "skintastic Zapad" },
-      { slug: "skintastic-istok", name: "skintastic Istok" },
     ],
     validUntil: "2026-11-30",
   },
@@ -61,7 +60,6 @@ const DEMO: readonly OfferWindowV2[] = [
     ],
     locations: [
       { slug: "skintastic-zapad", name: "skintastic Zapad" },
-      { slug: "skintastic-istok", name: "skintastic Istok" },
     ],
     validUntil: null,
   },
