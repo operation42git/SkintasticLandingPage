@@ -183,6 +183,7 @@
 .v2 .lp { position: relative; aspect-ratio: 3 / 2; overflow: hidden; background: var(--v2-linen); border-radius: 10px; display: grid; place-items: center; }
 .v2 .lp span { font-size: 11.5px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 600; color: var(--v2-taupe); }
 .v2 .lp2 { background: linear-gradient(150deg, #e6dace, #f4eee7); }
+.v2 .sb { display: none; }
 .v2 .lp3 { background: linear-gradient(150deg, #efe7de, #f7f3ee); border: 1px dashed var(--v2-stone); }
 .v2 .lg h3 { font-size: 26px; margin-top: 8px; }
 .v2 .lg p { margin: 0; font-size: 15px; }
@@ -306,6 +307,7 @@
   .v2 .lg .lp img { object-position: center top !important; transform: scale(1.2); transform-origin: center top; }
   .v2 .lg .soon { grid-template-columns: 1fr; }
   .v2 .lg .soon .lp { display: none; }
+  .v2 .lg .soon .sb { display: inline-block; justify-self: start; margin-bottom: 6px; padding: 3px 9px; border: 1px solid var(--v2-stone); border-radius: 999px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: var(--v2-taupe); }
   .v2 .lg .soon > :not(.lp) { grid-column: 1; }
   .v2 .loc, .v2 .contact { padding-block: 56px; }
   .v2 .fg { padding-block: 56px; gap: 24px; }

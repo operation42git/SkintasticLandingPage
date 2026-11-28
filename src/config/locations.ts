@@ -36,25 +36,14 @@ export const locations: Location[] = [
     url: "",
     image: "/images/locations/zagreb.jpg",
   },
-  // TEST STUDIO, made-up address (Ivan, 2026-11-04). Remove or replace before this reaches production (main).
+  // Coming soon (Ivan, 2026-11-28): no booking studio in the app yet, so no slug, no booking button, no prices.
+  // Hours and phone are not known yet and stay empty.
   {
-    id: "istok",
-    type: "bookable",
-    slug: "skintastic-istok", // read from the app, 2026-11-11
-    name: "skintastic Istok",
-    address: "Avenija Dubrava 47, 10040 Zagreb",
-    hours: { hr: "Pon–Sub 8:00–20:00 · Ned zatvoreno", en: "Mon–Sat 8:00–20:00 · Sun closed", de: "Mo–Sa 8:00–20:00 · So geschlossen" },
-    parking: "[PARKIRANJE]",
-    openingLabel: "",
-    url: "",
-    image: "/images/locations/zagreb-2.jpeg",
-  },
-  {
-    id: "jug",
+    id: "arena",
     type: "teaser",
     slug: "",
-    name: "skintastic Jug – Velika Gorica",
-    address: "Velika Gorica",
+    name: "skintastic Arena",
+    address: "Jaruščica 8, Zagreb",
     hours: { hr: "", en: "" },
     parking: "",
     openingLabel: "",

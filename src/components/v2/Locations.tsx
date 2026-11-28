@@ -38,10 +38,21 @@ export function Locations() {
                   <span>{t.has(`tile.${location.id}`) ? t(`tile.${location.id}`) : location.name}</span>
                 )}
               </div>
+              {/* The "Uskoro" badge on the phone, where the tile is hidden (Ivan, 2026-11-28). */}
+              {teaser && t.has(`tile.${location.id}`) ? <span className="sb">{t(`tile.${location.id}`)}</span> : null}
               <h3>{location.name}</h3>
               <p>{location.address}</p>
               {teaser ? (
-                <p className="mut">{t("soon")}</p>
+                <>
+                  <p className="mut">{t("soon")}</p>
+                  {maps ? (
+                    <div className="ll">
+                      <a className="lnk2" href={maps} target="_blank" rel="noopener noreferrer">
+                        {t("directions")}
+                      </a>
+                    </div>
+                  ) : null}
+                </>
               ) : (
                 <>
                   {hoursFor(location, locale) ? <p className="mut">{hoursFor(location, locale)}</p> : null}

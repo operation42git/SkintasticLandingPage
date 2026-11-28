@@ -308,10 +308,10 @@
       "title": "Naše lokacije",
       "book": "Rezerviraj ovdje →",
       "directions": "Kako do nas ↗",
-      "soon": "Otvaranje uskoro. Do tada nas posjeti na Zapadu ili Istoku.",
+      "soon": "Otvaranje uskoro. Do tada nas posjeti na Zapadu.",
       "family": "Dio skintastic obitelji",
       "tile": {
-        "jug": "Otvaranje uskoro"
+        "arena": "Uskoro"
       }
     },
     "faq": {
