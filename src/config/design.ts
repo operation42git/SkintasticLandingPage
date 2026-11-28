@@ -33,6 +33,5 @@ export const ABOUT_IMAGE_V2 = "/images/v2/about-sun.jpg";
  * (same names) with proper portraits when Ivan gives them.
  */
 export const STAFF_V2 = [
-  { key: "gabriella", photo: "/images/v2/staff-gabriella.jpg" },
   { key: "savka", photo: "/images/v2/staff-savka.jpg" },
 ] as const;
